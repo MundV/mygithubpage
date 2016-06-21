@@ -1,1 +1,1 @@
-# mygithubpage
+Alleen voor CNAME file

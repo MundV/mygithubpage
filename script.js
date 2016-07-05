@@ -14,8 +14,8 @@ $(document).ready(function() {
         $reeks = $("#reeks"),
         $info = $("#info");
 
-    $zoek.on("change", "input", actie);
-    $reeks.on("change", "input", reeks_actie);
+    $zoek.on("keyup", "input", actie);
+    $reeks.on("keyup", "input", reeks_actie);
 
     function actie() {
         //verkrijg het getal

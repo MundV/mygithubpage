@@ -3,7 +3,7 @@ $(document).ready(function() {
         clicked = false,
         do_not_show_again = false,
         timeouts = [];
-    var $zoek = $("#zoek"),
+    var $zoek = $("#priemen"),
         $actie = $("#actie"),
         $ia = $("#ia"),
         $ib = $("#ib"),
@@ -14,8 +14,8 @@ $(document).ready(function() {
         $reeks = $("#reeks"),
         $info = $("#info");
 
-    $zoek.on("keyup focus", actie);
-    $reeks.on("keyup", "input", reeks_actie);
+    $zoek.on("change", "input", actie);
+    $reeks.on("change", "input", reeks_actie);
 
     function actie() {
         //verkrijg het getal

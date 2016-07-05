@@ -3,7 +3,7 @@ $(document).ready(function() {
         clicked = false,
         do_not_show_again = false,
         timeouts = [];
-    var $zoek = $("#priemen"),
+    var $zoek = $("#zoek"),
         $actie = $("#actie"),
         $ia = $("#ia"),
         $ib = $("#ib"),
@@ -14,7 +14,7 @@ $(document).ready(function() {
         $reeks = $("#reeks"),
         $info = $("#info");
 
-    $zoek.on("keyup focus", "input", actie);
+    $zoek.on("keyup focus", actie);
     $reeks.on("keyup", "input", reeks_actie);
 
     function actie() {

@@ -14,7 +14,7 @@ $(document).ready(function() {
         $reeks = $("#reeks"),
         $info = $("#info");
 
-    $zoek.on("keyup", "input", actie);
+    $zoek.on("keyup focus", "input", actie);
     $reeks.on("keyup", "input", reeks_actie);
 
     function actie() {

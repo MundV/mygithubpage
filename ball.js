@@ -7,14 +7,14 @@ class ball {
     this.MAX_POWER = MAX_POWER
     this.physicsX = new physics(
       energy,
-      50,
-      3,
+      20,
+      0,
       Math.PI * size / 200,
       0.47
     )
     this.physicsY = new physics(
       energy,
-      50,
+      20,
       1.293,
       Math.PI * size / 200,
       0.47

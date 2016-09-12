@@ -7,7 +7,7 @@ var controllsBall = 0
 var flip1,
     flip2,
     b
-var latetsDirection = 'down'
+var lastDirection = 'left'
 
 function setup() {
   flip1 = new flipper()
@@ -53,12 +53,12 @@ function draw() {
   if(b.pos[0] < 0 || b.pos[0] > 720) {
     if(controllsBall == 1) {
       b = new ball('right')
-      var latetsDirection = 'right'
+      lastDirection = 'right'
     } else if(controllsBall == 2){
       b = new ball('left')
-      var latetsDirection = 'left'
+      lastDirection = 'left'
     } else {
-      b = new ball(latetsDirection)
+      b = new ball(lastDirection)
     }
     controllsBall = 0
   }

@@ -8,7 +8,7 @@ class ball {
     this.physicsX = new physics(
       energy,
       50,
-      0,
+      3,
       Math.PI * size / 200,
       0.47
     )

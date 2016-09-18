@@ -1,24 +1,28 @@
 class ball {
-  constructor(xDirection = 'left', energy = 0, startPos = [360 , 180], size = 10, fieldWidth = 360, MAX_POWER = 28) {
-    this.pos = startPos
-    this.size = size
-    this.fieldWidth = fieldWidth
-    this.xDirection = xDirection
-    this.MAX_POWER = MAX_POWER
-    this.physicsX = new physics(
-      energy,
-      20,
-      0,
-      Math.PI * size / 200,
-      0.47
-    )
-    this.physicsY = new physics(
-      energy,
-      20,
-      1.293,
-      Math.PI * size / 200,
-      0.47
-    )
+  constructor (options = {}) {
+    this.pos        = options.startPos   || [360 , 180]
+    this.size       = options.size       || 10
+    this.fieldWidth = options.fieldWidth || 360
+    this.xDirection = options.xDirection || 'left'
+    this.MAX_POWER  = options.MAX_POWER  || 28
+    this.energyX    = options.energyX    || 0
+    this.energyY    = options.energyY    || 0
+
+    this.physicsX = new physics({
+      energy: this.energyX,
+      mass: options.mass || 20,
+      airDensity: options.airDensity || 0,
+      area: options.area || Math.pow(Math.PI, 2) * this.size / 200,
+      dragCo: 0.47
+    })
+
+    this.physicsY = new physics({
+      energy: this.energyY,
+      mass: options.mass || 20,
+      airDensity: options.airDensity || 1.293,
+      area: options.area || Math.pow(Math.PI, 2) * this.size / 200,
+      dragCo: 0.47
+    })
   }
   moveY(direction){
     this.physicsY.power = this.MAX_POWER

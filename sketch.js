@@ -4,14 +4,14 @@ const KCAL2 = [[38, 'up'], [40, 'down']]
 
 var controllsBall = 0
 
-var flip1,
-    flip2,
+var pad1,
+    pad2,
     b
 var lastDirection = 'left'
 
 function setup() {
-  flip1 = new flipper()
-  flip2 = new flipper([700, 180])
+  pad1 = new paddle()
+  pad2 = new paddle([700, 180])
   b = new ball()
 
   createCanvas(720, 360)
@@ -20,10 +20,10 @@ function setup() {
 
 function draw() {
   background(51)
-  //flip1.move('down')
+  //pad1.move('down')
   for(const KA of KCAL1) {
     if(keyIsDown(KA[0])) {
-      flip1.move(KA[1])
+      pad1.move(KA[1])
       if(controllsBall == 1) {
         b.moveY(KA[1])
       }
@@ -31,38 +31,42 @@ function draw() {
   }
   for(const KA of KCAL2) {
     if(keyIsDown(KA[0])) {
-      flip2.move(KA[1])
+      pad2.move(KA[1])
       if(controllsBall == 2) {
         b.moveY(KA[1])
       }
     }
   }
 
-  if(Math.round(b.pos[0]) >= Math.round(flip1.START_POS[0]) && Math.round(b.pos[0]) <= Math.round(flip1.START_POS[0]) + 10) {
-    if(Math.round(b.pos[1]) >= Math.round(flip1.pos[1]) && Math.round(b.pos[1]) <= Math.round(flip1.pos[1]) + Math.round(flip1.size[1])) {
+  if(Math.round(b.pos[0]) >= Math.round(pad1.START_POS[0]) && Math.round(b.pos[0]) <= Math.round(pad1.START_POS[0]) + 10) {
+    if(Math.round(b.pos[1]) >= Math.round(pad1.pos[1]) && Math.round(b.pos[1]) <= Math.round(pad1.pos[1]) + Math.round(pad1.size[1])) {
       b.xDirection = 'right'
       controllsBall = 1
     }
   }
-  if(Math.round(b.pos[0]) >= Math.round(flip2.START_POS[0]) && Math.round(b.pos[0]) <= Math.round(flip2.START_POS[0]) + 10) {
-    if(Math.round(b.pos[1]) >= Math.round(flip2.pos[1]) && Math.round(b.pos[1]) <= Math.round(flip2.pos[1]) + Math.round(flip2.size[1])) {
+  if(Math.round(b.pos[0]) >= Math.round(pad2.START_POS[0]) && Math.round(b.pos[0]) <= Math.round(pad2.START_POS[0]) + 10) {
+    if(Math.round(b.pos[1]) >= Math.round(pad2.pos[1]) && Math.round(b.pos[1]) <= Math.round(pad2.pos[1]) + Math.round(pad2.size[1])) {
       b.xDirection = 'left'
       controllsBall = 2
     }
   }
   if(b.pos[0] < 0 || b.pos[0] > 720) {
     if(controllsBall == 1) {
-      b = new ball('right')
+      b = new ball({
+        xDirection: 'right'
+      })
       lastDirection = 'right'
     } else if(controllsBall == 2){
-      b = new ball('left')
+      b = new ball({
+        xDirection: 'left'
+      })
       lastDirection = 'left'
     } else {
       b = new ball(lastDirection)
     }
     controllsBall = 0
   }
-  flip1.show()
-  flip2.show()
+  pad1.show()
+  pad2.show()
   b.show()
 }

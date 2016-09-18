@@ -1,20 +1,23 @@
-class flipper {
-  constructor(START_POS = [10 , 180], size = [10, 55], fieldWidth = 360, MAX_POWER = 40, drag = 5, density = 400, height = 0.1) {
+class paddle {
+  constructor(START_POS = [10 , 180], options = {}) {
     this.START_POS = START_POS
-    this.size = size
     this.pos = START_POS
-    this.fieldWidth = fieldWidth
+    this.fieldWidth = options.fieldWidth || 360
+    this.size = options.size || [10, 55]
 
     //physics stuff here
-    this.MAX_POWER = MAX_POWER
-    const area = (size[0] / 100) * height
-    this.physics = new physics(
-      0, //starting amount of energy
-      density * area * (size[1] / 100),
-      drag,
-      area,
-      1.15, 60, true
-    )
+    this.MAX_POWER = options.MAX_POWER || 40
+    this.density = options.density || 400
+    this.height = options.height || 0.1
+    const area = (this.size[0] / 100) * this.height
+    this.physics = new physics({
+      energy: 0, //starting amount of energy
+      mass: this.density * area * (this.size[1] / 100),
+      drag: options.drag || 5,
+      area: area,
+      dragCo: 1.15,
+      friciton: true
+    })
   }
   move(direction) {
 /*    if (direction == 'up') {

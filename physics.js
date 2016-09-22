@@ -1,14 +1,13 @@
 class physics {
   constructor(options = {}) {
-    this.energy = options.energy || 0
-    this.mass = options.mass || 10
-    this.airDensity = options.airDensity || 1.293
+    this.energy = (typeof options.energy !== 'undefined') ? options.energy: 0
+    this.mass =  (typeof options.mass !== 'undefined') ? options.mass: 10
+    this.airDensity = (typeof options.airDensity !== 'undefined') ? options.airDensity: 1.293
     this.area = options.area || 5
     this.dragCo = options.dragCo || 1
     this.t = 1 / (options.framerate || 60)
-
-    this.friciton = options.friction || false
-    this.frictionCo = options.frictionCo || 1
+    this.friction = (typeof options.friction !== 'undefined') ? options.friction: false
+    this.frictionCo = options.frictionCo || 0.0001
     this.power = 0
 
     this.powerDirection = ''
@@ -40,7 +39,6 @@ class physics {
       resistance += this.mass * 9.81 * this.frictionCo
 
     this.energy -= resistance * this.t
-    console.log(this.energy);
   }
   energyToVelocity(energy, mass) {
     return Math.sqrt(2 * (Math.abs(energy) / mass) )

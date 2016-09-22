@@ -3,20 +3,20 @@ class paddle {
     this.START_POS = START_POS
     this.pos = START_POS
     this.fieldWidth = options.fieldWidth || 360
-    this.size = options.size || [10, 55]
+    this.size = options.size || [10, 70]
 
     //physics stuff here
-    this.MAX_POWER = options.MAX_POWER || 40
-    this.density = options.density || 400
-    this.height = options.height || 0.1
+    this.MAX_POWER = options.MAX_POWER || 60
+    this.density = (typeof options.density !== 'undefined') ? options.density : 400
+    this.height = (typeof options.height !== 'undefined') ? options.height : 0.1
     const area = (this.size[0] / 100) * this.height
     this.physics = new physics({
-      energy: 0, //starting amount of energy
       mass: this.density * area * (this.size[1] / 100),
       drag: options.drag || 5,
       area: area,
-      dragCo: 1.15,
-      friciton: true
+      dragCo: 5,
+      friction: true,
+      frictionCo: 0.3
     })
   }
   move(direction) {

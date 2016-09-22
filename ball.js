@@ -5,7 +5,7 @@ class ball {
     this.fieldWidth = options.fieldWidth || 360
     this.xDirection = options.xDirection || 'left'
     this.MAX_POWER  = options.MAX_POWER  || 28
-    this.energyX    = options.energyX    || 0
+    this.energyX    = (typeof options.energyX !== 'undefined') ? options.energyX :200
     this.energyY    = options.energyY    || 0
 
     this.physicsX = new physics({
@@ -13,15 +13,14 @@ class ball {
       mass: options.mass || 20,
       airDensity: options.airDensity || 0,
       area: options.area || Math.pow(Math.PI, 2) * this.size / 200,
-      dragCo: 0.47
     })
 
     this.physicsY = new physics({
       energy: this.energyY,
       mass: options.mass || 20,
-      airDensity: options.airDensity || 1.293,
+      airDensity: options.airDensity || 0,
       area: options.area || Math.pow(Math.PI, 2) * this.size / 200,
-      dragCo: 0.47
+      dragCo: 0
     })
   }
   moveY(direction){
@@ -35,6 +34,7 @@ class ball {
   }
   calcPosX() {
     this.physicsX.calcEnergy()
+    console.log(this.physicsX.energy);
     if(this.xDirection == 'left') {
       this.pos[0] -= this.physicsX.energyToVelocity(this.physicsX.energy, this.physicsX.mass)
     } else {
@@ -56,7 +56,6 @@ class ball {
   }
   show() {
     //physicsX
-    this.physicsX.power = 80
     this.calcPosX()
 
     //physicsY

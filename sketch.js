@@ -3,11 +3,11 @@ const KCAL1 = [[87, 'up'], [83, 'down']]
 const KCAL2 = [[38, 'up'], [40, 'down']]
 
 var controllsBall = 0
-
+var reflectEnergy = 1
+var multiplier = 3
 var pad1,
     pad2,
     b
-var lastDirection = 'left'
 
 function setup() {
   pad1 = new paddle()
@@ -41,28 +41,27 @@ function draw() {
   if(Math.round(b.pos[0]) >= Math.round(pad1.START_POS[0]) && Math.round(b.pos[0]) <= Math.round(pad1.START_POS[0]) + 10) {
     if(Math.round(b.pos[1]) >= Math.round(pad1.pos[1]) && Math.round(b.pos[1]) <= Math.round(pad1.pos[1]) + Math.round(pad1.size[1])) {
       b.xDirection = 'right'
+      b.physicsX.energy += multiplier * pad1.physics.energy + reflectEnergy
       controllsBall = 1
     }
   }
   if(Math.round(b.pos[0]) >= Math.round(pad2.START_POS[0]) && Math.round(b.pos[0]) <= Math.round(pad2.START_POS[0]) + 10) {
     if(Math.round(b.pos[1]) >= Math.round(pad2.pos[1]) && Math.round(b.pos[1]) <= Math.round(pad2.pos[1]) + Math.round(pad2.size[1])) {
       b.xDirection = 'left'
+      b.physicsX.energy += multiplier * pad2.physics.energy + reflectEnergy
       controllsBall = 2
     }
   }
   if(b.pos[0] < 0 || b.pos[0] > 720) {
-    if(controllsBall == 1) {
-      b = new ball({
-        xDirection: 'right'
-      })
-      lastDirection = 'right'
-    } else if(controllsBall == 2){
+    if(b.xDirection == 'left') {
       b = new ball({
         xDirection: 'left'
       })
-      lastDirection = 'left'
-    } else {
-      b = new ball(lastDirection)
+    } else if(b.xDirection == 'right'){
+      b = new ball({
+        xDirection: 'right'
+      })
+
     }
     controllsBall = 0
   }

@@ -1,5 +1,5 @@
 # New Pong by Mund
-This is New Pong by Mund. A variant of the original pong. 
+This is New Pong by Mund. A new version of the well known game pong. 
 
 ## Differences
 1.  In New Pong by Mund the paddles accelerate and have friction. 

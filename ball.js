@@ -34,7 +34,6 @@ class ball {
   }
   calcPosX() {
     this.physicsX.calcEnergy()
-    console.log(this.physicsX.energy);
     if(this.xDirection == 'left') {
       this.pos[0] -= this.physicsX.energyToVelocity(this.physicsX.energy, this.physicsX.mass)
     } else {

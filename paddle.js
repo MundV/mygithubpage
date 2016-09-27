@@ -1,7 +1,7 @@
 class paddle {
-  constructor(START_POS = [10 , 180], options = {}) {
-    this.START_POS = START_POS
-    this.pos = START_POS
+  constructor(options = {}) {
+    this.START_POS = options.START_POS || [10 , 170]
+    this.pos = this.START_POS
     this.fieldWidth = options.fieldWidth || 360
     this.size = options.size || [10, 70]
 
@@ -20,11 +20,6 @@ class paddle {
     })
   }
   move(direction) {
-/*    if (direction == 'up') {
-      this.pos[1] -= 3
-    } else {
-      this.pos[1] += 3
-    }*/
     this.physics.power = this.MAX_POWER
     this.physics.powerDirection = direction
   }

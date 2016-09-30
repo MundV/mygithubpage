@@ -24,7 +24,6 @@ class game {
     this.reflectEnergy = (typeof options.reflectEnergy !== 'undefined') ? options.reflectEnergy: 1
     this.multiplier = options.multiplier || 3
     this.bgColor = (typeof options.bgColor !== 'undefined') ? options.bgColor: 51
-    console.log(this.bgColor, this.FIELD_SIZE);
     //graphics stuff
     createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
     background(this.bgColor)
@@ -73,7 +72,6 @@ class game {
       })
       this.resetBallControl()
       this.ballOptions.xDirection = (this.ball.xDirection == 'left' ? 'left' : 'right')
-      console.log(this.ballOptions);
       this.ball = new ball(this.ballOptions)
 
       //temp code

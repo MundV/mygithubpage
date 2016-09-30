@@ -1,5 +1,5 @@
 'use strict'
-var curr
+let curr
 
 function setup() {
   curr = new game()

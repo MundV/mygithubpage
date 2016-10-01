@@ -5,6 +5,13 @@ class paddle {
     this.fieldWidth = options.fieldWidth || 360
     this.size = options.size || [10, 70]
 
+    //player stuff
+    this.name = (typeof options.name !== 'undefined') ? options.name : Math.random()
+    this.keys = options.keys || [[87, 'up'], [83, 'down']]
+    this.points = options.points || 0
+    this.controllsBall = options.controllsBall || false
+    this.goal = options.goal || 'right'
+
     //physics stuff here
     this.MAX_POWER = options.MAX_POWER || 60
     this.density = (typeof options.density !== 'undefined') ? options.density : 400

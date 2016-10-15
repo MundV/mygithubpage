@@ -37,15 +37,15 @@ class game {
   bounce() {
     this.paddles.map((paddle) => {
       const paddleX = {
-        min: Math.round(paddle.pos[0]),
-        max: Math.round(paddle.pos[0] + paddle.size[0])
+        min: paddle.pos[0],
+        max: paddle.pos[0] + paddle.size[0]
       }
       const paddleY = {
-        min: Math.round(paddle.pos[1]),
-        max: Math.round(paddle.pos[1] + paddle.size[1])
+        min: paddle.pos[1],
+        max: paddle.pos[1] + paddle.size[1]
       }
-      if(paddleX.min <= Math.round(this.ball.pos[0]) && Math.round(this.ball.pos[0]) <= paddleX.max &&
-         paddleY.min <= Math.round(this.ball.pos[1]) && Math.round(this.ball.pos[1]) <= paddleY.max) {
+      if(paddleX.min <= this.ball.pos[0] && this.ball.pos[0] <= paddleX.max &&
+         paddleY.min <= this.ball.pos[1] + this.ball.size / 2 && this.ball.pos[1] - this.ball.size / 2 <= paddleY.max) {
            this.ball.xDirection = (this.ball.xDirection == 'left' ? 'right' : 'left')
            this.ball.physicsX.energy += this.multiplier * paddle.physics.energy + this.reflectEnergy
            this.resetBallControl();

@@ -59,6 +59,7 @@ class ball {
 
     //physicsY
     this.calcPosY()
+    fill(255)
     ellipse(this.pos[0], this.pos[1], this.size, this.size)
   }
 }

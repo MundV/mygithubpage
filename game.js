@@ -10,29 +10,54 @@ class game {
         START_POS: [this.FIELD_SIZE[0] - 20, this.FIELD_SIZE[1] / 2 - 10]
       })
     ]
+    this.touchControls = options.touchControls || [
+      {x: 0, xMax: this.FIELD_SIZE[0] / 2, y: 0, yMax: this.FIELD_SIZE[1] / 2, player: 0, move: 'up'},
+      {x: 0, xMax: this.FIELD_SIZE[0] / 2, y: this.FIELD_SIZE[1] / 2, yMax: this.FIELD_SIZE[1], player: 0, move: 'down'},
+      {x: this.FIELD_SIZE[0] / 2, xMax: this.FIELD_SIZE[0], y: 0, yMax: this.FIELD_SIZE[1] / 2, player: 1, move: 'up'},
+      {x: this.FIELD_SIZE[0] / 2, xMax: this.FIELD_SIZE[0], y: this.FIELD_SIZE[1] / 2, yMax: this.FIELD_SIZE[1], player: 1, move:'down'}
+    ]
     this.ballOptions = options.ball || {}
     this.ball = new ball(this.ballOptions)
 
     this.reflectEnergy = (typeof options.reflectEnergy !== 'undefined') ? options.reflectEnergy: 1
     this.multiplier = options.multiplier || 3
     this.bgColor = (typeof options.bgColor !== 'undefined') ? options.bgColor: 51
-    //graphics stuff
-    createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
-    background(this.bgColor)
+    this._createCanvas()
 
     this.paused = false
+  }
+  _createCanvas() {
+    const canvas = createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
+    background(this.bgColor)
+    canvas.mouseClicked(() => {
+      if(!fullscreen()) {
+        fullscreen(true)
+      }
+    })
   }
   controlPaddle() {
     this.paddles.map( (paddle) => {
       for(const key of paddle.keys) {
         if (keyIsDown(key[0])) {
           paddle.move(key[1])
-          if(paddle.controllsBall)
-            this.ball.moveY(key[1])
+          this._controlBall(paddle, key[1])
         }
       }
       return paddle
     })
+    for(const touch of touches) {
+      for(const control of this.touchControls) {
+        if(control.x <= touch.x && control.xMax >= touch.x && control.y <= touch.y && control.yMax >= touch.y) {
+          const paddle = this.paddles[control.player]
+          paddle.move(control.move)
+          this._controlBall(paddle, control.move)
+        }
+      }
+    }
+  }
+  _controlBall(paddle, direction) {
+    if(paddle.controllsBall)
+      this.ball.moveY(direction)
   }
   bounce() {
     this.paddles.map((paddle) => {
@@ -64,12 +89,6 @@ class game {
       this.resetBallControl()
       this.ballOptions.xDirection = (this.ball.xDirection == 'left' ? 'left' : 'right')
       this.ball = new ball(this.ballOptions)
-
-      //temp code
-      const one = select("#one")
-      const two = select("#two")
-      one.html(this.paddles[0].points)
-      two.html(this.paddles[1].points)
     }
   }
   resetBallControl() {

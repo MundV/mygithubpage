@@ -1,7 +1,30 @@
 {
   "short_name": "New Pong",
   "name": "New Pong By Mund",
+  "description": "Play pong with a Twist. Created By Mund.",
+  "lang": "en-US",
   "icons": [
+    {
+      "src": "favicons/android-icon-48-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }, {
+      "src": "favicons/android-icon-72-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }, {
+      "src": "favicons/android-icon-96-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }, {
+      "src": "favicons/android-icon-144-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "favicons/android-icon-168-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
     {
       "src": "/favicons/android-icon-192-192.png",
       "sizes": "192x192",
@@ -10,5 +33,5 @@
   ],
   "start_url": "/index.html",
   "display": "fullscreen",
-  "orientation": "landscape"
+  "orientation": "landscape-primary"
 }

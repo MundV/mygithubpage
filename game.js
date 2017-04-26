@@ -1,6 +1,6 @@
 class game {
   constructor(options = {}) {
-    this.FIELD_SIZE = options.FIELD_SIZE || [720, 360]
+    this.FIELD_SIZE = options.FIELD_SIZE || [640, 360]
     this.paddles = options.paddles || [
       new paddle({name: 'p1'}),
       new paddle({
@@ -24,16 +24,25 @@ class game {
     this.bgColor = (typeof options.bgColor !== 'undefined') ? options.bgColor: 51
     this._createCanvas()
 
-    this.paused = false
+    this.paused = true;
   }
   _createCanvas() {
     const canvas = createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
+    const button = select("button")
     background(this.bgColor)
     canvas.mouseClicked(() => {
-      if(!fullscreen()) {
-        fullscreen(true)
-      }
+      this._fullscreen()
     })
+    button.mouseClicked(() => {
+      this._fullscreen()
+      select("#play").style("display", "none")
+    })
+  }
+  _fullscreen() {
+    this.paused = false;
+    if(!fullscreen()) {
+      fullscreen(true)
+    }
   }
   controlPaddle() {
     this.paddles.map( (paddle) => {

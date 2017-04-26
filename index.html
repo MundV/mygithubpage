@@ -59,12 +59,37 @@
       #portrait {
         display: none;
       }
+      #play {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        background-color: #333333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #play button {
+        padding: 10px;
+        border: 0;
+        background-color: white;
+        box-shadow:none;
+        border-radius: 0px;
+        font-family: "Verdana, Geneva, sans-serif";
+        font-size: 200%;
+      }
+      #play button:hover {
+        background-color: red;
+        color: white;
+      }
       @media screen and (orientation: portrait) {
         #portrait {
           display: block;
         }
         canvas {
           opacity: 0.2
+        }
+        #play {
+          display: none;
         }
       }
     </style>
@@ -73,6 +98,9 @@
     <div id="portrait">
       <h1>this.phone.rotate(π / 2)</h1>
       <p>Sorry, I can't conjure... Please rotate your phone 90 degrees.</p>
+    </div>
+    <div id="play">
+      <button>Play!11!!!</button>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

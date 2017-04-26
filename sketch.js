@@ -6,8 +6,10 @@ function setup() {
 }
 
 function draw() {
-  curr.controlPaddle()
-  curr.bounce()
-  curr.goalCheck()
-  curr.render()
+  if(!curr.paused) {
+    curr.controlPaddle()
+    curr.bounce()
+    curr.goalCheck()
+    curr.render()
+  }
 }

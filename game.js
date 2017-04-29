@@ -10,12 +10,6 @@ class game {
         START_POS: [this.FIELD_SIZE[0] - 20, this.FIELD_SIZE[1] / 2 - 10]
       })
     ]
-    this.touchControls = options.touchControls || [
-      {x: 0, xMax: this.FIELD_SIZE[0] / 2, y: 0, yMax: this.FIELD_SIZE[1] / 2, player: 0, move: 'up'},
-      {x: 0, xMax: this.FIELD_SIZE[0] / 2, y: this.FIELD_SIZE[1] / 2, yMax: this.FIELD_SIZE[1], player: 0, move: 'down'},
-      {x: this.FIELD_SIZE[0] / 2, xMax: this.FIELD_SIZE[0], y: 0, yMax: this.FIELD_SIZE[1] / 2, player: 1, move: 'up'},
-      {x: this.FIELD_SIZE[0] / 2, xMax: this.FIELD_SIZE[0], y: this.FIELD_SIZE[1] / 2, yMax: this.FIELD_SIZE[1], player: 1, move:'down'}
-    ]
     this.ballOptions = options.ball || {}
     this.ball = new ball(this.ballOptions)
 
@@ -25,6 +19,23 @@ class game {
     this._createCanvas()
 
     this.paused = true;
+  }
+  _getTouchControls() {
+    if ((window.matchMedia("(orientation: landscape)").matches)) {
+      return [
+          {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, player: 0, move: 'up'},
+          {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, player: 0, move: 'down'},
+          {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, player: 1, move: 'up'},
+          {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, player: 1, move:'down'}
+        ]
+    } else {
+      return [
+        {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, player: 0, move: 'down'},
+        {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, player: 0, move: 'up'},
+        {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, player: 1, move: 'down'},
+        {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, player: 1, move: 'up'}
+      ]
+    }
   }
   _createCanvas() {
     const canvas = createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
@@ -55,7 +66,8 @@ class game {
       return paddle
     })
     for(const touch of touches) {
-      for(const control of this.touchControls) {
+      const touchControls = this._getTouchControls()
+      for(const control of touchControls) {
         if(control.x <= touch.x && control.xMax >= touch.x && control.y <= touch.y && control.yMax >= touch.y) {
           const paddle = this.paddles[control.player]
           paddle.move(control.move)

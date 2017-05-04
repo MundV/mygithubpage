@@ -21,20 +21,18 @@ class game {
     this.paused = true;
   }
   _getTouchControls() {
-    if ((window.matchMedia("(orientation: landscape)").matches)) {
-      return [
-          {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, player: 0, move: 'up'},
-          {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, player: 0, move: 'down'},
-          {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, player: 1, move: 'up'},
-          {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, player: 1, move:'down'}
-        ]
-    } else {
-      return [
-        {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, player: 0, move: 'down'},
-        {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, player: 0, move: 'up'},
-        {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, player: 1, move: 'down'},
-        {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, player: 1, move: 'up'}
+    return [
+        {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, landscape:{player: 0, move: 'up'}, portrait: {player: 0, move: 'down'}},
+        {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, landscape: {player: 0, move: 'down'}, portrait: {player: 1, move:'down' }},
+        {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, landscape: {player: 1, move: 'up'}, portrait: {player: 0, move:'up' }},
+        {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, landscape: {player: 1, move:'down'}, portrait: {player: 1, move: 'up'}}
       ]
+  }
+  _orientation() {
+    if(window.matchMedia("(orientation: landscape)").matches) {
+      return 'landscape'
+    } else {
+      return 'portrait'
     }
   }
   _createCanvas() {
@@ -56,7 +54,7 @@ class game {
     }
   }
   controlPaddle() {
-    this.paddles.map( (paddle) => {
+    this.paddles.map((paddle) => {
       for(const key of paddle.keys) {
         if (keyIsDown(key[0])) {
           paddle.move(key[1])
@@ -69,9 +67,11 @@ class game {
       const touchControls = this._getTouchControls()
       for(const control of touchControls) {
         if(control.x <= touch.x && control.xMax >= touch.x && control.y <= touch.y && control.yMax >= touch.y) {
-          const paddle = this.paddles[control.player]
-          paddle.move(control.move)
-          this._controlBall(paddle, control.move)
+          const orientation = this._orientation()
+          const paddle = this.paddles[control[orientation].player]
+          const direction = control[orientation].move
+          paddle.move(direction)
+          this._controlBall(paddle, direction)
         }
       }
     }
@@ -119,6 +119,8 @@ class game {
     })
   }
   render() {
+    fill(255)
+    strokeWeight(0.5)
     background(this.bgColor)
     this.paddles.map((paddle) => {
       paddle.show()

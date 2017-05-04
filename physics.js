@@ -39,6 +39,7 @@ class physics {
       resistance += this.mass * 9.81 * this.frictionCo
 
     this.energy -= resistance * this.t
+    this.energy = parseInt(this.energy * 1000) / 1000
   }
   energyToVelocity(energy, mass) {
     return Math.sqrt(2 * (Math.abs(energy) / mass) )

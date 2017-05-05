@@ -36,15 +36,15 @@ class game {
     }
   }
   _createCanvas() {
-    const canvas = createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
     const button = select("button")
-    background(this.bgColor)
-    canvas.mouseClicked(() => {
-      this._fullscreen()
-    })
     button.mouseClicked(() => {
       this._fullscreen()
       select("#play").style("display", "none")
+      const canvas = createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
+      background(this.bgColor)
+      canvas.mouseClicked(() => {
+        this._fullscreen()
+      })
     })
   }
   _fullscreen() {

@@ -24,6 +24,11 @@
     <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ff0000">
 
+    <!-- Custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sarpanch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&subset=latin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
     <script src="libraries/p5.js" type="text/javascript"></script>
     <script src="libraries/p5.dom.js" type="text/javascript"></script>
     <script src="libraries/p5.sound.js" type="text/javascript"></script>
@@ -33,7 +38,6 @@
     <script src="ball.js" type="text/javascript"></script>
     <script src="paddle.js" type="text/javascript"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&subset=latin');
 
       body {
         padding: 0;
@@ -51,7 +55,7 @@
         image-rendering: -moz-crisp-edges;
         image-rendering:   -o-crisp-edges;
         image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
+        image-rendering: pixelated;
         -ms-interpolation-mode: nearest-neighbor;
       }
       #play {
@@ -69,9 +73,11 @@
         padding: 10px;
         width: 200px;
         border: 0;
+        font-size: 0.8em;
         box-shadow:none;
         border-radius: 0px;
         color: #333333;
+        font-family: 'VT323', monospace;
       }
       #play h1 {
         color: white;

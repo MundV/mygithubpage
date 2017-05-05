@@ -122,6 +122,8 @@ class game {
     fill(255)
     strokeWeight(0.5)
     background(this.bgColor)
+    textFont('Sarpanch');
+    textSize(10);
     this.paddles.map((paddle) => {
       paddle.show()
       return paddle

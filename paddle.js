@@ -1,4 +1,4 @@
-startPosclass paddle {
+class paddle {
   constructor(options = {}) {
     this.startPos = options.startPos || [10 , 170]
     this.pos = this.startPos

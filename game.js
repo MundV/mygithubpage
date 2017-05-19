@@ -1,13 +1,13 @@
 class game {
   constructor(options = {}) {
-    this.FIELD_SIZE = options.FIELD_SIZE || [640, 360]
+    this.fieldSize = options.fieldSize || [640, 360]
     this.paddles = options.paddles || [
       new paddle({name: 'p1'}),
       new paddle({
         name: 'p2',
         keys: [[38, 'up'], [40, 'down']],
         goal: 'left',
-        START_POS: [this.FIELD_SIZE[0] - 20, this.FIELD_SIZE[1] / 2 - 10]
+        startPos: [this.fieldSize[0] - 20, this.fieldSize[1] / 2 - 10]
       })
     ]
     this.ballOptions = options.ball || {}
@@ -40,7 +40,7 @@ class game {
     button.mouseClicked(() => {
       this._fullscreen()
       select("#play").style("display", "none")
-      const canvas = createCanvas(this.FIELD_SIZE[0], this.FIELD_SIZE[1])
+      const canvas = createCanvas(this.fieldSize[0], this.fieldSize[1])
       background(this.bgColor)
       canvas.mouseClicked(() => {
         this._fullscreen()
@@ -101,7 +101,7 @@ class game {
     })
   }
   goalCheck() {
-    if(this.ball.pos[0] < 0 || this.ball.pos[0] > this.FIELD_SIZE[0]) {
+    if(this.ball.pos[0] < 0 || this.ball.pos[0] > this.fieldSize[0]) {
       this.paddles.map((paddle) => {
         if (paddle.goal == this.ball.xDirection)
           paddle.points ++

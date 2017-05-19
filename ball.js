@@ -4,7 +4,7 @@ class ball {
     this.size       = options.size       || 10
     this.fieldWidth = options.fieldWidth || 360
     this.xDirection = options.xDirection || 'left'
-    this.MAX_POWER  = options.MAX_POWER  || 28
+    this.maxPower  = options.maxPower  || 28
     this.energyX    = (typeof options.energyX !== 'undefined') ? options.energyX :200
     this.energyY    = options.energyY    || 0
 
@@ -24,7 +24,7 @@ class ball {
     })
   }
   moveY(direction){
-    this.physicsY.power = this.MAX_POWER
+    this.physicsY.power = this.maxPower
     if(direction == 'up') {
       direction = 'down'
     } else {

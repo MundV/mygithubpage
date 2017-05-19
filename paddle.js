@@ -1,7 +1,7 @@
-class paddle {
+startPosclass paddle {
   constructor(options = {}) {
-    this.START_POS = options.START_POS || [10 , 170]
-    this.pos = this.START_POS
+    this.startPos = options.startPos || [10 , 170]
+    this.pos = this.startPos
     this.fieldWidth = options.fieldWidth || 360
     this.size = options.size || [10, 70]
 
@@ -13,7 +13,7 @@ class paddle {
     this.goal = options.goal || 'right'
 
     //physics stuff here
-    this.MAX_POWER = options.MAX_POWER || 60
+    this.maxPower = options.maxPower || 60
     this.density = (typeof options.density !== 'undefined') ? options.density : 400
     this.height = (typeof options.height !== 'undefined') ? options.height : 0.1
     const area = (this.size[0] / 100) * this.height
@@ -27,7 +27,7 @@ class paddle {
     })
   }
   move(direction) {
-    this.physics.power = this.MAX_POWER
+    this.physics.power = this.maxPower
     this.physics.powerDirection = direction
   }
   calcPos() {

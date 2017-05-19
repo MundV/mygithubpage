@@ -1,12 +1,14 @@
 class ball {
   constructor (options = {}) {
-    this.pos        = options.startPos   || [360 , 180]
-    this.size       = options.size       || 10
+    this.startPos = options.pos || [360 , 180]
+    this.pos   = options.pos || [360 , 180]
+    this.energyX    = options.energyX || 200
+    this.energyY    = options.energyY || 0
+    this.size       = options.size || 10
     this.fieldWidth = options.fieldWidth || 360
     this.xDirection = options.xDirection || 'left'
-    this.maxPower  = options.maxPower  || 28
-    this.energyX    = (typeof options.energyX !== 'undefined') ? options.energyX :200
-    this.energyY    = options.energyY    || 0
+    this.maxPower   = options.maxPower  || 28
+
 
     this.physicsX = new physics({
       energy: this.energyX,
@@ -53,12 +55,26 @@ class ball {
       this.pos[1] += this.physicsY.energyToVelocity(this.physicsY.energy, this.physicsY.mass)
     }
   }
+  reset() {
+    this.xDirection = (this.xDirection == 'left' ? 'left' : 'right')
+    this.pos[0] = this.startPos[0];
+    this.pos[1] = this.startPos[1]
+    this.physicsX.energy = this.energyX
+    this.physicsY.energy = this.energyY
+  }
+  addEnergyX(amount) {
+    this.physicsX.energy += amount
+  }
   show() {
     //physicsX
     this.calcPosX()
 
     //physicsY
     this.calcPosY()
+
+    //round pos
+    this.pos = this.pos.map(Math.round)
+
     stroke('red');
     ellipse(this.pos[0], this.pos[1], this.size, this.size)
   }

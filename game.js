@@ -93,7 +93,7 @@ class game {
       if(paddleX.min <= this.ball.pos[0] && this.ball.pos[0] <= paddleX.max &&
          paddleY.min <= this.ball.pos[1] + this.ball.size / 2 && this.ball.pos[1] - this.ball.size / 2 <= paddleY.max) {
            this.ball.xDirection = (this.ball.xDirection == 'left' ? 'right' : 'left')
-           this.ball.physicsX.energy += this.multiplier * paddle.physics.energy + this.reflectEnergy
+           this.ball.addEnergyX(this.multiplier * paddle.physics.energy + this.reflectEnergy)
            this.resetBallControl();
            paddle.controllsBall = true
       }
@@ -108,8 +108,7 @@ class game {
         return paddle
       })
       this.resetBallControl()
-      this.ballOptions.xDirection = (this.ball.xDirection == 'left' ? 'left' : 'right')
-      this.ball = new ball(this.ballOptions)
+      this.ball.reset()
     }
   }
   resetBallControl() {

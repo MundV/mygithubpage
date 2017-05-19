@@ -43,12 +43,13 @@ class paddle {
     } else if(this.pos[1] > this.fieldWidth) {
       this.pos[1] = 0 - this.size[1]
     }
+    this.pos = this.pos.map(Math.round)
   }
   show() {
     this.calcPos()
     fill(255)
     rect(this.pos[0], this.pos[1], this.size[0], this.size[1])
     fill(255)
-    text(this.points, Math.round(this.pos[0] + this.size[0] / 5), this.pos[1] + this.size[1] / 0.8)
+    text(this.points, this.pos[0] + this.size[0] / 5, this.pos[1] + this.size[1] / 0.8)
   }
 }

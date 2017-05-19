@@ -43,7 +43,6 @@ class paddle {
     } else if(this.pos[1] > this.fieldWidth) {
       this.pos[1] = 0 - this.size[1]
     }
-    this.pos = this.pos.map(Math.round)
   }
   show() {
     this.calcPos()

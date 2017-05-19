@@ -72,9 +72,6 @@ class ball {
     //physicsY
     this.calcPosY()
 
-    //round pos
-    this.pos = this.pos.map(Math.round)
-
     stroke('red');
     ellipse(this.pos[0], this.pos[1], this.size, this.size)
   }

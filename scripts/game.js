@@ -1,15 +1,23 @@
+let noRender = false
+if(typeof window === 'undefined') {
+  paddle = require('./paddle.js')
+  ball = require('./ball.js')
+  noRender = true
+}
+
 class game {
   constructor(options = {}) {
     this.fieldSize = options.fieldSize || [640, 360]
-    this.paddles = options.paddles || [
-      new paddle({name: 'p1'}),
-      new paddle({
+    this.paddleSettings = options.paddles || [
+      {name: 'p1'},
+      {
         name: 'p2',
         keys: [[38, 'up'], [40, 'down']],
         goal: 'left',
         startPos: [this.fieldSize[0] - 20, this.fieldSize[1] / 2 - 10]
-      })
+      }
     ]
+    this.paddles = this.paddleSettings.map(opt => new paddle(opt))
     this.ballOptions = options.ball || {}
     this.ball = new ball(this.ballOptions)
 
@@ -36,6 +44,8 @@ class game {
     }
   }
   _createCanvas() {
+    if(noRender)
+      return;
     const button = select("button")
     button.mouseClicked(() => {
       this._fullscreen()
@@ -54,6 +64,8 @@ class game {
     }
   }
   controlPaddle() {
+    if(noRender)
+      return;
     this.paddles.map((paddle) => {
       for(const key of paddle.keys) {
         if (keyIsDown(key[0])) {
@@ -118,15 +130,21 @@ class game {
     })
   }
   render() {
-    fill(255)
-    strokeWeight(0.5)
-    background(this.bgColor)
-    textFont('Sarpanch');
-    textSize(10);
+    if(!noRender) {
+      fill(255)
+      strokeWeight(0.5)
+      background(this.bgColor)
+      textFont('Sarpanch');
+      textSize(10);
+    }
     this.paddles.map((paddle) => {
       paddle.show()
       return paddle
     })
     this.ball.show()
   }
+}
+
+if(noRender) {
+  module.exports = game
 }

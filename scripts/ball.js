@@ -1,3 +1,8 @@
+if(typeof window === 'undefined') {
+  physics = require('./physics.js')
+  noRender = true
+}
+
 class ball {
   constructor (options = {}) {
     this.startPos = options.pos || [360 , 180]
@@ -8,7 +13,6 @@ class ball {
     this.fieldWidth = options.fieldWidth || 360
     this.xDirection = options.xDirection || 'left'
     this.maxPower   = options.maxPower  || 28
-
 
     this.physicsX = new physics({
       energy: this.energyX,
@@ -72,7 +76,12 @@ class ball {
     //physicsY
     this.calcPosY()
 
+    if(noRender)
+      return;
     stroke('red');
     ellipse(this.pos[0], this.pos[1], this.size, this.size)
   }
+}
+if(noRender) {
+  module.exports = ball
 }

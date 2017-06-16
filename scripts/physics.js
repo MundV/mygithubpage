@@ -45,3 +45,6 @@ class physics {
     return Math.sqrt(2 * (Math.abs(energy) / mass) )
   }
 }
+if(typeof window === 'undefined') {
+  module.exports = physics
+}

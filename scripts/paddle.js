@@ -1,3 +1,8 @@
+if(typeof window === 'undefined') {
+  physics = require('./physics.js')
+  noRender = true
+}
+
 class paddle {
   constructor(options = {}) {
     this.startPos = options.startPos || [10 , 170]
@@ -46,9 +51,14 @@ class paddle {
   }
   show() {
     this.calcPos()
+    if(noRender)
+      return;
     fill(255)
     rect(this.pos[0], this.pos[1], this.size[0], this.size[1])
     fill(255)
     text(this.points, this.pos[0] + this.size[0] / 5, this.pos[1] + this.size[1] / 0.8)
   }
+}
+if(noRender) {
+  module.exports = paddle
 }

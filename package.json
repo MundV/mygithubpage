@@ -1,0 +1,27 @@
+{
+  "name": "new_pong_by_mund",
+  "version": "1.0.0",
+  "description": "Glitchping",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MundVetter/New_Pong_by_Mund.git"
+  },
+  "author": "Mund Vetter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MundVetter/New_Pong_by_Mund/issues"
+  },
+  "homepage": "https://github.com/MundVetter/New_Pong_by_Mund#readme"
+}

@@ -6,10 +6,9 @@
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {
-  },
   "devDependencies": {
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "jsonfile": "^3.0.0"
   },
   "scripts": {
     "test": "mocha"

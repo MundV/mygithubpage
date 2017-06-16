@@ -12,7 +12,7 @@ class paddle {
 
     //player stuff
     this.name = (typeof options.name !== 'undefined') ? options.name : Math.random()
-    this.keys = options.keys || [[87, 'up'], [83, 'down']]
+    this.controls = options.controls || [{key: 87, action: 'up'}, {key: 83, action: 'down'}]
     this.points = options.points || 0
     this.controllsBall = options.controllsBall || false
     this.goal = options.goal || 'right'

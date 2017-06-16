@@ -12,7 +12,7 @@ class game {
       {name: 'p1'},
       {
         name: 'p2',
-        keys: [[38, 'up'], [40, 'down']],
+        controls: [{key: 38, action: 'up'}, {key: 40, action: 'down'}],
         goal: 'left',
         startPos: [this.fieldSize[0] - 20, this.fieldSize[1] / 2 - 10]
       }
@@ -30,10 +30,10 @@ class game {
   }
   _getTouchControls() {
     return [
-        {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, landscape:{player: 0, move: 'up'}, portrait: {player: 0, move: 'down'}},
-        {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, landscape: {player: 0, move: 'down'}, portrait: {player: 1, move:'down' }},
-        {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, landscape: {player: 1, move: 'up'}, portrait: {player: 0, move:'up' }},
-        {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, landscape: {player: 1, move:'down'}, portrait: {player: 1, move: 'up'}}
+        {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, landscape:{player: 0, action: 'up'}, portrait: {player: 0, action: 'down'}},
+        {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, landscape: {player: 0, action: 'down'}, portrait: {player: 1, action:'down' }},
+        {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, landscape: {player: 1, action: 'up'}, portrait: {player: 0, action:'up' }},
+        {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, landscape: {player: 1, action:'down'}, portrait: {player: 1, action: 'up'}}
       ]
   }
   _orientation() {
@@ -63,14 +63,15 @@ class game {
       fullscreen(true)
     }
   }
-  controlPaddle() {
+  sendControls() {
     if(noRender)
       return;
+    // inside the controller there will be a paddle and an action
+    const controller = []
     this.paddles.map((paddle) => {
-      for(const key of paddle.keys) {
-        if (keyIsDown(key[0])) {
-          paddle.move(key[1])
-          this._controlBall(paddle, key[1])
+      for(const control of paddle.controls) {
+        if (keyIsDown(control.key)) {
+          controller.push({paddle, action: control.action})
         }
       }
       return paddle
@@ -81,12 +82,18 @@ class game {
         if(control.x <= touch.x && control.xMax >= touch.x && control.y <= touch.y && control.yMax >= touch.y) {
           const orientation = this._orientation()
           const paddle = this.paddles[control[orientation].player]
-          const direction = control[orientation].move
-          paddle.move(direction)
-          this._controlBall(paddle, direction)
+          const action = control[orientation].action
+          controller.push({paddle, action})
         }
       }
     }
+    controller.forEach((control) => {
+      this._controlPaddle(control.paddle, control.action)
+      this._controlBall(control.paddle, control.action)
+    })
+  }
+  _controlPaddle(paddle, direction) {
+    paddle.move(direction)
   }
   _controlBall(paddle, direction) {
     if(paddle.controllsBall)
@@ -142,6 +149,12 @@ class game {
       return paddle
     })
     this.ball.show()
+  }
+  update() {
+    this.sendControls()
+    this.bounce()
+    this.goalCheck()
+    this.render()
   }
 }
 

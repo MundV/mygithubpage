@@ -7,12 +7,10 @@ describe('Glitchping', () => {
           paddles: [
             {
               name: 'testBot 1',
-              keys: [],
               startPos: [10, 100]
             },
             {
               name: 'testBot 2',
-              keys: [],
               goal: 'left',
               startPos: [620, 100]
             }

@@ -9,9 +9,9 @@ class game {
   constructor(options = {}) {
     this.fieldSize = options.fieldSize || [640, 360]
     this.paddleSettings = options.paddles || [
-      {name: 'p1'},
+      {name: 'player Left'},
       {
-        name: 'p2',
+        name: 'player Right',
         controls: [{key: 38, action: 'up'}, {key: 40, action: 'down'}],
         goal: 'left',
         startPos: [this.fieldSize[0] - 20, this.fieldSize[1] / 2 - 10]
@@ -25,8 +25,11 @@ class game {
     this.multiplier = options.multiplier || 3
     this.bgColor = (typeof options.bgColor !== 'undefined') ? options.bgColor: 51
     this._createCanvas()
+    this.goal = options.goal || 5
 
-    this.paused = true;
+    this.paused = false
+    this.ended = false
+    this.winner = ''
   }
   _getTouchControls() {
     return [
@@ -46,19 +49,14 @@ class game {
   _createCanvas() {
     if(noRender)
       return;
-    const button = select("button")
-    button.mouseClicked(() => {
+    const canvas = createCanvas(this.fieldSize[0], this.fieldSize[1])
+    this._fullscreen()
+    background(this.bgColor)
+    canvas.mouseClicked(() => {
       this._fullscreen()
-      select("#play").style("display", "none")
-      const canvas = createCanvas(this.fieldSize[0], this.fieldSize[1])
-      background(this.bgColor)
-      canvas.mouseClicked(() => {
-        this._fullscreen()
-      })
     })
   }
   _fullscreen() {
-    this.paused = false;
     if(!fullscreen()) {
       fullscreen(true)
     }
@@ -124,6 +122,10 @@ class game {
       this.paddles.map((paddle) => {
         if (paddle.goal == this.ball.xDirection)
           paddle.points ++
+          if(paddle.points >= this.goal) {
+            this.ended = true
+            this.winner = paddle.name
+          }
         return paddle
       })
       this.resetBallControl()

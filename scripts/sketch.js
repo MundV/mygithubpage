@@ -1,8 +1,9 @@
 'use strict'
 let curr = {paused: true}
+let options = {}
 
 function setup() {
-  select('#startGame').mouseClicked(() => {
+  select('.startGame').mouseClicked(() => {
     hideUI()
     curr = new game()
   })
@@ -27,6 +28,8 @@ function theWinnerIs(winner) {
   select('h1').html(`The winner is ${winner}`)
 }
 function hideUI() {
-  select('#startScreen').style('display', 'none')
+  selectAll('.screen').forEach(function(element) {
+   element.hide() 
+  });
   select('canvas').style('display', 'block')
 }

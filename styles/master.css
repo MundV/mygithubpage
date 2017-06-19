@@ -1,7 +1,6 @@
 body {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 200%;
@@ -31,12 +30,8 @@ canvas {
   align-items: center;
   flex-direction: column;
 }
-.inner {
-  display: flex;
-  width: 90%;
-}
 .button {
-  cursor:pointer;
+  cursor: pointer;
   background-color: #dddddd;
   display: block;
   padding: 10px;
@@ -51,19 +46,28 @@ canvas {
 .button:hover {
   background-color: #ff0000;
   color: white;
+}
+label.button {
   cursor: pointer;
 }
-input[type="radio"] {
+input[type='radio'] {
   opacity: 0;
   width: 0;
   height: 0;
   position: relative;
   top: 10px;
 }
-input[type="radio"]:checked ~ label {
+input[type='radio']:checked ~ label {
   background-color: #ff0000;
   color: white;
 }
+input[type='text']{
+  cursor: auto;
+}
+input[type='number'] {
+  cursor: auto;
+}
+
 #startScreen button:nth-child(2) {
   margin-bottom: 10px;
 }
@@ -88,10 +92,17 @@ input[type="radio"]:checked ~ label {
   display: flex;
   justify-content: space-around;
 }
+table {
+  width: 100vw;
+  white-space: nowrap;
+}
+.wrapper {
+  overflow-x: auto;
+}
 ul {
    list-style-type: none;
 }
-a{
+a {
   margin: 0;
   padding: 0;
   display: inherit;

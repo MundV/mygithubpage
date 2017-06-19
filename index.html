@@ -34,10 +34,10 @@
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 
     <!-- Scripts and Stuff -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/p5.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/addons/p5.dom.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/addons/p5.sound.min.js" type="text/javascript"></script>
-    <script src="scripts/sketch.js" type="text/javascript"></script>
+    <script src="scripts/index.js" type="text/javascript"></script>
     <script src="scripts/game.js" type="text/javascript"></script>
     <script src="scripts/physics.js" type="text/javascript"></script>
     <script src="scripts/ball.js" type="text/javascript"></script>
@@ -46,23 +46,75 @@
   <body>
     <div id="startScreen" class="screen">
         <h1>Glitchping by Mund</h1>
-        <button class='startGame button'>Play 🕹️</button>
-        <button id='settingButton' class="button">Settings 🔎</button>
+        <button class="startGame button">Play 🕹️</button>
+        <button id="settingButton" class="button">Settings 🔎</button>
     </div>
-    <div id="settingScreen" class="screen">
+    <!-- <div id="settingScreen" class="screen">
       <h1>Settings</h1>
       <h2>General</h2>
-      <ul>
-        <li>
-          <button>Play
-        </li>
-      </ul>
+      <div class="input">
+        <div class="wrapper">
+          <table id="generalPlayer">
+            <tr>
+              <th data-name="name">Player name</th>
+              <th data-name="up" data-varname='controls' data-store="controls">control Up</th>
+              <th data-name="down" data-varname="controls" data-store="controls">control Down</th>
+              <th data-name= "width" data-varname="size" data-store="array">width</th>
+              <th data-name="height" data-varname="size" data-store="array">height</th>
+              <th data-name="maxPower">speed</th>
+              <th data-name="startX" data-varname="startPos" data-store="array">start position X</th>
+              <th data-name="startY" data-varname="startPos" data-store="array">start position Y</th>
+            </tr>
+            <tr>
+              <td>
+                <input class="button player1" type="text" name="name" value="Player Left">
+              </td>
+              <td>
+                <input class="button keyInput player1" name="up" type="text" value="w">
+              </td>
+              <td>
+                <input class="button keyInput player1" name="down" type="text" value="s">
+              </td>
+              <td>
+                <input class="button player1" name="width" type="number" value="10">
+              </td>
+              <td>
+                <input class="button player1" name="height" type="number" value="70">
+              </td>
+              <td>
+                <input class="button player1" name="speed" type="number" value="60">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input class="button player2" type="text" name="name" value="Player right">
+              </td>
+              <td>
+                <input class="button keyInput player2" name="up" type="text" value="ArrowUp">
+              </td>
+              <td>
+                <input class="button keyInput player2" name="down" type="text" value="ArrowDown">
+              </td>
+              <td>
+                <input class="button player2" name="width" type="text" value="640">
+              </td>
+              <td>
+                <input class="button player2" name="height" type="text" value="360">
+              </td>
+              <td>
+                <input class="button player2" name="speed" type="number" value="60">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <button class="button startGame">Play 🕹️</button
+      </div>
       <h2>Game Modes</h2>
       <form class="selecter" id="gameModes">
         <a>
           <input id="wall" type="radio" name="gamemode" value="wall">
           <label class="button" for="wall">
-            Wall 🗻
+            The Wall 🗻
           </label>
         </a>
         <a>
@@ -129,6 +181,6 @@
           based on <span itemprop="ratingCount">9</span> ratings
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>

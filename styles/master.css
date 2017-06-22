@@ -111,7 +111,7 @@ a {
   display: inherit;
 }
 @media screen and (orientation: portrait) {
-  canvas {
+  #canvas canvas {
     transform: translateY(-100%) rotate(90deg);
     transform-origin: left bottom;
     height: 100vw !important;

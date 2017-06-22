@@ -34,9 +34,9 @@
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 
     <!-- Scripts and Stuff -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/p5.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/vue@2.3.4" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js" type="text/javascript"></script>
     <script src="scripts/index.js" type="text/javascript"></script>
     <script src="scripts/game.js" type="text/javascript"></script>
     <script src="scripts/physics.js" type="text/javascript"></script>
@@ -44,11 +44,36 @@
     <script src="scripts/paddle.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="startScreen" class="screen">
-        <h1>Glitchping by Mund</h1>
-        <button class="startGame button">Play 🕹️</button>
-        <button id="settingButton" class="button">Settings 🔎</button>
+    <div id="app">
+      <div id="startScreen" v-show="!gameIsRunning" class="screen">
+          <h1>{{message}}</h1>
+          <button @click="gameIsRunning = true" class="startGame button">Play 🕹️</button>
+          <button id="settingButton" class="button">Settings 🔎</button>
+      </div>
+      <div class="screen wrapper" v-show="!gameIsRunning" id="settingScreen">
+        <div id="playerSettings">
+          <table>
+            <tr >
+              <th v-for='(value, key) in paddles[0]'>
+                {{key}}
+              </th>
+            </tr>
+            <tr v-for="paddle in paddles">
+              <td v-for='(value, key) in paddle'>
+                <input class='button' type="text" v-model="paddle[key]">
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="canvas" v-show="gameIsRunning"></div>
     </div>
+
+    <!-- <div class="screen" id="settingScreen">
+      <div id="playerSettings">
+        <input v-for="(value, key) in options" type="text" v-model="JSON.stringify(options[key])">
+      </div>
+    </div> -->
     <!-- <div id="settingScreen" class="screen">
       <h1>Settings</h1>
       <h2>General</h2>

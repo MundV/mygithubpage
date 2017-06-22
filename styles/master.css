@@ -10,6 +10,9 @@ body {
 }*/
 canvas {
   display: none;
+}
+#canvas canvas {
+  display: block;
   width: 100vw !important;
   height: 100vh !important;
   image-rendering: -moz-crisp-edges;

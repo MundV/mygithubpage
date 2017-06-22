@@ -50,6 +50,7 @@ class game {
     if(noRender)
       return;
     const canvas = createCanvas(this.fieldSize[0], this.fieldSize[1])
+    document.getElementById('canvas').appendChild(document.getElementsByTagName('canvas')[0])
     this._fullscreen()
     background(this.bgColor)
     canvas.mouseClicked(() => {

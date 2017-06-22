@@ -1,6 +1,6 @@
 'use strict'
 let curr = {paused: true}
-let app;
+let app
 
 function setup() {
   app = new Vue({
@@ -9,32 +9,32 @@ function setup() {
       gameIsRunning: false,
       message: 'Glitchping by Mund',
       options: {
-        paddles: [
-          {
+        paddles: [{
           loading: 'waiting...'
-          }
-        ]
+        }]
       },
       paddles: []
     },
     watch: {
       gameIsRunning: function (val) {
         if(val) {
-          curr = new game()
+          curr = new game(this.getOptions())
         } else {
           fullscreen(false)
           this.message = `${curr.winner} won!🎉`
           curr = {paused: true}
         }
       },
-      options: function (val) {
-        this.paddles = this.setPaddleOptions(val.paddles)
-      },
-      paddles: function (val) {
-        console.log('why');
+      options: function (options) {
+        this.paddles = this.setPaddleOptions(options.paddles)
       }
     },
     methods: {
+      addPlayer: function (){
+        const paddle = this.cloneObject(this.paddles[0])
+        paddle.name = ""
+        this.paddles.push(paddle)
+      },
       getOptionsFromURL: function(url) {
         fetch(url).then((res) => {
           return res.json()
@@ -57,7 +57,10 @@ function setup() {
       },
       computePaddleOptions: function (paddles, action) {
         const options = []
-        for (const paddle of paddles) {
+        const _paddles = paddles.map((paddle) => {
+          return this.cloneObject(paddle)
+        })
+        for (const paddle of _paddles) {
           for (const option in paddle) {
             if (paddle.hasOwnProperty(option)) {
               paddle[option] = action(paddle[option])
@@ -66,6 +69,9 @@ function setup() {
           options.push(paddle)
         }
         return options
+      },
+      cloneObject: function (obj) {
+        return JSON.parse(JSON.stringify(obj))
       }
     },
     created: function() {

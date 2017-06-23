@@ -1,22 +1,9 @@
 {
   "fieldSize": [640, 360],
-  "paddleSettings": [{
-    "name": "player Left"
-  }, {
-    "name": "player Right",
-    "controls": [{
-      "key": 38,
-      "action": "up"
-    }, {
-      "key": 40,
-      "action": "down"
-    }],
-    "goal": "left",
-    "startPos": [620, 170]
-  }],
   "paddles": [{
     "name": "player Left",
     "startPos": [10, 170],
+    "goal": "right",
     "size": [10, 70],
     "controls": [{
       "key": 87,
@@ -27,13 +14,13 @@
     }],
     "points": 0,
     "controllsBall": false,
-    "goal": "right",
     "maxPower": 60,
     "density": 400,
     "height": 0.1
   }, {
     "name": "player Right",
     "startPos": [620, 170],
+    "goal": "left",
     "size": [10, 70],
     "controls": [{
       "key": 38,
@@ -44,7 +31,6 @@
     }],
     "points": 0,
     "controllsBall": false,
-    "goal": "left",
     "maxPower": 60,
     "density": 400,
     "height": 0.1

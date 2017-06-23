@@ -93,6 +93,7 @@ input[type='number'] {
 }
 .selecter {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 table {

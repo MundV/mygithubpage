@@ -21,7 +21,11 @@ function setup() {
           curr = new game(this.getOptions())
         } else {
           fullscreen(false)
-          this.message = `${curr.winner} won!🎉`
+          if(curr.winner.length > 1) {
+            this.message = `${curr.winner[0] and others won!🎉}`
+          } else {
+            this.message = `${curr.winner[0]} won!🎉`
+          }
           curr = {paused: true}
         }
       },

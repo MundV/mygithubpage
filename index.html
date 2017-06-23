@@ -51,7 +51,7 @@
           <button @click="gameIsRunning = true" class="startGame button">Play 🕹️</button>
           <button v-scroll-to="'#settingScreen'" id="settingButton" class="button">Settings 🔎</button>
       </div>
-      <div class="screen wrapper" v-show="!gameIsRunning" id="settingScreen">
+      <div class="screen" v-show="!gameIsRunning" id="settingScreen">
         <h1>Settings 🔎</h1>
         <h2>Game Modes 🃏</h2>
         <form class="selecter" id="gameModes">
@@ -75,7 +75,7 @@
           </a>
         </form>
         <h2>Advanced Settings 💻</h2>
-        <div id="playerSettings">
+        <div id="playerSettings" class="wrapper">
           <table>
             <tr >
               <th v-for='(value, key) in paddles[0]'>

@@ -125,7 +125,7 @@ class game {
           paddle.points ++
           if(paddle.points >= this.goal) {
             this.ended = true
-            this.winner = paddle.name
+            this.winner.push(paddle)
           }
         return paddle
       })

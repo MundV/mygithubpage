@@ -22,8 +22,10 @@ function setup() {
         } else {
           fullscreen(false)
           if(curr.winner.length > 1) {
+            console.log(curr.winner);
             this.message = `${curr.winner[0]} and others won!🎉`
           } else {
+            console.log(curr.winner);
             this.message = `${curr.winner[0]} won!🎉`
           }
           curr = {paused: true}

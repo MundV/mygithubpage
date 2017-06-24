@@ -29,7 +29,7 @@ class game {
 
     this.paused = false
     this.ended = false
-    this.winner = ''
+    this.winner = []
   }
   _getTouchControls() {
     return [
@@ -125,7 +125,7 @@ class game {
           paddle.points ++
           if(paddle.points >= this.goal) {
             this.ended = true
-            this.winner.push(paddle)
+            this.winner.push(paddle.name)
           }
         return paddle
       })

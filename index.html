@@ -56,23 +56,23 @@
         <h2>Game Modes 🃏</h2>
         <form class="selecter" id="gameModes">
           <a>
-            <input id="wall" type="radio" name="gamemode" value="wall">
-            <label class="button" for="wall">
+            <input id="wall" type="radio" name="gamemode" value="wall" >
+            <label class="button" for="wall" @click="getOptionsFromURL('./options/wall.json')">
               The Wall 🗻
             </label>
           </a>
           <a>
-            <input type="radio" id="regular"name="gamemode" value="regular️" checked>
-            <label class="button" for="regular">
+            <input type="radio" id="default"name="gamemode" value="default" checked>
+            <label class="button" for="regular" @click="getOptionsFromURL('./options/default.json')">
               Regular 😃️
             </label>
           </a>
-          <a>
+          <!-- <a>
             <input type="radio" id="speedy" name="gamemode" value="speedy">
             <label class="button" for="speedy">
               Speedy ⛷️
             </label>
-          </a>
+          </a> -->
         </form>
         <h2>Advanced Settings 💻</h2>
         <div id="playerSettings" class="wrapper">

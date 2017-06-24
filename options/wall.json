@@ -32,7 +32,7 @@
     "name": "wall 2",
     "startPos": [320, 205],
     "goal": "",
-    "size": [10, 100],
+    "size": [10, 105],
     "controls": [],
     "points": -10,
     "controllsBall": false,

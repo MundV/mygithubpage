@@ -22,7 +22,7 @@ function setup() {
         } else {
           fullscreen(false)
           if(curr.winner.length > 1) {
-            this.message = `${curr.winner[0] and others won!🎉}`
+            this.message = `${curr.winner[0]} and others won!🎉`
           } else {
             this.message = `${curr.winner[0]} won!🎉`
           }

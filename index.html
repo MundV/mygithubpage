@@ -56,14 +56,14 @@
         <h2>Game Modes 🃏</h2>
         <form class="selecter" id="gameModes">
           <a>
-            <input id="wall" type="radio" name="gamemode" value="wall" >
-            <label class="button" for="wall" @click="getOptionsFromURL('./options/wall.json')">
+            <input id="wall" type="radio" name="gamemode" value="wall" v-model="gameMode">
+            <label class="button" for="wall">
               The Wall 🗻
             </label>
           </a>
           <a>
-            <input type="radio" id="default" name="gamemode" value="default" checked>
-            <label class="button" for="default" @click="getOptionsFromURL('./options/default.json')">
+            <input type="radio" id="default" name="gamemode" value="default" v-model="gameMode" checked>
+            <label class="button" for="default">
               Default 😃️
             </label>
           </a>

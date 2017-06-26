@@ -99,7 +99,7 @@ class game {
       this.ball.moveY(direction)
   }
   bounce() {
-    this.paddles.map((paddle) => {
+    for (let paddle of this.paddles) {
       const paddleX = {
         min: paddle.pos[0],
         max: paddle.pos[0] + paddle.size[0]
@@ -112,32 +112,26 @@ class game {
          paddleY.min <= this.ball.pos[1] + this.ball.size / 2 && this.ball.pos[1] - this.ball.size / 2 <= paddleY.max) {
            this.ball.xDirection = (this.ball.xDirection == 'left' ? 'right' : 'left')
            this.ball.addEnergyX(this.multiplier * paddle.physics.energy + this.reflectEnergy)
-           this.resetBallControl();
+           for (const paddle of this.paddles) {
+             paddle.controllsBall = false
+           }
            paddle.controllsBall = true
       }
-      return paddle
-    })
+    }
   }
   goalCheck() {
     if(this.ball.pos[0] < 0 || this.ball.pos[0] > this.fieldSize[0]) {
-      this.paddles.map((paddle) => {
+      for (paddle of this.paddles) {
         if (paddle.goal == this.ball.xDirection)
           paddle.points ++
-          if(paddle.points >= this.goal) {
-            this.ended = true
-            this.winner.push(paddle.name)
-          }
-        return paddle
-      })
-      this.resetBallControl()
+        if(paddle.points >= this.goal) {
+          this.ended = true
+          this.winner.push(paddle.name)
+        }
+        paddle.controllsBall = false
+      }
       this.ball.reset()
     }
-  }
-  resetBallControl() {
-    this.paddles.map((paddle) => {
-     paddle.controllsBall = false
-     return paddle
-    })
   }
   render() {
     if(!noRender) {
@@ -147,10 +141,10 @@ class game {
       textFont('Sarpanch');
       textSize(10);
     }
-    this.paddles.map((paddle) => {
+
+    for (paddle of this.paddles) {
       paddle.show()
-      return paddle
-    })
+    }
     this.ball.show()
   }
   update() {

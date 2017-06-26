@@ -13,7 +13,8 @@ function setup() {
           loading: 'waiting...'
         }]
       },
-      paddles: []
+      paddles: [],
+      gameMode: 'default'
     },
     watch: {
       gameIsRunning: function (val) {
@@ -30,6 +31,9 @@ function setup() {
           }
           curr = {paused: true}
         }
+      },
+      gameMode: function (mode) {
+        this.getOptionsFromURL(`/options/${mode}.json`)
       },
       options: function (options) {
         this.paddles = this.setPaddleOptions(options.paddles)

@@ -95,7 +95,7 @@ class game {
     paddle.move(direction)
   }
   _controlBall(paddle, direction) {
-    if(paddle.controllsBall)
+    if(paddle.controlsBall)
       this.ball.moveY(direction)
   }
   bounce() {
@@ -113,9 +113,9 @@ class game {
            this.ball.xDirection = (this.ball.xDirection == 'left' ? 'right' : 'left')
            this.ball.addEnergyX(this.multiplier * paddle.physics.energy + this.reflectEnergy)
            for (const paddle of this.paddles) {
-             paddle.controllsBall = false
+             paddle.controlsBall = false
            }
-           paddle.controllsBall = true
+           paddle.controlsBall = true
       }
     }
   }
@@ -128,7 +128,7 @@ class game {
           this.ended = true
           this.winner.push(paddle.name)
         }
-        paddle.controllsBall = false
+        paddle.controlsBall = false
       }
       this.ball.reset()
     }

@@ -13,7 +13,7 @@
       "action": "down"
     }],
     "points": 0,
-    "controllsBall": false,
+    "controlsBall": false,
     "maxPower": 60,
     "density": 400,
     "height": 0.1
@@ -30,7 +30,7 @@
       "action": "down"
     }],
     "points": 0,
-    "controllsBall": false,
+    "controlsBall": false,
     "maxPower": 60,
     "density": 400,
     "height": 0.1

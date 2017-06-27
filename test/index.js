@@ -33,7 +33,7 @@ describe('Glitchping', () => {
       assert.equal(bounce.ball.xDirection, 'right')
     })
     it('should change the player who controls the ball', () => {
-      assert.ok(bounce.paddles[0].controllsBall)
+      assert.ok(bounce.paddles[0].controlsBall)
     })
   })
   describe('#control', () => {

@@ -33,7 +33,7 @@ describe('Glitchping', () => {
       assert.equal(bounce.ball.xDirection, 'right')
     })
     it('should change the player who controls the ball', () => {
-      assert.ok(bounce.paddles[0].controllsBall)
+      assert.ok(bounce.paddles[0].controlsBall)
     })
   })
   describe('#control', () => {
@@ -44,9 +44,10 @@ describe('Glitchping', () => {
     const ballPath = []
     const paddlePath = []
     for(let i = 0; i < 100; i++) {
-      control._controlPaddle(control.paddles[0], 'up')
-      control._controlBall(control.paddles[0], 'up')
-      control.update()
+      control.update([{
+          paddle: control.paddles[0],
+          action: 'up'
+        }])
       ballPath.push(control.ball.pos.slice())
       paddlePath.push(control.paddles[0].pos[1]);
     }
@@ -56,27 +57,6 @@ describe('Glitchping', () => {
     })
     it('should ensure that the paddle moves as expected', () => {
       assert.deepEqual(paddlePath, jsonfile.readFileSync('./test/paddlePath.json'))
-    })
-  })
-  describe('ballcontrol', () => {
-    const testCase = {
-        paddles: [
-          {
-            name: 'testBot 1',
-          },
-          {
-            name: 'testBot 2',
-            goal: 'left',
-            startPos: [620, 0]
-          }
-        ]
-      }
-    const control = new game()
-    for (let i = 0; i < 400; i++) {
-      control.update()
-    }
-    it('should remove the ballcontrol after a goal', () => {
-      assert.ok(!control.paddles[0].controllsBall)
     })
   })
 })

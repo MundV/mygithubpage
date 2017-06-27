@@ -1,9 +1,5 @@
-let noRender = false
-if(typeof window === 'undefined') {
-  paddle = require('./paddle.js')
-  ball = require('./ball.js')
-  noRender = true
-}
+const paddle = require('./paddle.js')
+const ball = require('./ball.js')
 
 class game {
   constructor(options = {}) {
@@ -23,69 +19,13 @@ class game {
 
     this.reflectEnergy = (typeof options.reflectEnergy !== 'undefined') ? options.reflectEnergy: 1
     this.multiplier = options.multiplier || 3
-    this.bgColor = (typeof options.bgColor !== 'undefined') ? options.bgColor: 51
-    this._createCanvas()
     this.goal = options.goal || 5
 
     this.paused = false
     this.ended = false
     this.winner = []
   }
-  _getTouchControls() {
-    return [
-        {x: 0, xMax: screen.width / 2, y: 0, yMax: screen.height / 2, landscape:{player: 0, action: 'up'}, portrait: {player: 0, action: 'down'}},
-        {x: 0, xMax: screen.width / 2, y: screen.height / 2, yMax: screen.height, landscape: {player: 0, action: 'down'}, portrait: {player: 1, action:'down' }},
-        {x: screen.width / 2, xMax: screen.width, y: 0, yMax: screen.height / 2, landscape: {player: 1, action: 'up'}, portrait: {player: 0, action:'up' }},
-        {x: screen.width / 2, xMax: screen.width, y: screen.height / 2, yMax: screen.height, landscape: {player: 1, action:'down'}, portrait: {player: 1, action: 'up'}}
-      ]
-  }
-  _orientation() {
-    if(window.matchMedia("(orientation: landscape)").matches) {
-      return 'landscape'
-    } else {
-      return 'portrait'
-    }
-  }
-  _createCanvas() {
-    if(noRender)
-      return;
-    const canvas = createCanvas(this.fieldSize[0], this.fieldSize[1])
-    document.getElementById('canvas').appendChild(document.getElementsByTagName('canvas')[0])
-    this._fullscreen()
-    background(this.bgColor)
-    canvas.mouseClicked(() => {
-      this._fullscreen()
-    })
-  }
-  _fullscreen() {
-    if(!fullscreen()) {
-      fullscreen(true)
-    }
-  }
-  sendControls() {
-    if(noRender)
-      return;
-    // inside the controller there will be a paddle and an action
-    const controller = []
-    this.paddles.map((paddle) => {
-      for(const control of paddle.controls) {
-        if (keyIsDown(control.key)) {
-          controller.push({paddle, action: control.action})
-        }
-      }
-      return paddle
-    })
-    for(const touch of touches) {
-      const touchControls = this._getTouchControls()
-      for(const control of touchControls) {
-        if(control.x <= touch.x && control.xMax >= touch.x && control.y <= touch.y && control.yMax >= touch.y) {
-          const orientation = this._orientation()
-          const paddle = this.paddles[control[orientation].player]
-          const action = control[orientation].action
-          controller.push({paddle, action})
-        }
-      }
-    }
+  sendControls(controller) {
     controller.forEach((control) => {
       this._controlPaddle(control.paddle, control.action)
       this._controlBall(control.paddle, control.action)
@@ -95,7 +35,7 @@ class game {
     paddle.move(direction)
   }
   _controlBall(paddle, direction) {
-    if(paddle.controllsBall)
+    if(paddle.controlsBall)
       this.ball.moveY(direction)
   }
   bounce() {
@@ -113,48 +53,37 @@ class game {
            this.ball.xDirection = (this.ball.xDirection == 'left' ? 'right' : 'left')
            this.ball.addEnergyX(this.multiplier * paddle.physics.energy + this.reflectEnergy)
            for (const paddle of this.paddles) {
-             paddle.controllsBall = false
+             paddle.controlsBall = false
            }
-           paddle.controllsBall = true
+           paddle.controlsBall = true
       }
     }
   }
   goalCheck() {
     if(this.ball.pos[0] < 0 || this.ball.pos[0] > this.fieldSize[0]) {
-      for (paddle of this.paddles) {
+      for (const paddle of this.paddles) {
         if (paddle.goal == this.ball.xDirection)
           paddle.points ++
         if(paddle.points >= this.goal) {
           this.ended = true
           this.winner.push(paddle.name)
         }
-        paddle.controllsBall = false
+        paddle.controlsBall = false
       }
       this.ball.reset()
     }
   }
-  render() {
-    if(!noRender) {
-      fill(255)
-      strokeWeight(0.5)
-      background(this.bgColor)
-      textFont('Sarpanch');
-      textSize(10);
+  calcPos() {
+    for (const paddle of this.paddles) {
+      paddle.calcPos()
     }
-
-    for (paddle of this.paddles) {
-      paddle.show()
-    }
-    this.ball.show()
+    this.ball.calcPos()
   }
-  update() {
-    this.sendControls()
+  update(controller = []) {
+    this.sendControls(controller)
     this.bounce()
     this.goalCheck()
-    this.render()
+    this.calcPos()
   }
 }
-
-if(noRender) {
-  module.exports = game
-}
+module.exports = game

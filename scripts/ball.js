@@ -1,7 +1,4 @@
-if(typeof window === 'undefined') {
-  physics = require('./physics.js')
-  noRender = true
-}
+const physics = require('./physics.js')
 
 class ball {
   constructor (options = {}) {
@@ -69,19 +66,12 @@ class ball {
   addEnergyX(amount) {
     this.physicsX.energy += amount
   }
-  show() {
+  calcPos() {
     //physicsX
     this.calcPosX()
 
     //physicsY
     this.calcPosY()
-
-    if(noRender)
-      return;
-    stroke('red');
-    ellipse(this.pos[0], this.pos[1], this.size, this.size)
   }
 }
-if(noRender) {
-  module.exports = ball
-}
+module.exports = ball

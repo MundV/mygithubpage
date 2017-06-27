@@ -1,7 +1,4 @@
-if(typeof window === 'undefined') {
-  physics = require('./physics.js')
-  noRender = true
-}
+const physics = require('./physics.js')
 
 class paddle {
   constructor(options = {}) {
@@ -14,7 +11,7 @@ class paddle {
     this.name = (typeof options.name !== 'undefined') ? options.name : Math.random()
     this.controls = options.controls || [{key: 87, action: 'up'}, {key: 83, action: 'down'}]
     this.points = options.points || 0
-    this.controllsBall = options.controllsBall || false
+    this.controlsBall = options.controlsBall || false
     this.goal = options.goal || 'right'
 
     //physics stuff here
@@ -49,16 +46,5 @@ class paddle {
       this.pos[1] = 0 - this.size[1]
     }
   }
-  show() {
-    this.calcPos()
-    if(noRender)
-      return;
-    fill(255)
-    rect(this.pos[0], this.pos[1], this.size[0], this.size[1])
-    fill(255)
-    text(this.points, this.pos[0] + this.size[0] / 5, this.pos[1] + this.size[1] / 0.8)
-  }
 }
-if(noRender) {
-  module.exports = paddle
-}
+module.exports = paddle

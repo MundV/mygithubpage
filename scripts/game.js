@@ -121,7 +121,7 @@ class game {
   }
   goalCheck() {
     if(this.ball.pos[0] < 0 || this.ball.pos[0] > this.fieldSize[0]) {
-      for (paddle of this.paddles) {
+      for (const paddle of this.paddles) {
         if (paddle.goal == this.ball.xDirection)
           paddle.points ++
         if(paddle.points >= this.goal) {
@@ -142,7 +142,7 @@ class game {
       textSize(10);
     }
 
-    for (paddle of this.paddles) {
+    for (const paddle of this.paddles) {
       paddle.show()
     }
     this.ball.show()

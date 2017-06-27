@@ -58,25 +58,4 @@ describe('Glitchping', () => {
       assert.deepEqual(paddlePath, jsonfile.readFileSync('./test/paddlePath.json'))
     })
   })
-  describe('ballcontrol', () => {
-    const testCase = {
-        paddles: [
-          {
-            name: 'testBot 1',
-          },
-          {
-            name: 'testBot 2',
-            goal: 'left',
-            startPos: [620, 0]
-          }
-        ]
-      }
-    const control = new game()
-    for (let i = 0; i < 400; i++) {
-      control.update()
-    }
-    it('should remove the ballcontrol after a goal', () => {
-      assert.ok(!control.paddles[0].controllsBall)
-    })
-  })
 })

@@ -2,7 +2,7 @@
 let curr = {paused: true}
 let app
 
-function setup() {
+function setup () {
   app = new Vue({
     el: '#app',
     data: {
@@ -18,15 +18,13 @@ function setup() {
     },
     watch: {
       gameIsRunning: function (val) {
-        if(val) {
-          curr = new game(this.getOptions())
+        if (val) {
+          curr = new Game(this.getOptions())
         } else {
           fullscreen(false)
-          if(curr.winner.length > 1) {
-            console.log(curr.winner);
+          if (curr.winner.length > 1) {
             this.message = `${curr.winner[0]} and others won!🎉`
           } else {
-            console.log(curr.winner);
             this.message = `${curr.winner[0]} won!🎉`
           }
           curr = {paused: true}
@@ -40,12 +38,12 @@ function setup() {
       }
     },
     methods: {
-      addPlayer: function (){
-        const paddle = this.cloneObject(this.paddles[0])
-        paddle.name = ""
+      addPlayer: function () {
+        const paddle = {...this.paddles[0]}
+        paddle.name = ''
         this.paddles.push(paddle)
       },
-      getOptionsFromURL: function(url) {
+      getOptionsFromURL: function (url, fetch = window.fetch) {
         fetch(url).then((res) => {
           return res.json()
         }).then((options) => {
@@ -54,7 +52,7 @@ function setup() {
           console.log(err)
         })
       },
-      getOptions() {
+      getOptions () {
         return {
           paddles: this.getPaddleOptions()
         }
@@ -68,7 +66,7 @@ function setup() {
       computePaddleOptions: function (paddles, action) {
         const options = []
         const _paddles = paddles.map((paddle) => {
-          return this.cloneObject(paddle)
+          return {...paddles}
         })
         for (const paddle of _paddles) {
           for (const option in paddle) {
@@ -84,17 +82,17 @@ function setup() {
         return JSON.parse(JSON.stringify(obj))
       }
     },
-    created: function() {
+    created: function () {
       this.getOptionsFromURL('/options/default.json')
     }
   })
 }
 
-function draw() {
-  if(curr.ended) {
+function draw () {
+  if (curr.ended) {
     app.gameIsRunning = false
   }
-  if(!curr.paused) {
+  if (!curr.paused) {
     curr.update()
   }
 }

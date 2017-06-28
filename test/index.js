@@ -1,31 +1,31 @@
 const assert = require('assert')
 const jsonfile = require('jsonfile')
 describe('Glitchping', () => {
-  const game = require('../scripts/game.js')
+  const Game = require('../scripts/game.js')
   describe('#goalCheck', () => {
     const testCase = {
-        paddles: [
-          {
-            name: 'testBot 1',
-            startPos: [10, 100]
-          },
-          {
-            name: 'testBot 2',
-            goal: 'left',
-            startPos: [620, 100]
-          }
-        ]
-      }
-      const goal = new game(testCase)
-      for (let i = 0; i < 100; i++) {
-        goal.update()
-      }
-      it('should add the score if the ball is in the goal', () => {
-          assert.equal(goal.paddles[1].points, 1)
-      })
+      paddles: [
+        {
+          name: 'testBot 1',
+          startPos: [10, 100]
+        },
+        {
+          name: 'testBot 2',
+          goal: 'left',
+          startPos: [620, 100]
+        }
+      ]
+    }
+    const goal = new Game(testCase)
+    for (let i = 0; i < 100; i++) {
+      goal.update()
+    }
+    it('should add the score if the ball is in the goal', () => {
+      assert.equal(goal.paddles[1].points, 1)
+    })
   })
   describe('#bounce', () => {
-    const bounce = new game()
+    const bounce = new Game()
     for (let i = 0; i < 100; i++) {
       bounce.update()
     }
@@ -37,21 +37,20 @@ describe('Glitchping', () => {
     })
   })
   describe('#control', () => {
-    const control = new game()
+    const control = new Game()
     for (let i = 0; i < 100; i++) {
       control.update()
     }
     const ballPath = []
     const paddlePath = []
-    for(let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i++) {
       control.update([{
-          paddle: control.paddles[0],
-          action: 'up'
-        }])
+        paddle: control.paddles[0],
+        action: 'up'
+      }])
       ballPath.push(control.ball.pos.slice())
-      paddlePath.push(control.paddles[0].pos[1]);
+      paddlePath.push(control.paddles[0].pos[1])
     }
-
     it('should ensure that the ball moves as expected given a certain input', () => {
       assert.deepEqual(ballPath, jsonfile.readFileSync('./test/ballPath.json'))
     })

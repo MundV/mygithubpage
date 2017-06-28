@@ -4,7 +4,7 @@
 //from ball.js
 // stroke('red');
 // ellipse(this.pos[0], this.pos[1], this.size, this.size)
-}
+//}
 
 
 //clearing up the canvas from game.js

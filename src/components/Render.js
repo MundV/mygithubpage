@@ -144,7 +144,7 @@ export default class Render {
           let scoreText
 
           if (this.firstRender) {
-            scoreText = new PIXI.Text(paddle.points, {
+            scoreText = new PIXI.Text('', {
               fontFamily: 'sarpanch',
               fontSize: this.multiplier.x * 10,
               fill: 0xffffff,

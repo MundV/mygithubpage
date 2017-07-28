@@ -21,12 +21,6 @@
             Default 😃️
           </label>
         </a>
-        <!-- <a>
-          <input type="radio" id="speedy" name="gamemode" value="speedy">
-          <label class="button" for="speedy">
-            Speedy ⛷️
-          </label>
-        </a> -->
       </form>
       <h2>Advanced Settings 💻</h2>
       <div id="playerSettings" class="wrapper" v-if="paddles[0]">

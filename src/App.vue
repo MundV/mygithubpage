@@ -54,7 +54,6 @@
 </template>
 
 <script>
-// import Hello from './components/Hello'
 import Render from './components/Render.js'
 
 export default {
@@ -87,7 +86,6 @@ export default {
         )
         this.render.start()
       } else {
-        //fullscreen(false)
         const game = this.render.game
         if (game.winner.length > 1) {
           this.message = `${game.winner[0]} and others won!🎉`

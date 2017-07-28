@@ -18,23 +18,18 @@
     "density": 400,
     "height": 0.1
   }, {
-    "name": "wall 1",
-    "startPos": [320, 50],
-    "goal": "",
-    "size": [10, 105],
-    "controls": [],
-    "points": -10,
-    "controllsBall": false,
-    "maxPower": 60,
-    "density": 400,
-    "height": 0.1
-  },{
-    "name": "wall 2",
-    "startPos": [320, 205],
-    "goal": "",
-    "size": [10, 105],
-    "controls": [],
-    "points": -10,
+    "name": "player Left",
+    "startPos": [10, 300],
+    "goal": "right",
+    "size": [10, 70],
+    "controls": [{
+      "key": 87,
+      "action": "up"
+    }, {
+      "key": 83,
+      "action": "down"
+    }],
+    "points": 0,
     "controllsBall": false,
     "maxPower": 60,
     "density": 400,
@@ -42,6 +37,23 @@
   }, {
     "name": "player Right",
     "startPos": [620, 170],
+    "goal": "left",
+    "size": [10, 70],
+    "controls": [{
+      "key": 38,
+      "action": "up"
+    }, {
+      "key": 40,
+      "action": "down"
+    }],
+    "points": 0,
+    "controllsBall": false,
+    "maxPower": 60,
+    "density": 400,
+    "height": 0.1
+  }, {
+    "name": "player Right",
+    "startPos": [620, 300],
     "goal": "left",
     "size": [10, 70],
     "controls": [{

@@ -10,9 +10,9 @@
       <h2>Game Modes 🃏</h2>
       <form class="selecter" id="gameModes">
         <a>
-          <input id="wall" type="radio" name="gamemode" value="wall" v-model="gameMode">
-          <label class="button" for="wall">
-            The Wall 🗻
+          <input id="twin" type="radio" name="gamemode" value="twin" v-model="gameMode">
+          <label class="button" for="twin">
+            Twin 👯‍♀️
           </label>
         </a>
         <a>

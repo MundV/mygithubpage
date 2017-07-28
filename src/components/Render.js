@@ -1,4 +1,4 @@
-/* globals screen*/
+/* globals screen */
 import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
 import fullscreen from 'fullscreen'

@@ -185,8 +185,8 @@ export default class Render {
         // Render the stage to see the animation
         this.renderer.render(this.stage)
       } else {
-        fs.release()
-        fs.dispose()
+        this.fs.release()
+        this.fs.dispose()
         this.stage.destroy()
         this.stop()
       }

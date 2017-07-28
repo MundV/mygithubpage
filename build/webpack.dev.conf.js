@@ -34,7 +34,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new FriendlyErrorsPlugin(),
     new ServiceWorkerWebpackPlugin({
-     entry: path.join(__dirname, '../src/sw.js')
-   })
+      entry: path.join(__dirname, '../src/sw.js')
+    })
   ]
 })

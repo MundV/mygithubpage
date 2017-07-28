@@ -20333,14 +20333,29 @@ Url.prototype.parseHost = function() {
 
 /***/ }),
 /* 118 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
+var serviceWorkerOption = {"scriptURL":"/sw.js"};
+      "use strict";
 
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 /* eslint-disable flowtype/require-valid-file-annotation */
+/* global serviceWorkerOption */
 
-throw new Error("serviceworker-webpack-plugin: It seems that your are importing\n  \"serviceworker-webpack-plugin/lib/runtime\" without using the plugin.\n  Makes sure that your webpack configuration is correct.");
+exports.default = {
+  register: function register() {
+    var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    if (navigator.serviceWorker) {
+      return navigator.serviceWorker.register(serviceWorkerOption.scriptURL, options);
+    }
+
+    return false;
+  }
+};
+module.exports = exports["default"];
 
 /***/ }),
 /* 119 */,
@@ -53426,4 +53441,4 @@ function applyToTag (styleElement, obj) {
 
 /***/ })
 ]);
-//# sourceMappingURL=vendor.7ac857037d85a67253e9.js.map
+//# sourceMappingURL=vendor.dc745f2bccda92dc6fce.js.map

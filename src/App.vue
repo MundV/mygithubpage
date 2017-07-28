@@ -12,7 +12,7 @@
         <a>
           <input id="twin" type="radio" name="gamemode" value="twin" v-model="gameMode">
           <label class="button" for="twin">
-            Twin 👯‍♀️
+            Twin 👯‍
           </label>
         </a>
         <a>
@@ -96,7 +96,7 @@ export default {
       return val
     },
     gameMode: function (mode) {
-      this.getOptionsFromURL(`static/options/${mode}.json`)
+      this.getOptionsFromURL(`./static/options/${mode}.json`)
     },
     options: function (options) {
       this.paddles = this.setPaddleOptions(options.paddles)
@@ -148,8 +148,7 @@ export default {
     }
   },
   created: function () {
-    this.getOptionsFromURL('static/options/default.json')
-    //this.render.start()
+    this.getOptionsFromURL('./static/options/default.json')
   }
 }
 </script>

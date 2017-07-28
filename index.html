@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Glitchping</title>
+    <meta name="description" content="Play ping with a Twist. An amzing multiplayer experience. Created By Mund.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons !!111!!11!! -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ff0000">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/master.css">
+
+    <!-- Custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sarpanch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&subset=latin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+    <!-- Scripts and Stuff -->
+    <script src="https://unpkg.com/vue@2.3.4" charset="utf-8"></script>
+    <script src="https://unpkg.com/vue-scrollto"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="scripts/index.js" type="text/javascript"></script>
+    <script src="scripts/game.js" type="text/javascript"></script>
+    <script src="scripts/physics.js" type="text/javascript"></script>
+    <script src="scripts/ball.js" type="text/javascript"></script>
+    <script src="scripts/paddle.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="startScreen" v-show="!gameIsRunning" class="screen">
+          <h1>{{message}}</h1>
+          <button @click="gameIsRunning = true" class="startGame button">Play 🕹️</button>
+          <button v-scroll-to="'#settingScreen'" id="settingButton" class="button">Settings 🔎</button>
+      </div>
+      <div class="screen" v-show="!gameIsRunning" id="settingScreen">
+        <h1>Settings 🔎</h1>
+        <h2>Game Modes 🃏</h2>
+        <form class="selecter" id="gameModes">
+          <a>
+            <input id="wall" type="radio" name="gamemode" value="wall" v-model="gameMode">
+            <label class="button" for="wall">
+              The Wall 🗻
+            </label>
+          </a>
+          <a>
+            <input type="radio" id="default" name="gamemode" value="default" v-model="gameMode" checked>
+            <label class="button" for="default">
+              Default 😃️
+            </label>
+          </a>
+          <!-- <a>
+            <input type="radio" id="speedy" name="gamemode" value="speedy">
+            <label class="button" for="speedy">
+              Speedy ⛷️
+            </label>
+          </a> -->
+        </form>
+        <h2>Advanced Settings 💻</h2>
+        <div id="playerSettings" class="wrapper">
+          <table>
+            <tr >
+              <th v-for='(value, key) in paddles[0]'>
+                {{key}}
+              </th>
+            </tr>
+            <tr v-for="paddle in paddles">
+              <td v-for='(value, key) in paddle'>
+                <input class='button' type="text" v-model="paddle[key]">
+              </td>
+            </tr>
+          </table>
+          <button class="button" @click="addPlayer">Add player</button>
+        </div>
+      </div>
+      <div id="canvas" v-show="gameIsRunning"></div>
+    </div>
+  </body>
+</html>

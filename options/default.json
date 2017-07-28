@@ -1,0 +1,53 @@
+{
+  "fieldSize": [640, 360],
+  "paddles": [{
+    "name": "player Left",
+    "startPos": [10, 170],
+    "goal": "right",
+    "size": [10, 70],
+    "controls": [{
+      "key": 87,
+      "action": "up"
+    }, {
+      "key": 83,
+      "action": "down"
+    }],
+    "points": 0,
+    "controlsBall": false,
+    "maxPower": 60,
+    "density": 400,
+    "height": 0.1
+  }, {
+    "name": "player Right",
+    "startPos": [620, 170],
+    "goal": "left",
+    "size": [10, 70],
+    "controls": [{
+      "key": 38,
+      "action": "up"
+    }, {
+      "key": 40,
+      "action": "down"
+    }],
+    "points": 0,
+    "controlsBall": false,
+    "maxPower": 60,
+    "density": 400,
+    "height": 0.1
+  }],
+  "ballOptions": {},
+  "ball": {
+    "startPos": [360, 180],
+    "pos": [360, 180],
+    "energyX": 200,
+    "energyY": 0,
+    "size": 10,
+    "fieldWidth": 360,
+    "xDirection": "left",
+    "maxPower": 28
+  },
+  "reflectEnergy": 1,
+  "multiplier": 3,
+  "bgColor": 51,
+  "goal": 5
+}

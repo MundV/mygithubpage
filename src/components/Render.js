@@ -8,8 +8,8 @@ export default class Render {
     this.game = new Game(options)
     this.stop = stop
     this.pause = pause
+    this.reRender = false
 
-    this.firstRender = true
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
     this.renderer = new PIXI.autoDetectRenderer({
       width: screen.availWidth,
@@ -17,13 +17,10 @@ export default class Render {
       backgroundColor: 0x333333
     })
 
-    this.touches = []
+    this.touches = {}
     this.keys = []
     this.actions = ['up', 'down']
 
-    this.graphics = new PIXI.Graphics()
-    this.textContainer = new PIXI.Container()
-    this.stage = new PIXI.Container()
     this.touchAreas = new PIXI.Container()
     this.touchAreas.interactive = true
     this.addTouchAreas()
@@ -34,25 +31,44 @@ export default class Render {
     }
     this.fs = fullscreen(this.target)
 
-    window.addEventListener('resize', () => {
-      this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
-      this.addTouchAreas()
-      this.renderer.resize(screen.availWidth, screen.availHeight)
-    })
-    window.onkeyup = (e) => { this.keys[e.keyCode] = false }
-    window.onkeydown = (e) => { this.keys[e.keyCode] = true }
+    this.resize = this.resize.bind(this)
+    this.activateKey = this.activateKey.bind(this)
+    this.deactivateKey = this.deactivateKey.bind(this)
+    this.addEventListeners()
+  }
+  addEventListeners () {
+    window.addEventListener('resize', this.resize)
+    window.addEventListener('keyup', this.deactivateKey)
+    window.addEventListener('keydown', this.activateKey)
+  }
+  removeEventListeners () {
+    window.removeEventListener('resize', this.resize)
+    window.removeEventListener('keyup', this.deactivateKey)
+    window.removeEventListener('keydown', this.activateKey)
+  }
+  resize () {
+    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
+    this.addTouchAreas()
+    this.firstRender()
+    this.renderer.resize(screen.availWidth, screen.availHeight)
+  }
+  activateKey (e) {
+    this.keys[e.keyCode] = true
+  }
+  deactivateKey (e) {
+    this.keys[e.keyCode] = false
   }
   addTouchAreas () {
     const conversion = {
-      0: 0,
-      1: 10,
-      10: 1,
-      11: 11
+      '00': '00',
+      '01': '10',
+      '10': '01',
+      '11': '11'
     }
     this.touchAreas.removeChildren()
     for (let i = 0; i < this.game.paddles.length; i++) {
       for (let j = 0; j < this.actions.length; j++) {
-        const state = parseInt('' + i + j)
+        const state = '' + i + j
         const area = new PIXI.Graphics()
         const standard = this.mp(this.game.fieldSize[0] / 2, this.game.fieldSize[1] / 2)
         area.hitArea = new PIXI.Rectangle(
@@ -62,6 +78,7 @@ export default class Render {
           j * standard[1] + standard[1])
         area.interactive = true
         this.touchAreas.addChild(area)
+
         area.on('touchstart', () => {
           if (screen.availWidth > screen.availHeight) {
             this.touches[state] = true
@@ -106,6 +123,83 @@ export default class Render {
       return [y * mp.y, x * mp.x]
     }
   }
+  createController () {
+    const controller = []
+    // controller for keyboard
+    for (const paddle of this.game.paddles) {
+      for (const control of paddle.controls) {
+        if (this.keys[control.key.toString()]) {
+          controller.push({paddle, action: control.action})
+        }
+      }
+    }
+    // controller for touch
+    for (let i = 0; i < this.game.paddles.length; i++) {
+      for (let j = 0; j < this.actions.length; j++) {
+        const state = '' + i + j
+        if (this.touches[state]) {
+          controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
+        }
+      }
+    }
+    this.controller = controller
+  }
+  firstRender () {
+    if (this.reRender) {
+      this.paddles.destroy()
+      this.ball.destroy()
+      this.textContainer.destroy()
+      this.stage.destroy()
+    }
+    this.reRender = true
+
+    this.paddles = new PIXI.Container()
+    this.ball = new PIXI.Graphics()
+    this.textContainer = new PIXI.Container()
+    this.stage = new PIXI.Container()
+    this.renderer.render(this.stage)
+
+    for (let i = 0; i < this.game.paddles.length; i++) {
+      const paddle = this.game.paddles[i]
+
+      // draw the text
+      const scoreText = new PIXI.Text('', {
+        fontFamily: 'sarpanch',
+        fontSize: this.multiplier.x * 10,
+        fill: 0xffffff,
+        stroke: 0xff0000
+      })
+      const textPos = this.mp(paddle.pos[0], paddle.pos[1] + 100)
+      scoreText.x = textPos[0]
+      scoreText.y = textPos[1]
+      this.textContainer.addChild(scoreText)
+
+      // draw the paddles
+      const paddleRender = new PIXI.Graphics()
+      paddleRender.lineStyle(this.multiplier.x, 0xff0000)
+      paddleRender.beginFill(0xffffff)
+      paddleRender.drawRect(0, 0, ...this.mp(...paddle.size))
+      const correctedPaddlePos = this.mp(...paddle.pos)
+      paddleRender.x = correctedPaddlePos[0]
+      paddleRender.y = correctedPaddlePos[1]
+      paddleRender.endFill()
+      this.paddles.addChild(paddleRender)
+    }
+
+    // draw the ball
+    const correctedBallPos = this.mp(...this.game.ball.pos)
+    this.ball.lineStyle(this.multiplier.x, 0xff0000)
+    this.ball.beginFill(0xffffff)
+    this.ball.drawCircle(0, 0, (this.game.ball.size / 2) * this.multiplier.x)
+    this.ball.x = correctedBallPos[0]
+    this.ball.y = correctedBallPos[1]
+    this.ball.endFill()
+
+    this.stage.addChild(this.ball)
+    this.stage.addChild(this.paddles)
+    this.stage.addChild(this.textContainer)
+    this.stage.addChild(this.touchAreas)
+  }
   start () {
     if (fullscreen.available()) {
       this.fs.request()
@@ -115,69 +209,28 @@ export default class Render {
       this.pause()
     })
     this.target.appendChild(this.renderer.view)
-    this.renderer.render(this.stage)
+    this.firstRender()
     const gameLoop = () => {
       if (!this.game.ended) {
-        const controller = []
-        for (const paddle of this.game.paddles) {
-          for (const control of paddle.controls) {
-            if (this.keys[control.key.toString()]) {
-              controller.push({paddle, action: control.action})
-            }
-          }
-        }
-        for (let i = 0; i < this.game.paddles.length; i++) {
-          for (let j = 0; j < this.actions.length; j++) {
-            const state = parseInt('' + i + j)
-            if (this.touches[state]) {
-              controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
-            }
-          }
-        }
-        this.game.update(controller)
-
-        this.graphics.clear()
+        this.createController()
+        this.game.update(this.controller)
 
         for (let i = 0; i < this.game.paddles.length; i++) {
           const paddle = this.game.paddles[i]
+          const scoreText = this.textContainer.getChildAt(i)
           const textPos = this.mp(paddle.pos[0], paddle.pos[1] + 100)
-          let scoreText
-
-          if (this.firstRender) {
-            scoreText = new PIXI.Text('', {
-              fontFamily: 'sarpanch',
-              fontSize: this.multiplier.x * 10,
-              fill: 0xffffff,
-              stroke: 0xff0000
-            })
-            this.textContainer.addChild(scoreText)
-          } else {
-            scoreText = this.textContainer.getChildAt(i)
-            scoreText.text = paddle.points
-          }
-
+          scoreText.text = paddle.points || ''
           scoreText.x = textPos[0]
           scoreText.y = textPos[1]
+
+          const paddleRender = this.paddles.getChildAt(i)
+          const correctedPaddlePos = this.mp(...paddle.pos)
+          paddleRender.x = correctedPaddlePos[0]
+          paddleRender.y = correctedPaddlePos[1]
         }
-        this.firstRender = false
-
-        for (const paddle of this.game.paddles) {
-          this.graphics.lineStyle(this.multiplier.x, 0xff0000)
-          this.graphics.beginFill(0xffffff)
-          this.graphics.drawRect(...this.mp(...paddle.pos), ...this.mp(...paddle.size))
-        }
-
-        this.graphics.lineStyle(this.multiplier.x, 0xff0000)
-        this.graphics.beginFill(0xffffff)
-        this.graphics.drawCircle(
-          ...this.mp(...this.game.ball.pos),
-          (this.game.ball.size / 2) * this.multiplier.x
-        )
-        this.graphics.endFill()
-
-        this.stage.addChild(this.graphics)
-        this.stage.addChild(this.textContainer)
-        this.stage.addChild(this.touchAreas)
+        const correctedBallPos = this.mp(...this.game.ball.pos)
+        this.ball.x = correctedBallPos[0]
+        this.ball.y = correctedBallPos[1]
 
         // Loop this function at 60 frames per second
         window.requestAnimationFrame(gameLoop)
@@ -185,6 +238,7 @@ export default class Render {
         // Render the stage to see the animation
         this.renderer.render(this.stage)
       } else {
+        this.removeEventListeners()
         this.fs.release()
         this.fs.dispose()
         this.stage.destroy()

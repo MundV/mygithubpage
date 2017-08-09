@@ -16,6 +16,7 @@
   "dependencies": {
     "fullscreen": "^1.1.0",
     "gp_engine": "^1.0.1",
+    "idb-keyval": "^2.3.0",
     "pixi.js": "^4.5.3",
     "sw-toolbox": "^3.6.0",
     "vue": "^2.3.3",

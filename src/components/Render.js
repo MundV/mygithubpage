@@ -2,6 +2,8 @@
 import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
 import fullscreen from 'fullscreen'
+import aiMove from './bots/index.js'
+import idbKeyval from 'idb-keyval'
 
 export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
@@ -9,6 +11,7 @@ export default class Render {
     this.stop = stop
     this.pause = pause
     this.reRender = false
+    this.testData = []
 
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
     this.renderer = new PIXI.autoDetectRenderer({
@@ -127,18 +130,52 @@ export default class Render {
     const controller = []
     // controller for keyboard
     for (const paddle of this.game.paddles) {
-      for (const control of paddle.controls) {
-        if (this.keys[control.key.toString()]) {
-          controller.push({paddle, action: control.action})
+      if (!paddle.bot) {
+        for (const control of paddle.controls) {
+          if (this.keys[control.key.toString()]) {
+            controller.push({paddle, action: control.action})
+            const g = this.game
+            const b = this.game.ball
+            const p1 = this.game.paddles[0]
+            const p2 = this.game.paddles[1]
+            this.testData.push({
+              action: control.action,
+              game: {
+                ball: {
+                  pos: b.pos,
+                  physicsX: {
+                    energyX: b.physicsX.energy
+                  },
+                  physicsY: {
+                    energyY: b.physicsY.energy
+                  }
+                },
+                paddles: [
+                  {
+                    pos: p1.pos,
+                    energy: p1.physics.energy
+                  },
+                  {
+                    pos: p2.pos,
+                    energy: p2.physics.energy
+                  }
+                ]
+              }
+            })
+          }
         }
       }
     }
     // controller for touch
     for (let i = 0; i < this.game.paddles.length; i++) {
-      for (let j = 0; j < this.actions.length; j++) {
-        const state = '' + i + j
-        if (this.touches[state]) {
-          controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
+      if (i === 0) {
+        controller.push({paddle: this.game.paddles[i], action: aiMove(this.game, i, 'simple')})
+      } else {
+        for (let j = 0; j < this.actions.length; j++) {
+          const state = '' + i + j
+          if (this.touches[state]) {
+            controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
+          }
         }
       }
     }
@@ -238,6 +275,10 @@ export default class Render {
         // Render the stage to see the animation
         this.renderer.render(this.stage)
       } else {
+        idbKeyval.set(
+          new Date().getTime(),
+          this.testData
+        )
         this.removeEventListeners()
         this.fs.release()
         this.fs.dispose()

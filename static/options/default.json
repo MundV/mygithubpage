@@ -16,7 +16,9 @@
     "controllsBall": false,
     "maxPower": 60,
     "density": 400,
-    "height": 0.1
+    "height": 0.1,
+    "bot": true,
+    "botType": "simple"
   }, {
     "name": "player Right",
     "startPos": [620, 170],

@@ -39,6 +39,16 @@
         <button class="button" @click="addPlayer">Add player</button>
       </div>
     </div>
+    <div class="database" v-show="!gameIsRunning">
+      <h2>Database</h2>
+      <ul>
+        <li v-for='key of keys'>
+          <span>{{key}}</span>
+          <button @click="(_) => { removeItemDB(key) }">delete?</button>
+        </li>
+      </ul>
+      <!-- <textarea name="testData" rows="8" cols="80" v-model="testData"></textarea> -->
+    </div>
     <div class="paused" v-show="paused">
       <h1>The game is paused!</h1>
       <button type="button" class="button pauseButton" name="button" @click="paused = false">Unpause</button>
@@ -49,6 +59,7 @@
 
 <script>
 import Render from './components/Render.js'
+import idbKeyval from 'idb-keyval'
 
 export default {
   name: 'app',
@@ -64,7 +75,8 @@ export default {
       paddles: [],
       gameMode: 'default',
       render: '',
-      paused: false
+      paused: false,
+      keys: []
     }
   },
   watch: {
@@ -86,6 +98,9 @@ export default {
         } else {
           this.message = `${game.winner[0]} won!🎉`
         }
+        idbKeyval.keys().then((keys) => {
+          this.keys = keys
+        })
       }
       return val
     },
@@ -116,7 +131,7 @@ export default {
         console.log(err)
       })
     },
-    getOptions () {
+    getOptions: function () {
       return {
         paddles: this.getPaddleOptions()
       }
@@ -139,9 +154,20 @@ export default {
         options.push(paddle)
       }
       return options
+    },
+    removeItemDB: function (key) {
+      idbKeyval.delete(key)
+        .then(_ => idbKeyval.keys())
+        .then((keys) => {
+          this.keys = keys
+        })
     }
   },
   created: function () {
+    idbKeyval.keys()
+      .then((keys) => {
+        this.keys = keys
+      })
     this.getOptionsFromURL('./static/options/default.json')
   }
 }

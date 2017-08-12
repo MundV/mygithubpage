@@ -2,7 +2,7 @@
 import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
 import fullscreen from 'fullscreen'
-import aiMove from './bots/index.js'
+import bot from './bots/index.js'
 import idbKeyval from 'idb-keyval'
 
 export default class Render {
@@ -12,6 +12,7 @@ export default class Render {
     this.pause = pause
     this.reRender = false
     this.testData = []
+    this.bot = bot('simple')
 
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
     this.renderer = new PIXI.autoDetectRenderer({
@@ -120,11 +121,8 @@ export default class Render {
     }
   }
   mp (x, y = 0, mp = this.multiplier) {
-    if (screen.availWidth > screen.availHeight) {
-      return [x * mp.x, y * mp.y]
-    } else {
-      return [y * mp.y, x * mp.x]
-    }
+    if (screen.availWidth > screen.availHeight) return [x * mp.x, y * mp.y]
+    return [y * mp.y, x * mp.x]
   }
   createController () {
     const controller = []
@@ -134,7 +132,7 @@ export default class Render {
         for (const control of paddle.controls) {
           if (this.keys[control.key.toString()]) {
             controller.push({paddle, action: control.action})
-            const g = this.game
+
             const b = this.game.ball
             const p1 = this.game.paddles[0]
             const p2 = this.game.paddles[1]
@@ -169,7 +167,7 @@ export default class Render {
     // controller for touch
     for (let i = 0; i < this.game.paddles.length; i++) {
       if (i === 0) {
-        controller.push({paddle: this.game.paddles[i], action: aiMove(this.game, i, 'simple')})
+        controller.push({paddle: this.game.paddles[i], action: this.bot(this.game, i)})
       } else {
         for (let j = 0; j < this.actions.length; j++) {
           const state = '' + i + j

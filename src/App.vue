@@ -42,12 +42,12 @@
     <div class="database" v-show="!gameIsRunning">
       <h2>Database</h2>
       <ul>
-        <li v-for='key of keys'>
+        <li class="center" v-for='key of keys'>
           <span>{{key}}</span>
-          <button @click="(_) => { removeItemDB(key) }">delete?</button>
+          <button class="button" @click="(_) => { removeItemDB(key) }">delete?</button>
         </li>
       </ul>
-      <!-- <textarea name="testData" rows="8" cols="80" v-model="testData"></textarea> -->
+      <button class="button center" name="createJSON" @click="createJSON">create JSON file</button>
     </div>
     <div class="paused" v-show="paused">
       <h1>The game is paused!</h1>
@@ -160,6 +160,46 @@ export default {
         .then(_ => idbKeyval.keys())
         .then((keys) => {
           this.keys = keys
+        }).catch((err) => {
+          if (err) console.log(err)
+        })
+    },
+    createJSON: function () {
+      idbKeyval.keys()
+        .then((keys) => {
+          const promises = []
+          for (const key of keys) {
+            promises.push(idbKeyval.get(key))
+          }
+          return Promise.all(promises)
+        })
+        .then((val) => {
+          const data =  [].concat.apply([], val)
+          const sets = []
+          for (const s of data) {
+            const _s = []
+            const g = s.game
+            const b = g.ball
+            const p1 = g.paddles[0]
+            const p2 = g.paddles[1]
+
+            _s.push(s.action)
+            _s.push(b.pos[0])
+            _s.push(b.pos[1])
+            _s.push(b.physicsY.energyY)
+            _s.push(b.physicsX.energyX)
+            _s.push(p1.pos[1])
+            _s.push(p1.energy)
+            _s.push(p2.pos[1])
+            _s.push(p2.energy)
+
+            sets.push(_s)
+          }
+          const final = JSON.stringify(sets)
+          var x = window.open();
+          x.document.open();
+          x.document.write('<html><body><pre>' + final  + '</pre></body></html>');
+          x.document.close();
         })
     }
   },
@@ -173,6 +213,10 @@ export default {
 }
 </script>
 <style>
+.center {
+  display: flex;
+  justify-content: center;
+}
 body {
   padding: 0;
   margin: 0;

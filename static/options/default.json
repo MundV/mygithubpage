@@ -1,7 +1,7 @@
 {
   "fieldSize": [640, 360],
   "paddles": [{
-    "name": "player Left",
+    "name": "simple bot",
     "startPos": [10, 170],
     "goal": "right",
     "size": [10, 70],
@@ -13,14 +13,13 @@
       "action": "down"
     }],
     "points": 0,
-    "controllsBall": false,
     "maxPower": 60,
     "density": 400,
     "height": 0.1,
     "bot": true,
     "botType": "simple"
   }, {
-    "name": "player Right",
+    "name": "me",
     "startPos": [620, 170],
     "goal": "left",
     "size": [10, 70],
@@ -32,10 +31,10 @@
       "action": "down"
     }],
     "points": 0,
-    "controllsBall": false,
     "maxPower": 60,
     "density": 400,
-    "height": 0.1
+    "height": 0.1,
+    "bot": false
   }],
   "ballOptions": {},
   "ball": {

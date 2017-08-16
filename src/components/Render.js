@@ -8,11 +8,17 @@ import idbKeyval from 'idb-keyval'
 export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
     this.game = new Game(options)
+    this.options = options
     this.stop = stop
     this.pause = pause
     this.reRender = false
     this.testData = []
-    this.bot = bot('simple')
+    this.bot = []
+    for (let i = 0; i < options.paddles.length; i++) {
+      if (options.paddles[i].bot) {
+        this.bot[i] = bot(options.paddles[i].botType)
+      }
+    }
 
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
     this.renderer = new PIXI.autoDetectRenderer({
@@ -132,42 +138,14 @@ export default class Render {
         for (const control of paddle.controls) {
           if (this.keys[control.key.toString()]) {
             controller.push({paddle, action: control.action})
-
-            const b = this.game.ball
-            const p1 = this.game.paddles[0]
-            const p2 = this.game.paddles[1]
-            this.testData.push({
-              action: control.action,
-              game: {
-                ball: {
-                  pos: b.pos,
-                  physicsX: {
-                    energyX: b.physicsX.energy
-                  },
-                  physicsY: {
-                    energyY: b.physicsY.energy
-                  }
-                },
-                paddles: [
-                  {
-                    pos: p1.pos,
-                    energy: p1.physics.energy
-                  },
-                  {
-                    pos: p2.pos,
-                    energy: p2.physics.energy
-                  }
-                ]
-              }
-            })
           }
         }
       }
     }
     // controller for touch
     for (let i = 0; i < this.game.paddles.length; i++) {
-      if (i === 0) {
-        controller.push({paddle: this.game.paddles[i], action: this.bot(this.game, i)})
+      if (this.options.paddles[i].bot) {
+        controller.push({paddle: this.game.paddles[i], action: this.bot[i](this.game, i)})
       } else {
         for (let j = 0; j < this.actions.length; j++) {
           const state = '' + i + j
@@ -248,6 +226,7 @@ export default class Render {
     const gameLoop = () => {
       if (!this.game.ended) {
         this.createController()
+
         this.game.update(this.controller)
 
         for (let i = 0; i < this.game.paddles.length; i++) {
@@ -273,10 +252,10 @@ export default class Render {
         // Render the stage to see the animation
         this.renderer.render(this.stage)
       } else {
-        idbKeyval.set(
-          new Date().getTime(),
-          this.testData
-        )
+        // idbKeyval.set(
+        //   new Date().getTime(),
+        //   this.testData
+        // )
         this.removeEventListeners()
         this.fs.release()
         this.fs.dispose()

@@ -186,8 +186,8 @@ export default {
             _s.push(s.action)
             _s.push(b.pos[0])
             _s.push(b.pos[1])
-            _s.push(b.physicsY.energyY)
-            _s.push(b.physicsX.energyX)
+            _s.push(b.physicsY.energy)
+            _s.push(b.physicsX.energy)
             _s.push(p1.pos[1])
             _s.push(p1.energy)
             _s.push(p2.pos[1])
@@ -198,7 +198,7 @@ export default {
           const final = JSON.stringify(sets)
           var x = window.open();
           x.document.open();
-          x.document.write('<html><body><pre>' + final  + '</pre></body></html>');
+          x.document.write('<html><body><pre style="max-width: 1000px; white-space: pre-line;">' + final  + '</pre></body></html>');
           x.document.close();
         })
     }
@@ -294,7 +294,6 @@ input[type='number'] {
 #settingScreen {
   background-color: white;
   color: #333333;
-  font-family: 'VT323', monospace;
 }
 #ratingScreen {
   color: #333333;

@@ -1,6 +1,12 @@
+import aiBot from './aiBot/index.js'
+import dnaBot from './dnaBot/index.js'
+
 export default function bot (botType) {
   if (botType === 'simple') return simpleBot()
+  if (botType === 'ai') return aiBot()
+  if (botType === 'dna') return dnaBot()
 }
+
 function simpleBot () {
   let direction = ''
 

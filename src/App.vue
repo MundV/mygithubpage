@@ -2,7 +2,7 @@
   <div id="app">
     <div id="startScreen" v-show="!gameIsRunning" class="screen">
       <h1>{{message}}</h1>
-      <button @click="gameIsRunning = true" class="startGame button">Play 🕹️</button>
+      <button @click="startGame" class="startGame button">Play 🕹️</button>
       <button v-scroll-to="'#settingScreen'" id="settingButton" class="button">Settings 🔎</button>
     </div>
     <div id="settingScreen" class="screen" v-show="!gameIsRunning">
@@ -49,6 +49,7 @@
 
 <script>
 import Render from './components/Render.js'
+import screenfull from 'screenfull'
 
 export default {
   name: 'app',
@@ -102,6 +103,11 @@ export default {
     }
   },
   methods: {
+    startGame: function () {
+      console.log('afdfs')
+      this.gameIsRunning = true
+      if(screenfull.enabled) screenfull.request()
+    },
     addPlayer: function () {
       const paddle = {...this.paddles[0]}
       paddle.name = JSON.stringify(` Player ${this.paddles.length + 1}`)

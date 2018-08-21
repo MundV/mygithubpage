@@ -3,6 +3,7 @@
   "paddles": [{
     "name": "player Left",
     "startPos": [10, 170],
+    "bot": false,
     "goal": "right",
     "size": [10, 70],
     "controls": [{
@@ -20,6 +21,7 @@
   }, {
     "name": "player Right",
     "startPos": [620, 170],
+    "bot": false,
     "goal": "left",
     "size": [10, 70],
     "controls": [{

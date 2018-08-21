@@ -1,6 +1,7 @@
 /* globals screen */
 import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
+import bot from './bot.js'
 import screenfull from 'screenfull'
 
 export default class Render {
@@ -10,10 +11,12 @@ export default class Render {
     this.pause = pause
     this.reRender = false
 
-    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
+    this.bots = options.paddles.map(options => options.bot ? bot() : false)
+
+    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
     this.renderer = new PIXI.autoDetectRenderer({
-      width: screen.availWidth,
-      height: screen.availHeight,
+      width: screen.Width,
+      height: screen.Height,
       backgroundColor: 0x333333
     })
 
@@ -46,10 +49,10 @@ export default class Render {
     window.removeEventListener('keydown', this.activateKey)
   }
   resize () {
-    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.availWidth, screen.availHeight)
+    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
     this.addTouchAreas()
     this.firstRender()
-    this.renderer.resize(screen.availWidth, screen.availHeight)
+    this.renderer.resize(screen.width, screen.height)
   }
   activateKey (e) {
     this.keys[e.keyCode] = true
@@ -61,7 +64,7 @@ export default class Render {
     this.touchAreas.removeChildren()
     for (let i = 0; i < this.game.paddles.length; i++) {
       for (let j = 0; j < this.actions.length; j++) {
-        const state = (screen.availWidth > screen.availHeight) ? i * 2 + j : j * 2 + i;
+        const state = (screen.width > screen.height) ? i * 2 + j : j * 2 + i;
         const area = new PIXI.Graphics()
         const standard = this.mp(this.game.fieldSize[0] / 2, this.game.fieldSize[1] / 2)
         area.hitArea = new PIXI.Rectangle(
@@ -85,7 +88,7 @@ export default class Render {
     }
   }
   findSaveMultiplier (xS, yS, xT, yT) {
-    if (screen.availWidth > screen.availHeight) {
+    if (screen.width > screen.height) {
       return {
         x: xT / xS,
         y: yT / yS
@@ -98,7 +101,7 @@ export default class Render {
     }
   }
   mp (x, y = 0, mp = this.multiplier) {
-    if (screen.availWidth > screen.availHeight) {
+    if (screen.width > screen.height) {
       return [x * mp.x, y * mp.y]
     } else {
       return [y * mp.y, x * mp.x]
@@ -108,6 +111,8 @@ export default class Render {
     const controller = []
     // controller for keyboard
     for (const paddle of this.game.paddles) {
+      if(paddle.bot) continue
+
       for (const control of paddle.controls) {
         if (this.keys[control.key.toString()]) {
           controller.push({paddle, action: control.action})
@@ -116,9 +121,12 @@ export default class Render {
     }
     // controller for touch
     for (let i = 0; i < this.game.paddles.length; i++) {
-      for (let j = 0; j < this.actions.length; j++) {
-        if (this.touches[i * 2 + j]) {
-          controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
+      if(this.bots[i]) controller.push({paddle: this.game.paddles[i], action: bots[i](this.game, i)})
+      else {
+        for (let j = 0; j < this.actions.length; j++) {
+          if (this.touches[i * 2 + j]) {
+            controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
+          }
         }
       }
     }
@@ -181,7 +189,7 @@ export default class Render {
     this.stage.addChild(this.touchAreas)
   }
   start () {
-    if (screenfull.enabled) screenfull.request()
+    // if (screenfull.enabled) screenfull.request()
 
     screenfull.on('change', () => {
       if(!screenfull.isFullscreen) {

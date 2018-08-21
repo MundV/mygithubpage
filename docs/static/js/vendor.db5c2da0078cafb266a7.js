@@ -15,7 +15,7 @@ exports.__esModule = true;
  * @name VERSION
  * @type {string}
  */
-var VERSION = exports.VERSION = '4.5.3';
+var VERSION = exports.VERSION = '4.8.1';
 
 /**
  * Two Pi.
@@ -166,7 +166,7 @@ var SCALE_MODES = exports.SCALE_MODES = {
 /**
  * The wrap modes that are supported by pixi.
  *
- * The {@link PIXI.settings.WRAP_MODE} wrap mode affects the default wraping mode of future operations.
+ * The {@link PIXI.settings.WRAP_MODE} wrap mode affects the default wrapping mode of future operations.
  * It can be re-assigned to either CLAMP or REPEAT, depending upon suitability.
  * If the texture is non power of two then clamp will be used regardless as webGL can
  * only use REPEAT if the texture is po2.
@@ -191,7 +191,7 @@ var WRAP_MODES = exports.WRAP_MODES = {
 /**
  * The gc modes that are supported by pixi.
  *
- * The {@link PIXI.settings.GC_MODE} Garbage Collection mode for pixi textures is AUTO
+ * The {@link PIXI.settings.GC_MODE} Garbage Collection mode for PixiJS textures is AUTO
  * If set to GC_MODE, the renderer will occasionally check textures usage. If they are not
  * used for a specified period of time they will be removed from the GPU. They will of course
  * be uploaded again when they are required. This is a silent behind the scenes process that
@@ -235,7 +235,7 @@ var URL_FILE_EXTENSION = exports.URL_FILE_EXTENSION = /\.(\w{3,4})(?:$|\?|#)/i;
  * @type {RegExp|string}
  * @example data:image/png;base64
  */
-var DATA_URI = exports.DATA_URI = /^\s*data:(?:([\w-]+)\/([\w+.-]+))?(?:;(charset=[\w-]+|base64))?,(.*)/i;
+var DATA_URI = exports.DATA_URI = /^\s*data:(?:([\w-]+)\/([\w+.-]+))?(?:;charset=([\w-]+))?(?:;(base64))?,(.*)/i;
 
 /**
  * Regexp for SVG size.
@@ -354,7 +354,7 @@ var UPDATE_PRIORITY = exports.UPDATE_PRIORITY = {
 
 
 exports.__esModule = true;
-exports.autoDetectRenderer = exports.Application = exports.Filter = exports.SpriteMaskFilter = exports.Quad = exports.RenderTarget = exports.ObjectRenderer = exports.WebGLManager = exports.Shader = exports.CanvasRenderTarget = exports.TextureUvs = exports.VideoBaseTexture = exports.BaseRenderTexture = exports.RenderTexture = exports.BaseTexture = exports.Texture = exports.Spritesheet = exports.CanvasGraphicsRenderer = exports.GraphicsRenderer = exports.GraphicsData = exports.Graphics = exports.TextMetrics = exports.TextStyle = exports.Text = exports.SpriteRenderer = exports.CanvasTinter = exports.CanvasSpriteRenderer = exports.Sprite = exports.TransformBase = exports.TransformStatic = exports.Transform = exports.Container = exports.DisplayObject = exports.Bounds = exports.glCore = exports.WebGLRenderer = exports.CanvasRenderer = exports.ticker = exports.utils = exports.settings = undefined;
+exports.autoDetectRenderer = exports.Application = exports.Filter = exports.SpriteMaskFilter = exports.Quad = exports.RenderTarget = exports.ObjectRenderer = exports.WebGLManager = exports.Shader = exports.CanvasRenderTarget = exports.TextureUvs = exports.VideoBaseTexture = exports.BaseRenderTexture = exports.RenderTexture = exports.BaseTexture = exports.TextureMatrix = exports.Texture = exports.Spritesheet = exports.CanvasGraphicsRenderer = exports.GraphicsRenderer = exports.GraphicsData = exports.Graphics = exports.TextMetrics = exports.TextStyle = exports.Text = exports.SpriteRenderer = exports.CanvasTinter = exports.CanvasSpriteRenderer = exports.Sprite = exports.TransformBase = exports.TransformStatic = exports.Transform = exports.Container = exports.DisplayObject = exports.Bounds = exports.glCore = exports.WebGLRenderer = exports.CanvasRenderer = exports.ticker = exports.utils = exports.settings = undefined;
 
 var _const = __webpack_require__(0);
 
@@ -389,7 +389,7 @@ Object.defineProperty(exports, 'glCore', {
   }
 });
 
-var _Bounds = __webpack_require__(42);
+var _Bounds = __webpack_require__(43);
 
 Object.defineProperty(exports, 'Bounds', {
   enumerable: true,
@@ -407,7 +407,7 @@ Object.defineProperty(exports, 'DisplayObject', {
   }
 });
 
-var _Container = __webpack_require__(19);
+var _Container = __webpack_require__(20);
 
 Object.defineProperty(exports, 'Container', {
   enumerable: true,
@@ -434,7 +434,7 @@ Object.defineProperty(exports, 'TransformStatic', {
   }
 });
 
-var _TransformBase = __webpack_require__(43);
+var _TransformBase = __webpack_require__(44);
 
 Object.defineProperty(exports, 'TransformBase', {
   enumerable: true,
@@ -443,7 +443,7 @@ Object.defineProperty(exports, 'TransformBase', {
   }
 });
 
-var _Sprite = __webpack_require__(47);
+var _Sprite = __webpack_require__(48);
 
 Object.defineProperty(exports, 'Sprite', {
   enumerable: true,
@@ -452,7 +452,7 @@ Object.defineProperty(exports, 'Sprite', {
   }
 });
 
-var _CanvasSpriteRenderer = __webpack_require__(213);
+var _CanvasSpriteRenderer = __webpack_require__(214);
 
 Object.defineProperty(exports, 'CanvasSpriteRenderer', {
   enumerable: true,
@@ -461,7 +461,7 @@ Object.defineProperty(exports, 'CanvasSpriteRenderer', {
   }
 });
 
-var _CanvasTinter = __webpack_require__(48);
+var _CanvasTinter = __webpack_require__(49);
 
 Object.defineProperty(exports, 'CanvasTinter', {
   enumerable: true,
@@ -470,7 +470,7 @@ Object.defineProperty(exports, 'CanvasTinter', {
   }
 });
 
-var _SpriteRenderer = __webpack_require__(215);
+var _SpriteRenderer = __webpack_require__(216);
 
 Object.defineProperty(exports, 'SpriteRenderer', {
   enumerable: true,
@@ -479,7 +479,7 @@ Object.defineProperty(exports, 'SpriteRenderer', {
   }
 });
 
-var _Text = __webpack_require__(217);
+var _Text = __webpack_require__(218);
 
 Object.defineProperty(exports, 'Text', {
   enumerable: true,
@@ -506,7 +506,7 @@ Object.defineProperty(exports, 'TextMetrics', {
   }
 });
 
-var _Graphics = __webpack_require__(185);
+var _Graphics = __webpack_require__(186);
 
 Object.defineProperty(exports, 'Graphics', {
   enumerable: true,
@@ -524,7 +524,7 @@ Object.defineProperty(exports, 'GraphicsData', {
   }
 });
 
-var _GraphicsRenderer = __webpack_require__(188);
+var _GraphicsRenderer = __webpack_require__(189);
 
 Object.defineProperty(exports, 'GraphicsRenderer', {
   enumerable: true,
@@ -533,7 +533,7 @@ Object.defineProperty(exports, 'GraphicsRenderer', {
   }
 });
 
-var _CanvasGraphicsRenderer = __webpack_require__(186);
+var _CanvasGraphicsRenderer = __webpack_require__(187);
 
 Object.defineProperty(exports, 'CanvasGraphicsRenderer', {
   enumerable: true,
@@ -542,7 +542,7 @@ Object.defineProperty(exports, 'CanvasGraphicsRenderer', {
   }
 });
 
-var _Spritesheet = __webpack_require__(218);
+var _Spritesheet = __webpack_require__(219);
 
 Object.defineProperty(exports, 'Spritesheet', {
   enumerable: true,
@@ -560,6 +560,15 @@ Object.defineProperty(exports, 'Texture', {
   }
 });
 
+var _TextureMatrix = __webpack_require__(100);
+
+Object.defineProperty(exports, 'TextureMatrix', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_TextureMatrix).default;
+  }
+});
+
 var _BaseTexture = __webpack_require__(12);
 
 Object.defineProperty(exports, 'BaseTexture', {
@@ -569,7 +578,7 @@ Object.defineProperty(exports, 'BaseTexture', {
   }
 });
 
-var _RenderTexture = __webpack_require__(49);
+var _RenderTexture = __webpack_require__(50);
 
 Object.defineProperty(exports, 'RenderTexture', {
   enumerable: true,
@@ -587,7 +596,7 @@ Object.defineProperty(exports, 'BaseRenderTexture', {
   }
 });
 
-var _VideoBaseTexture = __webpack_require__(101);
+var _VideoBaseTexture = __webpack_require__(102);
 
 Object.defineProperty(exports, 'VideoBaseTexture', {
   enumerable: true,
@@ -596,7 +605,7 @@ Object.defineProperty(exports, 'VideoBaseTexture', {
   }
 });
 
-var _TextureUvs = __webpack_require__(100);
+var _TextureUvs = __webpack_require__(101);
 
 Object.defineProperty(exports, 'TextureUvs', {
   enumerable: true,
@@ -614,7 +623,7 @@ Object.defineProperty(exports, 'CanvasRenderTarget', {
   }
 });
 
-var _Shader = __webpack_require__(18);
+var _Shader = __webpack_require__(19);
 
 Object.defineProperty(exports, 'Shader', {
   enumerable: true,
@@ -623,7 +632,7 @@ Object.defineProperty(exports, 'Shader', {
   }
 });
 
-var _WebGLManager = __webpack_require__(21);
+var _WebGLManager = __webpack_require__(22);
 
 Object.defineProperty(exports, 'WebGLManager', {
   enumerable: true,
@@ -632,7 +641,7 @@ Object.defineProperty(exports, 'WebGLManager', {
   }
 });
 
-var _ObjectRenderer = __webpack_require__(28);
+var _ObjectRenderer = __webpack_require__(29);
 
 Object.defineProperty(exports, 'ObjectRenderer', {
   enumerable: true,
@@ -641,7 +650,7 @@ Object.defineProperty(exports, 'ObjectRenderer', {
   }
 });
 
-var _RenderTarget = __webpack_require__(29);
+var _RenderTarget = __webpack_require__(30);
 
 Object.defineProperty(exports, 'RenderTarget', {
   enumerable: true,
@@ -699,7 +708,7 @@ var _utils = __webpack_require__(2);
 
 var utils = _interopRequireWildcard(_utils);
 
-var _ticker = __webpack_require__(50);
+var _ticker = __webpack_require__(51);
 
 var ticker = _interopRequireWildcard(_ticker);
 
@@ -707,11 +716,11 @@ var _settings = __webpack_require__(3);
 
 var _settings2 = _interopRequireDefault(_settings);
 
-var _CanvasRenderer = __webpack_require__(20);
+var _CanvasRenderer = __webpack_require__(21);
 
 var _CanvasRenderer2 = _interopRequireDefault(_CanvasRenderer);
 
-var _WebGLRenderer = __webpack_require__(27);
+var _WebGLRenderer = __webpack_require__(28);
 
 var _WebGLRenderer2 = _interopRequireDefault(_WebGLRenderer);
 
@@ -736,7 +745,7 @@ exports.WebGLRenderer = _WebGLRenderer2.default; /**
 
 
 exports.__esModule = true;
-exports.premultiplyBlendMode = exports.BaseTextureCache = exports.TextureCache = exports.mixins = exports.pluginTarget = exports.EventEmitter = exports.removeItems = exports.isMobile = undefined;
+exports.premultiplyBlendMode = exports.BaseTextureCache = exports.TextureCache = exports.earcut = exports.mixins = exports.pluginTarget = exports.EventEmitter = exports.removeItems = exports.isMobile = undefined;
 exports.uid = uid;
 exports.hex2rgb = hex2rgb;
 exports.hex2string = hex2string;
@@ -774,17 +783,21 @@ var _mixin = __webpack_require__(225);
 
 var mixins = _interopRequireWildcard(_mixin);
 
-var _ismobilejs = __webpack_require__(40);
+var _ismobilejs = __webpack_require__(41);
 
 var isMobile = _interopRequireWildcard(_ismobilejs);
 
-var _removeArrayItems = __webpack_require__(276);
+var _removeArrayItems = __webpack_require__(274);
 
 var _removeArrayItems2 = _interopRequireDefault(_removeArrayItems);
 
 var _mapPremultipliedBlendModes = __webpack_require__(223);
 
 var _mapPremultipliedBlendModes2 = _interopRequireDefault(_mapPremultipliedBlendModes);
+
+var _earcut = __webpack_require__(40);
+
+var _earcut2 = _interopRequireDefault(_earcut);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -816,6 +829,7 @@ exports.removeItems = _removeArrayItems2.default;
 exports.EventEmitter = _eventemitter2.default;
 exports.pluginTarget = _pluginTarget2.default;
 exports.mixins = mixins;
+exports.earcut = _earcut2.default;
 
 /**
  * Gets the next unique identifier
@@ -898,7 +912,7 @@ function getResolutionOfUrl(url, defaultValue) {
 /**
  * Typedef for decomposeDataUri return object.
  *
- * @typedef {object} DecomposedDataUri
+ * @typedef {object} PIXI.utils~DecomposedDataUri
  * @property {mediaType} Media type, eg. `image`
  * @property {subType} Sub type, eg. `png`
  * @property {encoding} Data encoding, eg. `base64`
@@ -912,7 +926,7 @@ function getResolutionOfUrl(url, defaultValue) {
  * @memberof PIXI.utils
  * @function decomposeDataUri
  * @param {string} dataUri - the data URI to check
- * @return {DecomposedDataUri|undefined} The decomposed data uri or undefined
+ * @return {PIXI.utils~DecomposedDataUri|undefined} The decomposed data uri or undefined
  */
 function decomposeDataUri(dataUri) {
     var dataUriMatch = _const.DATA_URI.exec(dataUri);
@@ -921,8 +935,9 @@ function decomposeDataUri(dataUri) {
         return {
             mediaType: dataUriMatch[1] ? dataUriMatch[1].toLowerCase() : undefined,
             subType: dataUriMatch[2] ? dataUriMatch[2].toLowerCase() : undefined,
-            encoding: dataUriMatch[3] ? dataUriMatch[3].toLowerCase() : undefined,
-            data: dataUriMatch[4]
+            charset: dataUriMatch[3] ? dataUriMatch[3].toLowerCase() : undefined,
+            encoding: dataUriMatch[4] ? dataUriMatch[4].toLowerCase() : undefined,
+            data: dataUriMatch[5]
         };
     }
 
@@ -950,7 +965,7 @@ function getUrlFileExtension(url) {
 /**
  * Typedef for Size object.
  *
- * @typedef {object} Size
+ * @typedef {object} PIXI.utils~Size
  * @property {width} Width component
  * @property {height} Height component
  */
@@ -961,7 +976,7 @@ function getUrlFileExtension(url) {
  * @memberof PIXI.utils
  * @function getSvgSize
  * @param {string} svgString - a serialized svg element
- * @return {Size|undefined} image extension
+ * @return {PIXI.utils~Size|undefined} image extension
  */
 function getSvgSize(svgString) {
     var sizeMatch = _const.SVG_SIZE.exec(svgString);
@@ -1001,11 +1016,11 @@ function sayHello(type) {
     }
 
     if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-        var args = ['\n %c %c %c Pixi.js ' + _const.VERSION + ' - \u2730 ' + type + ' \u2730  %c  %c  http://www.pixijs.com/  %c %c \u2665%c\u2665%c\u2665 \n\n', 'background: #ff66a5; padding:5px 0;', 'background: #ff66a5; padding:5px 0;', 'color: #ff66a5; background: #030307; padding:5px 0;', 'background: #ff66a5; padding:5px 0;', 'background: #ffc3dc; padding:5px 0;', 'background: #ff66a5; padding:5px 0;', 'color: #ff2424; background: #fff; padding:5px 0;', 'color: #ff2424; background: #fff; padding:5px 0;', 'color: #ff2424; background: #fff; padding:5px 0;'];
+        var args = ['\n %c %c %c PixiJS ' + _const.VERSION + ' - \u2730 ' + type + ' \u2730  %c  %c  http://www.pixijs.com/  %c %c \u2665%c\u2665%c\u2665 \n\n', 'background: #ff66a5; padding:5px 0;', 'background: #ff66a5; padding:5px 0;', 'color: #ff66a5; background: #030307; padding:5px 0;', 'background: #ff66a5; padding:5px 0;', 'background: #ffc3dc; padding:5px 0;', 'background: #ff66a5; padding:5px 0;', 'color: #ff2424; background: #fff; padding:5px 0;', 'color: #ff2424; background: #fff; padding:5px 0;', 'color: #ff2424; background: #fff; padding:5px 0;'];
 
         window.console.log.apply(console, args);
     } else if (window.console) {
-        window.console.log('Pixi.js ' + _const.VERSION + ' - ' + type + ' - http://www.pixijs.com/');
+        window.console.log('PixiJS ' + _const.VERSION + ' - ' + type + ' - http://www.pixijs.com/');
     }
 
     saidHello = true;
@@ -1112,9 +1127,10 @@ function clearTextureCache() {
 }
 
 /**
+ * maps premultiply flag and blendMode to adjusted blendMode
  * @memberof PIXI.utils
  * @const premultiplyBlendMode
- * @type {Array<number[]>} maps premultiply flag and blendMode to adjusted blendMode
+ * @type {Array<number[]>}
  */
 var premultiplyBlendMode = exports.premultiplyBlendMode = (0, _mapPremultipliedBlendModes2.default)();
 
@@ -1134,6 +1150,7 @@ function correctBlendMode(blendMode, premultiplied) {
 /**
  * premultiplies tint
  *
+ * @memberof PIXI.utils
  * @param {number} tint integet RGB
  * @param {number} alpha floating point alpha (0.0-1.0)
  * @returns {number} tint multiplied by alpha
@@ -1159,6 +1176,7 @@ function premultiplyTint(tint, alpha) {
 /**
  * combines rgb and alpha to out array
  *
+ * @memberof PIXI.utils
  * @param {Float32Array|number[]} rgb input rgb
  * @param {number} alpha alpha param
  * @param {Float32Array} [out] output
@@ -1184,6 +1202,7 @@ function premultiplyRgba(rgb, alpha, out, premultiply) {
 /**
  * converts integer tint and float alpha to vec4 form, premultiplies by default
  *
+ * @memberof PIXI.utils
  * @param {number} tint input tint
  * @param {number} alpha alpha param
  * @param {Float32Array} [out] output
@@ -1219,7 +1238,7 @@ var _maxRecommendedTextures = __webpack_require__(224);
 
 var _maxRecommendedTextures2 = _interopRequireDefault(_maxRecommendedTextures);
 
-var _canUploadSameBuffer = __webpack_require__(221);
+var _canUploadSameBuffer = __webpack_require__(222);
 
 var _canUploadSameBuffer2 = _interopRequireDefault(_canUploadSameBuffer);
 
@@ -1438,11 +1457,21 @@ exports.default = {
    *
    * @static
    * @constant
-   * @memberof PIXI
+   * @memberof PIXI.settings
    * @type {boolean}
    */
-  CAN_UPLOAD_SAME_BUFFER: (0, _canUploadSameBuffer2.default)()
+  CAN_UPLOAD_SAME_BUFFER: (0, _canUploadSameBuffer2.default)(),
 
+  /**
+   * Default Mesh `canvasPadding`.
+   *
+   * @see PIXI.mesh.Mesh#canvasPadding
+   * @static
+   * @constant
+   * @memberof PIXI.settings
+   * @type {number}
+   */
+  MESH_CANVAS_PADDING: 0
 };
 //# sourceMappingURL=settings.js.map
 
@@ -1455,7 +1484,7 @@ exports.default = {
 
 exports.__esModule = true;
 
-var _Point = __webpack_require__(45);
+var _Point = __webpack_require__(46);
 
 Object.defineProperty(exports, 'Point', {
   enumerable: true,
@@ -1473,7 +1502,7 @@ Object.defineProperty(exports, 'ObservablePoint', {
   }
 });
 
-var _Matrix = __webpack_require__(44);
+var _Matrix = __webpack_require__(45);
 
 Object.defineProperty(exports, 'Matrix', {
   enumerable: true,
@@ -1491,7 +1520,7 @@ Object.defineProperty(exports, 'GroupD8', {
   }
 });
 
-var _Circle = __webpack_require__(195);
+var _Circle = __webpack_require__(196);
 
 Object.defineProperty(exports, 'Circle', {
   enumerable: true,
@@ -1500,7 +1529,7 @@ Object.defineProperty(exports, 'Circle', {
   }
 });
 
-var _Ellipse = __webpack_require__(196);
+var _Ellipse = __webpack_require__(197);
 
 Object.defineProperty(exports, 'Ellipse', {
   enumerable: true,
@@ -1509,7 +1538,7 @@ Object.defineProperty(exports, 'Ellipse', {
   }
 });
 
-var _Polygon = __webpack_require__(197);
+var _Polygon = __webpack_require__(198);
 
 Object.defineProperty(exports, 'Polygon', {
   enumerable: true,
@@ -1518,7 +1547,7 @@ Object.defineProperty(exports, 'Polygon', {
   }
 });
 
-var _Rectangle = __webpack_require__(46);
+var _Rectangle = __webpack_require__(47);
 
 Object.defineProperty(exports, 'Rectangle', {
   enumerable: true,
@@ -1527,7 +1556,7 @@ Object.defineProperty(exports, 'Rectangle', {
   }
 });
 
-var _RoundedRectangle = __webpack_require__(198);
+var _RoundedRectangle = __webpack_require__(199);
 
 Object.defineProperty(exports, 'RoundedRectangle', {
   enumerable: true,
@@ -1544,14 +1573,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ (function(module, exports, __webpack_require__) {
 
 var gl = {
-    createContext:          __webpack_require__(181),
+    createContext:          __webpack_require__(182),
     setVertexAttribArrays:  __webpack_require__(74),
-    GLBuffer:               __webpack_require__(177),
-    GLFramebuffer:          __webpack_require__(178),
-    GLShader:               __webpack_require__(179),
+    GLBuffer:               __webpack_require__(178),
+    GLFramebuffer:          __webpack_require__(179),
+    GLShader:               __webpack_require__(180),
     GLTexture:              __webpack_require__(73),
-    VertexArrayObject:      __webpack_require__(180),
-    shader:                 __webpack_require__(182)
+    VertexArrayObject:      __webpack_require__(181),
+    shader:                 __webpack_require__(183)
 };
 
 // Export for Node-compatible environments
@@ -1799,30 +1828,32 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(271)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(119)))
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.5.7' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store      = __webpack_require__(64)('wks')
-  , uid        = __webpack_require__(66)
-  , Symbol     = __webpack_require__(11).Symbol
-  , USE_SYMBOL = typeof Symbol == 'function';
+var store = __webpack_require__(65)('wks');
+var uid = __webpack_require__(67);
+var Symbol = __webpack_require__(11).Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
 
-var $exports = module.exports = function(name){
+var $exports = module.exports = function (name) {
   return store[name] || (store[name] =
     USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
 };
 
 $exports.store = store;
 
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-var core = module.exports = {version: '2.4.0'};
-if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ }),
 /* 9 */
@@ -1839,11 +1870,11 @@ var _BaseTexture = __webpack_require__(12);
 
 var _BaseTexture2 = _interopRequireDefault(_BaseTexture);
 
-var _VideoBaseTexture = __webpack_require__(101);
+var _VideoBaseTexture = __webpack_require__(102);
 
 var _VideoBaseTexture2 = _interopRequireDefault(_VideoBaseTexture);
 
-var _TextureUvs = __webpack_require__(100);
+var _TextureUvs = __webpack_require__(101);
 
 var _TextureUvs2 = _interopRequireDefault(_TextureUvs);
 
@@ -1941,6 +1972,7 @@ var Texture = function (_EventEmitter) {
 
         /**
          * This is the trimmed area of original texture, before it was put in atlas
+         * Please call `_updateUvs()` after you change coordinates of `trim` manually.
          *
          * @member {PIXI.Rectangle}
          */
@@ -2007,8 +2039,10 @@ var Texture = function (_EventEmitter) {
         _this._updateID = 0;
 
         /**
-         * Extra field for extra plugins. May contain clamp settings and some matrices
-         * @type {Object}
+         * Contains data for uvs. May contain clamp settings and some matrices.
+         * Its a bit heavy, so by default that object is not created.
+         * @type {PIXI.TextureMatrix}
+         * @default null
          */
         _this.transform = null;
 
@@ -2120,9 +2154,7 @@ var Texture = function (_EventEmitter) {
     };
 
     /**
-     * Updates the internal WebGL UV cache.
-     *
-     * @protected
+     * Updates the internal WebGL UV cache. Use it after you change `frame` or `trim` of the texture.
      */
 
 
@@ -2361,7 +2393,10 @@ var Texture = function (_EventEmitter) {
             }
         } else if (texture && texture.textureCacheIds) {
             for (var i = 0; i < texture.textureCacheIds.length; ++i) {
-                delete _utils.TextureCache[texture.textureCacheIds[i]];
+                // Check that texture matches the one being passed in before deleting it from the cache.
+                if (_utils.TextureCache[texture.textureCacheIds[i]] === texture) {
+                    delete _utils.TextureCache[texture.textureCacheIds[i]];
+                }
             }
 
             texture.textureCacheIds.length = 0;
@@ -2374,6 +2409,7 @@ var Texture = function (_EventEmitter) {
 
     /**
      * The frame specifies the region of the base texture that this texture uses.
+     * Please call `_updateUvs()` after you change coordinates of `frame` manually.
      *
      * @member {PIXI.Rectangle}
      */
@@ -2390,12 +2426,24 @@ var Texture = function (_EventEmitter) {
 
             this.noFrame = false;
 
-            if (frame.x + frame.width > this.baseTexture.width || frame.y + frame.height > this.baseTexture.height) {
-                throw new Error('Texture Error: frame does not fit inside the base Texture dimensions: ' + ('X: ' + frame.x + ' + ' + frame.width + ' > ' + this.baseTexture.width + ' ') + ('Y: ' + frame.y + ' + ' + frame.height + ' > ' + this.baseTexture.height));
+            var x = frame.x,
+                y = frame.y,
+                width = frame.width,
+                height = frame.height;
+
+            var xNotFit = x + width > this.baseTexture.width;
+            var yNotFit = y + height > this.baseTexture.height;
+
+            if (xNotFit || yNotFit) {
+                var relationship = xNotFit && yNotFit ? 'and' : 'or';
+                var errorX = 'X: ' + x + ' + ' + width + ' = ' + (x + width) + ' > ' + this.baseTexture.width;
+                var errorY = 'Y: ' + y + ' + ' + height + ' = ' + (y + height) + ' > ' + this.baseTexture.height;
+
+                throw new Error('Texture Error: frame does not fit inside the base Texture dimensions: ' + (errorX + ' ' + relationship + ' ' + errorY));
             }
 
-            // this.valid = frame && frame.width && frame.height && this.baseTexture.source && this.baseTexture.hasLoaded;
-            this.valid = frame && frame.width && frame.height && this.baseTexture.hasLoaded;
+            // this.valid = width && height && this.baseTexture.source && this.baseTexture.hasLoaded;
+            this.valid = width && height && this.baseTexture.hasLoaded;
 
             if (!this.trim && !this.rotate) {
                 this.orig = frame;
@@ -2828,8 +2876,11 @@ if (true) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
-if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
 
 /***/ }),
 /* 12 */
@@ -2850,7 +2901,7 @@ var _eventemitter = __webpack_require__(10);
 
 var _eventemitter2 = _interopRequireDefault(_eventemitter);
 
-var _determineCrossOrigin = __webpack_require__(222);
+var _determineCrossOrigin = __webpack_require__(103);
 
 var _determineCrossOrigin2 = _interopRequireDefault(_determineCrossOrigin);
 
@@ -3570,7 +3621,9 @@ var BaseTexture = function (_EventEmitter) {
 
     /**
      * Helper function that creates a base texture based on the source you provide.
-     * The source can be - image url, image element, canvas element.
+     * The source can be - image url, image element, canvas element. If the
+     * source is an image url or an image element and not in the base texture
+     * cache, it will be created and loaded.
      *
      * @static
      * @param {string|HTMLImageElement|HTMLCanvasElement} source - The source to create base texture from.
@@ -3682,65 +3735,97 @@ exports.default = BaseTexture;
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var isObject = __webpack_require__(34);
-module.exports = function(it){
-  if(!isObject(it))throw TypeError(it + ' is not an object!');
-  return it;
-};
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(33)(function(){
-  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
-});
+var isObject = __webpack_require__(34);
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
+
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP         = __webpack_require__(17)
-  , createDesc = __webpack_require__(35);
-module.exports = __webpack_require__(14) ? function(object, key, value){
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__(33)(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(18);
+var createDesc = __webpack_require__(35);
+module.exports = __webpack_require__(15) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
-} : function(object, key, value){
+} : function (object, key, value) {
   object[key] = value;
   return object;
 };
 
+
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject       = __webpack_require__(13)
-  , IE8_DOM_DEFINE = __webpack_require__(145)
-  , toPrimitive    = __webpack_require__(162)
-  , dP             = Object.defineProperty;
-
-exports.f = __webpack_require__(14) ? Object.defineProperty : function defineProperty(O, P, Attributes){
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if(IE8_DOM_DEFINE)try {
-    return dP(O, P, Attributes);
-  } catch(e){ /* empty */ }
-  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
-  if('value' in Attributes)O[P] = Attributes.value;
-  return O;
-};
 
 /***/ }),
 /* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(14);
+var IE8_DOM_DEFINE = __webpack_require__(149);
+var toPrimitive = __webpack_require__(165);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(15) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3771,7 +3856,7 @@ function checkPrecision(src, def) {
 
             return copy;
         }
-    } else if (src.substring(0, 9) !== 'precision') {
+    } else if (src.trim().substring(0, 9) !== 'precision') {
         return 'precision ' + def + ' float;\n' + src;
     }
 
@@ -3795,11 +3880,14 @@ var Shader = function (_GLShader) {
      * @param {WebGLRenderingContext} gl - The current WebGL rendering context
      * @param {string|string[]} vertexSrc - The vertex shader source as an array of strings.
      * @param {string|string[]} fragmentSrc - The fragment shader source as an array of strings.
+     * @param {object} [attributeLocations] - A key value pair showing which location eact attribute should sit.
+                       e.g. {position:0, uvs:1}.
+     * @param {string} [precision] - The float precision of the shader. Options are 'lowp', 'mediump' or 'highp'.
      */
-    function Shader(gl, vertexSrc, fragmentSrc) {
+    function Shader(gl, vertexSrc, fragmentSrc, attributeLocations, precision) {
         _classCallCheck(this, Shader);
 
-        return _possibleConstructorReturn(this, _GLShader.call(this, gl, checkPrecision(vertexSrc, _settings2.default.PRECISION_VERTEX), checkPrecision(fragmentSrc, _settings2.default.PRECISION_FRAGMENT)));
+        return _possibleConstructorReturn(this, _GLShader.call(this, gl, checkPrecision(vertexSrc, precision || _settings2.default.PRECISION_VERTEX), checkPrecision(fragmentSrc, precision || _settings2.default.PRECISION_FRAGMENT), undefined, attributeLocations));
     }
 
     return Shader;
@@ -3809,7 +3897,7 @@ exports.default = Shader;
 //# sourceMappingURL=Shader.js.map
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3899,7 +3987,7 @@ var Container = function (_DisplayObject) {
                 this.addChild(arguments[i]);
             }
         } else {
-            // if the child has a parent then lets remove it as Pixi objects can only exist in one place
+            // if the child has a parent then lets remove it as PixiJS objects can only exist in one place
             if (child.parent) {
                 child.parent.removeChild(child);
             }
@@ -4004,7 +4092,7 @@ var Container = function (_DisplayObject) {
 
     Container.prototype.setChildIndex = function setChildIndex(child, index) {
         if (index < 0 || index >= this.children.length) {
-            throw new Error('The supplied index is out of bounds');
+            throw new Error('The index ' + index + ' supplied is out of bounds ' + this.children.length);
         }
 
         var currentIndex = this.getChildIndex(child);
@@ -4432,7 +4520,7 @@ Container.prototype.containerUpdateTransform = Container.prototype.updateTransfo
 //# sourceMappingURL=Container.js.map
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4444,7 +4532,7 @@ var _SystemRenderer2 = __webpack_require__(91);
 
 var _SystemRenderer3 = _interopRequireDefault(_SystemRenderer2);
 
-var _CanvasMaskManager = __webpack_require__(199);
+var _CanvasMaskManager = __webpack_require__(200);
 
 var _CanvasMaskManager2 = _interopRequireDefault(_CanvasMaskManager);
 
@@ -4452,7 +4540,7 @@ var _CanvasRenderTarget = __webpack_require__(92);
 
 var _CanvasRenderTarget2 = _interopRequireDefault(_CanvasRenderTarget);
 
-var _mapCanvasBlendModesToPixi = __webpack_require__(200);
+var _mapCanvasBlendModesToPixi = __webpack_require__(201);
 
 var _mapCanvasBlendModesToPixi2 = _interopRequireDefault(_mapCanvasBlendModesToPixi);
 
@@ -4501,7 +4589,7 @@ var CanvasRenderer = function (_SystemRenderer) {
      *      not before the new render pass.
      * @param {number} [options.backgroundColor=0x000000] - The background color of the rendered area
      *  (shown if not transparent).
-     * @param {boolean} [options.roundPixels=false] - If true Pixi will Math.floor() x/y values when rendering,
+     * @param {boolean} [options.roundPixels=false] - If true PixiJS will Math.floor() x/y values when rendering,
      *  stopping pixel interpolation.
      */
     function CanvasRenderer(options, arg2, arg3) {
@@ -4647,8 +4735,10 @@ var CanvasRenderer = function (_SystemRenderer) {
             // displayObject.hitArea = //TODO add a temp hit area
         }
 
+        context.save();
         context.setTransform(1, 0, 0, 1, 0, 0);
         context.globalAlpha = 1;
+        this._activeBlendMode = _const.BLEND_MODES.NORMAL;
         context.globalCompositeOperation = this.blendModes[_const.BLEND_MODES.NORMAL];
 
         if (navigator.isCocoonJS && this.view.screencanvas) {
@@ -4675,6 +4765,8 @@ var CanvasRenderer = function (_SystemRenderer) {
         this.context = context;
         displayObject.renderCanvas(this);
         this.context = tempContext;
+
+        context.restore();
 
         this.resolution = rootResolution;
 
@@ -4754,10 +4846,19 @@ var CanvasRenderer = function (_SystemRenderer) {
         _SystemRenderer.prototype.resize.call(this, screenWidth, screenHeight);
 
         // reset the scale mode.. oddly this seems to be reset when the canvas is resized.
-        // surely a browser bug?? Let pixi fix that for you..
+        // surely a browser bug?? Let PixiJS fix that for you..
         if (this.smoothProperty) {
             this.rootContext[this.smoothProperty] = _settings2.default.SCALE_MODE === _const.SCALE_MODES.LINEAR;
         }
+    };
+
+    /**
+     * Checks if blend mode has changed.
+     */
+
+
+    CanvasRenderer.prototype.invalidateBlendMode = function invalidateBlendMode() {
+        this._activeBlendMode = this.blendModes.indexOf(this.context.globalCompositeOperation);
     };
 
     return CanvasRenderer;
@@ -4789,7 +4890,7 @@ _utils.pluginTarget.mixin(CanvasRenderer);
 //# sourceMappingURL=CanvasRenderer.js.map
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4849,7 +4950,7 @@ exports.default = WebGLManager;
 //# sourceMappingURL=WebGLManager.js.map
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4863,9 +4964,9 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _TextureTransform = __webpack_require__(52);
+var _Texture = __webpack_require__(9);
 
-var _TextureTransform2 = _interopRequireDefault(_TextureTransform);
+var _Texture2 = _interopRequireDefault(_Texture);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4888,319 +4989,382 @@ var tempPolygon = new core.Polygon();
  */
 
 var Mesh = function (_core$Container) {
-  _inherits(Mesh, _core$Container);
-
-  /**
-   * @param {PIXI.Texture} texture - The texture to use
-   * @param {Float32Array} [vertices] - if you want to specify the vertices
-   * @param {Float32Array} [uvs] - if you want to specify the uvs
-   * @param {Uint16Array} [indices] - if you want to specify the indices
-   * @param {number} [drawMode] - the drawMode, can be any of the Mesh.DRAW_MODES consts
-   */
-  function Mesh(texture, vertices, uvs, indices, drawMode) {
-    _classCallCheck(this, Mesh);
+    _inherits(Mesh, _core$Container);
 
     /**
-     * The texture of the Mesh
+     * @param {PIXI.Texture} texture - The texture to use
+     * @param {Float32Array} [vertices] - if you want to specify the vertices
+     * @param {Float32Array} [uvs] - if you want to specify the uvs
+     * @param {Uint16Array} [indices] - if you want to specify the indices
+     * @param {number} [drawMode] - the drawMode, can be any of the Mesh.DRAW_MODES consts
+     */
+    function Mesh(texture, vertices, uvs, indices, drawMode) {
+        _classCallCheck(this, Mesh);
+
+        /**
+         * The texture of the Mesh
+         *
+         * @member {PIXI.Texture}
+         * @default PIXI.Texture.EMPTY
+         * @private
+         */
+        var _this = _possibleConstructorReturn(this, _core$Container.call(this));
+
+        _this._texture = texture || _Texture2.default.EMPTY;
+
+        /**
+         * The Uvs of the Mesh
+         *
+         * @member {Float32Array}
+         */
+        _this.uvs = uvs || new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]);
+
+        /**
+         * An array of vertices
+         *
+         * @member {Float32Array}
+         */
+        _this.vertices = vertices || new Float32Array([0, 0, 100, 0, 100, 100, 0, 100]);
+
+        /**
+         * An array containing the indices of the vertices
+         *
+         * @member {Uint16Array}
+         */
+        //  TODO auto generate this based on draw mode!
+        _this.indices = indices || new Uint16Array([0, 1, 3, 2]);
+
+        /**
+         * Version of mesh uvs are dirty or not
+         *
+         * @member {number}
+         */
+        _this.dirty = 0;
+
+        /**
+         * Version of mesh indices
+         *
+         * @member {number}
+         */
+        _this.indexDirty = 0;
+
+        /**
+         * Version of mesh verticies array
+         *
+         * @member {number}
+         */
+        _this.vertexDirty = 0;
+
+        /**
+         * For backwards compatibility the default is to re-upload verticies each render call.
+         * Set this to `false` and increase `vertexDirty` to manually re-upload the buffer.
+         *
+         * @member {boolean}
+         */
+        _this.autoUpdate = true;
+
+        /**
+         * The blend mode to be applied to the sprite. Set to `PIXI.BLEND_MODES.NORMAL` to remove
+         * any blend mode.
+         *
+         * @member {number}
+         * @default PIXI.BLEND_MODES.NORMAL
+         * @see PIXI.BLEND_MODES
+         */
+        _this.blendMode = core.BLEND_MODES.NORMAL;
+
+        /**
+         * Triangles in canvas mode are automatically antialiased, use this value to force triangles
+         * to overlap a bit with each other.
+         *
+         * @member {number}
+         */
+        _this.canvasPadding = core.settings.MESH_CANVAS_PADDING;
+
+        /**
+         * The way the Mesh should be drawn, can be any of the {@link PIXI.mesh.Mesh.DRAW_MODES} consts
+         *
+         * @member {number}
+         * @see PIXI.mesh.Mesh.DRAW_MODES
+         */
+        _this.drawMode = drawMode || Mesh.DRAW_MODES.TRIANGLE_MESH;
+
+        /**
+         * The default shader that is used if a mesh doesn't have a more specific one.
+         *
+         * @member {PIXI.Shader}
+         */
+        _this.shader = null;
+
+        /**
+         * The tint applied to the mesh. This is a [r,g,b] value. A value of [1,1,1] will remove any
+         * tint effect.
+         *
+         * @member {number}
+         */
+        _this.tintRgb = new Float32Array([1, 1, 1]);
+
+        /**
+         * A map of renderer IDs to webgl render data
+         *
+         * @private
+         * @member {object<number, object>}
+         */
+        _this._glDatas = {};
+
+        /**
+         * transform that is applied to UV to get the texture coords
+         * its updated independently from texture uvTransform
+         * updates of uvs are tied to that thing
+         *
+         * @member {PIXI.TextureMatrix}
+         * @private
+         */
+        _this._uvTransform = new core.TextureMatrix(_this._texture);
+
+        /**
+         * whether or not upload uvTransform to shader
+         * if its false, then uvs should be pre-multiplied
+         * if you change it for generated mesh, please call 'refresh(true)'
+         * @member {boolean}
+         * @default false
+         */
+        _this.uploadUvTransform = false;
+
+        /**
+         * Plugin that is responsible for rendering this element.
+         * Allows to customize the rendering process without overriding '_renderWebGL' & '_renderCanvas' methods.
+         * @member {string}
+         * @default 'mesh'
+         */
+        _this.pluginName = 'mesh';
+        return _this;
+    }
+
+    /**
+     * Renders the object using the WebGL renderer
+     *
+     * @private
+     * @param {PIXI.WebGLRenderer} renderer - a reference to the WebGL renderer
+     */
+
+
+    Mesh.prototype._renderWebGL = function _renderWebGL(renderer) {
+        this.refresh();
+        renderer.setObjectRenderer(renderer.plugins[this.pluginName]);
+        renderer.plugins[this.pluginName].render(this);
+    };
+
+    /**
+     * Renders the object using the Canvas renderer
+     *
+     * @private
+     * @param {PIXI.CanvasRenderer} renderer - The canvas renderer.
+     */
+
+
+    Mesh.prototype._renderCanvas = function _renderCanvas(renderer) {
+        this.refresh();
+        renderer.plugins[this.pluginName].render(this);
+    };
+
+    /**
+     * When the texture is updated, this event will fire to update the scale and frame
+     *
+     * @private
+     */
+
+
+    Mesh.prototype._onTextureUpdate = function _onTextureUpdate() {
+        this._uvTransform.texture = this._texture;
+        this.refresh();
+    };
+
+    /**
+     * multiplies uvs only if uploadUvTransform is false
+     * call it after you change uvs manually
+     * make sure that texture is valid
+     */
+
+
+    Mesh.prototype.multiplyUvs = function multiplyUvs() {
+        if (!this.uploadUvTransform) {
+            this._uvTransform.multiplyUvs(this.uvs);
+        }
+    };
+
+    /**
+     * Refreshes uvs for generated meshes (rope, plane)
+     * sometimes refreshes vertices too
+     *
+     * @param {boolean} [forceUpdate=false] if true, matrices will be updated any case
+     */
+
+
+    Mesh.prototype.refresh = function refresh(forceUpdate) {
+        if (this.autoUpdate) {
+            this.vertexDirty++;
+        }
+        if (this._uvTransform.update(forceUpdate)) {
+            this._refresh();
+        }
+    };
+
+    /**
+     * re-calculates mesh coords
+     * @protected
+     */
+
+
+    Mesh.prototype._refresh = function _refresh() {}
+    /* empty */
+
+
+    /**
+     * Returns the bounds of the mesh as a rectangle. The bounds calculation takes the worldTransform into account.
+     *
+     */
+    ;
+
+    Mesh.prototype._calculateBounds = function _calculateBounds() {
+        // TODO - we can cache local bounds and use them if they are dirty (like graphics)
+        this._bounds.addVertices(this.transform, this.vertices, 0, this.vertices.length);
+    };
+
+    /**
+     * Tests if a point is inside this mesh. Works only for TRIANGLE_MESH
+     *
+     * @param {PIXI.Point} point - the point to test
+     * @return {boolean} the result of the test
+     */
+
+
+    Mesh.prototype.containsPoint = function containsPoint(point) {
+        if (!this.getBounds().contains(point.x, point.y)) {
+            return false;
+        }
+
+        this.worldTransform.applyInverse(point, tempPoint);
+
+        var vertices = this.vertices;
+        var points = tempPolygon.points;
+        var indices = this.indices;
+        var len = this.indices.length;
+        var step = this.drawMode === Mesh.DRAW_MODES.TRIANGLES ? 3 : 1;
+
+        for (var i = 0; i + 2 < len; i += step) {
+            var ind0 = indices[i] * 2;
+            var ind1 = indices[i + 1] * 2;
+            var ind2 = indices[i + 2] * 2;
+
+            points[0] = vertices[ind0];
+            points[1] = vertices[ind0 + 1];
+            points[2] = vertices[ind1];
+            points[3] = vertices[ind1 + 1];
+            points[4] = vertices[ind2];
+            points[5] = vertices[ind2 + 1];
+
+            if (tempPolygon.contains(tempPoint.x, tempPoint.y)) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+    /**
+     * The texture that the mesh uses.
      *
      * @member {PIXI.Texture}
-     * @private
      */
-    var _this = _possibleConstructorReturn(this, _core$Container.call(this));
 
-    _this._texture = texture;
 
     /**
-     * The Uvs of the Mesh
+     * Destroys the Mesh object.
      *
-     * @member {Float32Array}
+     * @param {object|boolean} [options] - Options parameter. A boolean will act as if all
+     *  options have been set to that value
+     * @param {boolean} [options.children=false] - if set to true, all the children will have
+     *  their destroy method called as well. 'options' will be passed on to those calls.
+     * @param {boolean} [options.texture=false] - Only used for child Sprites if options.children is set to true
+     *  Should it destroy the texture of the child sprite
+     * @param {boolean} [options.baseTexture=false] - Only used for child Sprites if options.children is set to true
+     *  Should it destroy the base texture of the child sprite
      */
-    _this.uvs = uvs || new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]);
+    Mesh.prototype.destroy = function destroy(options) {
+        // for each webgl data entry, destroy the WebGLGraphicsData
+        for (var id in this._glDatas) {
+            var data = this._glDatas[id];
 
-    /**
-     * An array of vertices
-     *
-     * @member {Float32Array}
-     */
-    _this.vertices = vertices || new Float32Array([0, 0, 100, 0, 100, 100, 0, 100]);
-
-    /**
-     * An array containing the indices of the vertices
-     *
-     * @member {Uint16Array}
-     */
-    //  TODO auto generate this based on draw mode!
-    _this.indices = indices || new Uint16Array([0, 1, 3, 2]);
-
-    /**
-     * Version of mesh uvs are dirty or not
-     *
-     * @member {number}
-     */
-    _this.dirty = 0;
-
-    /**
-     * Version of mesh indices
-     *
-     * @member {number}
-     */
-    _this.indexDirty = 0;
-
-    /**
-     * The blend mode to be applied to the sprite. Set to `PIXI.BLEND_MODES.NORMAL` to remove
-     * any blend mode.
-     *
-     * @member {number}
-     * @default PIXI.BLEND_MODES.NORMAL
-     * @see PIXI.BLEND_MODES
-     */
-    _this.blendMode = core.BLEND_MODES.NORMAL;
-
-    /**
-     * Triangles in canvas mode are automatically antialiased, use this value to force triangles
-     * to overlap a bit with each other.
-     *
-     * @member {number}
-     */
-    _this.canvasPadding = 0;
-
-    /**
-     * The way the Mesh should be drawn, can be any of the {@link PIXI.mesh.Mesh.DRAW_MODES} consts
-     *
-     * @member {number}
-     * @see PIXI.mesh.Mesh.DRAW_MODES
-     */
-    _this.drawMode = drawMode || Mesh.DRAW_MODES.TRIANGLE_MESH;
-
-    /**
-     * The default shader that is used if a mesh doesn't have a more specific one.
-     *
-     * @member {PIXI.Shader}
-     */
-    _this.shader = null;
-
-    /**
-     * The tint applied to the mesh. This is a [r,g,b] value. A value of [1,1,1] will remove any
-     * tint effect.
-     *
-     * @member {number}
-     */
-    _this.tintRgb = new Float32Array([1, 1, 1]);
-
-    /**
-     * A map of renderer IDs to webgl render data
-     *
-     * @private
-     * @member {object<number, object>}
-     */
-    _this._glDatas = {};
-
-    /**
-     * transform that is applied to UV to get the texture coords
-     * its updated independently from texture uvTransform
-     * updates of uvs are tied to that thing
-     *
-     * @member {PIXI.extras.TextureTransform}
-     * @private
-     */
-    _this._uvTransform = new _TextureTransform2.default(texture);
-
-    /**
-     * whether or not upload uvTransform to shader
-     * if its false, then uvs should be pre-multiplied
-     * if you change it for generated mesh, please call 'refresh(true)'
-     * @member {boolean}
-     * @default false
-     */
-    _this.uploadUvTransform = false;
-
-    /**
-     * Plugin that is responsible for rendering this element.
-     * Allows to customize the rendering process without overriding '_renderWebGL' & '_renderCanvas' methods.
-     * @member {string}
-     * @default 'mesh'
-     */
-    _this.pluginName = 'mesh';
-    return _this;
-  }
-
-  /**
-   * Renders the object using the WebGL renderer
-   *
-   * @private
-   * @param {PIXI.WebGLRenderer} renderer - a reference to the WebGL renderer
-   */
-
-
-  Mesh.prototype._renderWebGL = function _renderWebGL(renderer) {
-    this.refresh();
-    renderer.setObjectRenderer(renderer.plugins[this.pluginName]);
-    renderer.plugins[this.pluginName].render(this);
-  };
-
-  /**
-   * Renders the object using the Canvas renderer
-   *
-   * @private
-   * @param {PIXI.CanvasRenderer} renderer - The canvas renderer.
-   */
-
-
-  Mesh.prototype._renderCanvas = function _renderCanvas(renderer) {
-    this.refresh();
-    renderer.plugins[this.pluginName].render(this);
-  };
-
-  /**
-   * When the texture is updated, this event will fire to update the scale and frame
-   *
-   * @private
-   */
-
-
-  Mesh.prototype._onTextureUpdate = function _onTextureUpdate() {
-    this._uvTransform.texture = this._texture;
-    this.refresh();
-  };
-
-  /**
-   * multiplies uvs only if uploadUvTransform is false
-   * call it after you change uvs manually
-   * make sure that texture is valid
-   */
-
-
-  Mesh.prototype.multiplyUvs = function multiplyUvs() {
-    if (!this.uploadUvTransform) {
-      this._uvTransform.multiplyUvs(this.uvs);
-    }
-  };
-
-  /**
-   * Refreshes uvs for generated meshes (rope, plane)
-   * sometimes refreshes vertices too
-   *
-   * @param {boolean} [forceUpdate=false] if true, matrices will be updated any case
-   */
-
-
-  Mesh.prototype.refresh = function refresh(forceUpdate) {
-    if (this._uvTransform.update(forceUpdate)) {
-      this._refresh();
-    }
-  };
-
-  /**
-   * re-calculates mesh coords
-   * @protected
-   */
-
-
-  Mesh.prototype._refresh = function _refresh() {}
-  /* empty */
-
-
-  /**
-   * Returns the bounds of the mesh as a rectangle. The bounds calculation takes the worldTransform into account.
-   *
-   */
-  ;
-
-  Mesh.prototype._calculateBounds = function _calculateBounds() {
-    // TODO - we can cache local bounds and use them if they are dirty (like graphics)
-    this._bounds.addVertices(this.transform, this.vertices, 0, this.vertices.length);
-  };
-
-  /**
-   * Tests if a point is inside this mesh. Works only for TRIANGLE_MESH
-   *
-   * @param {PIXI.Point} point - the point to test
-   * @return {boolean} the result of the test
-   */
-
-
-  Mesh.prototype.containsPoint = function containsPoint(point) {
-    if (!this.getBounds().contains(point.x, point.y)) {
-      return false;
-    }
-
-    this.worldTransform.applyInverse(point, tempPoint);
-
-    var vertices = this.vertices;
-    var points = tempPolygon.points;
-    var indices = this.indices;
-    var len = this.indices.length;
-    var step = this.drawMode === Mesh.DRAW_MODES.TRIANGLES ? 3 : 1;
-
-    for (var i = 0; i + 2 < len; i += step) {
-      var ind0 = indices[i] * 2;
-      var ind1 = indices[i + 1] * 2;
-      var ind2 = indices[i + 2] * 2;
-
-      points[0] = vertices[ind0];
-      points[1] = vertices[ind0 + 1];
-      points[2] = vertices[ind1];
-      points[3] = vertices[ind1 + 1];
-      points[4] = vertices[ind2];
-      points[5] = vertices[ind2 + 1];
-
-      if (tempPolygon.contains(tempPoint.x, tempPoint.y)) {
-        return true;
-      }
-    }
-
-    return false;
-  };
-
-  /**
-   * The texture that the mesh uses.
-   *
-   * @member {PIXI.Texture}
-   */
-
-
-  _createClass(Mesh, [{
-    key: 'texture',
-    get: function get() {
-      return this._texture;
-    },
-    set: function set(value) // eslint-disable-line require-jsdoc
-    {
-      if (this._texture === value) {
-        return;
-      }
-
-      this._texture = value;
-
-      if (value) {
-        // wait for the texture to load
-        if (value.baseTexture.hasLoaded) {
-          this._onTextureUpdate();
-        } else {
-          value.once('update', this._onTextureUpdate, this);
+            if (data.destroy) {
+                data.destroy();
+            } else {
+                if (data.vertexBuffer) {
+                    data.vertexBuffer.destroy();
+                    data.vertexBuffer = null;
+                }
+                if (data.indexBuffer) {
+                    data.indexBuffer.destroy();
+                    data.indexBuffer = null;
+                }
+                if (data.uvBuffer) {
+                    data.uvBuffer.destroy();
+                    data.uvBuffer = null;
+                }
+                if (data.vao) {
+                    data.vao.destroy();
+                    data.vao = null;
+                }
+            }
         }
-      }
-    }
 
-    /**
-     * The tint applied to the mesh. This is a hex value. A value of 0xFFFFFF will remove any tint effect.
-     *
-     * @member {number}
-     * @default 0xFFFFFF
-     */
+        this._glDatas = null;
 
-  }, {
-    key: 'tint',
-    get: function get() {
-      return core.utils.rgb2hex(this.tintRgb);
-    },
-    set: function set(value) // eslint-disable-line require-jsdoc
-    {
-      this.tintRgb = core.utils.hex2rgb(value, this.tintRgb);
-    }
-  }]);
+        _core$Container.prototype.destroy.call(this, options);
+    };
 
-  return Mesh;
+    _createClass(Mesh, [{
+        key: 'texture',
+        get: function get() {
+            return this._texture;
+        },
+        set: function set(value) // eslint-disable-line require-jsdoc
+        {
+            if (this._texture === value) {
+                return;
+            }
+
+            this._texture = value;
+
+            if (value) {
+                // wait for the texture to load
+                if (value.baseTexture.hasLoaded) {
+                    this._onTextureUpdate();
+                } else {
+                    value.once('update', this._onTextureUpdate, this);
+                }
+            }
+        }
+
+        /**
+         * The tint applied to the mesh. This is a hex value. A value of 0xFFFFFF will remove any tint effect.
+         *
+         * @member {number}
+         * @default 0xFFFFFF
+         */
+
+    }, {
+        key: 'tint',
+        get: function get() {
+            return core.utils.rgb2hex(this.tintRgb);
+        },
+        set: function set(value) // eslint-disable-line require-jsdoc
+        {
+            this.tintRgb = core.utils.hex2rgb(value, this.tintRgb);
+        }
+    }]);
+
+    return Mesh;
 }(core.Container);
 
 /**
@@ -5216,13 +5380,13 @@ var Mesh = function (_core$Container) {
 
 exports.default = Mesh;
 Mesh.DRAW_MODES = {
-  TRIANGLE_MESH: 0,
-  TRIANGLES: 1
+    TRIANGLE_MESH: 0,
+    TRIANGLES: 1
 };
 //# sourceMappingURL=Mesh.js.map
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5235,10 +5399,10 @@ Mesh.DRAW_MODES = {
 
 /* eslint-disable no-undef */
 
-var Loader = __webpack_require__(277).default;
+var Loader = __webpack_require__(275).default;
 var Resource = __webpack_require__(54).default;
-var async = __webpack_require__(115);
-var b64 = __webpack_require__(116);
+var async = __webpack_require__(120);
+var b64 = __webpack_require__(121);
 
 Loader.Resource = Resource;
 Loader.async = async;
@@ -5251,31 +5415,32 @@ module.exports.default = Loader;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global    = __webpack_require__(11)
-  , core      = __webpack_require__(8)
-  , ctx       = __webpack_require__(57)
-  , hide      = __webpack_require__(15)
-  , PROTOTYPE = 'prototype';
+var global = __webpack_require__(11);
+var core = __webpack_require__(7);
+var ctx = __webpack_require__(57);
+var hide = __webpack_require__(16);
+var has = __webpack_require__(26);
+var PROTOTYPE = 'prototype';
 
-var $export = function(type, name, source){
-  var IS_FORCED = type & $export.F
-    , IS_GLOBAL = type & $export.G
-    , IS_STATIC = type & $export.S
-    , IS_PROTO  = type & $export.P
-    , IS_BIND   = type & $export.B
-    , IS_WRAP   = type & $export.W
-    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
-    , expProto  = exports[PROTOTYPE]
-    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
-    , key, own, out;
-  if(IS_GLOBAL)source = name;
-  for(key in source){
+var $export = function (type, name, source) {
+  var IS_FORCED = type & $export.F;
+  var IS_GLOBAL = type & $export.G;
+  var IS_STATIC = type & $export.S;
+  var IS_PROTO = type & $export.P;
+  var IS_BIND = type & $export.B;
+  var IS_WRAP = type & $export.W;
+  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+  var expProto = exports[PROTOTYPE];
+  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
+  var key, own, out;
+  if (IS_GLOBAL) source = name;
+  for (key in source) {
     // contains in native
     own = !IS_FORCED && target && target[key] !== undefined;
-    if(own && key in exports)continue;
+    if (own && has(exports, key)) continue;
     // export native or passed
     out = own ? target[key] : source[key];
     // prevent global pollution for namespaces
@@ -5283,11 +5448,11 @@ var $export = function(type, name, source){
     // bind timers to global for call from export context
     : IS_BIND && own ? ctx(out, global)
     // wrap global constructors for prevent change them in library
-    : IS_WRAP && target[key] == out ? (function(C){
-      var F = function(a, b, c){
-        if(this instanceof C){
-          switch(arguments.length){
-            case 0: return new C;
+    : IS_WRAP && target[key] == out ? (function (C) {
+      var F = function (a, b, c) {
+        if (this instanceof C) {
+          switch (arguments.length) {
+            case 0: return new C();
             case 1: return new C(a);
             case 2: return new C(a, b);
           } return new C(a, b, c);
@@ -5298,10 +5463,10 @@ var $export = function(type, name, source){
     // make static versions for prototype methods
     })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
     // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
-    if(IS_PROTO){
+    if (IS_PROTO) {
       (exports.virtual || (exports.virtual = {}))[key] = out;
       // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
+      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
     }
   }
 };
@@ -5313,20 +5478,22 @@ $export.P = 8;   // proto
 $export.B = 16;  // bind
 $export.W = 32;  // wrap
 $export.U = 64;  // safe
-$export.R = 128; // real proto method for `library` 
+$export.R = 128; // real proto method for `library`
 module.exports = $export;
 
-/***/ }),
-/* 25 */
-/***/ (function(module, exports) {
-
-var hasOwnProperty = {}.hasOwnProperty;
-module.exports = function(it, key){
-  return hasOwnProperty.call(it, key);
-};
 
 /***/ }),
 /* 26 */
+/***/ (function(module, exports) {
+
+var hasOwnProperty = {}.hasOwnProperty;
+module.exports = function (it, key) {
+  return hasOwnProperty.call(it, key);
+};
+
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5431,10 +5598,14 @@ function buildLine(graphicsData, webGLData) {
     perpx *= width;
     perpy *= width;
 
-    // start
-    verts.push(p1x - perpx, p1y - perpy, r, g, b, alpha);
+    var ratio = graphicsData.lineAlignment; // 0.5;
+    var r1 = (1 - ratio) * 2;
+    var r2 = ratio * 2;
 
-    verts.push(p1x + perpx, p1y + perpy, r, g, b, alpha);
+    // start
+    verts.push(p1x - perpx * r1, p1y - perpy * r1, r, g, b, alpha);
+
+    verts.push(p1x + perpx * r2, p1y + perpy * r2, r, g, b, alpha);
 
     for (var i = 1; i < length - 1; ++i) {
         p1x = points[(i - 1) * 2];
@@ -5475,9 +5646,9 @@ function buildLine(graphicsData, webGLData) {
 
         if (Math.abs(denom) < 0.1) {
             denom += 10.1;
-            verts.push(p2x - perpx, p2y - perpy, r, g, b, alpha);
+            verts.push(p2x - perpx * r1, p2y - perpy * r1, r, g, b, alpha);
 
-            verts.push(p2x + perpx, p2y + perpy, r, g, b, alpha);
+            verts.push(p2x + perpx * r2, p2y + perpy * r2, r, g, b, alpha);
 
             continue;
         }
@@ -5496,21 +5667,21 @@ function buildLine(graphicsData, webGLData) {
             perp3x *= width;
             perp3y *= width;
 
-            verts.push(p2x - perp3x, p2y - perp3y);
+            verts.push(p2x - perp3x * r1, p2y - perp3y * r1);
             verts.push(r, g, b, alpha);
 
-            verts.push(p2x + perp3x, p2y + perp3y);
+            verts.push(p2x + perp3x * r2, p2y + perp3y * r2);
             verts.push(r, g, b, alpha);
 
-            verts.push(p2x - perp3x, p2y - perp3y);
+            verts.push(p2x - perp3x * r2 * r1, p2y - perp3y * r1);
             verts.push(r, g, b, alpha);
 
             indexCount++;
         } else {
-            verts.push(px, py);
+            verts.push(p2x + (px - p2x) * r1, p2y + (py - p2y) * r1);
             verts.push(r, g, b, alpha);
 
-            verts.push(p2x - (px - p2x), p2y - (py - p2y));
+            verts.push(p2x - (px - p2x) * r2, p2y - (py - p2y) * r2);
             verts.push(r, g, b, alpha);
         }
     }
@@ -5530,10 +5701,10 @@ function buildLine(graphicsData, webGLData) {
     perpx *= width;
     perpy *= width;
 
-    verts.push(p2x - perpx, p2y - perpy);
+    verts.push(p2x - perpx * r1, p2y - perpy * r1);
     verts.push(r, g, b, alpha);
 
-    verts.push(p2x + perpx, p2y + perpy);
+    verts.push(p2x + perpx * r2, p2y + perpy * r2);
     verts.push(r, g, b, alpha);
 
     indices.push(indexStart);
@@ -5601,7 +5772,7 @@ function buildNativeLine(graphicsData, webGLData) {
 //# sourceMappingURL=buildLine.js.map
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5613,27 +5784,27 @@ var _SystemRenderer2 = __webpack_require__(91);
 
 var _SystemRenderer3 = _interopRequireDefault(_SystemRenderer2);
 
-var _MaskManager = __webpack_require__(207);
+var _MaskManager = __webpack_require__(208);
 
 var _MaskManager2 = _interopRequireDefault(_MaskManager);
 
-var _StencilManager = __webpack_require__(208);
+var _StencilManager = __webpack_require__(209);
 
 var _StencilManager2 = _interopRequireDefault(_StencilManager);
 
-var _FilterManager = __webpack_require__(206);
+var _FilterManager = __webpack_require__(207);
 
 var _FilterManager2 = _interopRequireDefault(_FilterManager);
 
-var _RenderTarget = __webpack_require__(29);
+var _RenderTarget = __webpack_require__(30);
 
 var _RenderTarget2 = _interopRequireDefault(_RenderTarget);
 
-var _ObjectRenderer = __webpack_require__(28);
+var _ObjectRenderer = __webpack_require__(29);
 
 var _ObjectRenderer2 = _interopRequireDefault(_ObjectRenderer);
 
-var _TextureManager = __webpack_require__(202);
+var _TextureManager = __webpack_require__(203);
 
 var _TextureManager2 = _interopRequireDefault(_TextureManager);
 
@@ -5641,19 +5812,19 @@ var _BaseTexture = __webpack_require__(12);
 
 var _BaseTexture2 = _interopRequireDefault(_BaseTexture);
 
-var _TextureGarbageCollector = __webpack_require__(201);
+var _TextureGarbageCollector = __webpack_require__(202);
 
 var _TextureGarbageCollector2 = _interopRequireDefault(_TextureGarbageCollector);
 
-var _WebGLState = __webpack_require__(203);
+var _WebGLState = __webpack_require__(204);
 
 var _WebGLState2 = _interopRequireDefault(_WebGLState);
 
-var _mapWebGLDrawModesToPixi = __webpack_require__(211);
+var _mapWebGLDrawModesToPixi = __webpack_require__(212);
 
 var _mapWebGLDrawModesToPixi2 = _interopRequireDefault(_mapWebGLDrawModesToPixi);
 
-var _validateContext = __webpack_require__(212);
+var _validateContext = __webpack_require__(213);
 
 var _validateContext2 = _interopRequireDefault(_validateContext);
 
@@ -5709,12 +5880,14 @@ var WebGLRenderer = function (_SystemRenderer) {
      *  preserveDrawingBuffer to `true`.
      * @param {boolean} [options.preserveDrawingBuffer=false] - enables drawing buffer preservation,
      *  enable this if you need to call toDataUrl on the webgl context.
-     * @param {boolean} [options.roundPixels=false] - If true Pixi will Math.floor() x/y values when
+     * @param {boolean} [options.roundPixels=false] - If true PixiJS will Math.floor() x/y values when
      *  rendering, stopping pixel interpolation.
      * @param {number} [options.backgroundColor=0x000000] - The background color of the rendered area
      *  (shown if not transparent).
-     * @param {boolean} [options.legacy=false] - If true Pixi will aim to ensure compatibility
-     * with older / less advanced devices. If you experiance unexplained flickering try setting this to true.
+     * @param {boolean} [options.legacy=false] - If true PixiJS will aim to ensure compatibility
+     *  with older / less advanced devices. If you experiance unexplained flickering try setting this to true.
+     * @param {string} [options.powerPreference] - Parameter passed to webgl context, set to "high-performance"
+     *  for devices with dual graphics card
      */
     function WebGLRenderer(options, arg2, arg3) {
         _classCallCheck(this, WebGLRenderer);
@@ -5752,7 +5925,8 @@ var WebGLRenderer = function (_SystemRenderer) {
             antialias: _this.options.antialias,
             premultipliedAlpha: _this.transparent && _this.transparent !== 'notMultiplied',
             stencil: true,
-            preserveDrawingBuffer: _this.options.preserveDrawingBuffer
+            preserveDrawingBuffer: _this.options.preserveDrawingBuffer,
+            powerPreference: _this.options.powerPreference
         };
 
         _this._backgroundColorRgba[3] = _this.transparent ? 0 : 1;
@@ -5784,6 +5958,19 @@ var WebGLRenderer = function (_SystemRenderer) {
          * @member {PIXI.ObjectRenderer}
          */
         _this.currentRenderer = _this.emptyRenderer;
+
+        /**
+         * Manages textures
+         * @member {PIXI.TextureManager}
+         */
+        _this.textureManager = null;
+
+        /**
+         * Manages the filters.
+         *
+         * @member {PIXI.FilterManager}
+         */
+        _this.filterManager = null;
 
         _this.initPlugins();
 
@@ -5835,12 +6022,6 @@ var WebGLRenderer = function (_SystemRenderer) {
 
         _this._initContext();
 
-        /**
-         * Manages the filters.
-         *
-         * @member {PIXI.FilterManager}
-         */
-        _this.filterManager = new _FilterManager2.default(_this);
         // map some webGL blend and drawmodes..
         _this.drawModes = (0, _mapWebGLDrawModesToPixi2.default)(_this.gl);
 
@@ -5894,6 +6075,7 @@ var WebGLRenderer = function (_SystemRenderer) {
 
         // create a texture manager...
         this.textureManager = new _TextureManager2.default(this);
+        this.filterManager = new _FilterManager2.default(this);
         this.textureGC = new _TextureGarbageCollector2.default(this);
 
         this.state.resetToDefault();
@@ -6295,8 +6477,13 @@ var WebGLRenderer = function (_SystemRenderer) {
     WebGLRenderer.prototype.reset = function reset() {
         this.setObjectRenderer(this.emptyRenderer);
 
+        this.bindVao(null);
         this._activeShader = null;
         this._activeRenderTarget = this.rootRenderTarget;
+
+        for (var i = 0; i < this.boundTextures.length; i++) {
+            this.boundTextures[i] = this.emptyTextures[i];
+        }
 
         // bind the main frame buffer (the screen);
         this.rootRenderTarget.activate();
@@ -6327,6 +6514,7 @@ var WebGLRenderer = function (_SystemRenderer) {
 
     WebGLRenderer.prototype.handleContextRestored = function handleContextRestored() {
         this.textureManager.removeAll();
+        this.filterManager.destroy(true);
         this._initContext();
     };
 
@@ -6406,7 +6594,7 @@ _utils.pluginTarget.mixin(WebGLRenderer);
 //# sourceMappingURL=WebGLRenderer.js.map
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6414,7 +6602,7 @@ _utils.pluginTarget.mixin(WebGLRenderer);
 
 exports.__esModule = true;
 
-var _WebGLManager2 = __webpack_require__(21);
+var _WebGLManager2 = __webpack_require__(22);
 
 var _WebGLManager3 = _interopRequireDefault(_WebGLManager2);
 
@@ -6489,7 +6677,7 @@ exports.default = ObjectRenderer;
 //# sourceMappingURL=ObjectRenderer.js.map
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6624,6 +6812,13 @@ var RenderTarget = function () {
      * @member {object[]}
      */
     this.filterData = null;
+
+    /**
+     * The key for pooled texture of FilterSystem
+     * @private
+     * @member {string}
+     */
+    this.filterPoolKey = '';
 
     /**
      * The scale mode.
@@ -6819,33 +7014,6 @@ var RenderTarget = function () {
 
 exports.default = RenderTarget;
 //# sourceMappingURL=RenderTarget.js.map
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
 
 /***/ }),
 /* 31 */
@@ -7063,75 +7231,82 @@ exports.nextCombination = function(v) {
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
-module.exports = function(it){
-  if(it == undefined)throw TypeError("Can't call method on  " + it);
+module.exports = function (it) {
+  if (it == undefined) throw TypeError("Can't call method on  " + it);
   return it;
 };
+
 
 /***/ }),
 /* 33 */
 /***/ (function(module, exports) {
 
-module.exports = function(exec){
+module.exports = function (exec) {
   try {
     return !!exec();
-  } catch(e){
+  } catch (e) {
     return true;
   }
 };
+
 
 /***/ }),
 /* 34 */
 /***/ (function(module, exports) {
 
-module.exports = function(it){
+module.exports = function (it) {
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
+
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports) {
 
-module.exports = function(bitmap, value){
+module.exports = function (bitmap, value) {
   return {
-    enumerable  : !(bitmap & 1),
+    enumerable: !(bitmap & 1),
     configurable: !(bitmap & 2),
-    writable    : !(bitmap & 4),
-    value       : value
+    writable: !(bitmap & 4),
+    value: value
   };
 };
+
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(64)('keys')
-  , uid    = __webpack_require__(66);
-module.exports = function(key){
+var shared = __webpack_require__(65)('keys');
+var uid = __webpack_require__(67);
+module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
+
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
-var ceil  = Math.ceil
-  , floor = Math.floor;
-module.exports = function(it){
+var ceil = Math.ceil;
+var floor = Math.floor;
+module.exports = function (it) {
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
+
 
 /***/ }),
 /* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(60)
-  , defined = __webpack_require__(32);
-module.exports = function(it){
+var IObject = __webpack_require__(60);
+var defined = __webpack_require__(32);
+module.exports = function (it) {
   return IObject(defined(it));
 };
+
 
 /***/ }),
 /* 39 */
@@ -7139,12 +7314,670 @@ module.exports = function(it){
 
 // 7.1.13 ToObject(argument)
 var defined = __webpack_require__(32);
-module.exports = function(it){
+module.exports = function (it) {
   return Object(defined(it));
 };
 
+
 /***/ }),
 /* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = earcut;
+module.exports.default = earcut;
+
+function earcut(data, holeIndices, dim) {
+
+    dim = dim || 2;
+
+    var hasHoles = holeIndices && holeIndices.length,
+        outerLen = hasHoles ? holeIndices[0] * dim : data.length,
+        outerNode = linkedList(data, 0, outerLen, dim, true),
+        triangles = [];
+
+    if (!outerNode) return triangles;
+
+    var minX, minY, maxX, maxY, x, y, invSize;
+
+    if (hasHoles) outerNode = eliminateHoles(data, holeIndices, outerNode, dim);
+
+    // if the shape is not too simple, we'll use z-order curve hash later; calculate polygon bbox
+    if (data.length > 80 * dim) {
+        minX = maxX = data[0];
+        minY = maxY = data[1];
+
+        for (var i = dim; i < outerLen; i += dim) {
+            x = data[i];
+            y = data[i + 1];
+            if (x < minX) minX = x;
+            if (y < minY) minY = y;
+            if (x > maxX) maxX = x;
+            if (y > maxY) maxY = y;
+        }
+
+        // minX, minY and invSize are later used to transform coords into integers for z-order calculation
+        invSize = Math.max(maxX - minX, maxY - minY);
+        invSize = invSize !== 0 ? 1 / invSize : 0;
+    }
+
+    earcutLinked(outerNode, triangles, dim, minX, minY, invSize);
+
+    return triangles;
+}
+
+// create a circular doubly linked list from polygon points in the specified winding order
+function linkedList(data, start, end, dim, clockwise) {
+    var i, last;
+
+    if (clockwise === (signedArea(data, start, end, dim) > 0)) {
+        for (i = start; i < end; i += dim) last = insertNode(i, data[i], data[i + 1], last);
+    } else {
+        for (i = end - dim; i >= start; i -= dim) last = insertNode(i, data[i], data[i + 1], last);
+    }
+
+    if (last && equals(last, last.next)) {
+        removeNode(last);
+        last = last.next;
+    }
+
+    return last;
+}
+
+// eliminate colinear or duplicate points
+function filterPoints(start, end) {
+    if (!start) return start;
+    if (!end) end = start;
+
+    var p = start,
+        again;
+    do {
+        again = false;
+
+        if (!p.steiner && (equals(p, p.next) || area(p.prev, p, p.next) === 0)) {
+            removeNode(p);
+            p = end = p.prev;
+            if (p === p.next) break;
+            again = true;
+
+        } else {
+            p = p.next;
+        }
+    } while (again || p !== end);
+
+    return end;
+}
+
+// main ear slicing loop which triangulates a polygon (given as a linked list)
+function earcutLinked(ear, triangles, dim, minX, minY, invSize, pass) {
+    if (!ear) return;
+
+    // interlink polygon nodes in z-order
+    if (!pass && invSize) indexCurve(ear, minX, minY, invSize);
+
+    var stop = ear,
+        prev, next;
+
+    // iterate through ears, slicing them one by one
+    while (ear.prev !== ear.next) {
+        prev = ear.prev;
+        next = ear.next;
+
+        if (invSize ? isEarHashed(ear, minX, minY, invSize) : isEar(ear)) {
+            // cut off the triangle
+            triangles.push(prev.i / dim);
+            triangles.push(ear.i / dim);
+            triangles.push(next.i / dim);
+
+            removeNode(ear);
+
+            // skipping the next vertice leads to less sliver triangles
+            ear = next.next;
+            stop = next.next;
+
+            continue;
+        }
+
+        ear = next;
+
+        // if we looped through the whole remaining polygon and can't find any more ears
+        if (ear === stop) {
+            // try filtering points and slicing again
+            if (!pass) {
+                earcutLinked(filterPoints(ear), triangles, dim, minX, minY, invSize, 1);
+
+            // if this didn't work, try curing all small self-intersections locally
+            } else if (pass === 1) {
+                ear = cureLocalIntersections(ear, triangles, dim);
+                earcutLinked(ear, triangles, dim, minX, minY, invSize, 2);
+
+            // as a last resort, try splitting the remaining polygon into two
+            } else if (pass === 2) {
+                splitEarcut(ear, triangles, dim, minX, minY, invSize);
+            }
+
+            break;
+        }
+    }
+}
+
+// check whether a polygon node forms a valid ear with adjacent nodes
+function isEar(ear) {
+    var a = ear.prev,
+        b = ear,
+        c = ear.next;
+
+    if (area(a, b, c) >= 0) return false; // reflex, can't be an ear
+
+    // now make sure we don't have other points inside the potential ear
+    var p = ear.next.next;
+
+    while (p !== ear.prev) {
+        if (pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y) &&
+            area(p.prev, p, p.next) >= 0) return false;
+        p = p.next;
+    }
+
+    return true;
+}
+
+function isEarHashed(ear, minX, minY, invSize) {
+    var a = ear.prev,
+        b = ear,
+        c = ear.next;
+
+    if (area(a, b, c) >= 0) return false; // reflex, can't be an ear
+
+    // triangle bbox; min & max are calculated like this for speed
+    var minTX = a.x < b.x ? (a.x < c.x ? a.x : c.x) : (b.x < c.x ? b.x : c.x),
+        minTY = a.y < b.y ? (a.y < c.y ? a.y : c.y) : (b.y < c.y ? b.y : c.y),
+        maxTX = a.x > b.x ? (a.x > c.x ? a.x : c.x) : (b.x > c.x ? b.x : c.x),
+        maxTY = a.y > b.y ? (a.y > c.y ? a.y : c.y) : (b.y > c.y ? b.y : c.y);
+
+    // z-order range for the current triangle bbox;
+    var minZ = zOrder(minTX, minTY, minX, minY, invSize),
+        maxZ = zOrder(maxTX, maxTY, minX, minY, invSize);
+
+    var p = ear.prevZ,
+        n = ear.nextZ;
+
+    // look for points inside the triangle in both directions
+    while (p && p.z >= minZ && n && n.z <= maxZ) {
+        if (p !== ear.prev && p !== ear.next &&
+            pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y) &&
+            area(p.prev, p, p.next) >= 0) return false;
+        p = p.prevZ;
+
+        if (n !== ear.prev && n !== ear.next &&
+            pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, n.x, n.y) &&
+            area(n.prev, n, n.next) >= 0) return false;
+        n = n.nextZ;
+    }
+
+    // look for remaining points in decreasing z-order
+    while (p && p.z >= minZ) {
+        if (p !== ear.prev && p !== ear.next &&
+            pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y) &&
+            area(p.prev, p, p.next) >= 0) return false;
+        p = p.prevZ;
+    }
+
+    // look for remaining points in increasing z-order
+    while (n && n.z <= maxZ) {
+        if (n !== ear.prev && n !== ear.next &&
+            pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, n.x, n.y) &&
+            area(n.prev, n, n.next) >= 0) return false;
+        n = n.nextZ;
+    }
+
+    return true;
+}
+
+// go through all polygon nodes and cure small local self-intersections
+function cureLocalIntersections(start, triangles, dim) {
+    var p = start;
+    do {
+        var a = p.prev,
+            b = p.next.next;
+
+        if (!equals(a, b) && intersects(a, p, p.next, b) && locallyInside(a, b) && locallyInside(b, a)) {
+
+            triangles.push(a.i / dim);
+            triangles.push(p.i / dim);
+            triangles.push(b.i / dim);
+
+            // remove two nodes involved
+            removeNode(p);
+            removeNode(p.next);
+
+            p = start = b;
+        }
+        p = p.next;
+    } while (p !== start);
+
+    return p;
+}
+
+// try splitting polygon into two and triangulate them independently
+function splitEarcut(start, triangles, dim, minX, minY, invSize) {
+    // look for a valid diagonal that divides the polygon into two
+    var a = start;
+    do {
+        var b = a.next.next;
+        while (b !== a.prev) {
+            if (a.i !== b.i && isValidDiagonal(a, b)) {
+                // split the polygon in two by the diagonal
+                var c = splitPolygon(a, b);
+
+                // filter colinear points around the cuts
+                a = filterPoints(a, a.next);
+                c = filterPoints(c, c.next);
+
+                // run earcut on each half
+                earcutLinked(a, triangles, dim, minX, minY, invSize);
+                earcutLinked(c, triangles, dim, minX, minY, invSize);
+                return;
+            }
+            b = b.next;
+        }
+        a = a.next;
+    } while (a !== start);
+}
+
+// link every hole into the outer loop, producing a single-ring polygon without holes
+function eliminateHoles(data, holeIndices, outerNode, dim) {
+    var queue = [],
+        i, len, start, end, list;
+
+    for (i = 0, len = holeIndices.length; i < len; i++) {
+        start = holeIndices[i] * dim;
+        end = i < len - 1 ? holeIndices[i + 1] * dim : data.length;
+        list = linkedList(data, start, end, dim, false);
+        if (list === list.next) list.steiner = true;
+        queue.push(getLeftmost(list));
+    }
+
+    queue.sort(compareX);
+
+    // process holes from left to right
+    for (i = 0; i < queue.length; i++) {
+        eliminateHole(queue[i], outerNode);
+        outerNode = filterPoints(outerNode, outerNode.next);
+    }
+
+    return outerNode;
+}
+
+function compareX(a, b) {
+    return a.x - b.x;
+}
+
+// find a bridge between vertices that connects hole with an outer ring and and link it
+function eliminateHole(hole, outerNode) {
+    outerNode = findHoleBridge(hole, outerNode);
+    if (outerNode) {
+        var b = splitPolygon(outerNode, hole);
+        filterPoints(b, b.next);
+    }
+}
+
+// David Eberly's algorithm for finding a bridge between hole and outer polygon
+function findHoleBridge(hole, outerNode) {
+    var p = outerNode,
+        hx = hole.x,
+        hy = hole.y,
+        qx = -Infinity,
+        m;
+
+    // find a segment intersected by a ray from the hole's leftmost point to the left;
+    // segment's endpoint with lesser x will be potential connection point
+    do {
+        if (hy <= p.y && hy >= p.next.y && p.next.y !== p.y) {
+            var x = p.x + (hy - p.y) * (p.next.x - p.x) / (p.next.y - p.y);
+            if (x <= hx && x > qx) {
+                qx = x;
+                if (x === hx) {
+                    if (hy === p.y) return p;
+                    if (hy === p.next.y) return p.next;
+                }
+                m = p.x < p.next.x ? p : p.next;
+            }
+        }
+        p = p.next;
+    } while (p !== outerNode);
+
+    if (!m) return null;
+
+    if (hx === qx) return m.prev; // hole touches outer segment; pick lower endpoint
+
+    // look for points inside the triangle of hole point, segment intersection and endpoint;
+    // if there are no points found, we have a valid connection;
+    // otherwise choose the point of the minimum angle with the ray as connection point
+
+    var stop = m,
+        mx = m.x,
+        my = m.y,
+        tanMin = Infinity,
+        tan;
+
+    p = m.next;
+
+    while (p !== stop) {
+        if (hx >= p.x && p.x >= mx && hx !== p.x &&
+                pointInTriangle(hy < my ? hx : qx, hy, mx, my, hy < my ? qx : hx, hy, p.x, p.y)) {
+
+            tan = Math.abs(hy - p.y) / (hx - p.x); // tangential
+
+            if ((tan < tanMin || (tan === tanMin && p.x > m.x)) && locallyInside(p, hole)) {
+                m = p;
+                tanMin = tan;
+            }
+        }
+
+        p = p.next;
+    }
+
+    return m;
+}
+
+// interlink polygon nodes in z-order
+function indexCurve(start, minX, minY, invSize) {
+    var p = start;
+    do {
+        if (p.z === null) p.z = zOrder(p.x, p.y, minX, minY, invSize);
+        p.prevZ = p.prev;
+        p.nextZ = p.next;
+        p = p.next;
+    } while (p !== start);
+
+    p.prevZ.nextZ = null;
+    p.prevZ = null;
+
+    sortLinked(p);
+}
+
+// Simon Tatham's linked list merge sort algorithm
+// http://www.chiark.greenend.org.uk/~sgtatham/algorithms/listsort.html
+function sortLinked(list) {
+    var i, p, q, e, tail, numMerges, pSize, qSize,
+        inSize = 1;
+
+    do {
+        p = list;
+        list = null;
+        tail = null;
+        numMerges = 0;
+
+        while (p) {
+            numMerges++;
+            q = p;
+            pSize = 0;
+            for (i = 0; i < inSize; i++) {
+                pSize++;
+                q = q.nextZ;
+                if (!q) break;
+            }
+            qSize = inSize;
+
+            while (pSize > 0 || (qSize > 0 && q)) {
+
+                if (pSize !== 0 && (qSize === 0 || !q || p.z <= q.z)) {
+                    e = p;
+                    p = p.nextZ;
+                    pSize--;
+                } else {
+                    e = q;
+                    q = q.nextZ;
+                    qSize--;
+                }
+
+                if (tail) tail.nextZ = e;
+                else list = e;
+
+                e.prevZ = tail;
+                tail = e;
+            }
+
+            p = q;
+        }
+
+        tail.nextZ = null;
+        inSize *= 2;
+
+    } while (numMerges > 1);
+
+    return list;
+}
+
+// z-order of a point given coords and inverse of the longer side of data bbox
+function zOrder(x, y, minX, minY, invSize) {
+    // coords are transformed into non-negative 15-bit integer range
+    x = 32767 * (x - minX) * invSize;
+    y = 32767 * (y - minY) * invSize;
+
+    x = (x | (x << 8)) & 0x00FF00FF;
+    x = (x | (x << 4)) & 0x0F0F0F0F;
+    x = (x | (x << 2)) & 0x33333333;
+    x = (x | (x << 1)) & 0x55555555;
+
+    y = (y | (y << 8)) & 0x00FF00FF;
+    y = (y | (y << 4)) & 0x0F0F0F0F;
+    y = (y | (y << 2)) & 0x33333333;
+    y = (y | (y << 1)) & 0x55555555;
+
+    return x | (y << 1);
+}
+
+// find the leftmost node of a polygon ring
+function getLeftmost(start) {
+    var p = start,
+        leftmost = start;
+    do {
+        if (p.x < leftmost.x) leftmost = p;
+        p = p.next;
+    } while (p !== start);
+
+    return leftmost;
+}
+
+// check if a point lies within a convex triangle
+function pointInTriangle(ax, ay, bx, by, cx, cy, px, py) {
+    return (cx - px) * (ay - py) - (ax - px) * (cy - py) >= 0 &&
+           (ax - px) * (by - py) - (bx - px) * (ay - py) >= 0 &&
+           (bx - px) * (cy - py) - (cx - px) * (by - py) >= 0;
+}
+
+// check if a diagonal between two polygon nodes is valid (lies in polygon interior)
+function isValidDiagonal(a, b) {
+    return a.next.i !== b.i && a.prev.i !== b.i && !intersectsPolygon(a, b) &&
+           locallyInside(a, b) && locallyInside(b, a) && middleInside(a, b);
+}
+
+// signed area of a triangle
+function area(p, q, r) {
+    return (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
+}
+
+// check if two points are equal
+function equals(p1, p2) {
+    return p1.x === p2.x && p1.y === p2.y;
+}
+
+// check if two segments intersect
+function intersects(p1, q1, p2, q2) {
+    if ((equals(p1, q1) && equals(p2, q2)) ||
+        (equals(p1, q2) && equals(p2, q1))) return true;
+    return area(p1, q1, p2) > 0 !== area(p1, q1, q2) > 0 &&
+           area(p2, q2, p1) > 0 !== area(p2, q2, q1) > 0;
+}
+
+// check if a polygon diagonal intersects any polygon segments
+function intersectsPolygon(a, b) {
+    var p = a;
+    do {
+        if (p.i !== a.i && p.next.i !== a.i && p.i !== b.i && p.next.i !== b.i &&
+                intersects(p, p.next, a, b)) return true;
+        p = p.next;
+    } while (p !== a);
+
+    return false;
+}
+
+// check if a polygon diagonal is locally inside the polygon
+function locallyInside(a, b) {
+    return area(a.prev, a, a.next) < 0 ?
+        area(a, b, a.next) >= 0 && area(a, a.prev, b) >= 0 :
+        area(a, b, a.prev) < 0 || area(a, a.next, b) < 0;
+}
+
+// check if the middle point of a polygon diagonal is inside the polygon
+function middleInside(a, b) {
+    var p = a,
+        inside = false,
+        px = (a.x + b.x) / 2,
+        py = (a.y + b.y) / 2;
+    do {
+        if (((p.y > py) !== (p.next.y > py)) && p.next.y !== p.y &&
+                (px < (p.next.x - p.x) * (py - p.y) / (p.next.y - p.y) + p.x))
+            inside = !inside;
+        p = p.next;
+    } while (p !== a);
+
+    return inside;
+}
+
+// link two polygon vertices with a bridge; if the vertices belong to the same ring, it splits polygon into two;
+// if one belongs to the outer ring and another to a hole, it merges it into a single ring
+function splitPolygon(a, b) {
+    var a2 = new Node(a.i, a.x, a.y),
+        b2 = new Node(b.i, b.x, b.y),
+        an = a.next,
+        bp = b.prev;
+
+    a.next = b;
+    b.prev = a;
+
+    a2.next = an;
+    an.prev = a2;
+
+    b2.next = a2;
+    a2.prev = b2;
+
+    bp.next = b2;
+    b2.prev = bp;
+
+    return b2;
+}
+
+// create a node and optionally link it with previous one (in a circular doubly linked list)
+function insertNode(i, x, y, last) {
+    var p = new Node(i, x, y);
+
+    if (!last) {
+        p.prev = p;
+        p.next = p;
+
+    } else {
+        p.next = last.next;
+        p.prev = last;
+        last.next.prev = p;
+        last.next = p;
+    }
+    return p;
+}
+
+function removeNode(p) {
+    p.next.prev = p.prev;
+    p.prev.next = p.next;
+
+    if (p.prevZ) p.prevZ.nextZ = p.nextZ;
+    if (p.nextZ) p.nextZ.prevZ = p.prevZ;
+}
+
+function Node(i, x, y) {
+    // vertice index in coordinates array
+    this.i = i;
+
+    // vertex coordinates
+    this.x = x;
+    this.y = y;
+
+    // previous and next vertice nodes in a polygon ring
+    this.prev = null;
+    this.next = null;
+
+    // z-order curve value
+    this.z = null;
+
+    // previous and next nodes in z-order
+    this.prevZ = null;
+    this.nextZ = null;
+
+    // indicates whether this is a steiner point
+    this.steiner = false;
+}
+
+// return a percentage difference between the polygon area and its triangulation area;
+// used to verify correctness of triangulation
+earcut.deviation = function (data, holeIndices, dim, triangles) {
+    var hasHoles = holeIndices && holeIndices.length;
+    var outerLen = hasHoles ? holeIndices[0] * dim : data.length;
+
+    var polygonArea = Math.abs(signedArea(data, 0, outerLen, dim));
+    if (hasHoles) {
+        for (var i = 0, len = holeIndices.length; i < len; i++) {
+            var start = holeIndices[i] * dim;
+            var end = i < len - 1 ? holeIndices[i + 1] * dim : data.length;
+            polygonArea -= Math.abs(signedArea(data, start, end, dim));
+        }
+    }
+
+    var trianglesArea = 0;
+    for (i = 0; i < triangles.length; i += 3) {
+        var a = triangles[i] * dim;
+        var b = triangles[i + 1] * dim;
+        var c = triangles[i + 2] * dim;
+        trianglesArea += Math.abs(
+            (data[a] - data[c]) * (data[b + 1] - data[a + 1]) -
+            (data[a] - data[b]) * (data[c + 1] - data[a + 1]));
+    }
+
+    return polygonArea === 0 && trianglesArea === 0 ? 0 :
+        Math.abs((trianglesArea - polygonArea) / polygonArea);
+};
+
+function signedArea(data, start, end, dim) {
+    var sum = 0;
+    for (var i = start, j = end - dim; i < end; i += dim) {
+        sum += (data[j] - data[i]) * (data[i + 1] + data[j + 1]);
+        j = i;
+    }
+    return sum;
+}
+
+// turn a polygon in a multi-dimensional array form (e.g. as in GeoJSON) into a form Earcut accepts
+earcut.flatten = function (data) {
+    var dim = data[0][0].length,
+        result = {vertices: [], holes: [], dimensions: dim},
+        holeIndex = 0;
+
+    for (var i = 0; i < data.length; i++) {
+        for (var j = 0; j < data[i].length; j++) {
+            for (var d = 0; d < dim; d++) result.vertices.push(data[i][j][d]);
+        }
+        if (i > 0) {
+            holeIndex += data[i - 1].length;
+            result.holes.push(holeIndex);
+        }
+    }
+    return result;
+};
+
+
+/***/ }),
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -7290,12 +8123,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 
 
-var mapSize = function(gl, type) 
+var mapType = function(gl, type) 
 {
     if(!GL_TABLE) 
     {
@@ -7338,11 +8171,11 @@ var GL_TO_GLSL_TYPES = {
   'SAMPLER_2D':  'sampler2D'  
 };
 
-module.exports = mapSize;
+module.exports = mapType;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7690,7 +8523,7 @@ exports.default = Bounds;
 //# sourceMappingURL=Bounds.js.map
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7782,7 +8615,7 @@ TransformBase.IDENTITY = new TransformBase();
 //# sourceMappingURL=TransformBase.js.map
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7792,19 +8625,21 @@ exports.__esModule = true;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Point = __webpack_require__(45);
+var _Point = __webpack_require__(46);
 
 var _Point2 = _interopRequireDefault(_Point);
+
+var _const = __webpack_require__(0);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
- * The pixi Matrix class as an object, which makes it a lot faster,
+ * The PixiJS Matrix class as an object, which makes it a lot faster,
  * here is a representation of it :
- * | a | b | tx|
- * | c | d | ty|
+ * | a | c | tx|
+ * | b | d | ty|
  * | 0 | 0 | 1 |
  *
  * @class
@@ -7813,8 +8648,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Matrix = function () {
     /**
      * @param {number} [a=1] - x scale
-     * @param {number} [b=0] - y skew
-     * @param {number} [c=0] - x skew
+     * @param {number} [b=0] - x skew
+     * @param {number} [c=0] - y skew
      * @param {number} [d=1] - y scale
      * @param {number} [tx=0] - x translation
      * @param {number} [ty=0] - y translation
@@ -8107,25 +8942,13 @@ var Matrix = function () {
 
 
     Matrix.prototype.setTransform = function setTransform(x, y, pivotX, pivotY, scaleX, scaleY, rotation, skewX, skewY) {
-        var sr = Math.sin(rotation);
-        var cr = Math.cos(rotation);
-        var cy = Math.cos(skewY);
-        var sy = Math.sin(skewY);
-        var nsx = -Math.sin(skewX);
-        var cx = Math.cos(skewX);
+        this.a = Math.cos(rotation + skewY) * scaleX;
+        this.b = Math.sin(rotation + skewY) * scaleX;
+        this.c = -Math.sin(rotation - skewX) * scaleY;
+        this.d = Math.cos(rotation - skewX) * scaleY;
 
-        var a = cr * scaleX;
-        var b = sr * scaleX;
-        var c = -sr * scaleY;
-        var d = cr * scaleY;
-
-        this.a = cy * a + sy * c;
-        this.b = cy * b + sy * d;
-        this.c = nsx * a + cx * c;
-        this.d = nsx * b + cx * d;
-
-        this.tx = x + (pivotX * a + pivotY * c);
-        this.ty = y + (pivotX * b + pivotY * d);
+        this.tx = x - (pivotX * this.a + pivotY * this.c);
+        this.ty = y - (pivotX * this.b + pivotY * this.d);
 
         return this;
     };
@@ -8177,7 +9000,7 @@ var Matrix = function () {
 
         var delta = Math.abs(skewX + skewY);
 
-        if (delta < 0.00001) {
+        if (delta < 0.00001 || Math.abs(_const.PI_2 - delta) < 0.00001) {
             transform.rotation = skewY;
 
             if (a < 0 && d >= 0) {
@@ -8186,6 +9009,7 @@ var Matrix = function () {
 
             transform.skew.x = transform.skew.y = 0;
         } else {
+            transform.rotation = 0;
             transform.skew.x = skewX;
             transform.skew.y = skewY;
         }
@@ -8318,7 +9142,7 @@ exports.default = Matrix;
 //# sourceMappingURL=Matrix.js.map
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8414,7 +9238,7 @@ exports.default = Point;
 //# sourceMappingURL=Point.js.map
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8454,25 +9278,25 @@ var Rectangle = function () {
          * @member {number}
          * @default 0
          */
-        this.x = x;
+        this.x = Number(x);
 
         /**
          * @member {number}
          * @default 0
          */
-        this.y = y;
+        this.y = Number(y);
 
         /**
          * @member {number}
          * @default 0
          */
-        this.width = width;
+        this.width = Number(width);
 
         /**
          * @member {number}
          * @default 0
          */
-        this.height = height;
+        this.height = Number(height);
 
         /**
          * The type of the object, mainly used to avoid `instanceof` checks
@@ -8545,7 +9369,7 @@ var Rectangle = function () {
      * Pads the rectangle making it grow in all directions.
      *
      * @param {number} paddingX - The horizontal padding amount.
-     * @param {number} paddingY - The vertical padding amount.
+     * @param {number} [paddingY] - The vertical padding amount.
      */
 
 
@@ -8682,7 +9506,7 @@ exports.default = Rectangle;
 //# sourceMappingURL=Rectangle.js.map
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8702,7 +9526,7 @@ var _Texture = __webpack_require__(9);
 
 var _Texture2 = _interopRequireDefault(_Texture);
 
-var _Container2 = __webpack_require__(19);
+var _Container2 = __webpack_require__(20);
 
 var _Container3 = _interopRequireDefault(_Container2);
 
@@ -8858,6 +9682,7 @@ var Sprite = function (_Container) {
     Sprite.prototype._onTextureUpdate = function _onTextureUpdate() {
         this._textureID = -1;
         this._textureTrimmedID = -1;
+        this.cachedTint = 0xFFFFFF;
 
         // so if _width is 0 then width was not set..
         if (this._width) {
@@ -9066,7 +9891,7 @@ var Sprite = function (_Container) {
             this._bounds.minX = this._texture.orig.width * -this._anchor._x;
             this._bounds.minY = this._texture.orig.height * -this._anchor._y;
             this._bounds.maxX = this._texture.orig.width * (1 - this._anchor._x);
-            this._bounds.maxY = this._texture.orig.height * (1 - this._anchor._x);
+            this._bounds.maxY = this._texture.orig.height * (1 - this._anchor._y);
 
             if (!rect) {
                 if (!this._localBoundsRect) {
@@ -9123,6 +9948,8 @@ var Sprite = function (_Container) {
 
     Sprite.prototype.destroy = function destroy(options) {
         _Container.prototype.destroy.call(this, options);
+
+        this._texture.off('update', this._onTextureUpdate, this);
 
         this._anchor = null;
 
@@ -9309,7 +10136,7 @@ exports.default = Sprite;
 //# sourceMappingURL=Sprite.js.map
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9404,6 +10231,7 @@ var CanvasTinter = {
         canvas.width = Math.ceil(crop.width);
         canvas.height = Math.ceil(crop.height);
 
+        context.save();
         context.fillStyle = '#' + ('00000' + (color | 0).toString(16)).substr(-6);
 
         context.fillRect(0, 0, crop.width, crop.height);
@@ -9415,6 +10243,7 @@ var CanvasTinter = {
         context.globalCompositeOperation = 'destination-atop';
 
         context.drawImage(texture.baseTexture.source, crop.x, crop.y, crop.width, crop.height, 0, 0, crop.width, crop.height);
+        context.restore();
     },
 
     /**
@@ -9438,6 +10267,7 @@ var CanvasTinter = {
         canvas.width = Math.ceil(crop.width);
         canvas.height = Math.ceil(crop.height);
 
+        context.save();
         context.globalCompositeOperation = 'copy';
         context.fillStyle = '#' + ('00000' + (color | 0).toString(16)).substr(-6);
         context.fillRect(0, 0, crop.width, crop.height);
@@ -9446,6 +10276,7 @@ var CanvasTinter = {
         context.drawImage(texture.baseTexture.source, crop.x, crop.y, crop.width, crop.height, 0, 0, crop.width, crop.height);
 
         // context.globalCompositeOperation = 'copy';
+        context.restore();
     },
 
 
@@ -9470,8 +10301,10 @@ var CanvasTinter = {
         canvas.width = Math.ceil(crop.width);
         canvas.height = Math.ceil(crop.height);
 
+        context.save();
         context.globalCompositeOperation = 'copy';
         context.drawImage(texture.baseTexture.source, crop.x, crop.y, crop.width, crop.height, 0, 0, crop.width, crop.height);
+        context.restore();
 
         var rgbValues = (0, _utils.hex2rgb)(color);
         var r = rgbValues[0];
@@ -9559,7 +10392,7 @@ exports.default = CanvasTinter;
 //# sourceMappingURL=CanvasTinter.js.map
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9584,7 +10417,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
- * A RenderTexture is a special texture that allows any Pixi display object to be rendered to it.
+ * A RenderTexture is a special texture that allows any PixiJS display object to be rendered to it.
  *
  * __Hint__: All DisplayObjects (i.e. Sprites) that render to a RenderTexture should be preloaded
  * otherwise black rectangles will be drawn instead.
@@ -9680,6 +10513,9 @@ var RenderTexture = function (_Texture) {
 
 
     RenderTexture.prototype.resize = function resize(width, height, doNotResizeBaseTexture) {
+        width = Math.ceil(width);
+        height = Math.ceil(height);
+
         // TODO - could be not required..
         this.valid = width > 0 && height > 0;
 
@@ -9715,7 +10551,7 @@ exports.default = RenderTexture;
 //# sourceMappingURL=RenderTexture.js.map
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9724,7 +10560,7 @@ exports.default = RenderTexture;
 exports.__esModule = true;
 exports.Ticker = exports.shared = undefined;
 
-var _Ticker = __webpack_require__(219);
+var _Ticker = __webpack_require__(220);
 
 var _Ticker2 = _interopRequireDefault(_Ticker);
 
@@ -9800,7 +10636,7 @@ exports.Ticker = _Ticker2.default;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9839,170 +10675,6 @@ function createIndicesForQuads(size) {
 //# sourceMappingURL=createIndicesForQuads.js.map
 
 /***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Matrix = __webpack_require__(44);
-
-var _Matrix2 = _interopRequireDefault(_Matrix);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var tempMat = new _Matrix2.default();
-
-/**
- * class controls uv transform and frame clamp for texture
- *
- * @class
- * @memberof PIXI.extras
- */
-
-var TextureTransform = function () {
-    /**
-     *
-     * @param {PIXI.Texture} texture observed texture
-     * @param {number} [clampMargin] Changes frame clamping, 0.5 by default. Use -0.5 for extra border.
-     * @constructor
-     */
-    function TextureTransform(texture, clampMargin) {
-        _classCallCheck(this, TextureTransform);
-
-        this._texture = texture;
-
-        this.mapCoord = new _Matrix2.default();
-
-        this.uClampFrame = new Float32Array(4);
-
-        this.uClampOffset = new Float32Array(2);
-
-        this._lastTextureID = -1;
-
-        /**
-         * Changes frame clamping
-         * Works with TilingSprite and Mesh
-         * Change to 1.5 if you texture has repeated right and bottom lines, that leads to smoother borders
-         *
-         * @default 0
-         * @member {number}
-         */
-        this.clampOffset = 0;
-
-        /**
-         * Changes frame clamping
-         * Works with TilingSprite and Mesh
-         * Change to -0.5 to add a pixel to the edge, recommended for transparent trimmed textures in atlas
-         *
-         * @default 0.5
-         * @member {number}
-         */
-        this.clampMargin = typeof clampMargin === 'undefined' ? 0.5 : clampMargin;
-    }
-
-    /**
-     * texture property
-     * @member {PIXI.Texture}
-     */
-
-
-    /**
-     * Multiplies uvs array to transform
-     * @param {Float32Array} uvs mesh uvs
-     * @param {Float32Array} [out=uvs] output
-     * @returns {Float32Array} output
-     */
-    TextureTransform.prototype.multiplyUvs = function multiplyUvs(uvs, out) {
-        if (out === undefined) {
-            out = uvs;
-        }
-
-        var mat = this.mapCoord;
-
-        for (var i = 0; i < uvs.length; i += 2) {
-            var x = uvs[i];
-            var y = uvs[i + 1];
-
-            out[i] = x * mat.a + y * mat.c + mat.tx;
-            out[i + 1] = x * mat.b + y * mat.d + mat.ty;
-        }
-
-        return out;
-    };
-
-    /**
-     * updates matrices if texture was changed
-     * @param {boolean} forceUpdate if true, matrices will be updated any case
-     * @returns {boolean} whether or not it was updated
-     */
-
-
-    TextureTransform.prototype.update = function update(forceUpdate) {
-        var tex = this._texture;
-
-        if (!tex || !tex.valid) {
-            return false;
-        }
-
-        if (!forceUpdate && this._lastTextureID === tex._updateID) {
-            return false;
-        }
-
-        this._lastTextureID = tex._updateID;
-
-        var uvs = tex._uvs;
-
-        this.mapCoord.set(uvs.x1 - uvs.x0, uvs.y1 - uvs.y0, uvs.x3 - uvs.x0, uvs.y3 - uvs.y0, uvs.x0, uvs.y0);
-
-        var orig = tex.orig;
-        var trim = tex.trim;
-
-        if (trim) {
-            tempMat.set(orig.width / trim.width, 0, 0, orig.height / trim.height, -trim.x / trim.width, -trim.y / trim.height);
-            this.mapCoord.append(tempMat);
-        }
-
-        var texBase = tex.baseTexture;
-        var frame = this.uClampFrame;
-        var margin = this.clampMargin / texBase.resolution;
-        var offset = this.clampOffset;
-
-        frame[0] = (tex._frame.x + margin + offset) / texBase.width;
-        frame[1] = (tex._frame.y + margin + offset) / texBase.height;
-        frame[2] = (tex._frame.x + tex._frame.width - margin + offset) / texBase.width;
-        frame[3] = (tex._frame.y + tex._frame.height - margin + offset) / texBase.height;
-        this.uClampOffset[0] = offset / texBase.realWidth;
-        this.uClampOffset[1] = offset / texBase.realHeight;
-
-        return true;
-    };
-
-    _createClass(TextureTransform, [{
-        key: 'texture',
-        get: function get() {
-            return this._texture;
-        },
-        set: function set(value) // eslint-disable-line require-jsdoc
-        {
-            this._texture = value;
-            this._lastTextureID = -1;
-        }
-    }]);
-
-    return TextureTransform;
-}();
-
-exports.default = TextureTransform;
-//# sourceMappingURL=TextureTransform.js.map
-
-/***/ }),
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10015,7 +10687,7 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _CountLimiter = __webpack_require__(114);
+var _CountLimiter = __webpack_require__(118);
 
 var _CountLimiter2 = _interopRequireDefault(_CountLimiter);
 
@@ -11256,7 +11928,7 @@ var Resource = function () {
 
         // status can be 0 when using the `file://` protocol so we also check if a response is set.
         // If it has a response, we assume 200; otherwise a 0 status code with no contents is an aborted request.
-        if (status === STATUS_NONE && text.length > 0) {
+        if (status === STATUS_NONE && (text.length > 0 || xhr.responseType === Resource.XHR_RESPONSE_TYPE.BUFFER)) {
             status = STATUS_OK;
         }
         // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
@@ -11660,7 +12332,7 @@ function reqType(xhr) {
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(135), __esModule: true };
+module.exports = { "default": __webpack_require__(139), __esModule: true };
 
 /***/ }),
 /* 56 */
@@ -11668,46 +12340,49 @@ module.exports = { "default": __webpack_require__(135), __esModule: true };
 
 var toString = {}.toString;
 
-module.exports = function(it){
+module.exports = function (it) {
   return toString.call(it).slice(8, -1);
 };
+
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(139);
-module.exports = function(fn, that, length){
+var aFunction = __webpack_require__(143);
+module.exports = function (fn, that, length) {
   aFunction(fn);
-  if(that === undefined)return fn;
-  switch(length){
-    case 1: return function(a){
+  if (that === undefined) return fn;
+  switch (length) {
+    case 1: return function (a) {
       return fn.call(that, a);
     };
-    case 2: return function(a, b){
+    case 2: return function (a, b) {
       return fn.call(that, a, b);
     };
-    case 3: return function(a, b, c){
+    case 3: return function (a, b, c) {
       return fn.call(that, a, b, c);
     };
   }
-  return function(/* ...args */){
+  return function (/* ...args */) {
     return fn.apply(that, arguments);
   };
 };
+
 
 /***/ }),
 /* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(34)
-  , document = __webpack_require__(11).document
-  // in old IE typeof document.createElement is 'object'
-  , is = isObject(document) && isObject(document.createElement);
-module.exports = function(it){
+var isObject = __webpack_require__(34);
+var document = __webpack_require__(11).document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
   return is ? document.createElement(it) : {};
 };
+
 
 /***/ }),
 /* 59 */
@@ -11718,15 +12393,18 @@ module.exports = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
 ).split(',');
 
+
 /***/ }),
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = __webpack_require__(56);
-module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+// eslint-disable-next-line no-prototype-builtins
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
+
 
 /***/ }),
 /* 61 */
@@ -11734,167 +12412,163 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 
 "use strict";
 
-var LIBRARY        = __webpack_require__(151)
-  , $export        = __webpack_require__(24)
-  , redefine       = __webpack_require__(159)
-  , hide           = __webpack_require__(15)
-  , has            = __webpack_require__(25)
-  , Iterators      = __webpack_require__(16)
-  , $iterCreate    = __webpack_require__(148)
-  , setToStringTag = __webpack_require__(63)
-  , getPrototypeOf = __webpack_require__(156)
-  , ITERATOR       = __webpack_require__(7)('iterator')
-  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
-  , FF_ITERATOR    = '@@iterator'
-  , KEYS           = 'keys'
-  , VALUES         = 'values';
+var LIBRARY = __webpack_require__(62);
+var $export = __webpack_require__(25);
+var redefine = __webpack_require__(162);
+var hide = __webpack_require__(16);
+var Iterators = __webpack_require__(17);
+var $iterCreate = __webpack_require__(152);
+var setToStringTag = __webpack_require__(64);
+var getPrototypeOf = __webpack_require__(159);
+var ITERATOR = __webpack_require__(8)('iterator');
+var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
+var FF_ITERATOR = '@@iterator';
+var KEYS = 'keys';
+var VALUES = 'values';
 
-var returnThis = function(){ return this; };
+var returnThis = function () { return this; };
 
-module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
+module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
   $iterCreate(Constructor, NAME, next);
-  var getMethod = function(kind){
-    if(!BUGGY && kind in proto)return proto[kind];
-    switch(kind){
-      case KEYS: return function keys(){ return new Constructor(this, kind); };
-      case VALUES: return function values(){ return new Constructor(this, kind); };
-    } return function entries(){ return new Constructor(this, kind); };
+  var getMethod = function (kind) {
+    if (!BUGGY && kind in proto) return proto[kind];
+    switch (kind) {
+      case KEYS: return function keys() { return new Constructor(this, kind); };
+      case VALUES: return function values() { return new Constructor(this, kind); };
+    } return function entries() { return new Constructor(this, kind); };
   };
-  var TAG        = NAME + ' Iterator'
-    , DEF_VALUES = DEFAULT == VALUES
-    , VALUES_BUG = false
-    , proto      = Base.prototype
-    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
-    , $default   = $native || getMethod(DEFAULT)
-    , $entries   = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined
-    , $anyNative = NAME == 'Array' ? proto.entries || $native : $native
-    , methods, key, IteratorPrototype;
+  var TAG = NAME + ' Iterator';
+  var DEF_VALUES = DEFAULT == VALUES;
+  var VALUES_BUG = false;
+  var proto = Base.prototype;
+  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
+  var $default = $native || getMethod(DEFAULT);
+  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
+  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
+  var methods, key, IteratorPrototype;
   // Fix native
-  if($anyNative){
-    IteratorPrototype = getPrototypeOf($anyNative.call(new Base));
-    if(IteratorPrototype !== Object.prototype){
+  if ($anyNative) {
+    IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
+    if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
       // Set @@toStringTag to native iterators
       setToStringTag(IteratorPrototype, TAG, true);
       // fix for some old engines
-      if(!LIBRARY && !has(IteratorPrototype, ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
+      if (!LIBRARY && typeof IteratorPrototype[ITERATOR] != 'function') hide(IteratorPrototype, ITERATOR, returnThis);
     }
   }
   // fix Array#{values, @@iterator}.name in V8 / FF
-  if(DEF_VALUES && $native && $native.name !== VALUES){
+  if (DEF_VALUES && $native && $native.name !== VALUES) {
     VALUES_BUG = true;
-    $default = function values(){ return $native.call(this); };
+    $default = function values() { return $native.call(this); };
   }
   // Define iterator
-  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
+  if ((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
     hide(proto, ITERATOR, $default);
   }
   // Plug for library
   Iterators[NAME] = $default;
-  Iterators[TAG]  = returnThis;
-  if(DEFAULT){
+  Iterators[TAG] = returnThis;
+  if (DEFAULT) {
     methods = {
-      values:  DEF_VALUES ? $default : getMethod(VALUES),
-      keys:    IS_SET     ? $default : getMethod(KEYS),
+      values: DEF_VALUES ? $default : getMethod(VALUES),
+      keys: IS_SET ? $default : getMethod(KEYS),
       entries: $entries
     };
-    if(FORCED)for(key in methods){
-      if(!(key in proto))redefine(proto, key, methods[key]);
+    if (FORCED) for (key in methods) {
+      if (!(key in proto)) redefine(proto, key, methods[key]);
     } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
   }
   return methods;
 };
 
+
 /***/ }),
 /* 62 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(157)
-  , enumBugKeys = __webpack_require__(59);
+module.exports = true;
 
-module.exports = Object.keys || function keys(O){
-  return $keys(O, enumBugKeys);
-};
 
 /***/ }),
 /* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(17).f
-  , has = __webpack_require__(25)
-  , TAG = __webpack_require__(7)('toStringTag');
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys = __webpack_require__(160);
+var enumBugKeys = __webpack_require__(59);
 
-module.exports = function(it, tag, stat){
-  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
+module.exports = Object.keys || function keys(O) {
+  return $keys(O, enumBugKeys);
 };
+
 
 /***/ }),
 /* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(11)
-  , SHARED = '__core-js_shared__'
-  , store  = global[SHARED] || (global[SHARED] = {});
-module.exports = function(key){
-  return store[key] || (store[key] = {});
+var def = __webpack_require__(18).f;
+var has = __webpack_require__(26);
+var TAG = __webpack_require__(8)('toStringTag');
+
+module.exports = function (it, tag, stat) {
+  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
 };
+
 
 /***/ }),
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// 7.1.15 ToLength
-var toInteger = __webpack_require__(37)
-  , min       = Math.min;
-module.exports = function(it){
-  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-};
+var core = __webpack_require__(7);
+var global = __webpack_require__(11);
+var SHARED = '__core-js_shared__';
+var store = global[SHARED] || (global[SHARED] = {});
+
+(module.exports = function (key, value) {
+  return store[key] || (store[key] = value !== undefined ? value : {});
+})('versions', []).push({
+  version: core.version,
+  mode: __webpack_require__(62) ? 'pure' : 'global',
+  copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
+});
+
 
 /***/ }),
 /* 66 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var id = 0
-  , px = Math.random();
-module.exports = function(key){
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+// 7.1.15 ToLength
+var toInteger = __webpack_require__(37);
+var min = Math.min;
+module.exports = function (it) {
+  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
+
 
 /***/ }),
 /* 67 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var classof   = __webpack_require__(142)
-  , ITERATOR  = __webpack_require__(7)('iterator')
-  , Iterators = __webpack_require__(16);
-module.exports = __webpack_require__(8).getIteratorMethod = function(it){
-  if(it != undefined)return it[ITERATOR]
-    || it['@@iterator']
-    || Iterators[classof(it)];
+var id = 0;
+var px = Math.random();
+module.exports = function (key) {
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
+
 
 /***/ }),
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+var classof = __webpack_require__(146);
+var ITERATOR = __webpack_require__(8)('iterator');
+var Iterators = __webpack_require__(17);
+module.exports = __webpack_require__(7).getIteratorMethod = function (it) {
+  if (it != undefined) return it[ITERATOR]
+    || it['@@iterator']
+    || Iterators[classof(it)];
+};
 
-var $at  = __webpack_require__(160)(true);
-
-// 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(61)(String, 'String', function(iterated){
-  this._t = String(iterated); // target
-  this._i = 0;                // next index
-// 21.1.5.2.1 %StringIteratorPrototype%.next()
-}, function(){
-  var O     = this._t
-    , index = this._i
-    , point;
-  if(index >= O.length)return {value: undefined, done: true};
-  point = $at(O, index);
-  this._i += point.length;
-  return {value: point, done: false};
-});
 
 /***/ }),
 /* 69 */
@@ -11902,649 +12576,22 @@ __webpack_require__(61)(String, 'String', function(iterated){
 
 "use strict";
 
-
-module.exports = earcut;
-
-function earcut(data, holeIndices, dim) {
-
-    dim = dim || 2;
-
-    var hasHoles = holeIndices && holeIndices.length,
-        outerLen = hasHoles ? holeIndices[0] * dim : data.length,
-        outerNode = linkedList(data, 0, outerLen, dim, true),
-        triangles = [];
-
-    if (!outerNode) return triangles;
-
-    var minX, minY, maxX, maxY, x, y, size;
-
-    if (hasHoles) outerNode = eliminateHoles(data, holeIndices, outerNode, dim);
-
-    // if the shape is not too simple, we'll use z-order curve hash later; calculate polygon bbox
-    if (data.length > 80 * dim) {
-        minX = maxX = data[0];
-        minY = maxY = data[1];
-
-        for (var i = dim; i < outerLen; i += dim) {
-            x = data[i];
-            y = data[i + 1];
-            if (x < minX) minX = x;
-            if (y < minY) minY = y;
-            if (x > maxX) maxX = x;
-            if (y > maxY) maxY = y;
-        }
-
-        // minX, minY and size are later used to transform coords into integers for z-order calculation
-        size = Math.max(maxX - minX, maxY - minY);
-    }
-
-    earcutLinked(outerNode, triangles, dim, minX, minY, size);
-
-    return triangles;
-}
-
-// create a circular doubly linked list from polygon points in the specified winding order
-function linkedList(data, start, end, dim, clockwise) {
-    var i, last;
-
-    if (clockwise === (signedArea(data, start, end, dim) > 0)) {
-        for (i = start; i < end; i += dim) last = insertNode(i, data[i], data[i + 1], last);
-    } else {
-        for (i = end - dim; i >= start; i -= dim) last = insertNode(i, data[i], data[i + 1], last);
-    }
-
-    if (last && equals(last, last.next)) {
-        removeNode(last);
-        last = last.next;
-    }
-
-    return last;
-}
-
-// eliminate colinear or duplicate points
-function filterPoints(start, end) {
-    if (!start) return start;
-    if (!end) end = start;
-
-    var p = start,
-        again;
-    do {
-        again = false;
-
-        if (!p.steiner && (equals(p, p.next) || area(p.prev, p, p.next) === 0)) {
-            removeNode(p);
-            p = end = p.prev;
-            if (p === p.next) return null;
-            again = true;
-
-        } else {
-            p = p.next;
-        }
-    } while (again || p !== end);
-
-    return end;
-}
-
-// main ear slicing loop which triangulates a polygon (given as a linked list)
-function earcutLinked(ear, triangles, dim, minX, minY, size, pass) {
-    if (!ear) return;
-
-    // interlink polygon nodes in z-order
-    if (!pass && size) indexCurve(ear, minX, minY, size);
-
-    var stop = ear,
-        prev, next;
-
-    // iterate through ears, slicing them one by one
-    while (ear.prev !== ear.next) {
-        prev = ear.prev;
-        next = ear.next;
-
-        if (size ? isEarHashed(ear, minX, minY, size) : isEar(ear)) {
-            // cut off the triangle
-            triangles.push(prev.i / dim);
-            triangles.push(ear.i / dim);
-            triangles.push(next.i / dim);
-
-            removeNode(ear);
-
-            // skipping the next vertice leads to less sliver triangles
-            ear = next.next;
-            stop = next.next;
-
-            continue;
-        }
-
-        ear = next;
-
-        // if we looped through the whole remaining polygon and can't find any more ears
-        if (ear === stop) {
-            // try filtering points and slicing again
-            if (!pass) {
-                earcutLinked(filterPoints(ear), triangles, dim, minX, minY, size, 1);
-
-            // if this didn't work, try curing all small self-intersections locally
-            } else if (pass === 1) {
-                ear = cureLocalIntersections(ear, triangles, dim);
-                earcutLinked(ear, triangles, dim, minX, minY, size, 2);
-
-            // as a last resort, try splitting the remaining polygon into two
-            } else if (pass === 2) {
-                splitEarcut(ear, triangles, dim, minX, minY, size);
-            }
-
-            break;
-        }
-    }
-}
-
-// check whether a polygon node forms a valid ear with adjacent nodes
-function isEar(ear) {
-    var a = ear.prev,
-        b = ear,
-        c = ear.next;
-
-    if (area(a, b, c) >= 0) return false; // reflex, can't be an ear
-
-    // now make sure we don't have other points inside the potential ear
-    var p = ear.next.next;
-
-    while (p !== ear.prev) {
-        if (pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y) &&
-            area(p.prev, p, p.next) >= 0) return false;
-        p = p.next;
-    }
-
-    return true;
-}
-
-function isEarHashed(ear, minX, minY, size) {
-    var a = ear.prev,
-        b = ear,
-        c = ear.next;
-
-    if (area(a, b, c) >= 0) return false; // reflex, can't be an ear
-
-    // triangle bbox; min & max are calculated like this for speed
-    var minTX = a.x < b.x ? (a.x < c.x ? a.x : c.x) : (b.x < c.x ? b.x : c.x),
-        minTY = a.y < b.y ? (a.y < c.y ? a.y : c.y) : (b.y < c.y ? b.y : c.y),
-        maxTX = a.x > b.x ? (a.x > c.x ? a.x : c.x) : (b.x > c.x ? b.x : c.x),
-        maxTY = a.y > b.y ? (a.y > c.y ? a.y : c.y) : (b.y > c.y ? b.y : c.y);
-
-    // z-order range for the current triangle bbox;
-    var minZ = zOrder(minTX, minTY, minX, minY, size),
-        maxZ = zOrder(maxTX, maxTY, minX, minY, size);
-
-    // first look for points inside the triangle in increasing z-order
-    var p = ear.nextZ;
-
-    while (p && p.z <= maxZ) {
-        if (p !== ear.prev && p !== ear.next &&
-            pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y) &&
-            area(p.prev, p, p.next) >= 0) return false;
-        p = p.nextZ;
-    }
-
-    // then look for points in decreasing z-order
-    p = ear.prevZ;
-
-    while (p && p.z >= minZ) {
-        if (p !== ear.prev && p !== ear.next &&
-            pointInTriangle(a.x, a.y, b.x, b.y, c.x, c.y, p.x, p.y) &&
-            area(p.prev, p, p.next) >= 0) return false;
-        p = p.prevZ;
-    }
-
-    return true;
-}
-
-// go through all polygon nodes and cure small local self-intersections
-function cureLocalIntersections(start, triangles, dim) {
-    var p = start;
-    do {
-        var a = p.prev,
-            b = p.next.next;
-
-        if (!equals(a, b) && intersects(a, p, p.next, b) && locallyInside(a, b) && locallyInside(b, a)) {
-
-            triangles.push(a.i / dim);
-            triangles.push(p.i / dim);
-            triangles.push(b.i / dim);
-
-            // remove two nodes involved
-            removeNode(p);
-            removeNode(p.next);
-
-            p = start = b;
-        }
-        p = p.next;
-    } while (p !== start);
-
-    return p;
-}
-
-// try splitting polygon into two and triangulate them independently
-function splitEarcut(start, triangles, dim, minX, minY, size) {
-    // look for a valid diagonal that divides the polygon into two
-    var a = start;
-    do {
-        var b = a.next.next;
-        while (b !== a.prev) {
-            if (a.i !== b.i && isValidDiagonal(a, b)) {
-                // split the polygon in two by the diagonal
-                var c = splitPolygon(a, b);
-
-                // filter colinear points around the cuts
-                a = filterPoints(a, a.next);
-                c = filterPoints(c, c.next);
-
-                // run earcut on each half
-                earcutLinked(a, triangles, dim, minX, minY, size);
-                earcutLinked(c, triangles, dim, minX, minY, size);
-                return;
-            }
-            b = b.next;
-        }
-        a = a.next;
-    } while (a !== start);
-}
-
-// link every hole into the outer loop, producing a single-ring polygon without holes
-function eliminateHoles(data, holeIndices, outerNode, dim) {
-    var queue = [],
-        i, len, start, end, list;
-
-    for (i = 0, len = holeIndices.length; i < len; i++) {
-        start = holeIndices[i] * dim;
-        end = i < len - 1 ? holeIndices[i + 1] * dim : data.length;
-        list = linkedList(data, start, end, dim, false);
-        if (list === list.next) list.steiner = true;
-        queue.push(getLeftmost(list));
-    }
-
-    queue.sort(compareX);
-
-    // process holes from left to right
-    for (i = 0; i < queue.length; i++) {
-        eliminateHole(queue[i], outerNode);
-        outerNode = filterPoints(outerNode, outerNode.next);
-    }
-
-    return outerNode;
-}
-
-function compareX(a, b) {
-    return a.x - b.x;
-}
-
-// find a bridge between vertices that connects hole with an outer ring and and link it
-function eliminateHole(hole, outerNode) {
-    outerNode = findHoleBridge(hole, outerNode);
-    if (outerNode) {
-        var b = splitPolygon(outerNode, hole);
-        filterPoints(b, b.next);
-    }
-}
-
-// David Eberly's algorithm for finding a bridge between hole and outer polygon
-function findHoleBridge(hole, outerNode) {
-    var p = outerNode,
-        hx = hole.x,
-        hy = hole.y,
-        qx = -Infinity,
-        m;
-
-    // find a segment intersected by a ray from the hole's leftmost point to the left;
-    // segment's endpoint with lesser x will be potential connection point
-    do {
-        if (hy <= p.y && hy >= p.next.y) {
-            var x = p.x + (hy - p.y) * (p.next.x - p.x) / (p.next.y - p.y);
-            if (x <= hx && x > qx) {
-                qx = x;
-                if (x === hx) {
-                    if (hy === p.y) return p;
-                    if (hy === p.next.y) return p.next;
-                }
-                m = p.x < p.next.x ? p : p.next;
-            }
-        }
-        p = p.next;
-    } while (p !== outerNode);
-
-    if (!m) return null;
-
-    if (hx === qx) return m.prev; // hole touches outer segment; pick lower endpoint
-
-    // look for points inside the triangle of hole point, segment intersection and endpoint;
-    // if there are no points found, we have a valid connection;
-    // otherwise choose the point of the minimum angle with the ray as connection point
-
-    var stop = m,
-        mx = m.x,
-        my = m.y,
-        tanMin = Infinity,
-        tan;
-
-    p = m.next;
-
-    while (p !== stop) {
-        if (hx >= p.x && p.x >= mx &&
-                pointInTriangle(hy < my ? hx : qx, hy, mx, my, hy < my ? qx : hx, hy, p.x, p.y)) {
-
-            tan = Math.abs(hy - p.y) / (hx - p.x); // tangential
-
-            if ((tan < tanMin || (tan === tanMin && p.x > m.x)) && locallyInside(p, hole)) {
-                m = p;
-                tanMin = tan;
-            }
-        }
-
-        p = p.next;
-    }
-
-    return m;
-}
-
-// interlink polygon nodes in z-order
-function indexCurve(start, minX, minY, size) {
-    var p = start;
-    do {
-        if (p.z === null) p.z = zOrder(p.x, p.y, minX, minY, size);
-        p.prevZ = p.prev;
-        p.nextZ = p.next;
-        p = p.next;
-    } while (p !== start);
-
-    p.prevZ.nextZ = null;
-    p.prevZ = null;
-
-    sortLinked(p);
-}
-
-// Simon Tatham's linked list merge sort algorithm
-// http://www.chiark.greenend.org.uk/~sgtatham/algorithms/listsort.html
-function sortLinked(list) {
-    var i, p, q, e, tail, numMerges, pSize, qSize,
-        inSize = 1;
-
-    do {
-        p = list;
-        list = null;
-        tail = null;
-        numMerges = 0;
-
-        while (p) {
-            numMerges++;
-            q = p;
-            pSize = 0;
-            for (i = 0; i < inSize; i++) {
-                pSize++;
-                q = q.nextZ;
-                if (!q) break;
-            }
-
-            qSize = inSize;
-
-            while (pSize > 0 || (qSize > 0 && q)) {
-
-                if (pSize === 0) {
-                    e = q;
-                    q = q.nextZ;
-                    qSize--;
-                } else if (qSize === 0 || !q) {
-                    e = p;
-                    p = p.nextZ;
-                    pSize--;
-                } else if (p.z <= q.z) {
-                    e = p;
-                    p = p.nextZ;
-                    pSize--;
-                } else {
-                    e = q;
-                    q = q.nextZ;
-                    qSize--;
-                }
-
-                if (tail) tail.nextZ = e;
-                else list = e;
-
-                e.prevZ = tail;
-                tail = e;
-            }
-
-            p = q;
-        }
-
-        tail.nextZ = null;
-        inSize *= 2;
-
-    } while (numMerges > 1);
-
-    return list;
-}
-
-// z-order of a point given coords and size of the data bounding box
-function zOrder(x, y, minX, minY, size) {
-    // coords are transformed into non-negative 15-bit integer range
-    x = 32767 * (x - minX) / size;
-    y = 32767 * (y - minY) / size;
-
-    x = (x | (x << 8)) & 0x00FF00FF;
-    x = (x | (x << 4)) & 0x0F0F0F0F;
-    x = (x | (x << 2)) & 0x33333333;
-    x = (x | (x << 1)) & 0x55555555;
-
-    y = (y | (y << 8)) & 0x00FF00FF;
-    y = (y | (y << 4)) & 0x0F0F0F0F;
-    y = (y | (y << 2)) & 0x33333333;
-    y = (y | (y << 1)) & 0x55555555;
-
-    return x | (y << 1);
-}
-
-// find the leftmost node of a polygon ring
-function getLeftmost(start) {
-    var p = start,
-        leftmost = start;
-    do {
-        if (p.x < leftmost.x) leftmost = p;
-        p = p.next;
-    } while (p !== start);
-
-    return leftmost;
-}
-
-// check if a point lies within a convex triangle
-function pointInTriangle(ax, ay, bx, by, cx, cy, px, py) {
-    return (cx - px) * (ay - py) - (ax - px) * (cy - py) >= 0 &&
-           (ax - px) * (by - py) - (bx - px) * (ay - py) >= 0 &&
-           (bx - px) * (cy - py) - (cx - px) * (by - py) >= 0;
-}
-
-// check if a diagonal between two polygon nodes is valid (lies in polygon interior)
-function isValidDiagonal(a, b) {
-    return a.next.i !== b.i && a.prev.i !== b.i && !intersectsPolygon(a, b) &&
-           locallyInside(a, b) && locallyInside(b, a) && middleInside(a, b);
-}
-
-// signed area of a triangle
-function area(p, q, r) {
-    return (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
-}
-
-// check if two points are equal
-function equals(p1, p2) {
-    return p1.x === p2.x && p1.y === p2.y;
-}
-
-// check if two segments intersect
-function intersects(p1, q1, p2, q2) {
-    if ((equals(p1, q1) && equals(p2, q2)) ||
-        (equals(p1, q2) && equals(p2, q1))) return true;
-    return area(p1, q1, p2) > 0 !== area(p1, q1, q2) > 0 &&
-           area(p2, q2, p1) > 0 !== area(p2, q2, q1) > 0;
-}
-
-// check if a polygon diagonal intersects any polygon segments
-function intersectsPolygon(a, b) {
-    var p = a;
-    do {
-        if (p.i !== a.i && p.next.i !== a.i && p.i !== b.i && p.next.i !== b.i &&
-                intersects(p, p.next, a, b)) return true;
-        p = p.next;
-    } while (p !== a);
-
-    return false;
-}
-
-// check if a polygon diagonal is locally inside the polygon
-function locallyInside(a, b) {
-    return area(a.prev, a, a.next) < 0 ?
-        area(a, b, a.next) >= 0 && area(a, a.prev, b) >= 0 :
-        area(a, b, a.prev) < 0 || area(a, a.next, b) < 0;
-}
-
-// check if the middle point of a polygon diagonal is inside the polygon
-function middleInside(a, b) {
-    var p = a,
-        inside = false,
-        px = (a.x + b.x) / 2,
-        py = (a.y + b.y) / 2;
-    do {
-        if (((p.y > py) !== (p.next.y > py)) && (px < (p.next.x - p.x) * (py - p.y) / (p.next.y - p.y) + p.x))
-            inside = !inside;
-        p = p.next;
-    } while (p !== a);
-
-    return inside;
-}
-
-// link two polygon vertices with a bridge; if the vertices belong to the same ring, it splits polygon into two;
-// if one belongs to the outer ring and another to a hole, it merges it into a single ring
-function splitPolygon(a, b) {
-    var a2 = new Node(a.i, a.x, a.y),
-        b2 = new Node(b.i, b.x, b.y),
-        an = a.next,
-        bp = b.prev;
-
-    a.next = b;
-    b.prev = a;
-
-    a2.next = an;
-    an.prev = a2;
-
-    b2.next = a2;
-    a2.prev = b2;
-
-    bp.next = b2;
-    b2.prev = bp;
-
-    return b2;
-}
-
-// create a node and optionally link it with previous one (in a circular doubly linked list)
-function insertNode(i, x, y, last) {
-    var p = new Node(i, x, y);
-
-    if (!last) {
-        p.prev = p;
-        p.next = p;
-
-    } else {
-        p.next = last.next;
-        p.prev = last;
-        last.next.prev = p;
-        last.next = p;
-    }
-    return p;
-}
-
-function removeNode(p) {
-    p.next.prev = p.prev;
-    p.prev.next = p.next;
-
-    if (p.prevZ) p.prevZ.nextZ = p.nextZ;
-    if (p.nextZ) p.nextZ.prevZ = p.prevZ;
-}
-
-function Node(i, x, y) {
-    // vertice index in coordinates array
-    this.i = i;
-
-    // vertex coordinates
-    this.x = x;
-    this.y = y;
-
-    // previous and next vertice nodes in a polygon ring
-    this.prev = null;
-    this.next = null;
-
-    // z-order curve value
-    this.z = null;
-
-    // previous and next nodes in z-order
-    this.prevZ = null;
-    this.nextZ = null;
-
-    // indicates whether this is a steiner point
-    this.steiner = false;
-}
-
-// return a percentage difference between the polygon area and its triangulation area;
-// used to verify correctness of triangulation
-earcut.deviation = function (data, holeIndices, dim, triangles) {
-    var hasHoles = holeIndices && holeIndices.length;
-    var outerLen = hasHoles ? holeIndices[0] * dim : data.length;
-
-    var polygonArea = Math.abs(signedArea(data, 0, outerLen, dim));
-    if (hasHoles) {
-        for (var i = 0, len = holeIndices.length; i < len; i++) {
-            var start = holeIndices[i] * dim;
-            var end = i < len - 1 ? holeIndices[i + 1] * dim : data.length;
-            polygonArea -= Math.abs(signedArea(data, start, end, dim));
-        }
-    }
-
-    var trianglesArea = 0;
-    for (i = 0; i < triangles.length; i += 3) {
-        var a = triangles[i] * dim;
-        var b = triangles[i + 1] * dim;
-        var c = triangles[i + 2] * dim;
-        trianglesArea += Math.abs(
-            (data[a] - data[c]) * (data[b + 1] - data[a + 1]) -
-            (data[a] - data[b]) * (data[c + 1] - data[a + 1]));
-    }
-
-    return polygonArea === 0 && trianglesArea === 0 ? 0 :
-        Math.abs((trianglesArea - polygonArea) / polygonArea);
-};
-
-function signedArea(data, start, end, dim) {
-    var sum = 0;
-    for (var i = start, j = end - dim; i < end; i += dim) {
-        sum += (data[j] - data[i]) * (data[i + 1] + data[j + 1]);
-        j = i;
-    }
-    return sum;
-}
-
-// turn a polygon in a multi-dimensional array form (e.g. as in GeoJSON) into a form Earcut accepts
-earcut.flatten = function (data) {
-    var dim = data[0][0].length,
-        result = {vertices: [], holes: [], dimensions: dim},
-        holeIndex = 0;
-
-    for (var i = 0; i < data.length; i++) {
-        for (var j = 0; j < data[i].length; j++) {
-            for (var d = 0; d < dim; d++) result.vertices.push(data[i][j][d]);
-        }
-        if (i > 0) {
-            holeIndex += data[i - 1].length;
-            result.holes.push(holeIndex);
-        }
-    }
-    return result;
-};
+var $at = __webpack_require__(163)(true);
+
+// 21.1.3.27 String.prototype[@@iterator]()
+__webpack_require__(61)(String, 'String', function (iterated) {
+  this._t = String(iterated); // target
+  this._i = 0;                // next index
+// 21.1.5.2.1 %StringIteratorPrototype%.next()
+}, function () {
+  var O = this._t;
+  var index = this._i;
+  var point;
+  if (index >= O.length) return { value: undefined, done: true };
+  point = $at(O, index);
+  this._i += point.length;
+  return { value: point, done: false };
+});
 
 
 /***/ }),
@@ -12566,15 +12613,18 @@ class Physics {
     this.powerDirection = ''
     this.objectDirection = ''
   }
+
   calcEnergy () {
     if (this.power > 0) {
-      if (this.objectDirection === '') this.objectDirection === this.powerDirection
+      if (this.objectDirection === '') this.objectDirection === this.powerDirection 
+ 
       if (this.powerDirection === this.objectDirection) {
         this.energy += this.power * this.t
-      } else {
+      } else if(this.powerDirection !== '') {
         this.energy -= this.power * this.t
       }
     }
+ 
     if (this.energy < 0) {
       this.energy = Math.abs(this.energy)
       this.objectDirection = (this.objectDirection === 'up' ? 'down' : 'up')
@@ -12584,8 +12634,9 @@ class Physics {
     let resistance = 0.5 * this.airDensity * this.energyToVelocity(this.energy, this.mass) * this.dragCo
     if (this.friction) resistance += this.mass * 9.81 * this.frictionCo
     this.energy -= resistance * this.t
-    this.energy = parseInt(this.energy * 1000) / 1000
+    this.energy = ~~(this.energy * 1000) / 1000
   }
+
   energyToVelocity (energy, mass) {
     return Math.sqrt(2 * (Math.abs(energy) / mass))
   }
@@ -13377,7 +13428,7 @@ module.exports = defaultValue;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var mapType = __webpack_require__(41);
+var mapType = __webpack_require__(42);
 var mapSize = __webpack_require__(80);
 
 /**
@@ -13423,7 +13474,7 @@ module.exports = extractAttributes;
 /* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapType = __webpack_require__(41);
+var mapType = __webpack_require__(42);
 var defaultValue = __webpack_require__(76);
 
 /**
@@ -13508,33 +13559,68 @@ var generateUniformAccessObject = function(gl, uniformData)
 
 var generateGetter = function(name)
 {
-	var template = getterTemplate.replace('%%', name);
-	return new Function(template); // jshint ignore:line
+    return function() {
+        return this.data[name].value;
+    };
 };
 
-var generateSetter = function(name, uniform)
+var GLSL_SINGLE_SETTERS = {
+    float: function setSingleFloat(gl, location, value) { gl.uniform1f(location, value); },
+    vec2: function setSingleVec2(gl, location, value) { gl.uniform2f(location, value[0], value[1]); },
+    vec3: function setSingleVec3(gl, location, value) { gl.uniform3f(location, value[0], value[1], value[2]); },
+    vec4: function setSingleVec4(gl, location, value) { gl.uniform4f(location, value[0], value[1], value[2], value[3]); },
+
+    int: function setSingleInt(gl, location, value) { gl.uniform1i(location, value); },
+    ivec2: function setSingleIvec2(gl, location, value) { gl.uniform2i(location, value[0], value[1]); },
+    ivec3: function setSingleIvec3(gl, location, value) { gl.uniform3i(location, value[0], value[1], value[2]); },
+    ivec4: function setSingleIvec4(gl, location, value) { gl.uniform4i(location, value[0], value[1], value[2], value[3]); },
+
+    bool: function setSingleBool(gl, location, value) { gl.uniform1i(location, value); },
+    bvec2: function setSingleBvec2(gl, location, value) { gl.uniform2i(location, value[0], value[1]); },
+    bvec3: function setSingleBvec3(gl, location, value) { gl.uniform3i(location, value[0], value[1], value[2]); },
+    bvec4: function setSingleBvec4(gl, location, value) { gl.uniform4i(location, value[0], value[1], value[2], value[3]); },
+
+    mat2: function setSingleMat2(gl, location, value) { gl.uniformMatrix2fv(location, false, value); },
+    mat3: function setSingleMat3(gl, location, value) { gl.uniformMatrix3fv(location, false, value); },
+    mat4: function setSingleMat4(gl, location, value) { gl.uniformMatrix4fv(location, false, value); },
+
+    sampler2D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
+};
+
+var GLSL_ARRAY_SETTERS = {
+    float: function setFloatArray(gl, location, value) { gl.uniform1fv(location, value); },
+    vec2: function setVec2Array(gl, location, value) { gl.uniform2fv(location, value); },
+    vec3: function setVec3Array(gl, location, value) { gl.uniform3fv(location, value); },
+    vec4: function setVec4Array(gl, location, value) { gl.uniform4fv(location, value); },
+    int: function setIntArray(gl, location, value) { gl.uniform1iv(location, value); },
+    ivec2: function setIvec2Array(gl, location, value) { gl.uniform2iv(location, value); },
+    ivec3: function setIvec3Array(gl, location, value) { gl.uniform3iv(location, value); },
+    ivec4: function setIvec4Array(gl, location, value) { gl.uniform4iv(location, value); },
+    bool: function setBoolArray(gl, location, value) { gl.uniform1iv(location, value); },
+    bvec2: function setBvec2Array(gl, location, value) { gl.uniform2iv(location, value); },
+    bvec3: function setBvec3Array(gl, location, value) { gl.uniform3iv(location, value); },
+    bvec4: function setBvec4Array(gl, location, value) { gl.uniform4iv(location, value); },
+    sampler2D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
+};
+
+function generateSetter(name, uniform)
 {
-    var template = setterTemplate.replace(/%%/g, name);
-    var setTemplate;
+    return function(value) {
+        this.data[name].value = value;
+        var location = this.data[name].location;
+        if (uniform.size === 1)
+        {
+            GLSL_SINGLE_SETTERS[uniform.type](this.gl, location, value);
+        }
+        else
+        {
+            // glslSetArray(gl, location, type, value) {
+            GLSL_ARRAY_SETTERS[uniform.type](this.gl, location, value);
+        }
+    };
+}
 
-    if(uniform.size === 1)
-    {
-        setTemplate = GLSL_TO_SINGLE_SETTERS[uniform.type];
-    }
-    else
-    {
-        setTemplate = GLSL_TO_ARRAY_SETTERS[uniform.type];
-    }
-
-    if(setTemplate)
-    {
-        template += "\nthis.gl." + setTemplate + ";";
-    }
-
-  	return new Function('value', template); // jshint ignore:line
-};
-
-var getUniformGroup = function(nameTokens, uniform)
+function getUniformGroup(nameTokens, uniform)
 {
     var cur = uniform;
 
@@ -13546,63 +13632,8 @@ var getUniformGroup = function(nameTokens, uniform)
     }
 
     return cur;
-};
+}
 
-var getterTemplate = [
-    'return this.data.%%.value;',
-].join('\n');
-
-var setterTemplate = [
-    'this.data.%%.value = value;',
-    'var location = this.data.%%.location;'
-].join('\n');
-
-
-var GLSL_TO_SINGLE_SETTERS = {
-
-    'float':    'uniform1f(location, value)',
-
-    'vec2':     'uniform2f(location, value[0], value[1])',
-    'vec3':     'uniform3f(location, value[0], value[1], value[2])',
-    'vec4':     'uniform4f(location, value[0], value[1], value[2], value[3])',
-
-    'int':      'uniform1i(location, value)',
-    'ivec2':    'uniform2i(location, value[0], value[1])',
-    'ivec3':    'uniform3i(location, value[0], value[1], value[2])',
-    'ivec4':    'uniform4i(location, value[0], value[1], value[2], value[3])',
-
-    'bool':     'uniform1i(location, value)',
-    'bvec2':    'uniform2i(location, value[0], value[1])',
-    'bvec3':    'uniform3i(location, value[0], value[1], value[2])',
-    'bvec4':    'uniform4i(location, value[0], value[1], value[2], value[3])',
-
-    'mat2':     'uniformMatrix2fv(location, false, value)',
-    'mat3':     'uniformMatrix3fv(location, false, value)',
-    'mat4':     'uniformMatrix4fv(location, false, value)',
-
-    'sampler2D':'uniform1i(location, value)'
-};
-
-var GLSL_TO_ARRAY_SETTERS = {
-
-    'float':    'uniform1fv(location, value)',
-
-    'vec2':     'uniform2fv(location, value)',
-    'vec3':     'uniform3fv(location, value)',
-    'vec4':     'uniform4fv(location, value)',
-
-    'int':      'uniform1iv(location, value)',
-    'ivec2':    'uniform2iv(location, value)',
-    'ivec3':    'uniform3iv(location, value)',
-    'ivec4':    'uniform4iv(location, value)',
-
-    'bool':     'uniform1iv(location, value)',
-    'bvec2':    'uniform2iv(location, value)',
-    'bvec3':    'uniform3iv(location, value)',
-    'bvec4':    'uniform4iv(location, value)',
-
-    'sampler2D':'uniform1iv(location, value)'
-};
 
 module.exports = generateUniformAccessObject;
 
@@ -13749,11 +13780,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _autoDetectRenderer = __webpack_require__(84);
 
-var _Container = __webpack_require__(19);
+var _Container = __webpack_require__(20);
 
 var _Container2 = _interopRequireDefault(_Container);
 
-var _ticker = __webpack_require__(50);
+var _ticker = __webpack_require__(51);
 
 var _settings = __webpack_require__(3);
 
@@ -13787,6 +13818,9 @@ var Application = function () {
     // eslint-disable-next-line valid-jsdoc
     /**
      * @param {object} [options] - The optional renderer parameters
+     * @param {boolean} [options.autoStart=true] - automatically starts the rendering after the construction.
+     *     Note that setting this parameter to false does NOT stop the shared ticker even if you set
+     *     options.sharedTicker to true in case that it is already started. Stop it by your own.
      * @param {number} [options.width=800] - the width of the renderers view
      * @param {number} [options.height=600] - the height of the renderers view
      * @param {HTMLCanvasElement} [options.view] - the canvas to use as a view, optional
@@ -13800,12 +13834,14 @@ var Application = function () {
      *  (shown if not transparent).
      * @param {boolean} [options.clearBeforeRender=true] - This sets if the renderer will clear the canvas or
      *   not before the new render pass.
-     * @param {boolean} [options.roundPixels=false] - If true Pixi will Math.floor() x/y values when rendering,
+     * @param {boolean} [options.roundPixels=false] - If true PixiJS will Math.floor() x/y values when rendering,
      *  stopping pixel interpolation.
      * @param {boolean} [options.forceFXAA=false] - forces FXAA antialiasing to be used over native.
      *  FXAA is faster, but may not always look as great **webgl only**
      * @param {boolean} [options.legacy=false] - `true` to ensure compatibility with older / less advanced devices.
      *  If you experience unexplained flickering try setting this to true. **webgl only**
+     * @param {string} [options.powerPreference] - Parameter passed to webgl context, set to "high-performance"
+     *  for devices with dual graphics card **webgl only**
      * @param {boolean} [options.sharedTicker=false] - `true` to use PIXI.ticker.shared, `false` to create new ticker.
      * @param {boolean} [options.sharedLoader=false] - `true` to use PIXI.loaders.shared, `false` to create new Loader.
      */
@@ -13828,6 +13864,7 @@ var Application = function () {
          * @protected
          */
         this._options = options = Object.assign({
+            autoStart: true,
             sharedTicker: false,
             forceCanvas: false,
             sharedLoader: false
@@ -13860,7 +13897,9 @@ var Application = function () {
         this.ticker = options.sharedTicker ? _ticker.shared : new _ticker.Ticker();
 
         // Start the rendering
-        this.start();
+        if (options.autoStart) {
+            this.start();
+        }
     }
 
     /**
@@ -13898,15 +13937,24 @@ var Application = function () {
     /**
      * Destroy and don't use after this.
      * @param {Boolean} [removeView=false] Automatically remove canvas from DOM.
+     * @param {object|boolean} [stageOptions] - Options parameter. A boolean will act as if all options
+     *  have been set to that value
+     * @param {boolean} [stageOptions.children=false] - if set to true, all the children will have their destroy
+     *  method called as well. 'stageOptions' will be passed on to those calls.
+     * @param {boolean} [stageOptions.texture=false] - Only used for child Sprites if stageOptions.children is set
+     *  to true. Should it destroy the texture of the child sprite
+     * @param {boolean} [stageOptions.baseTexture=false] - Only used for child Sprites if stageOptions.children is set
+     *  to true. Should it destroy the base texture of the child sprite
      */
-    Application.prototype.destroy = function destroy(removeView) {
-        var oldTicker = this._ticker;
+    Application.prototype.destroy = function destroy(removeView, stageOptions) {
+        if (this._ticker) {
+            var oldTicker = this._ticker;
 
-        this.ticker = null;
+            this.ticker = null;
+            oldTicker.destroy();
+        }
 
-        oldTicker.destroy();
-
-        this.stage.destroy();
+        this.stage.destroy(stageOptions);
         this.stage = null;
 
         this.renderer.destroy(removeView);
@@ -13970,11 +14018,11 @@ var _utils = __webpack_require__(2);
 
 var utils = _interopRequireWildcard(_utils);
 
-var _CanvasRenderer = __webpack_require__(20);
+var _CanvasRenderer = __webpack_require__(21);
 
 var _CanvasRenderer2 = _interopRequireDefault(_CanvasRenderer);
 
-var _WebGLRenderer = __webpack_require__(27);
+var _WebGLRenderer = __webpack_require__(28);
 
 var _WebGLRenderer2 = _interopRequireDefault(_WebGLRenderer);
 
@@ -14004,12 +14052,14 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  *   not before the new render pass.
  * @param {number} [options.resolution=1] - The resolution / device pixel ratio of the renderer, retina would be 2
  * @param {boolean} [options.forceCanvas=false] - prevents selection of WebGL renderer, even if such is present
- * @param {boolean} [options.roundPixels=false] - If true Pixi will Math.floor() x/y values when rendering,
+ * @param {boolean} [options.roundPixels=false] - If true PixiJS will Math.floor() x/y values when rendering,
  *  stopping pixel interpolation.
  * @param {boolean} [options.forceFXAA=false] - forces FXAA antialiasing to be used over native.
  *  FXAA is faster, but may not always look as great **webgl only**
  * @param {boolean} [options.legacy=false] - `true` to ensure compatibility with older / less advanced devices.
  *  If you experience unexplained flickering try setting this to true. **webgl only**
+ * @param {string} [options.powerPreference] - Parameter passed to webgl context, set to "high-performance"
+ *  for devices with dual graphics card **webgl only**
  * @return {PIXI.WebGLRenderer|PIXI.CanvasRenderer} Returns WebGL renderer if available, otherwise CanvasRenderer
  */
 function autoDetectRenderer(options, arg1, arg2, arg3) {
@@ -14057,7 +14107,7 @@ var _Transform = __webpack_require__(86);
 
 var _Transform2 = _interopRequireDefault(_Transform);
 
-var _Bounds = __webpack_require__(42);
+var _Bounds = __webpack_require__(43);
 
 var _Bounds2 = _interopRequireDefault(_Bounds);
 
@@ -14687,12 +14737,14 @@ var DisplayObject = function (_EventEmitter) {
         {
             if (this._mask) {
                 this._mask.renderable = true;
+                this._mask.isMask = false;
             }
 
             this._mask = value;
 
             if (this._mask) {
                 this._mask.renderable = false;
+                this._mask.isMask = true;
             }
         }
 
@@ -14738,7 +14790,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _math = __webpack_require__(4);
 
-var _TransformBase2 = __webpack_require__(43);
+var _TransformBase2 = __webpack_require__(44);
 
 var _TransformBase3 = _interopRequireDefault(_TransformBase2);
 
@@ -14924,7 +14976,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _math = __webpack_require__(4);
 
-var _TransformBase2 = __webpack_require__(43);
+var _TransformBase2 = __webpack_require__(44);
 
 var _TransformBase3 = _interopRequireDefault(_TransformBase2);
 
@@ -15154,63 +15206,86 @@ var GraphicsData = function () {
    * @param {boolean} fill - whether or not the shape is filled with a colour
    * @param {boolean} nativeLines - the method for drawing lines
    * @param {PIXI.Circle|PIXI.Rectangle|PIXI.Ellipse|PIXI.Polygon} shape - The shape object to draw.
+   * @param {number} lineAlignment - the alignment of the line.
    */
-  function GraphicsData(lineWidth, lineColor, lineAlpha, fillColor, fillAlpha, fill, nativeLines, shape) {
+  function GraphicsData(lineWidth, lineColor, lineAlpha, fillColor, fillAlpha, fill, nativeLines, shape, lineAlignment) {
     _classCallCheck(this, GraphicsData);
 
     /**
-     * @member {number} the width of the line to draw
+     * the width of the line to draw
+     * @member {number}
      */
     this.lineWidth = lineWidth;
+
     /**
-     * @member {boolean} if true the liens will be draw using LINES instead of TRIANGLE_STRIP
+     * The alignment of any lines drawn (0.5 = middle, 1 = outter, 0 = inner).
+     *
+     * @member {number}
+     * @default 0
+     */
+    this.lineAlignment = lineAlignment;
+
+    /**
+     * if true the liens will be draw using LINES instead of TRIANGLE_STRIP
+     * @member {boolean}
      */
     this.nativeLines = nativeLines;
 
     /**
-     * @member {number} the color of the line to draw
+     * the color of the line to draw
+     * @member {number}
      */
     this.lineColor = lineColor;
 
     /**
-     * @member {number} the alpha of the line to draw
+     * the alpha of the line to draw
+     * @member {number}
      */
     this.lineAlpha = lineAlpha;
 
     /**
-     * @member {number} cached tint of the line to draw
+     * cached tint of the line to draw
+     * @member {number}
+     * @private
      */
     this._lineTint = lineColor;
 
     /**
-     * @member {number} the color of the fill
+     * the color of the fill
+     * @member {number}
      */
     this.fillColor = fillColor;
 
     /**
-     * @member {number} the alpha of the fill
+     * the alpha of the fill
+     * @member {number}
      */
     this.fillAlpha = fillAlpha;
 
     /**
-     * @member {number} cached tint of the fill
+     * cached tint of the fill
+     * @member {number}
+     * @private
      */
     this._fillTint = fillColor;
 
     /**
-     * @member {boolean} whether or not the shape is filled with a colour
+     * whether or not the shape is filled with a colour
+     * @member {boolean}
      */
     this.fill = fill;
 
     this.holes = [];
 
     /**
-     * @member {PIXI.Circle|PIXI.Ellipse|PIXI.Polygon|PIXI.Rectangle|PIXI.RoundedRectangle} The shape object to draw.
+     * The shape object to draw.
+     * @member {PIXI.Circle|PIXI.Ellipse|PIXI.Polygon|PIXI.Rectangle|PIXI.RoundedRectangle}
      */
     this.shape = shape;
 
     /**
-     * @member {number} The type of the shape, see the Const.Shapes file for all the existing types,
+     * The type of the shape, see the Const.Shapes file for all the existing types,
+     * @member {number}
      */
     this.type = shape.type;
   }
@@ -15262,7 +15337,7 @@ exports.default = GraphicsData;
 
 exports.__esModule = true;
 
-var _Matrix = __webpack_require__(44);
+var _Matrix = __webpack_require__(45);
 
 var _Matrix2 = _interopRequireDefault(_Matrix);
 
@@ -15382,13 +15457,14 @@ var GroupD8 = {
     },
 
     /**
-     * I dont know why sometimes width and heights needs to be swapped. We'll fix it later.
+     * Direction of main vector can be horizontal, vertical or diagonal.
+     * Some objects work with vertical directions different.
      *
      * @memberof PIXI.GroupD8
      * @param {number} rotation - The number to check.
-     * @returns {boolean} Whether or not the width/height should be swapped.
+     * @returns {boolean} Whether or not the direction is vertical
      */
-    isSwapWidthHeight: function isSwapWidthHeight(rotation) {
+    isVertical: function isVertical(rotation) {
         return (rotation & 3) === 2;
     },
 
@@ -15593,11 +15669,11 @@ var _settings = __webpack_require__(3);
 
 var _settings2 = _interopRequireDefault(_settings);
 
-var _Container = __webpack_require__(19);
+var _Container = __webpack_require__(20);
 
 var _Container2 = _interopRequireDefault(_Container);
 
-var _RenderTexture = __webpack_require__(49);
+var _RenderTexture = __webpack_require__(50);
 
 var _RenderTexture2 = _interopRequireDefault(_RenderTexture);
 
@@ -15616,8 +15692,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var tempMatrix = new _math.Matrix();
 
 /**
- * The SystemRenderer is the base for a Pixi Renderer. It is extended by the {@link PIXI.CanvasRenderer}
- * and {@link PIXI.WebGLRenderer} which can be used for rendering a Pixi scene.
+ * The SystemRenderer is the base for a PixiJS Renderer. It is extended by the {@link PIXI.CanvasRenderer}
+ * and {@link PIXI.WebGLRenderer} which can be used for rendering a PixiJS scene.
  *
  * @abstract
  * @class
@@ -15646,7 +15722,7 @@ var SystemRenderer = function (_EventEmitter) {
    *      not before the new render pass.
    * @param {number} [options.backgroundColor=0x000000] - The background color of the rendered area
    *  (shown if not transparent).
-   * @param {boolean} [options.roundPixels=false] - If true Pixi will Math.floor() x/y values when rendering,
+   * @param {boolean} [options.roundPixels=false] - If true PixiJS will Math.floor() x/y values when rendering,
    *  stopping pixel interpolation.
    */
   function SystemRenderer(system, options, arg2, arg3) {
@@ -15739,8 +15815,8 @@ var SystemRenderer = function (_EventEmitter) {
 
     /**
      * This sets if the CanvasRenderer will clear the canvas or not before the new render pass.
-     * If the scene is NOT transparent Pixi will use a canvas sized fillRect operation every
-     * frame to set the canvas background color. If the scene is transparent Pixi will use clearRect
+     * If the scene is NOT transparent PixiJS will use a canvas sized fillRect operation every
+     * frame to set the canvas background color. If the scene is transparent PixiJS will use clearRect
      * to clear the canvas every frame. Disable this by setting this to false. For example if
      * your game has a canvas filling background image you often don't need this set.
      *
@@ -15750,7 +15826,7 @@ var SystemRenderer = function (_EventEmitter) {
     _this.clearBeforeRender = options.clearBeforeRender;
 
     /**
-     * If true Pixi will Math.floor() x/y values when rendering, stopping pixel interpolation.
+     * If true PixiJS will Math.floor() x/y values when rendering, stopping pixel interpolation.
      * Handy for crisp pixel art and speed on legacy devices.
      *
      * @member {boolean}
@@ -15837,17 +15913,19 @@ var SystemRenderer = function (_EventEmitter) {
    * @param {PIXI.DisplayObject} displayObject - The displayObject the object will be generated from
    * @param {number} scaleMode - Should be one of the scaleMode consts
    * @param {number} resolution - The resolution / device pixel ratio of the texture being generated
+   * @param {PIXI.Rectangle} [region] - The region of the displayObject, that shall be rendered,
+   *        if no region is specified, defaults to the local bounds of the displayObject.
    * @return {PIXI.Texture} a texture of the graphics object
    */
 
 
-  SystemRenderer.prototype.generateTexture = function generateTexture(displayObject, scaleMode, resolution) {
-    var bounds = displayObject.getLocalBounds();
+  SystemRenderer.prototype.generateTexture = function generateTexture(displayObject, scaleMode, resolution, region) {
+    region = region || displayObject.getLocalBounds();
 
-    var renderTexture = _RenderTexture2.default.create(bounds.width | 0, bounds.height | 0, scaleMode, resolution);
+    var renderTexture = _RenderTexture2.default.create(region.width | 0, region.height | 0, scaleMode, resolution);
 
-    tempMatrix.tx = -bounds.x;
-    tempMatrix.ty = -bounds.y;
+    tempMatrix.tx = -region.x;
+    tempMatrix.ty = -region.y;
 
     this.render(displayObject, renderTexture, false, tempMatrix, true);
 
@@ -16146,7 +16224,7 @@ exports.__esModule = true;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _extractUniformsFromSrc = __webpack_require__(204);
+var _extractUniformsFromSrc = __webpack_require__(205);
 
 var _extractUniformsFromSrc2 = _interopRequireDefault(_extractUniformsFromSrc);
 
@@ -16194,7 +16272,7 @@ var Filter = function () {
      */
     this.fragmentSrc = fragmentSrc || Filter.defaultFragmentSrc;
 
-    this.blendMode = _const.BLEND_MODES.NORMAL;
+    this._blendMode = _const.BLEND_MODES.NORMAL;
 
     this.uniformData = uniforms || (0, _extractUniformsFromSrc2.default)(this.vertexSrc, this.fragmentSrc, 'projectionMatrix|uSampler');
 
@@ -16209,6 +16287,9 @@ var Filter = function () {
 
     for (var i in this.uniformData) {
       this.uniforms[i] = this.uniformData[i].value;
+      if (this.uniformData[i].type) {
+        this.uniformData[i].type = this.uniformData[i].type.toLowerCase();
+      }
     }
 
     // this is where we store shader references..
@@ -16237,7 +16318,7 @@ var Filter = function () {
      *
      * @member {number}
      */
-    this.resolution = _settings2.default.RESOLUTION;
+    this.resolution = _settings2.default.FILTER_RESOLUTION;
 
     /**
      * If enabled is true the filter is applied, if false it will not.
@@ -16247,7 +16328,7 @@ var Filter = function () {
     this.enabled = true;
 
     /**
-     * If enabled, pixi will fit the filter area into boundaries for better performance.
+     * If enabled, PixiJS will fit the filter area into boundaries for better performance.
      * Switch it off if it does not work for specific shader.
      *
      * @member {boolean}
@@ -16281,14 +16362,31 @@ var Filter = function () {
   };
 
   /**
-   * The default vertex shader source
+   * Sets the blendmode of the filter
    *
-   * @static
-   * @constant
+   * @member {number}
+   * @default PIXI.BLEND_MODES.NORMAL
    */
 
 
-  _createClass(Filter, null, [{
+  _createClass(Filter, [{
+    key: 'blendMode',
+    get: function get() {
+      return this._blendMode;
+    },
+    set: function set(value) // eslint-disable-line require-jsdoc
+    {
+      this._blendMode = value;
+    }
+
+    /**
+     * The default vertex shader source
+     *
+     * @static
+     * @constant
+     */
+
+  }], [{
     key: 'defaultVertexSrc',
     get: function get() {
       return ['attribute vec2 aVertexPosition;', 'attribute vec2 aTextureCoord;', 'uniform mat3 projectionMatrix;', 'uniform mat3 filterMatrix;', 'varying vec2 vTextureCoord;', 'varying vec2 vFilterCoord;', 'void main(void){', '   gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);', '   vFilterCoord = ( filterMatrix * vec3( aTextureCoord, 1.0)  ).xy;', '   vTextureCoord = aTextureCoord ;', '}'].join('\n');
@@ -16333,6 +16431,10 @@ var _math = __webpack_require__(4);
 
 var _path = __webpack_require__(6);
 
+var _TextureMatrix = __webpack_require__(100);
+
+var _TextureMatrix2 = _interopRequireDefault(_TextureMatrix);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -16359,7 +16461,7 @@ var SpriteMaskFilter = function (_Filter) {
 
         var maskMatrix = new _math.Matrix();
 
-        var _this = _possibleConstructorReturn(this, _Filter.call(this, 'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 otherMatrix;\n\nvarying vec2 vMaskCoord;\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = aTextureCoord;\n    vMaskCoord = ( otherMatrix * vec3( aTextureCoord, 1.0)  ).xy;\n}\n', 'varying vec2 vMaskCoord;\nvarying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform float alpha;\nuniform sampler2D mask;\n\nvoid main(void)\n{\n    // check clip! this will stop the mask bleeding out from the edges\n    vec2 text = abs( vMaskCoord - 0.5 );\n    text = step(0.5, text);\n\n    float clip = 1.0 - max(text.y, text.x);\n    vec4 original = texture2D(uSampler, vTextureCoord);\n    vec4 masky = texture2D(mask, vMaskCoord);\n\n    original *= (masky.r * masky.a * alpha * clip);\n\n    gl_FragColor = original;\n}\n'));
+        var _this = _possibleConstructorReturn(this, _Filter.call(this, 'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 otherMatrix;\n\nvarying vec2 vMaskCoord;\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = aTextureCoord;\n    vMaskCoord = ( otherMatrix * vec3( aTextureCoord, 1.0)  ).xy;\n}\n', 'varying vec2 vMaskCoord;\nvarying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform sampler2D mask;\nuniform float alpha;\nuniform vec4 maskClamp;\n\nvoid main(void)\n{\n    float clip = step(3.5,\n        step(maskClamp.x, vMaskCoord.x) +\n        step(maskClamp.y, vMaskCoord.y) +\n        step(vMaskCoord.x, maskClamp.z) +\n        step(vMaskCoord.y, maskClamp.w));\n\n    vec4 original = texture2D(uSampler, vTextureCoord);\n    vec4 masky = texture2D(mask, vMaskCoord);\n\n    original *= (masky.r * masky.a * alpha * clip);\n\n    gl_FragColor = original;\n}\n'));
 
         sprite.renderable = false;
 
@@ -16379,10 +16481,22 @@ var SpriteMaskFilter = function (_Filter) {
 
     SpriteMaskFilter.prototype.apply = function apply(filterManager, input, output) {
         var maskSprite = this.maskSprite;
+        var tex = this.maskSprite.texture;
 
-        this.uniforms.mask = maskSprite._texture;
-        this.uniforms.otherMatrix = filterManager.calculateSpriteMatrix(this.maskMatrix, maskSprite);
+        if (!tex.valid) {
+            return;
+        }
+        if (!tex.transform) {
+            // margin = 0.0, let it bleed a bit, shader code becomes easier
+            // assuming that atlas textures were made with 1-pixel padding
+            tex.transform = new _TextureMatrix2.default(tex, 0.0);
+        }
+        tex.transform.update();
+
+        this.uniforms.mask = tex;
+        this.uniforms.otherMatrix = filterManager.calculateSpriteMatrix(this.maskMatrix, maskSprite).prepend(tex.transform.mapCoord);
         this.uniforms.alpha = maskSprite.worldAlpha;
+        this.uniforms.maskClamp = tex.transform.uClampFrame;
 
         filterManager.applyFilter(this, input, output);
     };
@@ -16406,7 +16520,7 @@ var _pixiGlCore = __webpack_require__(5);
 
 var _pixiGlCore2 = _interopRequireDefault(_pixiGlCore);
 
-var _createIndicesForQuads = __webpack_require__(51);
+var _createIndicesForQuads = __webpack_require__(52);
 
 var _createIndicesForQuads2 = _interopRequireDefault(_createIndicesForQuads);
 
@@ -16593,6 +16707,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * The TextMetrics object represents the measurement of a block of text with a specified style.
  *
+ * ```js
+ * let style = new PIXI.TextStyle({fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'})
+ * let textMetrics = PIXI.TextMetrics.measureText('Your text', style)
+ * ```
+ *
  * @class
  * @memberOf PIXI
  */
@@ -16661,13 +16780,13 @@ var TextMetrics = function () {
         }
 
         var lineHeight = style.lineHeight || fontProperties.fontSize + style.strokeThickness;
-        var height = Math.max(lineHeight, fontProperties.fontSize + style.strokeThickness) + (lines.length - 1) * lineHeight;
+        var height = Math.max(lineHeight, fontProperties.fontSize + style.strokeThickness) + (lines.length - 1) * (lineHeight + style.leading);
 
         if (style.dropShadow) {
             height += style.dropShadowDistance;
         }
 
-        return new TextMetrics(text, style, width, height, lines, lineWidths, lineHeight, maxLineWidth, fontProperties);
+        return new TextMetrics(text, style, width, height, lines, lineWidths, lineHeight + style.leading, maxLineWidth, fontProperties);
     };
 
     /**
@@ -16687,69 +16806,383 @@ var TextMetrics = function () {
 
         var context = canvas.getContext('2d');
 
-        // Greedy wrapping algorithm that will wrap words as the line grows longer
-        // than its horizontal bounds.
-        var result = '';
-        var lines = text.split('\n');
-        var wordWrapWidth = style.wordWrapWidth;
-        var characterCache = {};
+        var width = 0;
+        var line = '';
+        var lines = '';
 
-        for (var i = 0; i < lines.length; i++) {
-            var spaceLeft = wordWrapWidth;
-            var words = lines[i].split(' ');
+        var cache = {};
+        var letterSpacing = style.letterSpacing,
+            whiteSpace = style.whiteSpace;
 
-            for (var j = 0; j < words.length; j++) {
-                var wordWidth = context.measureText(words[j]).width;
+        // How to handle whitespaces
 
-                if (style.breakWords && wordWidth > wordWrapWidth) {
-                    // Word should be split in the middle
-                    var characters = words[j].split('');
+        var collapseSpaces = TextMetrics.collapseSpaces(whiteSpace);
+        var collapseNewlines = TextMetrics.collapseNewlines(whiteSpace);
 
-                    for (var c = 0; c < characters.length; c++) {
-                        var character = characters[c];
-                        var characterWidth = characterCache[character];
+        // whether or not spaces may be added to the beginning of lines
+        var canPrependSpaces = !collapseSpaces;
 
-                        if (characterWidth === undefined) {
-                            characterWidth = context.measureText(character).width;
-                            characterCache[character] = characterWidth;
-                        }
+        // There is letterSpacing after every char except the last one
+        // t_h_i_s_' '_i_s_' '_a_n_' '_e_x_a_m_p_l_e_' '_!
+        // so for convenience the above needs to be compared to width + 1 extra letterSpace
+        // t_h_i_s_' '_i_s_' '_a_n_' '_e_x_a_m_p_l_e_' '_!_
+        // ________________________________________________
+        // And then the final space is simply no appended to each line
+        var wordWrapWidth = style.wordWrapWidth + letterSpacing;
 
-                        if (characterWidth > spaceLeft) {
-                            result += '\n' + character;
-                            spaceLeft = wordWrapWidth - characterWidth;
-                        } else {
-                            if (c === 0) {
-                                result += ' ';
-                            }
+        // break text into words, spaces and newline chars
+        var tokens = TextMetrics.tokenize(text);
 
-                            result += character;
-                            spaceLeft -= characterWidth;
-                        }
-                    }
-                } else {
-                    var wordWidthWithSpace = wordWidth + context.measureText(' ').width;
+        for (var i = 0; i < tokens.length; i++) {
+            // get the word, space or newlineChar
+            var token = tokens[i];
 
-                    if (j === 0 || wordWidthWithSpace > spaceLeft) {
-                        // Skip printing the newline if it's the first word of the line that is
-                        // greater than the word wrap width.
-                        if (j > 0) {
-                            result += '\n';
-                        }
-                        result += words[j];
-                        spaceLeft = wordWrapWidth - wordWidth;
-                    } else {
-                        spaceLeft -= wordWidthWithSpace;
-                        result += ' ' + words[j];
-                    }
+            // if word is a new line
+            if (TextMetrics.isNewline(token)) {
+                // keep the new line
+                if (!collapseNewlines) {
+                    lines += TextMetrics.addLine(line);
+                    canPrependSpaces = !collapseSpaces;
+                    line = '';
+                    width = 0;
+                    continue;
+                }
+
+                // if we should collapse new lines
+                // we simply convert it into a space
+                token = ' ';
+            }
+
+            // if we should collapse repeated whitespaces
+            if (collapseSpaces) {
+                // check both this and the last tokens for spaces
+                var currIsBreakingSpace = TextMetrics.isBreakingSpace(token);
+                var lastIsBreakingSpace = TextMetrics.isBreakingSpace(line[line.length - 1]);
+
+                if (currIsBreakingSpace && lastIsBreakingSpace) {
+                    continue;
                 }
             }
 
-            if (i < lines.length - 1) {
-                result += '\n';
+            // get word width from cache if possible
+            var tokenWidth = TextMetrics.getFromCache(token, letterSpacing, cache, context);
+
+            // word is longer than desired bounds
+            if (tokenWidth > wordWrapWidth) {
+                // if we are not already at the beginning of a line
+                if (line !== '') {
+                    // start newlines for overflow words
+                    lines += TextMetrics.addLine(line);
+                    line = '';
+                    width = 0;
+                }
+
+                // break large word over multiple lines
+                if (TextMetrics.canBreakWords(token, style.breakWords)) {
+                    // break word into characters
+                    var characters = token.split('');
+
+                    // loop the characters
+                    for (var j = 0; j < characters.length; j++) {
+                        var char = characters[j];
+
+                        var k = 1;
+                        // we are not at the end of the token
+
+                        while (characters[j + k]) {
+                            var nextChar = characters[j + k];
+                            var lastChar = char[char.length - 1];
+
+                            // should not split chars
+                            if (!TextMetrics.canBreakChars(lastChar, nextChar, token, j, style.breakWords)) {
+                                // combine chars & move forward one
+                                char += nextChar;
+                            } else {
+                                break;
+                            }
+
+                            k++;
+                        }
+
+                        j += char.length - 1;
+
+                        var characterWidth = TextMetrics.getFromCache(char, letterSpacing, cache, context);
+
+                        if (characterWidth + width > wordWrapWidth) {
+                            lines += TextMetrics.addLine(line);
+                            canPrependSpaces = false;
+                            line = '';
+                            width = 0;
+                        }
+
+                        line += char;
+                        width += characterWidth;
+                    }
+                }
+
+                // run word out of the bounds
+                else {
+                        // if there are words in this line already
+                        // finish that line and start a new one
+                        if (line.length > 0) {
+                            lines += TextMetrics.addLine(line);
+                            line = '';
+                            width = 0;
+                        }
+
+                        var isLastToken = i === tokens.length - 1;
+
+                        // give it its own line if it's not the end
+                        lines += TextMetrics.addLine(token, !isLastToken);
+                        canPrependSpaces = false;
+                        line = '';
+                        width = 0;
+                    }
             }
+
+            // word could fit
+            else {
+                    // word won't fit because of existing words
+                    // start a new line
+                    if (tokenWidth + width > wordWrapWidth) {
+                        // if its a space we don't want it
+                        canPrependSpaces = false;
+
+                        // add a new line
+                        lines += TextMetrics.addLine(line);
+
+                        // start a new line
+                        line = '';
+                        width = 0;
+                    }
+
+                    // don't add spaces to the beginning of lines
+                    if (line.length > 0 || !TextMetrics.isBreakingSpace(token) || canPrependSpaces) {
+                        // add the word to the current line
+                        line += token;
+
+                        // update width counter
+                        width += tokenWidth;
+                    }
+                }
         }
 
-        return result;
+        lines += TextMetrics.addLine(line, false);
+
+        return lines;
+    };
+
+    /**
+     * Convienience function for logging each line added during the wordWrap
+     * method
+     *
+     * @private
+     * @param  {string}   line        - The line of text to add
+     * @param  {boolean}  newLine     - Add new line character to end
+     * @return {string}   A formatted line
+     */
+
+
+    TextMetrics.addLine = function addLine(line) {
+        var newLine = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+        line = TextMetrics.trimRight(line);
+
+        line = newLine ? line + '\n' : line;
+
+        return line;
+    };
+
+    /**
+     * Gets & sets the widths of calculated characters in a cache object
+     *
+     * @private
+     * @param  {string}                    key            The key
+     * @param  {number}                    letterSpacing  The letter spacing
+     * @param  {object}                    cache          The cache
+     * @param  {CanvasRenderingContext2D}  context        The canvas context
+     * @return {number}                    The from cache.
+     */
+
+
+    TextMetrics.getFromCache = function getFromCache(key, letterSpacing, cache, context) {
+        var width = cache[key];
+
+        if (width === undefined) {
+            var spacing = key.length * letterSpacing;
+
+            width = context.measureText(key).width + spacing;
+            cache[key] = width;
+        }
+
+        return width;
+    };
+
+    /**
+     * Determines whether we should collapse breaking spaces
+     *
+     * @private
+     * @param  {string}   whiteSpace  The TextStyle property whiteSpace
+     * @return {boolean}  should collapse
+     */
+
+
+    TextMetrics.collapseSpaces = function collapseSpaces(whiteSpace) {
+        return whiteSpace === 'normal' || whiteSpace === 'pre-line';
+    };
+
+    /**
+     * Determines whether we should collapse newLine chars
+     *
+     * @private
+     * @param  {string}   whiteSpace  The white space
+     * @return {boolean}  should collapse
+     */
+
+
+    TextMetrics.collapseNewlines = function collapseNewlines(whiteSpace) {
+        return whiteSpace === 'normal';
+    };
+
+    /**
+     * trims breaking whitespaces from string
+     *
+     * @private
+     * @param  {string}  text  The text
+     * @return {string}  trimmed string
+     */
+
+
+    TextMetrics.trimRight = function trimRight(text) {
+        if (typeof text !== 'string') {
+            return '';
+        }
+
+        for (var i = text.length - 1; i >= 0; i--) {
+            var char = text[i];
+
+            if (!TextMetrics.isBreakingSpace(char)) {
+                break;
+            }
+
+            text = text.slice(0, -1);
+        }
+
+        return text;
+    };
+
+    /**
+     * Determines if char is a newline.
+     *
+     * @private
+     * @param  {string}  char  The character
+     * @return {boolean}  True if newline, False otherwise.
+     */
+
+
+    TextMetrics.isNewline = function isNewline(char) {
+        if (typeof char !== 'string') {
+            return false;
+        }
+
+        return TextMetrics._newlines.indexOf(char.charCodeAt(0)) >= 0;
+    };
+
+    /**
+     * Determines if char is a breaking whitespace.
+     *
+     * @private
+     * @param  {string}  char  The character
+     * @return {boolean}  True if whitespace, False otherwise.
+     */
+
+
+    TextMetrics.isBreakingSpace = function isBreakingSpace(char) {
+        if (typeof char !== 'string') {
+            return false;
+        }
+
+        return TextMetrics._breakingSpaces.indexOf(char.charCodeAt(0)) >= 0;
+    };
+
+    /**
+     * Splits a string into words, breaking-spaces and newLine characters
+     *
+     * @private
+     * @param  {string}  text       The text
+     * @return {array}  A tokenized array
+     */
+
+
+    TextMetrics.tokenize = function tokenize(text) {
+        var tokens = [];
+        var token = '';
+
+        if (typeof text !== 'string') {
+            return tokens;
+        }
+
+        for (var i = 0; i < text.length; i++) {
+            var char = text[i];
+
+            if (TextMetrics.isBreakingSpace(char) || TextMetrics.isNewline(char)) {
+                if (token !== '') {
+                    tokens.push(token);
+                    token = '';
+                }
+
+                tokens.push(char);
+
+                continue;
+            }
+
+            token += char;
+        }
+
+        if (token !== '') {
+            tokens.push(token);
+        }
+
+        return tokens;
+    };
+
+    /**
+     * This method exists to be easily overridden
+     * It allows one to customise which words should break
+     * Examples are if the token is CJK or numbers.
+     * It must return a boolean.
+     *
+     * @private
+     * @param  {string}  token       The token
+     * @param  {boolean}  breakWords  The style attr break words
+     * @return {boolean} whether to break word or not
+     */
+
+
+    TextMetrics.canBreakWords = function canBreakWords(token, breakWords) {
+        return breakWords;
+    };
+
+    /**
+     * This method exists to be easily overridden
+     * It allows one to determine whether a pair of characters
+     * should be broken by newlines
+     * For example certain characters in CJK langs or numbers.
+     * It must return a boolean.
+     *
+     * @private
+     * @param  {string}  char      The character
+     * @param  {string}  nextChar  The next character
+     * @param  {string}  token     The token/word the characters are from
+     * @param  {number}  index     The index in the token of the char
+     * @param  {boolean}  breakWords  The style attr break words
+     * @return {boolean} whether to break word or not
+     */
+
+
+    TextMetrics.canBreakChars = function canBreakChars(char, nextChar, token, index, breakWords) // eslint-disable-line no-unused-vars
+    {
+        return true;
     };
 
     /**
@@ -16774,11 +17207,12 @@ var TextMetrics = function () {
 
         context.font = font;
 
-        var width = Math.ceil(context.measureText('|MÉq').width);
-        var baseline = Math.ceil(context.measureText('M').width);
+        var metricsString = TextMetrics.METRICS_STRING + TextMetrics.BASELINE_SYMBOL;
+        var width = Math.ceil(context.measureText(metricsString).width);
+        var baseline = Math.ceil(context.measureText(TextMetrics.BASELINE_SYMBOL).width);
         var height = 2 * baseline;
 
-        baseline = baseline * 1.4 | 0;
+        baseline = baseline * TextMetrics.BASELINE_MULTIPLIER | 0;
 
         canvas.width = width;
         canvas.height = height;
@@ -16790,7 +17224,7 @@ var TextMetrics = function () {
 
         context.textBaseline = 'alphabetic';
         context.fillStyle = '#000';
-        context.fillText('|MÉq', 0, baseline);
+        context.fillText(metricsString, 0, baseline);
 
         var imagedata = context.getImageData(0, 0, width, height).data;
         var pixels = imagedata.length;
@@ -16844,6 +17278,24 @@ var TextMetrics = function () {
         return properties;
     };
 
+    /**
+     * Clear font metrics in metrics cache.
+     *
+     * @static
+     * @param {string} [font] - font name. If font name not set then clear cache for all fonts.
+     */
+
+
+    TextMetrics.clearMetrics = function clearMetrics() {
+        var font = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+        if (font) {
+            delete TextMetrics._fonts[font];
+        } else {
+            TextMetrics._fonts = {};
+        }
+    };
+
     return TextMetrics;
 }();
 
@@ -16884,6 +17336,66 @@ TextMetrics._context = canvas.getContext('2d');
  * @private
  */
 TextMetrics._fonts = {};
+
+/**
+ * String used for calculate font metrics.
+ * @static
+ * @memberof PIXI.TextMetrics
+ * @name METRICS_STRING
+ * @type {string}
+ * @default |Éq
+ */
+TextMetrics.METRICS_STRING = '|Éq';
+
+/**
+ * Baseline symbol for calculate font metrics.
+ * @static
+ * @memberof PIXI.TextMetrics
+ * @name BASELINE_SYMBOL
+ * @type {string}
+ * @default M
+ */
+TextMetrics.BASELINE_SYMBOL = 'M';
+
+/**
+ * Baseline multiplier for calculate font metrics.
+ * @static
+ * @memberof PIXI.TextMetrics
+ * @name BASELINE_MULTIPLIER
+ * @type {number}
+ * @default 1.4
+ */
+TextMetrics.BASELINE_MULTIPLIER = 1.4;
+
+/**
+ * Cache of new line chars.
+ * @memberof PIXI.TextMetrics
+ * @type {number[]}
+ * @private
+ */
+TextMetrics._newlines = [0x000A, // line feed
+0x000D];
+
+/**
+ * Cache of breaking spaces.
+ * @memberof PIXI.TextMetrics
+ * @type {number[]}
+ * @private
+ */
+TextMetrics._breakingSpaces = [0x0009, // character tabulation
+0x0020, // space
+0x2000, // en quad
+0x2001, // em quad
+0x2002, // en space
+0x2003, // em space
+0x2004, // three-per-em space
+0x2005, // four-per-em space
+0x2006, // six-per-em space
+0x2008, // punctuation space
+0x2009, // thin space
+0x200A, // hair space
+0x205F, // medium mathematical space
+0x3000];
 //# sourceMappingURL=TextMetrics.js.map
 
 /***/ }),
@@ -16930,8 +17442,10 @@ var defaultStyle = {
     strokeThickness: 0,
     textBaseline: 'alphabetic',
     trim: false,
+    whiteSpace: 'pre',
     wordWrap: false,
-    wordWrapWidth: 100
+    wordWrapWidth: 100,
+    leading: 0
 };
 
 /**
@@ -16953,7 +17467,7 @@ var TextStyle = function () {
      * @param {number} [style.dropShadowAlpha=1] - Set alpha for the drop shadow
      * @param {number} [style.dropShadowAngle=Math.PI/6] - Set a angle of the drop shadow
      * @param {number} [style.dropShadowBlur=0] - Set a shadow blur radius
-     * @param {string} [style.dropShadowColor='black'] - A fill style to be used on the dropshadow e.g 'red', '#00FF00'
+     * @param {string|number} [style.dropShadowColor='black'] - A fill style to be used on the dropshadow e.g 'red', '#00FF00'
      * @param {number} [style.dropShadowDistance=5] - Set a distance of the drop shadow
      * @param {string|string[]|number|number[]|CanvasGradient|CanvasPattern} [style.fill='black'] - A canvas
      *  fillstyle that will be used on the text e.g 'red', '#00FF00'. Can be an array to create a gradient
@@ -16970,10 +17484,12 @@ var TextStyle = function () {
      * @param {string} [style.fontVariant='normal'] - The font variant ('normal' or 'small-caps')
      * @param {string} [style.fontWeight='normal'] - The font weight ('normal', 'bold', 'bolder', 'lighter' and '100',
      *  '200', '300', '400', '500', '600', '700', 800' or '900')
+     * @param {number} [style.leading=0] - The space between lines
      * @param {number} [style.letterSpacing=0] - The amount of spacing between letters, default is 0
      * @param {number} [style.lineHeight] - The line height, a number that represents the vertical space that a letter uses
      * @param {string} [style.lineJoin='miter'] - The lineJoin property sets the type of corner created, it can resolve
-     *      spiked text issues. Default is 'miter' (creates a sharp corner).
+     *      spiked text issues. Possible values "miter" (creates a sharp corner), "round" (creates a round corner) or "bevel"
+     *      (creates a squared corner).
      * @param {number} [style.miterLimit=10] - The miter limit to use when using the 'miter' lineJoin mode. This can reduce
      *      or increase the spikiness of rendered text.
      * @param {number} [style.padding=0] - Occasionally some fonts are cropped. Adding some padding will prevent this from
@@ -16984,6 +17500,8 @@ var TextStyle = function () {
      *  Default is 0 (no stroke)
      * @param {boolean} [style.trim=false] - Trim transparent borders
      * @param {string} [style.textBaseline='alphabetic'] - The baseline of the text that is rendered.
+     * @param {boolean} [style.whiteSpace='pre'] - Determines whether newlines & spaces are collapsed or preserved "normal"
+     *      (collapse, collapse), "pre" (preserve, preserve) | "pre-line" (preserve, collapse). It needs wordWrap to be set to true
      * @param {boolean} [style.wordWrap=false] - Indicates if word wrap should be used
      * @param {number} [style.wordWrapWidth=100] - The width at which text will wrap, it needs wordWrap to be set to true
      */
@@ -16992,7 +17510,9 @@ var TextStyle = function () {
 
         this.styleID = 0;
 
-        Object.assign(this, defaultStyle, style);
+        this.reset();
+
+        deepCopyProperties(this, style, style);
     }
 
     /**
@@ -17006,9 +17526,7 @@ var TextStyle = function () {
     TextStyle.prototype.clone = function clone() {
         var clonedProperties = {};
 
-        for (var key in defaultStyle) {
-            clonedProperties[key] = this[key];
-        }
+        deepCopyProperties(clonedProperties, this, defaultStyle);
 
         return new TextStyle(clonedProperties);
     };
@@ -17019,8 +17537,15 @@ var TextStyle = function () {
 
 
     TextStyle.prototype.reset = function reset() {
-        Object.assign(this, defaultStyle);
+        deepCopyProperties(this, defaultStyle, defaultStyle);
     };
+
+    /**
+     * Alignment for multiline text ('left', 'center' or 'right'), does not affect single line text
+     *
+     * @member {string}
+     */
+
 
     /**
      * Generates a font style string to use for `TextMetrics.measureFont()`.
@@ -17058,296 +17583,563 @@ var TextStyle = function () {
         get: function get() {
             return this._align;
         },
-        set: function set(align) {
+        set: function set(align) // eslint-disable-line require-jsdoc
+        {
             if (this._align !== align) {
                 this._align = align;
                 this.styleID++;
             }
         }
+
+        /**
+         * Indicates if lines can be wrapped within words, it needs wordWrap to be set to true
+         *
+         * @member {boolean}
+         */
+
     }, {
         key: 'breakWords',
         get: function get() {
             return this._breakWords;
         },
-        set: function set(breakWords) {
+        set: function set(breakWords) // eslint-disable-line require-jsdoc
+        {
             if (this._breakWords !== breakWords) {
                 this._breakWords = breakWords;
                 this.styleID++;
             }
         }
+
+        /**
+         * Set a drop shadow for the text
+         *
+         * @member {boolean}
+         */
+
     }, {
         key: 'dropShadow',
         get: function get() {
             return this._dropShadow;
         },
-        set: function set(dropShadow) {
+        set: function set(dropShadow) // eslint-disable-line require-jsdoc
+        {
             if (this._dropShadow !== dropShadow) {
                 this._dropShadow = dropShadow;
                 this.styleID++;
             }
         }
+
+        /**
+         * Set alpha for the drop shadow
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'dropShadowAlpha',
         get: function get() {
             return this._dropShadowAlpha;
         },
-        set: function set(dropShadowAlpha) {
+        set: function set(dropShadowAlpha) // eslint-disable-line require-jsdoc
+        {
             if (this._dropShadowAlpha !== dropShadowAlpha) {
                 this._dropShadowAlpha = dropShadowAlpha;
                 this.styleID++;
             }
         }
+
+        /**
+         * Set a angle of the drop shadow
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'dropShadowAngle',
         get: function get() {
             return this._dropShadowAngle;
         },
-        set: function set(dropShadowAngle) {
+        set: function set(dropShadowAngle) // eslint-disable-line require-jsdoc
+        {
             if (this._dropShadowAngle !== dropShadowAngle) {
                 this._dropShadowAngle = dropShadowAngle;
                 this.styleID++;
             }
         }
+
+        /**
+         * Set a shadow blur radius
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'dropShadowBlur',
         get: function get() {
             return this._dropShadowBlur;
         },
-        set: function set(dropShadowBlur) {
+        set: function set(dropShadowBlur) // eslint-disable-line require-jsdoc
+        {
             if (this._dropShadowBlur !== dropShadowBlur) {
                 this._dropShadowBlur = dropShadowBlur;
                 this.styleID++;
             }
         }
+
+        /**
+         * A fill style to be used on the dropshadow e.g 'red', '#00FF00'
+         *
+         * @member {string|number}
+         */
+
     }, {
         key: 'dropShadowColor',
         get: function get() {
             return this._dropShadowColor;
         },
-        set: function set(dropShadowColor) {
+        set: function set(dropShadowColor) // eslint-disable-line require-jsdoc
+        {
             var outputColor = getColor(dropShadowColor);
             if (this._dropShadowColor !== outputColor) {
                 this._dropShadowColor = outputColor;
                 this.styleID++;
             }
         }
+
+        /**
+         * Set a distance of the drop shadow
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'dropShadowDistance',
         get: function get() {
             return this._dropShadowDistance;
         },
-        set: function set(dropShadowDistance) {
+        set: function set(dropShadowDistance) // eslint-disable-line require-jsdoc
+        {
             if (this._dropShadowDistance !== dropShadowDistance) {
                 this._dropShadowDistance = dropShadowDistance;
                 this.styleID++;
             }
         }
+
+        /**
+         * A canvas fillstyle that will be used on the text e.g 'red', '#00FF00'.
+         * Can be an array to create a gradient eg ['#000000','#FFFFFF']
+         * {@link https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle|MDN}
+         *
+         * @member {string|string[]|number|number[]|CanvasGradient|CanvasPattern}
+         */
+
     }, {
         key: 'fill',
         get: function get() {
             return this._fill;
         },
-        set: function set(fill) {
+        set: function set(fill) // eslint-disable-line require-jsdoc
+        {
             var outputColor = getColor(fill);
             if (this._fill !== outputColor) {
                 this._fill = outputColor;
                 this.styleID++;
             }
         }
+
+        /**
+         * If fill is an array of colours to create a gradient, this can change the type/direction of the gradient.
+         * See {@link PIXI.TEXT_GRADIENT}
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'fillGradientType',
         get: function get() {
             return this._fillGradientType;
         },
-        set: function set(fillGradientType) {
+        set: function set(fillGradientType) // eslint-disable-line require-jsdoc
+        {
             if (this._fillGradientType !== fillGradientType) {
                 this._fillGradientType = fillGradientType;
                 this.styleID++;
             }
         }
+
+        /**
+         * If fill is an array of colours to create a gradient, this array can set the stop points
+         * (numbers between 0 and 1) for the color, overriding the default behaviour of evenly spacing them.
+         *
+         * @member {number[]}
+         */
+
     }, {
         key: 'fillGradientStops',
         get: function get() {
             return this._fillGradientStops;
         },
-        set: function set(fillGradientStops) {
+        set: function set(fillGradientStops) // eslint-disable-line require-jsdoc
+        {
             if (!areArraysEqual(this._fillGradientStops, fillGradientStops)) {
                 this._fillGradientStops = fillGradientStops;
                 this.styleID++;
             }
         }
+
+        /**
+         * The font family
+         *
+         * @member {string|string[]}
+         */
+
     }, {
         key: 'fontFamily',
         get: function get() {
             return this._fontFamily;
         },
-        set: function set(fontFamily) {
+        set: function set(fontFamily) // eslint-disable-line require-jsdoc
+        {
             if (this.fontFamily !== fontFamily) {
                 this._fontFamily = fontFamily;
                 this.styleID++;
             }
         }
+
+        /**
+         * The font size
+         * (as a number it converts to px, but as a string, equivalents are '26px','20pt','160%' or '1.6em')
+         *
+         * @member {number|string}
+         */
+
     }, {
         key: 'fontSize',
         get: function get() {
             return this._fontSize;
         },
-        set: function set(fontSize) {
+        set: function set(fontSize) // eslint-disable-line require-jsdoc
+        {
             if (this._fontSize !== fontSize) {
                 this._fontSize = fontSize;
                 this.styleID++;
             }
         }
+
+        /**
+         * The font style
+         * ('normal', 'italic' or 'oblique')
+         *
+         * @member {string}
+         */
+
     }, {
         key: 'fontStyle',
         get: function get() {
             return this._fontStyle;
         },
-        set: function set(fontStyle) {
+        set: function set(fontStyle) // eslint-disable-line require-jsdoc
+        {
             if (this._fontStyle !== fontStyle) {
                 this._fontStyle = fontStyle;
                 this.styleID++;
             }
         }
+
+        /**
+         * The font variant
+         * ('normal' or 'small-caps')
+         *
+         * @member {string}
+         */
+
     }, {
         key: 'fontVariant',
         get: function get() {
             return this._fontVariant;
         },
-        set: function set(fontVariant) {
+        set: function set(fontVariant) // eslint-disable-line require-jsdoc
+        {
             if (this._fontVariant !== fontVariant) {
                 this._fontVariant = fontVariant;
                 this.styleID++;
             }
         }
+
+        /**
+         * The font weight
+         * ('normal', 'bold', 'bolder', 'lighter' and '100', '200', '300', '400', '500', '600', '700', 800' or '900')
+         *
+         * @member {string}
+         */
+
     }, {
         key: 'fontWeight',
         get: function get() {
             return this._fontWeight;
         },
-        set: function set(fontWeight) {
+        set: function set(fontWeight) // eslint-disable-line require-jsdoc
+        {
             if (this._fontWeight !== fontWeight) {
                 this._fontWeight = fontWeight;
                 this.styleID++;
             }
         }
+
+        /**
+         * The amount of spacing between letters, default is 0
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'letterSpacing',
         get: function get() {
             return this._letterSpacing;
         },
-        set: function set(letterSpacing) {
+        set: function set(letterSpacing) // eslint-disable-line require-jsdoc
+        {
             if (this._letterSpacing !== letterSpacing) {
                 this._letterSpacing = letterSpacing;
                 this.styleID++;
             }
         }
+
+        /**
+         * The line height, a number that represents the vertical space that a letter uses
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'lineHeight',
         get: function get() {
             return this._lineHeight;
         },
-        set: function set(lineHeight) {
+        set: function set(lineHeight) // eslint-disable-line require-jsdoc
+        {
             if (this._lineHeight !== lineHeight) {
                 this._lineHeight = lineHeight;
                 this.styleID++;
             }
         }
+
+        /**
+         * The space between lines
+         *
+         * @member {number}
+         */
+
+    }, {
+        key: 'leading',
+        get: function get() {
+            return this._leading;
+        },
+        set: function set(leading) // eslint-disable-line require-jsdoc
+        {
+            if (this._leading !== leading) {
+                this._leading = leading;
+                this.styleID++;
+            }
+        }
+
+        /**
+         * The lineJoin property sets the type of corner created, it can resolve spiked text issues.
+         * Default is 'miter' (creates a sharp corner).
+         *
+         * @member {string}
+         */
+
     }, {
         key: 'lineJoin',
         get: function get() {
             return this._lineJoin;
         },
-        set: function set(lineJoin) {
+        set: function set(lineJoin) // eslint-disable-line require-jsdoc
+        {
             if (this._lineJoin !== lineJoin) {
                 this._lineJoin = lineJoin;
                 this.styleID++;
             }
         }
+
+        /**
+         * The miter limit to use when using the 'miter' lineJoin mode
+         * This can reduce or increase the spikiness of rendered text.
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'miterLimit',
         get: function get() {
             return this._miterLimit;
         },
-        set: function set(miterLimit) {
+        set: function set(miterLimit) // eslint-disable-line require-jsdoc
+        {
             if (this._miterLimit !== miterLimit) {
                 this._miterLimit = miterLimit;
                 this.styleID++;
             }
         }
+
+        /**
+         * Occasionally some fonts are cropped. Adding some padding will prevent this from happening
+         * by adding padding to all sides of the text.
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'padding',
         get: function get() {
             return this._padding;
         },
-        set: function set(padding) {
+        set: function set(padding) // eslint-disable-line require-jsdoc
+        {
             if (this._padding !== padding) {
                 this._padding = padding;
                 this.styleID++;
             }
         }
+
+        /**
+         * A canvas fillstyle that will be used on the text stroke
+         * e.g 'blue', '#FCFF00'
+         *
+         * @member {string|number}
+         */
+
     }, {
         key: 'stroke',
         get: function get() {
             return this._stroke;
         },
-        set: function set(stroke) {
+        set: function set(stroke) // eslint-disable-line require-jsdoc
+        {
             var outputColor = getColor(stroke);
             if (this._stroke !== outputColor) {
                 this._stroke = outputColor;
                 this.styleID++;
             }
         }
+
+        /**
+         * A number that represents the thickness of the stroke.
+         * Default is 0 (no stroke)
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'strokeThickness',
         get: function get() {
             return this._strokeThickness;
         },
-        set: function set(strokeThickness) {
+        set: function set(strokeThickness) // eslint-disable-line require-jsdoc
+        {
             if (this._strokeThickness !== strokeThickness) {
                 this._strokeThickness = strokeThickness;
                 this.styleID++;
             }
         }
+
+        /**
+         * The baseline of the text that is rendered.
+         *
+         * @member {string}
+         */
+
     }, {
         key: 'textBaseline',
         get: function get() {
             return this._textBaseline;
         },
-        set: function set(textBaseline) {
+        set: function set(textBaseline) // eslint-disable-line require-jsdoc
+        {
             if (this._textBaseline !== textBaseline) {
                 this._textBaseline = textBaseline;
                 this.styleID++;
             }
         }
+
+        /**
+         * Trim transparent borders
+         *
+         * @member {boolean}
+         */
+
     }, {
         key: 'trim',
         get: function get() {
             return this._trim;
         },
-        set: function set(trim) {
+        set: function set(trim) // eslint-disable-line require-jsdoc
+        {
             if (this._trim !== trim) {
                 this._trim = trim;
                 this.styleID++;
             }
         }
+
+        /**
+         * How newlines and spaces should be handled.
+         * Default is 'pre' (preserve, preserve).
+         *
+         *  value       | New lines     |   Spaces
+         *  ---         | ---           |   ---
+         * 'normal'     | Collapse      |   Collapse
+         * 'pre'        | Preserve      |   Preserve
+         * 'pre-line'   | Preserve      |   Collapse
+         *
+         * @member {string}
+         */
+
+    }, {
+        key: 'whiteSpace',
+        get: function get() {
+            return this._whiteSpace;
+        },
+        set: function set(whiteSpace) // eslint-disable-line require-jsdoc
+        {
+            if (this._whiteSpace !== whiteSpace) {
+                this._whiteSpace = whiteSpace;
+                this.styleID++;
+            }
+        }
+
+        /**
+         * Indicates if word wrap should be used
+         *
+         * @member {boolean}
+         */
+
     }, {
         key: 'wordWrap',
         get: function get() {
             return this._wordWrap;
         },
-        set: function set(wordWrap) {
+        set: function set(wordWrap) // eslint-disable-line require-jsdoc
+        {
             if (this._wordWrap !== wordWrap) {
                 this._wordWrap = wordWrap;
                 this.styleID++;
             }
         }
+
+        /**
+         * The width at which text will wrap, it needs wordWrap to be set to true
+         *
+         * @member {number}
+         */
+
     }, {
         key: 'wordWrapWidth',
         get: function get() {
             return this._wordWrapWidth;
         },
-        set: function set(wordWrapWidth) {
+        set: function set(wordWrapWidth) // eslint-disable-line require-jsdoc
+        {
             if (this._wordWrapWidth !== wordWrapWidth) {
                 this._wordWrapWidth = wordWrapWidth;
                 this.styleID++;
@@ -17360,7 +18152,7 @@ var TextStyle = function () {
 
 /**
  * Utility function to convert hexadecimal colors to strings, and simply return the color if it's a string.
- *
+ * @private
  * @param {number|number[]} color
  * @return {string} The color as a string.
  */
@@ -17382,7 +18174,7 @@ function getSingleColor(color) {
 /**
  * Utility function to convert hexadecimal colors to strings, and simply return the color if it's a string.
  * This version can also convert array of colors
- *
+ * @private
  * @param {number|number[]} color
  * @return {string} The color as a string.
  */
@@ -17401,7 +18193,7 @@ function getColor(color) {
 /**
  * Utility function to convert hexadecimal colors to strings, and simply return the color if it's a string.
  * This version can also convert array of colors
- *
+ * @private
  * @param {Array} array1 First array to compare
  * @param {Array} array2 Second array to compare
  * @return {boolean} Do the arrays contain the same values in the same order
@@ -17422,6 +18214,23 @@ function areArraysEqual(array1, array2) {
     }
 
     return true;
+}
+
+/**
+ * Utility function to ensure that object properties are copied by value, and not by reference
+ * @private
+ * @param {Object} target Target object to copy properties into
+ * @param {Object} source Source object for the proporties to copy
+ * @param {string} propertyObj Object containing properties names we want to loop over
+ */
+function deepCopyProperties(target, source, propertyObj) {
+    for (var prop in propertyObj) {
+        if (Array.isArray(source[prop])) {
+            target[prop] = source[prop].slice();
+        } else {
+            target[prop] = source[prop];
+        }
+    }
 }
 //# sourceMappingURL=TextStyle.js.map
 
@@ -17451,7 +18260,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
- * A BaseRenderTexture is a special texture that allows any Pixi display object to be rendered to it.
+ * A BaseRenderTexture is a special texture that allows any PixiJS display object to be rendered to it.
  *
  * __Hint__: All DisplayObjects (i.e. Sprites) that render to a BaseRenderTexture should be preloaded
  * otherwise black rectangles will be drawn instead.
@@ -17510,8 +18319,8 @@ var BaseRenderTexture = function (_BaseTexture) {
 
     _this.resolution = resolution || _settings2.default.RESOLUTION;
 
-    _this.width = width;
-    _this.height = height;
+    _this.width = Math.ceil(width);
+    _this.height = Math.ceil(height);
 
     _this.realWidth = _this.width * _this.resolution;
     _this.realHeight = _this.height * _this.resolution;
@@ -17553,6 +18362,9 @@ var BaseRenderTexture = function (_BaseTexture) {
 
 
   BaseRenderTexture.prototype.resize = function resize(width, height) {
+    width = Math.ceil(width);
+    height = Math.ceil(height);
+
     if (width === this.width && height === this.height) {
       return;
     }
@@ -17591,6 +18403,175 @@ exports.default = BaseRenderTexture;
 
 /***/ }),
 /* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Matrix = __webpack_require__(45);
+
+var _Matrix2 = _interopRequireDefault(_Matrix);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var tempMat = new _Matrix2.default();
+
+/**
+ * Class controls uv transform and frame clamp for texture
+ * Can be used in Texture "transform" field, or separately, you can use different clamp settings on the same texture.
+ * If you want to add support for texture region of certain feature or filter, that's what you're looking for.
+ *
+ * @see PIXI.Texture
+ * @see PIXI.mesh.Mesh
+ * @see PIXI.extras.TilingSprite
+ * @class
+ * @memberof PIXI
+ */
+
+var TextureMatrix = function () {
+    /**
+     *
+     * @param {PIXI.Texture} texture observed texture
+     * @param {number} [clampMargin] Changes frame clamping, 0.5 by default. Use -0.5 for extra border.
+     * @constructor
+     */
+    function TextureMatrix(texture, clampMargin) {
+        _classCallCheck(this, TextureMatrix);
+
+        this._texture = texture;
+
+        this.mapCoord = new _Matrix2.default();
+
+        this.uClampFrame = new Float32Array(4);
+
+        this.uClampOffset = new Float32Array(2);
+
+        this._lastTextureID = -1;
+
+        /**
+         * Changes frame clamping
+         * Works with TilingSprite and Mesh
+         * Change to 1.5 if you texture has repeated right and bottom lines, that leads to smoother borders
+         *
+         * @default 0
+         * @member {number}
+         */
+        this.clampOffset = 0;
+
+        /**
+         * Changes frame clamping
+         * Works with TilingSprite and Mesh
+         * Change to -0.5 to add a pixel to the edge, recommended for transparent trimmed textures in atlas
+         *
+         * @default 0.5
+         * @member {number}
+         */
+        this.clampMargin = typeof clampMargin === 'undefined' ? 0.5 : clampMargin;
+    }
+
+    /**
+     * texture property
+     * @member {PIXI.Texture}
+     */
+
+
+    /**
+     * Multiplies uvs array to transform
+     * @param {Float32Array} uvs mesh uvs
+     * @param {Float32Array} [out=uvs] output
+     * @returns {Float32Array} output
+     */
+    TextureMatrix.prototype.multiplyUvs = function multiplyUvs(uvs, out) {
+        if (out === undefined) {
+            out = uvs;
+        }
+
+        var mat = this.mapCoord;
+
+        for (var i = 0; i < uvs.length; i += 2) {
+            var x = uvs[i];
+            var y = uvs[i + 1];
+
+            out[i] = x * mat.a + y * mat.c + mat.tx;
+            out[i + 1] = x * mat.b + y * mat.d + mat.ty;
+        }
+
+        return out;
+    };
+
+    /**
+     * updates matrices if texture was changed
+     * @param {boolean} forceUpdate if true, matrices will be updated any case
+     * @returns {boolean} whether or not it was updated
+     */
+
+
+    TextureMatrix.prototype.update = function update(forceUpdate) {
+        var tex = this._texture;
+
+        if (!tex || !tex.valid) {
+            return false;
+        }
+
+        if (!forceUpdate && this._lastTextureID === tex._updateID) {
+            return false;
+        }
+
+        this._lastTextureID = tex._updateID;
+
+        var uvs = tex._uvs;
+
+        this.mapCoord.set(uvs.x1 - uvs.x0, uvs.y1 - uvs.y0, uvs.x3 - uvs.x0, uvs.y3 - uvs.y0, uvs.x0, uvs.y0);
+
+        var orig = tex.orig;
+        var trim = tex.trim;
+
+        if (trim) {
+            tempMat.set(orig.width / trim.width, 0, 0, orig.height / trim.height, -trim.x / trim.width, -trim.y / trim.height);
+            this.mapCoord.append(tempMat);
+        }
+
+        var texBase = tex.baseTexture;
+        var frame = this.uClampFrame;
+        var margin = this.clampMargin / texBase.resolution;
+        var offset = this.clampOffset;
+
+        frame[0] = (tex._frame.x + margin + offset) / texBase.width;
+        frame[1] = (tex._frame.y + margin + offset) / texBase.height;
+        frame[2] = (tex._frame.x + tex._frame.width - margin + offset) / texBase.width;
+        frame[3] = (tex._frame.y + tex._frame.height - margin + offset) / texBase.height;
+        this.uClampOffset[0] = offset / texBase.realWidth;
+        this.uClampOffset[1] = offset / texBase.realHeight;
+
+        return true;
+    };
+
+    _createClass(TextureMatrix, [{
+        key: 'texture',
+        get: function get() {
+            return this._texture;
+        },
+        set: function set(value) // eslint-disable-line require-jsdoc
+        {
+            this._texture = value;
+            this._lastTextureID = -1;
+        }
+    }]);
+
+    return TextureMatrix;
+}();
+
+exports.default = TextureMatrix;
+//# sourceMappingURL=TextureMatrix.js.map
+
+/***/ }),
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17700,7 +18681,7 @@ exports.default = TextureUvs;
 //# sourceMappingURL=TextureUvs.js.map
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17716,9 +18697,13 @@ var _BaseTexture3 = _interopRequireDefault(_BaseTexture2);
 
 var _utils = __webpack_require__(2);
 
-var _ticker = __webpack_require__(50);
+var _ticker = __webpack_require__(51);
 
 var _const = __webpack_require__(0);
+
+var _determineCrossOrigin = __webpack_require__(103);
+
+var _determineCrossOrigin2 = _interopRequireDefault(_determineCrossOrigin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17731,7 +18716,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /**
  * A texture of a [playing] Video.
  *
- * Video base textures mimic Pixi BaseTexture.from.... method in their creation process.
+ * Video base textures mimic PixiJS BaseTexture.from.... method in their creation process.
  *
  * This can be used in several ways, such as:
  *
@@ -17913,13 +18898,17 @@ var VideoBaseTexture = function (_BaseTexture) {
         if (this.source && this.source._pixiId) {
             _BaseTexture3.default.removeFromCache(this.source._pixiId);
             delete this.source._pixiId;
+
+            this.source.pause();
+            this.source.src = '';
+            this.source.load();
         }
 
         _BaseTexture.prototype.destroy.call(this);
     };
 
     /**
-     * Mimic Pixi BaseTexture.from.... method.
+     * Mimic PixiJS BaseTexture.from.... method.
      *
      * @static
      * @param {HTMLVideoElement} video - Video to create texture from
@@ -17953,15 +18942,24 @@ var VideoBaseTexture = function (_BaseTexture) {
      * @param {string} [videoSrc.mime] - The mimetype of the video (e.g. 'video/mp4'). If not specified
      *  the url's extension will be used as the second part of the mime type.
      * @param {number} scaleMode - See {@link PIXI.SCALE_MODES} for possible values
+     * @param {boolean} [crossorigin=(auto)] - Should use anonymous CORS? Defaults to true if the URL is not a data-URI.
      * @return {PIXI.VideoBaseTexture} Newly created VideoBaseTexture
      */
 
 
-    VideoBaseTexture.fromUrl = function fromUrl(videoSrc, scaleMode) {
+    VideoBaseTexture.fromUrl = function fromUrl(videoSrc, scaleMode, crossorigin) {
         var video = document.createElement('video');
 
         video.setAttribute('webkit-playsinline', '');
         video.setAttribute('playsinline', '');
+
+        var url = Array.isArray(videoSrc) ? videoSrc[0].src || videoSrc[0] : videoSrc.src || videoSrc;
+
+        if (crossorigin === undefined && url.indexOf('data:') !== 0) {
+            video.crossOrigin = (0, _determineCrossOrigin2.default)(url);
+        } else if (crossorigin) {
+            video.crossOrigin = typeof crossorigin === 'string' ? crossorigin : 'anonymous';
+        }
 
         // array of objects or strings
         if (Array.isArray(videoSrc)) {
@@ -17971,7 +18969,7 @@ var VideoBaseTexture = function (_BaseTexture) {
         }
         // single object or string
         else {
-                video.appendChild(createSource(videoSrc.src || videoSrc, videoSrc.mime));
+                video.appendChild(createSource(url, videoSrc.mime));
             }
 
         video.load();
@@ -18030,14 +19028,75 @@ function createSource(path, type) {
 //# sourceMappingURL=VideoBaseTexture.js.map
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 exports.__esModule = true;
-exports.BitmapText = exports.TilingSpriteRenderer = exports.TilingSprite = exports.TextureTransform = exports.AnimatedSprite = undefined;
+exports.default = determineCrossOrigin;
+
+var _url2 = __webpack_require__(122);
+
+var _url3 = _interopRequireDefault(_url2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var tempAnchor = void 0;
+
+/**
+ * Sets the `crossOrigin` property for this resource based on if the url
+ * for this resource is cross-origin. If crossOrigin was manually set, this
+ * function does nothing.
+ * Nipped from the resource loader!
+ *
+ * @ignore
+ * @param {string} url - The url to test.
+ * @param {object} [loc=window.location] - The location object to test against.
+ * @return {string} The crossOrigin value to use (or empty string for none).
+ */
+function determineCrossOrigin(url) {
+    var loc = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : window.location;
+
+    // data: and javascript: urls are considered same-origin
+    if (url.indexOf('data:') === 0) {
+        return '';
+    }
+
+    // default is window.location
+    loc = loc || window.location;
+
+    if (!tempAnchor) {
+        tempAnchor = document.createElement('a');
+    }
+
+    // let the browser determine the full href for the url of this resource and then
+    // parse with the node url lib, we can't use the properties of the anchor element
+    // because they don't work in IE9 :(
+    tempAnchor.href = url;
+    url = _url3.default.parse(tempAnchor.href);
+
+    var samePort = !url.port && loc.port === '' || url.port === loc.port;
+
+    // if cross origin
+    if (url.hostname !== loc.hostname || !samePort || url.protocol !== loc.protocol) {
+        return 'anonymous';
+    }
+
+    return '';
+}
+//# sourceMappingURL=determineCrossOrigin.js.map
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.BitmapText = exports.TilingSpriteRenderer = exports.TilingSprite = exports.AnimatedSprite = undefined;
 
 var _AnimatedSprite = __webpack_require__(232);
 
@@ -18045,15 +19104,6 @@ Object.defineProperty(exports, 'AnimatedSprite', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AnimatedSprite).default;
-  }
-});
-
-var _TextureTransform = __webpack_require__(52);
-
-Object.defineProperty(exports, 'TextureTransform', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_TextureTransform).default;
   }
 });
 
@@ -18096,7 +19146,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18110,15 +19160,15 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _generateBlurVertSource = __webpack_require__(106);
+var _generateBlurVertSource = __webpack_require__(108);
 
 var _generateBlurVertSource2 = _interopRequireDefault(_generateBlurVertSource);
 
-var _generateBlurFragSource = __webpack_require__(105);
+var _generateBlurFragSource = __webpack_require__(107);
 
 var _generateBlurFragSource2 = _interopRequireDefault(_generateBlurFragSource);
 
-var _getMaxBlurKernelSize = __webpack_require__(107);
+var _getMaxBlurKernelSize = __webpack_require__(109);
 
 var _getMaxBlurKernelSize2 = _interopRequireDefault(_getMaxBlurKernelSize);
 
@@ -18267,7 +19317,7 @@ exports.default = BlurXFilter;
 //# sourceMappingURL=BlurXFilter.js.map
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18281,15 +19331,15 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _generateBlurVertSource = __webpack_require__(106);
+var _generateBlurVertSource = __webpack_require__(108);
 
 var _generateBlurVertSource2 = _interopRequireDefault(_generateBlurVertSource);
 
-var _generateBlurFragSource = __webpack_require__(105);
+var _generateBlurFragSource = __webpack_require__(107);
 
 var _generateBlurFragSource2 = _interopRequireDefault(_generateBlurFragSource);
 
-var _getMaxBlurKernelSize = __webpack_require__(107);
+var _getMaxBlurKernelSize = __webpack_require__(109);
 
 var _getMaxBlurKernelSize2 = _interopRequireDefault(_getMaxBlurKernelSize);
 
@@ -18437,7 +19487,7 @@ exports.default = BlurYFilter;
 //# sourceMappingURL=BlurYFilter.js.map
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18489,7 +19539,7 @@ function generateFragBlurSource(kernelSize) {
 //# sourceMappingURL=generateBlurFragSource.js.map
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18538,7 +19588,7 @@ function generateVertBlurSource(kernelSize, x) {
 //# sourceMappingURL=generateBlurVertSource.js.map
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18559,7 +19609,7 @@ function getMaxKernelSize(gl) {
 //# sourceMappingURL=getMaxBlurKernelSize.js.map
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18737,11 +19787,10 @@ var InteractionData = function () {
    * Copies properties from normalized event data.
    *
    * @param {Touch|MouseEvent|PointerEvent} event The normalized event data
-   * @private
    */
 
 
-  InteractionData.prototype._copyEvent = function _copyEvent(event) {
+  InteractionData.prototype.copyEvent = function copyEvent(event) {
     // isPrimary should only change on touchstart/pointerdown, so we don't want to overwrite
     // it with "false" on later events when our shim for it on touch events might not be
     // accurate
@@ -18749,7 +19798,9 @@ var InteractionData = function () {
       this.isPrimary = true;
     }
     this.button = event.button;
-    this.buttons = event.buttons;
+    // event.buttons is not available in all browsers (ie. Safari), but it does have a non-standard
+    // event.which property instead, which conveys the same information.
+    this.buttons = Number.isInteger(event.buttons) ? event.buttons : event.which;
     this.width = event.width;
     this.height = event.height;
     this.tiltX = event.tiltX;
@@ -18763,12 +19814,10 @@ var InteractionData = function () {
 
   /**
    * Resets the data for pooling.
-   *
-   * @private
    */
 
 
-  InteractionData.prototype._reset = function _reset() {
+  InteractionData.prototype.reset = function reset() {
     // isPrimary is the only property that we really need to reset - everything else is
     // guaranteed to be overwritten
     this.isPrimary = false;
@@ -18788,7 +19837,276 @@ exports.default = InteractionData;
 //# sourceMappingURL=InteractionData.js.map
 
 /***/ }),
-/* 109 */
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Event class that mimics native DOM events.
+ *
+ * @class
+ * @memberof PIXI.interaction
+ */
+var InteractionEvent = function () {
+  /**
+   *
+   */
+  function InteractionEvent() {
+    _classCallCheck(this, InteractionEvent);
+
+    /**
+     * Whether this event will continue propagating in the tree
+     *
+     * @member {boolean}
+     */
+    this.stopped = false;
+
+    /**
+     * The object which caused this event to be dispatched.
+     * For listener callback see {@link PIXI.interaction.InteractionEvent.currentTarget}.
+     *
+     * @member {PIXI.DisplayObject}
+     */
+    this.target = null;
+
+    /**
+     * The object whose event listener’s callback is currently being invoked.
+     *
+     * @member {PIXI.DisplayObject}
+     */
+    this.currentTarget = null;
+
+    /**
+     * Type of the event
+     *
+     * @member {string}
+     */
+    this.type = null;
+
+    /**
+     * InteractionData related to this event
+     *
+     * @member {PIXI.interaction.InteractionData}
+     */
+    this.data = null;
+  }
+
+  /**
+   * Prevents event from reaching any objects other than the current object.
+   *
+   */
+
+
+  InteractionEvent.prototype.stopPropagation = function stopPropagation() {
+    this.stopped = true;
+  };
+
+  /**
+   * Resets the event.
+   */
+
+
+  InteractionEvent.prototype.reset = function reset() {
+    this.stopped = false;
+    this.currentTarget = null;
+    this.target = null;
+  };
+
+  return InteractionEvent;
+}();
+
+exports.default = InteractionEvent;
+//# sourceMappingURL=InteractionEvent.js.map
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * DisplayObjects with the {@link PIXI.interaction.interactiveTarget} mixin use this class to track interactions
+ *
+ * @class
+ * @private
+ * @memberof PIXI.interaction
+ */
+var InteractionTrackingData = function () {
+    /**
+     * @param {number} pointerId - Unique pointer id of the event
+     */
+    function InteractionTrackingData(pointerId) {
+        _classCallCheck(this, InteractionTrackingData);
+
+        this._pointerId = pointerId;
+        this._flags = InteractionTrackingData.FLAGS.NONE;
+    }
+
+    /**
+     *
+     * @private
+     * @param {number} flag - The interaction flag to set
+     * @param {boolean} yn - Should the flag be set or unset
+     */
+
+
+    InteractionTrackingData.prototype._doSet = function _doSet(flag, yn) {
+        if (yn) {
+            this._flags = this._flags | flag;
+        } else {
+            this._flags = this._flags & ~flag;
+        }
+    };
+
+    /**
+     * Unique pointer id of the event
+     *
+     * @readonly
+     * @member {number}
+     */
+
+
+    _createClass(InteractionTrackingData, [{
+        key: "pointerId",
+        get: function get() {
+            return this._pointerId;
+        }
+
+        /**
+         * State of the tracking data, expressed as bit flags
+         *
+         * @member {number}
+         * @memberof PIXI.interaction.InteractionTrackingData#
+         */
+
+    }, {
+        key: "flags",
+        get: function get() {
+            return this._flags;
+        }
+
+        /**
+         * Set the flags for the tracking data
+         *
+         * @param {number} flags - Flags to set
+         */
+        ,
+        set: function set(flags) {
+            this._flags = flags;
+        }
+
+        /**
+         * Is the tracked event inactive (not over or down)?
+         *
+         * @member {number}
+         * @memberof PIXI.interaction.InteractionTrackingData#
+         */
+
+    }, {
+        key: "none",
+        get: function get() {
+            return this._flags === this.constructor.FLAGS.NONE;
+        }
+
+        /**
+         * Is the tracked event over the DisplayObject?
+         *
+         * @member {boolean}
+         * @memberof PIXI.interaction.InteractionTrackingData#
+         */
+
+    }, {
+        key: "over",
+        get: function get() {
+            return (this._flags & this.constructor.FLAGS.OVER) !== 0;
+        }
+
+        /**
+         * Set the over flag
+         *
+         * @param {boolean} yn - Is the event over?
+         */
+        ,
+        set: function set(yn) {
+            this._doSet(this.constructor.FLAGS.OVER, yn);
+        }
+
+        /**
+         * Did the right mouse button come down in the DisplayObject?
+         *
+         * @member {boolean}
+         * @memberof PIXI.interaction.InteractionTrackingData#
+         */
+
+    }, {
+        key: "rightDown",
+        get: function get() {
+            return (this._flags & this.constructor.FLAGS.RIGHT_DOWN) !== 0;
+        }
+
+        /**
+         * Set the right down flag
+         *
+         * @param {boolean} yn - Is the right mouse button down?
+         */
+        ,
+        set: function set(yn) {
+            this._doSet(this.constructor.FLAGS.RIGHT_DOWN, yn);
+        }
+
+        /**
+         * Did the left mouse button come down in the DisplayObject?
+         *
+         * @member {boolean}
+         * @memberof PIXI.interaction.InteractionTrackingData#
+         */
+
+    }, {
+        key: "leftDown",
+        get: function get() {
+            return (this._flags & this.constructor.FLAGS.LEFT_DOWN) !== 0;
+        }
+
+        /**
+         * Set the left down flag
+         *
+         * @param {boolean} yn - Is the left mouse button down?
+         */
+        ,
+        set: function set(yn) {
+            this._doSet(this.constructor.FLAGS.LEFT_DOWN, yn);
+        }
+    }]);
+
+    return InteractionTrackingData;
+}();
+
+exports.default = InteractionTrackingData;
+
+
+InteractionTrackingData.FLAGS = Object.freeze({
+    NONE: 0,
+    OVER: 1 << 0,
+    LEFT_DOWN: 1 << 1,
+    RIGHT_DOWN: 1 << 2
+});
+//# sourceMappingURL=InteractionTrackingData.js.map
+
+/***/ }),
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18829,7 +20147,7 @@ exports.default = {
 
   /**
    * Determines if the children to the displayObject can be clicked/touched
-   * Setting this to false allows pixi to bypass a recursive `hitTest` function
+   * Setting this to false allows PixiJS to bypass a recursive `hitTest` function
    *
    * @member {boolean}
    * @memberof PIXI.Container#
@@ -18910,7 +20228,7 @@ exports.default = {
 //# sourceMappingURL=interactiveTarget.js.map
 
 /***/ }),
-/* 110 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18947,36 +20265,60 @@ exports.default = function () {
                 if (this.baseUrl.charAt(this.baseUrl.length - 1) === '/') {
                     xmlUrl += '/';
                 }
-
-                // remove baseUrl from xmlUrl
-                xmlUrl = xmlUrl.replace(this.baseUrl, '');
             }
         }
+
+        // remove baseUrl from xmlUrl
+        xmlUrl = xmlUrl.replace(this.baseUrl, '');
 
         // if there is an xmlUrl now, it needs a trailing slash. Ensure that it does if the string isn't empty.
         if (xmlUrl && xmlUrl.charAt(xmlUrl.length - 1) !== '/') {
             xmlUrl += '/';
         }
 
-        var textureUrl = xmlUrl + resource.data.getElementsByTagName('page')[0].getAttribute('file');
+        var pages = resource.data.getElementsByTagName('page');
+        var textures = {};
 
-        if (_core.utils.TextureCache[textureUrl]) {
-            // reuse existing texture
-            parse(resource, _core.utils.TextureCache[textureUrl]);
-            next();
-        } else {
-            var loadOptions = {
-                crossOrigin: resource.crossOrigin,
-                loadType: _resourceLoader.Resource.LOAD_TYPE.IMAGE,
-                metadata: resource.metadata.imageMetadata,
-                parentResource: resource
-            };
+        // Handle completed, when the number of textures
+        // load is the same number as references in the fnt file
+        var completed = function completed(page) {
+            textures[page.metadata.pageFile] = page.texture;
 
-            // load the texture for the font
-            this.add(resource.name + '_image', textureUrl, loadOptions, function (res) {
-                parse(resource, res.texture);
+            if (Object.keys(textures).length === pages.length) {
+                parse(resource, textures);
                 next();
-            });
+            }
+        };
+
+        for (var i = 0; i < pages.length; ++i) {
+            var pageFile = pages[i].getAttribute('file');
+            var url = xmlUrl + pageFile;
+            var exists = false;
+
+            // incase the image is loaded outside
+            // using the same loader, resource will be available
+            for (var name in this.resources) {
+                if (this.resources[name].url === url) {
+                    this.resources[name].metadata.pageFile = pageFile;
+                    completed(this.resources[name]);
+                    exists = true;
+                    break;
+                }
+            }
+
+            // texture is not loaded, we'll attempt to add
+            // it to the load and add the texture to the list
+            if (!exists) {
+                // Standard loading options for images
+                var options = {
+                    crossOrigin: resource.crossOrigin,
+                    loadType: _resourceLoader.Resource.LOAD_TYPE.IMAGE,
+                    metadata: Object.assign({ pageFile: pageFile }, resource.metadata.imageMetadata),
+                    parentResource: resource
+                };
+
+                this.add(url, options, completed);
+            }
         }
     };
 };
@@ -18985,11 +20327,9 @@ var _path = __webpack_require__(6);
 
 var path = _interopRequireWildcard(_path);
 
-var _core = __webpack_require__(1);
+var _resourceLoader = __webpack_require__(24);
 
-var _resourceLoader = __webpack_require__(23);
-
-var _extras = __webpack_require__(102);
+var _extras = __webpack_require__(104);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -18999,15 +20339,15 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @function parseBitmapFontData
  * @memberof PIXI.loaders
  * @param {PIXI.loaders.Resource} resource - Loader resource.
- * @param {PIXI.Texture} texture - Reference to texture.
+ * @param {PIXI.Texture|PIXI.Texture[]} textures - List of textures for each page.
  */
-function parse(resource, texture) {
-    resource.bitmapFont = _extras.BitmapText.registerFont(resource.data, texture);
+function parse(resource, textures) {
+    resource.bitmapFont = _extras.BitmapText.registerFont(resource.data, textures);
 }
 //# sourceMappingURL=bitmapFontParser.js.map
 
 /***/ }),
-/* 111 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19028,7 +20368,6 @@ exports.default = function () {
 
         var loadOptions = {
             crossOrigin: resource.crossOrigin,
-            loadType: _resourceLoader.Resource.LOAD_TYPE.IMAGE,
             metadata: resource.metadata.imageMetadata,
             parentResource: resource
         };
@@ -19037,6 +20376,12 @@ exports.default = function () {
 
         // load the image for this sheet
         this.add(imageResourceName, resourcePath, loadOptions, function onImageLoad(res) {
+            if (res.error) {
+                next(res.error);
+
+                return;
+            }
+
             var spritesheet = new _core.Spritesheet(res.texture.baseTexture, resource.data, resource.url);
 
             spritesheet.parse(function () {
@@ -19050,9 +20395,9 @@ exports.default = function () {
 
 exports.getResourcePath = getResourcePath;
 
-var _resourceLoader = __webpack_require__(23);
+var _resourceLoader = __webpack_require__(24);
 
-var _url = __webpack_require__(117);
+var _url = __webpack_require__(122);
 
 var _url2 = _interopRequireDefault(_url);
 
@@ -19071,7 +20416,7 @@ function getResourcePath(resource, baseUrl) {
 //# sourceMappingURL=spritesheetParser.js.map
 
 /***/ }),
-/* 112 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19089,7 +20434,7 @@ exports.default = function () {
     };
 };
 
-var _resourceLoader = __webpack_require__(23);
+var _resourceLoader = __webpack_require__(24);
 
 var _Texture = __webpack_require__(9);
 
@@ -19099,7 +20444,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=textureParser.js.map
 
 /***/ }),
-/* 113 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19107,7 +20452,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.__esModule = true;
 
-var _Mesh2 = __webpack_require__(22);
+var _Mesh2 = __webpack_require__(23);
 
 var _Mesh3 = _interopRequireDefault(_Mesh2);
 
@@ -19215,7 +20560,9 @@ var Plane = function (_Mesh) {
         this.uvs = new Float32Array(uvs);
         this.colors = new Float32Array(colors);
         this.indices = new Uint16Array(indices);
-        this.indexDirty = true;
+
+        this.dirty++;
+        this.indexDirty++;
 
         this.multiplyUvs();
     };
@@ -19243,7 +20590,7 @@ exports.default = Plane;
 //# sourceMappingURL=Plane.js.map
 
 /***/ }),
-/* 114 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19306,7 +20653,197 @@ exports.default = CountLimiter;
 //# sourceMappingURL=CountLimiter.js.map
 
 /***/ }),
-/* 115 */
+/* 119 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19520,7 +21057,7 @@ function queue(worker, concurrency) {
 //# sourceMappingURL=async.js.map
 
 /***/ }),
-/* 116 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19593,7 +21130,7 @@ function encodeBinary(input) {
 //# sourceMappingURL=b64.js.map
 
 /***/ }),
-/* 117 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19620,8 +21157,8 @@ function encodeBinary(input) {
 
 
 
-var punycode = __webpack_require__(272);
-var util = __webpack_require__(279);
+var punycode = __webpack_require__(270);
+var util = __webpack_require__(280);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -19696,7 +21233,7 @@ var protocolPattern = /^([a-z0-9.+-]+:)/i,
       'gopher:': true,
       'file:': true
     },
-    querystring = __webpack_require__(275);
+    querystring = __webpack_require__(273);
 
 function urlParse(url, parseQueryString, slashesDenoteHost) {
   if (url && util.isObject(url) && url instanceof Url) return url;
@@ -20332,7 +21869,7 @@ Url.prototype.parseHost = function() {
 
 
 /***/ }),
-/* 118 */
+/* 123 */
 /***/ (function(module, exports) {
 
 var serviceWorkerOption = {"scriptURL":"/sw.js"};
@@ -20358,8 +21895,8 @@ exports.default = {
 module.exports = exports["default"];
 
 /***/ }),
-/* 119 */,
-/* 120 */
+/* 124 */,
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -20421,7 +21958,7 @@ function newtonRaphsonIterate (aX, aGuessT, mX1, mX2) {
  return aGuessT;
 }
 
-var index = function bezier (mX1, mY1, mX2, mY2) {
+var src = function bezier (mX1, mY1, mX2, mY2) {
   if (!(0 <= mX1 && mX1 <= 1 && 0 <= mX2 && mX2 <= 1)) {
     throw new Error('bezier x values must be in [0, 1] range');
   }
@@ -20481,6 +22018,17 @@ var easings = {
     "ease-in-out": [0.42, 0.0, 0.58, 1.0]
 };
 
+// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
+var supportsPassive = false;
+try {
+    var opts = Object.defineProperty({}, "passive", {
+        get: function get() {
+            supportsPassive = true;
+        }
+    });
+    window.addEventListener("test", null, opts);
+} catch (e) {}
+
 var _ = {
     $: function $(selector) {
         if (typeof selector !== "string") {
@@ -20489,11 +22037,13 @@ var _ = {
         return document.querySelector(selector);
     },
     on: function on(element, events, handler) {
+        var opts = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { passive: false };
+
         if (!(events instanceof Array)) {
             events = [events];
         }
         for (var i = 0; i < events.length; i++) {
-            element.addEventListener(events[i], handler);
+            element.addEventListener(events[i], handler, supportsPassive ? opts : false);
         }
     },
     off: function off(element, events, handler) {
@@ -20527,6 +22077,40 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
 var abortEvents = ["mousedown", "wheel", "DOMMouseScroll", "mousewheel", "keyup", "touchmove"];
 
 var defaults$$1 = {
@@ -20535,12 +22119,15 @@ var defaults$$1 = {
     easing: "ease",
     offset: 0,
     cancelable: true,
+    onStart: false,
     onDone: false,
-    onCancel: false
+    onCancel: false,
+    x: false,
+    y: true
 };
 
 function setDefaults(options) {
-    defaults$$1 = Object.assign({}, defaults$$1, options);
+    defaults$$1 = _extends({}, defaults$$1, options);
 }
 
 var scroller = function scroller() {
@@ -20550,8 +22137,11 @@ var scroller = function scroller() {
     var easing = void 0; // easing to be used when scrolling
     var offset = void 0; // offset to be added (subtracted)
     var cancelable = void 0; // indicates if user can cancel the scroll or not.
+    var onStart = void 0; // callback when scrolling is started
     var onDone = void 0; // callback when scrolling is done
     var onCancel = void 0; // callback when scrolling is canceled / aborted
+    var x = void 0; // scroll on x axis
+    var y = void 0; // scroll on y axis
 
     var initialX = void 0; // initial X of container
     var targetX = void 0; // target X of container
@@ -20620,19 +22210,19 @@ var scroller = function scroller() {
         timeStart = false;
 
         _.off(container, abortEvents, abortFn);
-        if (abort && onCancel) onCancel(abortEv);
-        if (!abort && onDone) onDone();
+        if (abort && onCancel) onCancel(abortEv, element);
+        if (!abort && onDone) onDone(element);
     }
 
     function topLeft(element, top, left) {
-        element.scrollTop = top;
-        element.scrollLeft = left;
+        if (y) element.scrollTop = top;
+        if (x) element.scrollLeft = left;
         if (element.tagName.toLowerCase() === "body") {
             // in firefox body.scrollTop doesn't scroll the page
             // thus if we are trying to scrollTop on a body tag
             // we need to scroll on the documentElement
-            document.documentElement.scrollTop = top;
-            document.documentElement.scrollLeft = left;
+            if (y) document.documentElement.scrollTop = top;
+            if (x) document.documentElement.scrollLeft = left;
         }
     }
 
@@ -20655,17 +22245,25 @@ var scroller = function scroller() {
         duration = options.duration || defaults$$1.duration;
         easing = options.easing || defaults$$1.easing;
         offset = options.offset || defaults$$1.offset;
-        cancelable = options.cancelable || defaults$$1.cancelable;
+        cancelable = options.hasOwnProperty("cancelable") ? options.cancelable !== false : defaults$$1.cancelable;
+        onStart = options.onStart || defaults$$1.onStart;
         onDone = options.onDone || defaults$$1.onDone;
         onCancel = options.onCancel || defaults$$1.onCancel;
+        x = options.x === undefined ? defaults$$1.x : options.x;
+        y = options.y === undefined ? defaults$$1.y : options.y;
 
-        var cumulativeOffset = _.cumulativeOffset(element);
+        var cumulativeOffsetContainer = _.cumulativeOffset(container);
+        var cumulativeOffsetElement = _.cumulativeOffset(element);
+
+        if (typeof offset === "function") {
+            offset = offset();
+        }
 
         initialY = scrollTop(container);
-        targetY = cumulativeOffset.top - container.offsetTop + offset;
+        targetY = cumulativeOffsetElement.top - cumulativeOffsetContainer.top + offset;
 
         initialX = scrollLeft(container);
-        targetX = cumulativeOffset.left - container.offsetLeft + offset;
+        targetX = cumulativeOffsetElement.left - cumulativeOffsetContainer.left + offset;
 
         abort = false;
 
@@ -20676,13 +22274,19 @@ var scroller = function scroller() {
             easing = easings[easing] || easings["ease"];
         }
 
-        easingFn = index.apply(index, easing);
+        easingFn = src.apply(src, easing);
 
         if (!diffY && !diffX) return;
+        if (onStart) onStart(element);
 
-        _.on(container, abortEvents, abortFn);
+        _.on(container, abortEvents, abortFn, { passive: true });
 
         window.requestAnimationFrame(step);
+
+        return function () {
+            abortEv = null;
+            abort = true;
+        };
     }
 
     return scrollTo;
@@ -20702,10 +22306,16 @@ function deleteBinding(el) {
     return false;
 }
 
+function findBinding(el) {
+    for (var i = 0; i < bindings.length; ++i) {
+        if (bindings[i].el === el) {
+            return bindings[i];
+        }
+    }
+}
+
 function getBinding(el) {
-    var binding = bindings.find(function (entry) {
-        return entry.el == el;
-    });
+    var binding = findBinding(el);
 
     if (binding) {
         return binding;
@@ -20766,16 +22376,18 @@ return VueScrollTo$1;
 
 
 /***/ }),
-/* 121 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/*!
- * Vue.js v2.3.4
- * (c) 2014-2017 Evan You
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
+ * Vue.js v2.5.17
+ * (c) 2014-2018 Evan You
  * Released under the MIT License.
  */
 /*  */
+
+var emptyObject = Object.freeze({});
 
 // these helpers produces better vm code in JS engines due to their
 // explicitness and function inlining
@@ -20794,11 +22406,18 @@ function isTrue (v) {
 function isFalse (v) {
   return v === false
 }
+
 /**
  * Check if value is primitive
  */
 function isPrimitive (value) {
-  return typeof value === 'string' || typeof value === 'number'
+  return (
+    typeof value === 'string' ||
+    typeof value === 'number' ||
+    // $flow-disable-line
+    typeof value === 'symbol' ||
+    typeof value === 'boolean'
+  )
 }
 
 /**
@@ -20810,7 +22429,14 @@ function isObject (obj) {
   return obj !== null && typeof obj === 'object'
 }
 
+/**
+ * Get the raw type string of a value e.g. [object Object]
+ */
 var _toString = Object.prototype.toString;
+
+function toRawType (value) {
+  return _toString.call(value).slice(8, -1)
+}
 
 /**
  * Strict object type check. Only returns true
@@ -20822,6 +22448,14 @@ function isPlainObject (obj) {
 
 function isRegExp (v) {
   return _toString.call(v) === '[object RegExp]'
+}
+
+/**
+ * Check if val is a valid array index.
+ */
+function isValidArrayIndex (val) {
+  var n = parseFloat(String(val));
+  return n >= 0 && Math.floor(n) === n && isFinite(val)
 }
 
 /**
@@ -20866,6 +22500,11 @@ function makeMap (
  * Check if a tag is a built-in tag.
  */
 var isBuiltInTag = makeMap('slot,component', true);
+
+/**
+ * Check if a attribute is a reserved attribute.
+ */
+var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
 
 /**
  * Remove an item from an array
@@ -20916,18 +22555,21 @@ var capitalize = cached(function (str) {
 /**
  * Hyphenate a camelCase string.
  */
-var hyphenateRE = /([^-])([A-Z])/g;
+var hyphenateRE = /\B([A-Z])/g;
 var hyphenate = cached(function (str) {
-  return str
-    .replace(hyphenateRE, '$1-$2')
-    .replace(hyphenateRE, '$1-$2')
-    .toLowerCase()
+  return str.replace(hyphenateRE, '-$1').toLowerCase()
 });
 
 /**
- * Simple bind, faster than native
+ * Simple bind polyfill for environments that do not support it... e.g.
+ * PhantomJS 1.x. Technically we don't need this anymore since native bind is
+ * now more performant in most browsers, but removing it would be breaking for
+ * code that was able to run in PhantomJS 1.x, so this must be kept for
+ * backwards compatibility.
  */
-function bind (fn, ctx) {
+
+/* istanbul ignore next */
+function polyfillBind (fn, ctx) {
   function boundFn (a) {
     var l = arguments.length;
     return l
@@ -20936,10 +22578,18 @@ function bind (fn, ctx) {
         : fn.call(ctx, a)
       : fn.call(ctx)
   }
-  // record original fn length
+
   boundFn._length = fn.length;
   return boundFn
 }
+
+function nativeBind (fn, ctx) {
+  return fn.bind(ctx)
+}
+
+var bind = Function.prototype.bind
+  ? nativeBind
+  : polyfillBind;
 
 /**
  * Convert an Array-like object to a real Array.
@@ -20979,13 +22629,15 @@ function toObject (arr) {
 
 /**
  * Perform no operation.
+ * Stubbing args to make Flow happy without leaving useless transpiled code
+ * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/)
  */
-function noop () {}
+function noop (a, b, c) {}
 
 /**
  * Always return false.
  */
-var no = function () { return false; };
+var no = function (a, b, c) { return false; };
 
 /**
  * Return same value
@@ -21006,14 +22658,30 @@ function genStaticKeys (modules) {
  * if they are plain objects, do they have the same shape?
  */
 function looseEqual (a, b) {
+  if (a === b) { return true }
   var isObjectA = isObject(a);
   var isObjectB = isObject(b);
   if (isObjectA && isObjectB) {
     try {
-      return JSON.stringify(a) === JSON.stringify(b)
+      var isArrayA = Array.isArray(a);
+      var isArrayB = Array.isArray(b);
+      if (isArrayA && isArrayB) {
+        return a.length === b.length && a.every(function (e, i) {
+          return looseEqual(e, b[i])
+        })
+      } else if (!isArrayA && !isArrayB) {
+        var keysA = Object.keys(a);
+        var keysB = Object.keys(b);
+        return keysA.length === keysB.length && keysA.every(function (key) {
+          return looseEqual(a[key], b[key])
+        })
+      } else {
+        /* istanbul ignore next */
+        return false
+      }
     } catch (e) {
-      // possible circular reference
-      return a === b
+      /* istanbul ignore next */
+      return false
     }
   } else if (!isObjectA && !isObjectB) {
     return String(a) === String(b)
@@ -21060,7 +22728,8 @@ var LIFECYCLE_HOOKS = [
   'beforeDestroy',
   'destroyed',
   'activated',
-  'deactivated'
+  'deactivated',
+  'errorCaptured'
 ];
 
 /*  */
@@ -21069,6 +22738,7 @@ var config = ({
   /**
    * Option merge strategies (used in core/util/options)
    */
+  // $flow-disable-line
   optionMergeStrategies: Object.create(null),
 
   /**
@@ -21097,6 +22767,11 @@ var config = ({
   errorHandler: null,
 
   /**
+   * Warn handler for watcher warns
+   */
+  warnHandler: null,
+
+  /**
    * Ignore certain custom elements
    */
   ignoredElements: [],
@@ -21104,6 +22779,7 @@ var config = ({
   /**
    * Custom user key aliases for v-on
    */
+  // $flow-disable-line
   keyCodes: Object.create(null),
 
   /**
@@ -21144,11 +22820,9 @@ var config = ({
    * Exposed for legacy reasons
    */
   _lifecycleHooks: LIFECYCLE_HOOKS
-});
+})
 
 /*  */
-
-var emptyObject = Object.freeze({});
 
 /**
  * Check if a string starts with $ or _
@@ -21190,9 +22864,98 @@ function parsePath (path) {
 
 /*  */
 
+// can we use __proto__?
+var hasProto = '__proto__' in {};
+
+// Browser environment sniffing
+var inBrowser = typeof window !== 'undefined';
+var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
+var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
+var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+var isIE = UA && /msie|trident/.test(UA);
+var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+var isEdge = UA && UA.indexOf('edge/') > 0;
+var isAndroid = (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android');
+var isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios');
+var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+
+// Firefox has a "watch" function on Object.prototype...
+var nativeWatch = ({}).watch;
+
+var supportsPassive = false;
+if (inBrowser) {
+  try {
+    var opts = {};
+    Object.defineProperty(opts, 'passive', ({
+      get: function get () {
+        /* istanbul ignore next */
+        supportsPassive = true;
+      }
+    })); // https://github.com/facebook/flow/issues/285
+    window.addEventListener('test-passive', null, opts);
+  } catch (e) {}
+}
+
+// this needs to be lazy-evaled because vue may be required before
+// vue-server-renderer can set VUE_ENV
+var _isServer;
+var isServerRendering = function () {
+  if (_isServer === undefined) {
+    /* istanbul ignore if */
+    if (!inBrowser && !inWeex && typeof global !== 'undefined') {
+      // detect presence of vue-server-renderer and avoid
+      // Webpack shimming the process
+      _isServer = global['process'].env.VUE_ENV === 'server';
+    } else {
+      _isServer = false;
+    }
+  }
+  return _isServer
+};
+
+// detect devtools
+var devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+/* istanbul ignore next */
+function isNative (Ctor) {
+  return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
+}
+
+var hasSymbol =
+  typeof Symbol !== 'undefined' && isNative(Symbol) &&
+  typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys);
+
+var _Set;
+/* istanbul ignore if */ // $flow-disable-line
+if (typeof Set !== 'undefined' && isNative(Set)) {
+  // use native Set when available.
+  _Set = Set;
+} else {
+  // a non-standard Set polyfill that only works with primitive keys.
+  _Set = (function () {
+    function Set () {
+      this.set = Object.create(null);
+    }
+    Set.prototype.has = function has (key) {
+      return this.set[key] === true
+    };
+    Set.prototype.add = function add (key) {
+      this.set[key] = true;
+    };
+    Set.prototype.clear = function clear () {
+      this.set = Object.create(null);
+    };
+
+    return Set;
+  }());
+}
+
+/*  */
+
 var warn = noop;
 var tip = noop;
-var formatComponentName = (null); // work around flow check
+var generateComponentTrace = (noop); // work around flow check
+var formatComponentName = (noop);
 
 if (false) {
   var hasConsole = typeof console !== 'undefined';
@@ -21202,10 +22965,12 @@ if (false) {
     .replace(/[-_]/g, ''); };
 
   warn = function (msg, vm) {
-    if (hasConsole && (!config.silent)) {
-      console.error("[Vue warn]: " + msg + (
-        vm ? generateComponentTrace(vm) : ''
-      ));
+    var trace = vm ? generateComponentTrace(vm) : '';
+
+    if (config.warnHandler) {
+      config.warnHandler.call(null, msg, vm, trace);
+    } else if (hasConsole && (!config.silent)) {
+      console.error(("[Vue warn]: " + msg + trace));
     }
   };
 
@@ -21221,15 +22986,13 @@ if (false) {
     if (vm.$root === vm) {
       return '<Root>'
     }
-    var name = typeof vm === 'string'
-      ? vm
-      : typeof vm === 'function' && vm.options
-        ? vm.options.name
-        : vm._isVue
-          ? vm.$options.name || vm.$options._componentTag
-          : vm.name;
-
-    var file = vm._isVue && vm.$options.__file;
+    var options = typeof vm === 'function' && vm.cid != null
+      ? vm.options
+      : vm._isVue
+        ? vm.$options || vm.constructor.options
+        : vm || {};
+    var name = options.name || options._componentTag;
+    var file = options.__file;
     if (!name && file) {
       var match = file.match(/([^/\\]+)\.vue$/);
       name = match && match[1];
@@ -21251,7 +23014,7 @@ if (false) {
     return res
   };
 
-  var generateComponentTrace = function (vm) {
+  generateComponentTrace = function (vm) {
     if (vm._isVue && vm.$parent) {
       var tree = [];
       var currentRecursiveSequence = 0;
@@ -21279,194 +23042,6 @@ if (false) {
       return ("\n\n(found in " + (formatComponentName(vm)) + ")")
     }
   };
-}
-
-/*  */
-
-function handleError (err, vm, info) {
-  if (config.errorHandler) {
-    config.errorHandler.call(null, err, vm, info);
-  } else {
-    if (false) {
-      warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
-    }
-    /* istanbul ignore else */
-    if (inBrowser && typeof console !== 'undefined') {
-      console.error(err);
-    } else {
-      throw err
-    }
-  }
-}
-
-/*  */
-/* globals MutationObserver */
-
-// can we use __proto__?
-var hasProto = '__proto__' in {};
-
-// Browser environment sniffing
-var inBrowser = typeof window !== 'undefined';
-var UA = inBrowser && window.navigator.userAgent.toLowerCase();
-var isIE = UA && /msie|trident/.test(UA);
-var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
-var isEdge = UA && UA.indexOf('edge/') > 0;
-var isAndroid = UA && UA.indexOf('android') > 0;
-var isIOS = UA && /iphone|ipad|ipod|ios/.test(UA);
-var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
-
-var supportsPassive = false;
-if (inBrowser) {
-  try {
-    var opts = {};
-    Object.defineProperty(opts, 'passive', ({
-      get: function get () {
-        /* istanbul ignore next */
-        supportsPassive = true;
-      }
-    } )); // https://github.com/facebook/flow/issues/285
-    window.addEventListener('test-passive', null, opts);
-  } catch (e) {}
-}
-
-// this needs to be lazy-evaled because vue may be required before
-// vue-server-renderer can set VUE_ENV
-var _isServer;
-var isServerRendering = function () {
-  if (_isServer === undefined) {
-    /* istanbul ignore if */
-    if (!inBrowser && typeof global !== 'undefined') {
-      // detect presence of vue-server-renderer and avoid
-      // Webpack shimming the process
-      _isServer = global['process'].env.VUE_ENV === 'server';
-    } else {
-      _isServer = false;
-    }
-  }
-  return _isServer
-};
-
-// detect devtools
-var devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
-
-/* istanbul ignore next */
-function isNative (Ctor) {
-  return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
-}
-
-var hasSymbol =
-  typeof Symbol !== 'undefined' && isNative(Symbol) &&
-  typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys);
-
-/**
- * Defer a task to execute it asynchronously.
- */
-var nextTick = (function () {
-  var callbacks = [];
-  var pending = false;
-  var timerFunc;
-
-  function nextTickHandler () {
-    pending = false;
-    var copies = callbacks.slice(0);
-    callbacks.length = 0;
-    for (var i = 0; i < copies.length; i++) {
-      copies[i]();
-    }
-  }
-
-  // the nextTick behavior leverages the microtask queue, which can be accessed
-  // via either native Promise.then or MutationObserver.
-  // MutationObserver has wider support, however it is seriously bugged in
-  // UIWebView in iOS >= 9.3.3 when triggered in touch event handlers. It
-  // completely stops working after triggering a few times... so, if native
-  // Promise is available, we will use it:
-  /* istanbul ignore if */
-  if (typeof Promise !== 'undefined' && isNative(Promise)) {
-    var p = Promise.resolve();
-    var logError = function (err) { console.error(err); };
-    timerFunc = function () {
-      p.then(nextTickHandler).catch(logError);
-      // in problematic UIWebViews, Promise.then doesn't completely break, but
-      // it can get stuck in a weird state where callbacks are pushed into the
-      // microtask queue but the queue isn't being flushed, until the browser
-      // needs to do some other work, e.g. handle a timer. Therefore we can
-      // "force" the microtask queue to be flushed by adding an empty timer.
-      if (isIOS) { setTimeout(noop); }
-    };
-  } else if (typeof MutationObserver !== 'undefined' && (
-    isNative(MutationObserver) ||
-    // PhantomJS and iOS 7.x
-    MutationObserver.toString() === '[object MutationObserverConstructor]'
-  )) {
-    // use MutationObserver where native Promise is not available,
-    // e.g. PhantomJS IE11, iOS7, Android 4.4
-    var counter = 1;
-    var observer = new MutationObserver(nextTickHandler);
-    var textNode = document.createTextNode(String(counter));
-    observer.observe(textNode, {
-      characterData: true
-    });
-    timerFunc = function () {
-      counter = (counter + 1) % 2;
-      textNode.data = String(counter);
-    };
-  } else {
-    // fallback to setTimeout
-    /* istanbul ignore next */
-    timerFunc = function () {
-      setTimeout(nextTickHandler, 0);
-    };
-  }
-
-  return function queueNextTick (cb, ctx) {
-    var _resolve;
-    callbacks.push(function () {
-      if (cb) {
-        try {
-          cb.call(ctx);
-        } catch (e) {
-          handleError(e, ctx, 'nextTick');
-        }
-      } else if (_resolve) {
-        _resolve(ctx);
-      }
-    });
-    if (!pending) {
-      pending = true;
-      timerFunc();
-    }
-    if (!cb && typeof Promise !== 'undefined') {
-      return new Promise(function (resolve, reject) {
-        _resolve = resolve;
-      })
-    }
-  }
-})();
-
-var _Set;
-/* istanbul ignore if */
-if (typeof Set !== 'undefined' && isNative(Set)) {
-  // use native Set when available.
-  _Set = Set;
-} else {
-  // a non-standard Set polyfill that only works with primitive keys.
-  _Set = (function () {
-    function Set () {
-      this.set = Object.create(null);
-    }
-    Set.prototype.has = function has (key) {
-      return this.set[key] === true
-    };
-    Set.prototype.add = function add (key) {
-      this.set[key] = true;
-    };
-    Set.prototype.clear = function clear () {
-      this.set = Object.create(null);
-    };
-
-    return Set;
-  }());
 }
 
 /*  */
@@ -21520,13 +23095,101 @@ function popTarget () {
   Dep.target = targetStack.pop();
 }
 
+/*  */
+
+var VNode = function VNode (
+  tag,
+  data,
+  children,
+  text,
+  elm,
+  context,
+  componentOptions,
+  asyncFactory
+) {
+  this.tag = tag;
+  this.data = data;
+  this.children = children;
+  this.text = text;
+  this.elm = elm;
+  this.ns = undefined;
+  this.context = context;
+  this.fnContext = undefined;
+  this.fnOptions = undefined;
+  this.fnScopeId = undefined;
+  this.key = data && data.key;
+  this.componentOptions = componentOptions;
+  this.componentInstance = undefined;
+  this.parent = undefined;
+  this.raw = false;
+  this.isStatic = false;
+  this.isRootInsert = true;
+  this.isComment = false;
+  this.isCloned = false;
+  this.isOnce = false;
+  this.asyncFactory = asyncFactory;
+  this.asyncMeta = undefined;
+  this.isAsyncPlaceholder = false;
+};
+
+var prototypeAccessors = { child: { configurable: true } };
+
+// DEPRECATED: alias for componentInstance for backwards compat.
+/* istanbul ignore next */
+prototypeAccessors.child.get = function () {
+  return this.componentInstance
+};
+
+Object.defineProperties( VNode.prototype, prototypeAccessors );
+
+var createEmptyVNode = function (text) {
+  if ( text === void 0 ) text = '';
+
+  var node = new VNode();
+  node.text = text;
+  node.isComment = true;
+  return node
+};
+
+function createTextVNode (val) {
+  return new VNode(undefined, undefined, undefined, String(val))
+}
+
+// optimized shallow clone
+// used for static nodes and slot nodes because they may be reused across
+// multiple renders, cloning them avoids errors when DOM manipulations rely
+// on their elm reference.
+function cloneVNode (vnode) {
+  var cloned = new VNode(
+    vnode.tag,
+    vnode.data,
+    vnode.children,
+    vnode.text,
+    vnode.elm,
+    vnode.context,
+    vnode.componentOptions,
+    vnode.asyncFactory
+  );
+  cloned.ns = vnode.ns;
+  cloned.isStatic = vnode.isStatic;
+  cloned.key = vnode.key;
+  cloned.isComment = vnode.isComment;
+  cloned.fnContext = vnode.fnContext;
+  cloned.fnOptions = vnode.fnOptions;
+  cloned.fnScopeId = vnode.fnScopeId;
+  cloned.isCloned = true;
+  return cloned
+}
+
 /*
  * not type checking this file because flow doesn't play well with
  * dynamically accessing methods on Array prototype
  */
 
 var arrayProto = Array.prototype;
-var arrayMethods = Object.create(arrayProto);[
+var arrayMethods = Object.create(arrayProto);
+
+var methodsToPatch = [
   'push',
   'pop',
   'shift',
@@ -21534,27 +23197,23 @@ var arrayMethods = Object.create(arrayProto);[
   'splice',
   'sort',
   'reverse'
-]
-.forEach(function (method) {
+];
+
+/**
+ * Intercept mutating methods and emit events
+ */
+methodsToPatch.forEach(function (method) {
   // cache original method
   var original = arrayProto[method];
   def(arrayMethods, method, function mutator () {
-    var arguments$1 = arguments;
+    var args = [], len = arguments.length;
+    while ( len-- ) args[ len ] = arguments[ len ];
 
-    // avoid leaking arguments:
-    // http://jsperf.com/closure-with-arguments
-    var i = arguments.length;
-    var args = new Array(i);
-    while (i--) {
-      args[i] = arguments$1[i];
-    }
     var result = original.apply(this, args);
     var ob = this.__ob__;
     var inserted;
     switch (method) {
       case 'push':
-        inserted = args;
-        break
       case 'unshift':
         inserted = args;
         break
@@ -21574,21 +23233,20 @@ var arrayMethods = Object.create(arrayProto);[
 var arrayKeys = Object.getOwnPropertyNames(arrayMethods);
 
 /**
- * By default, when a reactive property is set, the new value is
- * also converted to become reactive. However when passing down props,
- * we don't want to force conversion because the value may be a nested value
- * under a frozen data structure. Converting it would defeat the optimization.
+ * In some cases we may want to disable observation inside a component's
+ * update computation.
  */
-var observerState = {
-  shouldConvert: true,
-  isSettingProps: false
-};
+var shouldObserve = true;
+
+function toggleObserving (value) {
+  shouldObserve = value;
+}
 
 /**
- * Observer class that are attached to each observed
- * object. Once attached, the observer converts target
+ * Observer class that is attached to each observed
+ * object. Once attached, the observer converts the target
  * object's property keys into getter/setters that
- * collect dependencies and dispatches updates.
+ * collect dependencies and dispatch updates.
  */
 var Observer = function Observer (value) {
   this.value = value;
@@ -21614,7 +23272,7 @@ var Observer = function Observer (value) {
 Observer.prototype.walk = function walk (obj) {
   var keys = Object.keys(obj);
   for (var i = 0; i < keys.length; i++) {
-    defineReactive$$1(obj, keys[i], obj[keys[i]]);
+    defineReactive(obj, keys[i]);
   }
 };
 
@@ -21633,7 +23291,7 @@ Observer.prototype.observeArray = function observeArray (items) {
  * Augment an target Object or Array by intercepting
  * the prototype chain using __proto__
  */
-function protoAugment (target, src) {
+function protoAugment (target, src, keys) {
   /* eslint-disable no-proto */
   target.__proto__ = src;
   /* eslint-enable no-proto */
@@ -21657,14 +23315,14 @@ function copyAugment (target, src, keys) {
  * or the existing observer if the value already has one.
  */
 function observe (value, asRootData) {
-  if (!isObject(value)) {
+  if (!isObject(value) || value instanceof VNode) {
     return
   }
   var ob;
   if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
     ob = value.__ob__;
   } else if (
-    observerState.shouldConvert &&
+    shouldObserve &&
     !isServerRendering() &&
     (Array.isArray(value) || isPlainObject(value)) &&
     Object.isExtensible(value) &&
@@ -21681,11 +23339,12 @@ function observe (value, asRootData) {
 /**
  * Define a reactive property on an Object.
  */
-function defineReactive$$1 (
+function defineReactive (
   obj,
   key,
   val,
-  customSetter
+  customSetter,
+  shallow
 ) {
   var dep = new Dep();
 
@@ -21696,9 +23355,12 @@ function defineReactive$$1 (
 
   // cater for pre-defined getter/setters
   var getter = property && property.get;
+  if (!getter && arguments.length === 2) {
+    val = obj[key];
+  }
   var setter = property && property.set;
 
-  var childOb = observe(val);
+  var childOb = !shallow && observe(val);
   Object.defineProperty(obj, key, {
     enumerable: true,
     configurable: true,
@@ -21708,9 +23370,9 @@ function defineReactive$$1 (
         dep.depend();
         if (childOb) {
           childOb.dep.depend();
-        }
-        if (Array.isArray(value)) {
-          dependArray(value);
+          if (Array.isArray(value)) {
+            dependArray(value);
+          }
         }
       }
       return value
@@ -21730,7 +23392,7 @@ function defineReactive$$1 (
       } else {
         val = newVal;
       }
-      childOb = observe(newVal);
+      childOb = !shallow && observe(newVal);
       dep.notify();
     }
   });
@@ -21742,16 +23404,20 @@ function defineReactive$$1 (
  * already exist.
  */
 function set (target, key, val) {
-  if (Array.isArray(target) && typeof key === 'number') {
+  if (false
+  ) {
+    warn(("Cannot set reactive property on undefined, null, or primitive value: " + ((target))));
+  }
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
     target.length = Math.max(target.length, key);
     target.splice(key, 1, val);
     return val
   }
-  if (hasOwn(target, key)) {
+  if (key in target && !(key in Object.prototype)) {
     target[key] = val;
     return val
   }
-  var ob = (target ).__ob__;
+  var ob = (target).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
     "production" !== 'production' && warn(
       'Avoid adding reactive properties to a Vue instance or its root $data ' +
@@ -21763,7 +23429,7 @@ function set (target, key, val) {
     target[key] = val;
     return val
   }
-  defineReactive$$1(ob.value, key, val);
+  defineReactive(ob.value, key, val);
   ob.dep.notify();
   return val
 }
@@ -21772,11 +23438,15 @@ function set (target, key, val) {
  * Delete a property and trigger change if necessary.
  */
 function del (target, key) {
-  if (Array.isArray(target) && typeof key === 'number') {
+  if (false
+  ) {
+    warn(("Cannot delete reactive property on undefined, null, or primitive value: " + ((target))));
+  }
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
     target.splice(key, 1);
     return
   }
-  var ob = (target ).__ob__;
+  var ob = (target).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
     "production" !== 'production' && warn(
       'Avoid deleting properties on a Vue instance or its root $data ' +
@@ -21855,7 +23525,7 @@ function mergeData (to, from) {
 /**
  * Data
  */
-strats.data = function (
+function mergeDataOrFn (
   parentVal,
   childVal,
   vm
@@ -21863,15 +23533,6 @@ strats.data = function (
   if (!vm) {
     // in a Vue.extend merge, both should be functions
     if (!childVal) {
-      return parentVal
-    }
-    if (typeof childVal !== 'function') {
-      "production" !== 'production' && warn(
-        'The "data" option should be a function ' +
-        'that returns a per-instance value in component ' +
-        'definitions.',
-        vm
-      );
       return parentVal
     }
     if (!parentVal) {
@@ -21884,19 +23545,19 @@ strats.data = function (
     // it has to be a function to pass previous merges.
     return function mergedDataFn () {
       return mergeData(
-        childVal.call(this),
-        parentVal.call(this)
+        typeof childVal === 'function' ? childVal.call(this, this) : childVal,
+        typeof parentVal === 'function' ? parentVal.call(this, this) : parentVal
       )
     }
-  } else if (parentVal || childVal) {
+  } else {
     return function mergedInstanceDataFn () {
       // instance merge
       var instanceData = typeof childVal === 'function'
-        ? childVal.call(vm)
+        ? childVal.call(vm, vm)
         : childVal;
       var defaultData = typeof parentVal === 'function'
-        ? parentVal.call(vm)
-        : undefined;
+        ? parentVal.call(vm, vm)
+        : parentVal;
       if (instanceData) {
         return mergeData(instanceData, defaultData)
       } else {
@@ -21904,6 +23565,28 @@ strats.data = function (
       }
     }
   }
+}
+
+strats.data = function (
+  parentVal,
+  childVal,
+  vm
+) {
+  if (!vm) {
+    if (childVal && typeof childVal !== 'function') {
+      "production" !== 'production' && warn(
+        'The "data" option should be a function ' +
+        'that returns a per-instance value in component ' +
+        'definitions.',
+        vm
+      );
+
+      return parentVal
+    }
+    return mergeDataOrFn(parentVal, childVal)
+  }
+
+  return mergeDataOrFn(parentVal, childVal, vm)
 };
 
 /**
@@ -21933,11 +23616,19 @@ LIFECYCLE_HOOKS.forEach(function (hook) {
  * a three-way merge between constructor options, instance
  * options and parent options.
  */
-function mergeAssets (parentVal, childVal) {
+function mergeAssets (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
   var res = Object.create(parentVal || null);
-  return childVal
-    ? extend(res, childVal)
-    : res
+  if (childVal) {
+    "production" !== 'production' && assertObjectType(key, childVal, vm);
+    return extend(res, childVal)
+  } else {
+    return res
+  }
 }
 
 ASSET_TYPES.forEach(function (type) {
@@ -21950,21 +23641,32 @@ ASSET_TYPES.forEach(function (type) {
  * Watchers hashes should not overwrite one
  * another, so we merge them as arrays.
  */
-strats.watch = function (parentVal, childVal) {
+strats.watch = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  // work around Firefox's Object.prototype.watch...
+  if (parentVal === nativeWatch) { parentVal = undefined; }
+  if (childVal === nativeWatch) { childVal = undefined; }
   /* istanbul ignore if */
   if (!childVal) { return Object.create(parentVal || null) }
+  if (false) {
+    assertObjectType(key, childVal, vm);
+  }
   if (!parentVal) { return childVal }
   var ret = {};
   extend(ret, parentVal);
-  for (var key in childVal) {
-    var parent = ret[key];
-    var child = childVal[key];
+  for (var key$1 in childVal) {
+    var parent = ret[key$1];
+    var child = childVal[key$1];
     if (parent && !Array.isArray(parent)) {
       parent = [parent];
     }
-    ret[key] = parent
+    ret[key$1] = parent
       ? parent.concat(child)
-      : [child];
+      : Array.isArray(child) ? child : [child];
   }
   return ret
 };
@@ -21974,14 +23676,23 @@ strats.watch = function (parentVal, childVal) {
  */
 strats.props =
 strats.methods =
-strats.computed = function (parentVal, childVal) {
-  if (!childVal) { return Object.create(parentVal || null) }
+strats.inject =
+strats.computed = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  if (childVal && "production" !== 'production') {
+    assertObjectType(key, childVal, vm);
+  }
   if (!parentVal) { return childVal }
   var ret = Object.create(null);
   extend(ret, parentVal);
-  extend(ret, childVal);
+  if (childVal) { extend(ret, childVal); }
   return ret
 };
+strats.provide = mergeDataOrFn;
 
 /**
  * Default strategy.
@@ -21997,13 +23708,23 @@ var defaultStrat = function (parentVal, childVal) {
  */
 function checkComponents (options) {
   for (var key in options.components) {
-    var lower = key.toLowerCase();
-    if (isBuiltInTag(lower) || config.isReservedTag(lower)) {
-      warn(
-        'Do not use built-in or reserved HTML elements as component ' +
-        'id: ' + key
-      );
-    }
+    validateComponentName(key);
+  }
+}
+
+function validateComponentName (name) {
+  if (!/^[a-zA-Z][\w-]*$/.test(name)) {
+    warn(
+      'Invalid component name: "' + name + '". Component names ' +
+      'can only contain alphanumeric characters and the hyphen, ' +
+      'and must start with a letter.'
+    );
+  }
+  if (isBuiltInTag(name) || config.isReservedTag(name)) {
+    warn(
+      'Do not use built-in or reserved HTML elements as component ' +
+      'id: ' + name
+    );
   }
 }
 
@@ -22011,7 +23732,7 @@ function checkComponents (options) {
  * Ensure all props option syntax are normalized into the
  * Object-based format.
  */
-function normalizeProps (options) {
+function normalizeProps (options, vm) {
   var props = options.props;
   if (!props) { return }
   var res = {};
@@ -22035,8 +23756,41 @@ function normalizeProps (options) {
         ? val
         : { type: val };
     }
+  } else if (false) {
+    warn(
+      "Invalid value for option \"props\": expected an Array or an Object, " +
+      "but got " + (toRawType(props)) + ".",
+      vm
+    );
   }
   options.props = res;
+}
+
+/**
+ * Normalize all injections into Object-based format
+ */
+function normalizeInject (options, vm) {
+  var inject = options.inject;
+  if (!inject) { return }
+  var normalized = options.inject = {};
+  if (Array.isArray(inject)) {
+    for (var i = 0; i < inject.length; i++) {
+      normalized[inject[i]] = { from: inject[i] };
+    }
+  } else if (isPlainObject(inject)) {
+    for (var key in inject) {
+      var val = inject[key];
+      normalized[key] = isPlainObject(val)
+        ? extend({ from: key }, val)
+        : { from: val };
+    }
+  } else if (false) {
+    warn(
+      "Invalid value for option \"inject\": expected an Array or an Object, " +
+      "but got " + (toRawType(inject)) + ".",
+      vm
+    );
+  }
 }
 
 /**
@@ -22051,6 +23805,16 @@ function normalizeDirectives (options) {
         dirs[key] = { bind: def, update: def };
       }
     }
+  }
+}
+
+function assertObjectType (name, value, vm) {
+  if (!isPlainObject(value)) {
+    warn(
+      "Invalid value for option \"" + name + "\": expected an Object, " +
+      "but got " + (toRawType(value)) + ".",
+      vm
+    );
   }
 }
 
@@ -22071,7 +23835,8 @@ function mergeOptions (
     child = child.options;
   }
 
-  normalizeProps(child);
+  normalizeProps(child, vm);
+  normalizeInject(child, vm);
   normalizeDirectives(child);
   var extendsFrom = child.extends;
   if (extendsFrom) {
@@ -22143,12 +23908,18 @@ function validateProp (
   var prop = propOptions[key];
   var absent = !hasOwn(propsData, key);
   var value = propsData[key];
-  // handle boolean props
-  if (isType(Boolean, prop.type)) {
+  // boolean casting
+  var booleanIndex = getTypeIndex(Boolean, prop.type);
+  if (booleanIndex > -1) {
     if (absent && !hasOwn(prop, 'default')) {
       value = false;
-    } else if (!isType(String, prop.type) && (value === '' || value === hyphenate(key))) {
-      value = true;
+    } else if (value === '' || value === hyphenate(key)) {
+      // only cast empty string / same name to boolean if
+      // boolean has higher priority
+      var stringIndex = getTypeIndex(String, prop.type);
+      if (stringIndex < 0 || booleanIndex < stringIndex) {
+        value = true;
+      }
     }
   }
   // check default value
@@ -22156,12 +23927,14 @@ function validateProp (
     value = getPropDefaultValue(vm, prop, key);
     // since the default value is a fresh copy,
     // make sure to observe it.
-    var prevShouldConvert = observerState.shouldConvert;
-    observerState.shouldConvert = true;
+    var prevShouldObserve = shouldObserve;
+    toggleObserving(true);
     observe(value);
-    observerState.shouldConvert = prevShouldConvert;
+    toggleObserving(prevShouldObserve);
   }
-  if (false) {
+  if (
+    false
+  ) {
     assertProp(prop, key, value, vm, absent);
   }
   return value
@@ -22235,9 +24008,9 @@ function assertProp (
   }
   if (!valid) {
     warn(
-      'Invalid prop: type check failed for prop "' + name + '".' +
-      ' Expected ' + expectedTypes.map(capitalize).join(', ') +
-      ', got ' + Object.prototype.toString.call(value).slice(8, -1) + '.',
+      "Invalid prop: type check failed for prop \"" + name + "\"." +
+      " Expected " + (expectedTypes.map(capitalize).join(', ')) +
+      ", got " + (toRawType(value)) + ".",
       vm
     );
     return
@@ -22259,7 +24032,12 @@ function assertType (value, type) {
   var valid;
   var expectedType = getType(type);
   if (simpleCheckRE.test(expectedType)) {
-    valid = typeof value === expectedType.toLowerCase();
+    var t = typeof value;
+    valid = t === expectedType.toLowerCase();
+    // for primitive wrapper objects
+    if (!valid && t === 'object') {
+      valid = value instanceof type;
+    }
   } else if (expectedType === 'Object') {
     valid = isPlainObject(value);
   } else if (expectedType === 'Array') {
@@ -22283,17 +24061,179 @@ function getType (fn) {
   return match ? match[1] : ''
 }
 
-function isType (type, fn) {
-  if (!Array.isArray(fn)) {
-    return getType(fn) === getType(type)
+function isSameType (a, b) {
+  return getType(a) === getType(b)
+}
+
+function getTypeIndex (type, expectedTypes) {
+  if (!Array.isArray(expectedTypes)) {
+    return isSameType(expectedTypes, type) ? 0 : -1
   }
-  for (var i = 0, len = fn.length; i < len; i++) {
-    if (getType(fn[i]) === getType(type)) {
-      return true
+  for (var i = 0, len = expectedTypes.length; i < len; i++) {
+    if (isSameType(expectedTypes[i], type)) {
+      return i
     }
   }
+  return -1
+}
+
+/*  */
+
+function handleError (err, vm, info) {
+  if (vm) {
+    var cur = vm;
+    while ((cur = cur.$parent)) {
+      var hooks = cur.$options.errorCaptured;
+      if (hooks) {
+        for (var i = 0; i < hooks.length; i++) {
+          try {
+            var capture = hooks[i].call(cur, err, vm, info) === false;
+            if (capture) { return }
+          } catch (e) {
+            globalHandleError(e, cur, 'errorCaptured hook');
+          }
+        }
+      }
+    }
+  }
+  globalHandleError(err, vm, info);
+}
+
+function globalHandleError (err, vm, info) {
+  if (config.errorHandler) {
+    try {
+      return config.errorHandler.call(null, err, vm, info)
+    } catch (e) {
+      logError(e, null, 'config.errorHandler');
+    }
+  }
+  logError(err, vm, info);
+}
+
+function logError (err, vm, info) {
+  if (false) {
+    warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
+  }
+  /* istanbul ignore else */
+  if ((inBrowser || inWeex) && typeof console !== 'undefined') {
+    console.error(err);
+  } else {
+    throw err
+  }
+}
+
+/*  */
+/* globals MessageChannel */
+
+var callbacks = [];
+var pending = false;
+
+function flushCallbacks () {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+
+// Here we have async deferring wrappers using both microtasks and (macro) tasks.
+// In < 2.4 we used microtasks everywhere, but there are some scenarios where
+// microtasks have too high a priority and fire in between supposedly
+// sequential events (e.g. #4521, #6690) or even between bubbling of the same
+// event (#6566). However, using (macro) tasks everywhere also has subtle problems
+// when state is changed right before repaint (e.g. #6813, out-in transitions).
+// Here we use microtask by default, but expose a way to force (macro) task when
+// needed (e.g. in event handlers attached by v-on).
+var microTimerFunc;
+var macroTimerFunc;
+var useMacroTask = false;
+
+// Determine (macro) task defer implementation.
+// Technically setImmediate should be the ideal choice, but it's only available
+// in IE. The only polyfill that consistently queues the callback after all DOM
+// events triggered in the same loop is by using MessageChannel.
+/* istanbul ignore if */
+if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+  macroTimerFunc = function () {
+    setImmediate(flushCallbacks);
+  };
+} else if (typeof MessageChannel !== 'undefined' && (
+  isNative(MessageChannel) ||
+  // PhantomJS
+  MessageChannel.toString() === '[object MessageChannelConstructor]'
+)) {
+  var channel = new MessageChannel();
+  var port = channel.port2;
+  channel.port1.onmessage = flushCallbacks;
+  macroTimerFunc = function () {
+    port.postMessage(1);
+  };
+} else {
   /* istanbul ignore next */
-  return false
+  macroTimerFunc = function () {
+    setTimeout(flushCallbacks, 0);
+  };
+}
+
+// Determine microtask defer implementation.
+/* istanbul ignore next, $flow-disable-line */
+if (typeof Promise !== 'undefined' && isNative(Promise)) {
+  var p = Promise.resolve();
+  microTimerFunc = function () {
+    p.then(flushCallbacks);
+    // in problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // "force" the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) { setTimeout(noop); }
+  };
+} else {
+  // fallback to macro
+  microTimerFunc = macroTimerFunc;
+}
+
+/**
+ * Wrap a function so that if any code inside triggers state change,
+ * the changes are queued using a (macro) task instead of a microtask.
+ */
+function withMacroTask (fn) {
+  return fn._withTask || (fn._withTask = function () {
+    useMacroTask = true;
+    var res = fn.apply(null, arguments);
+    useMacroTask = false;
+    return res
+  })
+}
+
+function nextTick (cb, ctx) {
+  var _resolve;
+  callbacks.push(function () {
+    if (cb) {
+      try {
+        cb.call(ctx);
+      } catch (e) {
+        handleError(e, ctx, 'nextTick');
+      }
+    } else if (_resolve) {
+      _resolve(ctx);
+    }
+  });
+  if (!pending) {
+    pending = true;
+    if (useMacroTask) {
+      macroTimerFunc();
+    } else {
+      microTimerFunc();
+    }
+  }
+  // $flow-disable-line
+  if (!cb && typeof Promise !== 'undefined') {
+    return new Promise(function (resolve) {
+      _resolve = resolve;
+    })
+  }
 }
 
 /*  */
@@ -22336,18 +24276,19 @@ if (false) {
   var warnNonPresent = function (target, key) {
     warn(
       "Property or method \"" + key + "\" is not defined on the instance but " +
-      "referenced during render. Make sure to declare reactive data " +
-      "properties in the data option.",
+      'referenced during render. Make sure that this property is reactive, ' +
+      'either in the data option, or for class-based components, by ' +
+      'initializing the property. ' +
+      'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',
       target
     );
   };
 
   var hasProxy =
-    typeof Proxy !== 'undefined' &&
-    Proxy.toString().match(/native code/);
+    typeof Proxy !== 'undefined' && isNative(Proxy);
 
   if (hasProxy) {
-    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta');
+    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta,exact');
     config.keyCodes = new Proxy(config.keyCodes, {
       set: function set (target, key, value) {
         if (isBuiltInModifier(key)) {
@@ -22397,85 +24338,39 @@ if (false) {
 
 /*  */
 
-var VNode = function VNode (
-  tag,
-  data,
-  children,
-  text,
-  elm,
-  context,
-  componentOptions
-) {
-  this.tag = tag;
-  this.data = data;
-  this.children = children;
-  this.text = text;
-  this.elm = elm;
-  this.ns = undefined;
-  this.context = context;
-  this.functionalContext = undefined;
-  this.key = data && data.key;
-  this.componentOptions = componentOptions;
-  this.componentInstance = undefined;
-  this.parent = undefined;
-  this.raw = false;
-  this.isStatic = false;
-  this.isRootInsert = true;
-  this.isComment = false;
-  this.isCloned = false;
-  this.isOnce = false;
-};
+var seenObjects = new _Set();
 
-var prototypeAccessors = { child: {} };
-
-// DEPRECATED: alias for componentInstance for backwards compat.
-/* istanbul ignore next */
-prototypeAccessors.child.get = function () {
-  return this.componentInstance
-};
-
-Object.defineProperties( VNode.prototype, prototypeAccessors );
-
-var createEmptyVNode = function () {
-  var node = new VNode();
-  node.text = '';
-  node.isComment = true;
-  return node
-};
-
-function createTextVNode (val) {
-  return new VNode(undefined, undefined, undefined, String(val))
+/**
+ * Recursively traverse an object to evoke all converted
+ * getters, so that every nested property inside the object
+ * is collected as a "deep" dependency.
+ */
+function traverse (val) {
+  _traverse(val, seenObjects);
+  seenObjects.clear();
 }
 
-// optimized shallow clone
-// used for static nodes and slot nodes because they may be reused across
-// multiple renders, cloning them avoids errors when DOM manipulations rely
-// on their elm reference.
-function cloneVNode (vnode) {
-  var cloned = new VNode(
-    vnode.tag,
-    vnode.data,
-    vnode.children,
-    vnode.text,
-    vnode.elm,
-    vnode.context,
-    vnode.componentOptions
-  );
-  cloned.ns = vnode.ns;
-  cloned.isStatic = vnode.isStatic;
-  cloned.key = vnode.key;
-  cloned.isComment = vnode.isComment;
-  cloned.isCloned = true;
-  return cloned
-}
-
-function cloneVNodes (vnodes) {
-  var len = vnodes.length;
-  var res = new Array(len);
-  for (var i = 0; i < len; i++) {
-    res[i] = cloneVNode(vnodes[i]);
+function _traverse (val, seen) {
+  var i, keys;
+  var isA = Array.isArray(val);
+  if ((!isA && !isObject(val)) || Object.isFrozen(val) || val instanceof VNode) {
+    return
   }
-  return res
+  if (val.__ob__) {
+    var depId = val.__ob__.dep.id;
+    if (seen.has(depId)) {
+      return
+    }
+    seen.add(depId);
+  }
+  if (isA) {
+    i = val.length;
+    while (i--) { _traverse(val[i], seen); }
+  } else {
+    keys = Object.keys(val);
+    i = keys.length;
+    while (i--) { _traverse(val[keys[i]], seen); }
+  }
 }
 
 /*  */
@@ -22501,8 +24396,9 @@ function createFnInvoker (fns) {
 
     var fns = invoker.fns;
     if (Array.isArray(fns)) {
-      for (var i = 0; i < fns.length; i++) {
-        fns[i].apply(null, arguments$1);
+      var cloned = fns.slice();
+      for (var i = 0; i < cloned.length; i++) {
+        cloned[i].apply(null, arguments$1);
       }
     } else {
       // return handler return value for single handlers
@@ -22520,11 +24416,12 @@ function updateListeners (
   remove$$1,
   vm
 ) {
-  var name, cur, old, event;
+  var name, def, cur, old, event;
   for (name in on) {
-    cur = on[name];
+    def = cur = on[name];
     old = oldOn[name];
     event = normalizeEvent(name);
+    /* istanbul ignore if */
     if (isUndef(cur)) {
       "production" !== 'production' && warn(
         "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
@@ -22534,7 +24431,7 @@ function updateListeners (
       if (isUndef(cur.fns)) {
         cur = on[name] = createFnInvoker(cur);
       }
-      add(event.name, cur, event.once, event.capture, event.passive);
+      add(event.name, cur, event.once, event.capture, event.passive, event.params);
     } else if (cur !== old) {
       old.fns = cur;
       on[name] = old;
@@ -22551,6 +24448,9 @@ function updateListeners (
 /*  */
 
 function mergeVNodeHook (def, hookKey, hook) {
+  if (def instanceof VNode) {
+    def = def.data.hook || (def.data.hook = {});
+  }
   var invoker;
   var oldHook = def[hookKey];
 
@@ -22689,20 +24589,29 @@ function isTextNode (node) {
 
 function normalizeArrayChildren (children, nestedIndex) {
   var res = [];
-  var i, c, last;
+  var i, c, lastIndex, last;
   for (i = 0; i < children.length; i++) {
     c = children[i];
     if (isUndef(c) || typeof c === 'boolean') { continue }
-    last = res[res.length - 1];
+    lastIndex = res.length - 1;
+    last = res[lastIndex];
     //  nested
     if (Array.isArray(c)) {
-      res.push.apply(res, normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i)));
+      if (c.length > 0) {
+        c = normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i));
+        // merge adjacent text nodes
+        if (isTextNode(c[0]) && isTextNode(last)) {
+          res[lastIndex] = createTextVNode(last.text + (c[0]).text);
+          c.shift();
+        }
+        res.push.apply(res, c);
+      }
     } else if (isPrimitive(c)) {
       if (isTextNode(last)) {
         // merge adjacent text nodes
         // this is necessary for SSR hydration because text nodes are
         // essentially merged when rendered to HTML strings
-        (last).text += String(c);
+        res[lastIndex] = createTextVNode(last.text + c);
       } else if (c !== '') {
         // convert primitive to vnode
         res.push(createTextVNode(c));
@@ -22710,7 +24619,7 @@ function normalizeArrayChildren (children, nestedIndex) {
     } else {
       if (isTextNode(c) && isTextNode(last)) {
         // merge adjacent text nodes
-        res[res.length - 1] = createTextVNode(last.text + c.text);
+        res[lastIndex] = createTextVNode(last.text + c.text);
       } else {
         // default key for nested array children (likely generated by v-for)
         if (isTrue(children._isVList) &&
@@ -22729,9 +24638,28 @@ function normalizeArrayChildren (children, nestedIndex) {
 /*  */
 
 function ensureCtor (comp, base) {
+  if (
+    comp.__esModule ||
+    (hasSymbol && comp[Symbol.toStringTag] === 'Module')
+  ) {
+    comp = comp.default;
+  }
   return isObject(comp)
     ? base.extend(comp)
     : comp
+}
+
+function createAsyncPlaceholder (
+  factory,
+  data,
+  context,
+  children,
+  tag
+) {
+  var node = createEmptyVNode();
+  node.asyncFactory = factory;
+  node.asyncMeta = { data: data, context: context, children: children, tag: tag };
+  return node
 }
 
 function resolveAsyncComponent (
@@ -22838,11 +24766,17 @@ function resolveAsyncComponent (
 
 /*  */
 
+function isAsyncPlaceholder (node) {
+  return node.isComment && node.asyncFactory
+}
+
+/*  */
+
 function getFirstComponentChild (children) {
   if (Array.isArray(children)) {
     for (var i = 0; i < children.length; i++) {
       var c = children[i];
-      if (isDef(c) && isDef(c.componentOptions)) {
+      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
         return c
       }
     }
@@ -22865,8 +24799,8 @@ function initEvents (vm) {
 
 var target;
 
-function add (event, fn, once$$1) {
-  if (once$$1) {
+function add (event, fn, once) {
+  if (once) {
     target.$once(event, fn);
   } else {
     target.$on(event, fn);
@@ -22884,6 +24818,7 @@ function updateComponentListeners (
 ) {
   target = vm;
   updateListeners(listeners, oldListeners || {}, add, remove$1, vm);
+  target = undefined;
 }
 
 function eventsMixin (Vue) {
@@ -22929,8 +24864,8 @@ function eventsMixin (Vue) {
     }
     // array of events
     if (Array.isArray(event)) {
-      for (var i$1 = 0, l = event.length; i$1 < l; i$1++) {
-        this$1.$off(event[i$1], fn);
+      for (var i = 0, l = event.length; i < l; i++) {
+        this$1.$off(event[i], fn);
       }
       return vm
     }
@@ -22939,18 +24874,20 @@ function eventsMixin (Vue) {
     if (!cbs) {
       return vm
     }
-    if (arguments.length === 1) {
+    if (!fn) {
       vm._events[event] = null;
       return vm
     }
-    // specific handler
-    var cb;
-    var i = cbs.length;
-    while (i--) {
-      cb = cbs[i];
-      if (cb === fn || cb.fn === fn) {
-        cbs.splice(i, 1);
-        break
+    if (fn) {
+      // specific handler
+      var cb;
+      var i$1 = cbs.length;
+      while (i$1--) {
+        cb = cbs[i$1];
+        if (cb === fn || cb.fn === fn) {
+          cbs.splice(i$1, 1);
+          break
+        }
       }
     }
     return vm
@@ -22975,7 +24912,11 @@ function eventsMixin (Vue) {
       cbs = cbs.length > 1 ? toArray(cbs) : cbs;
       var args = toArray(arguments, 1);
       for (var i = 0, l = cbs.length; i < l; i++) {
-        cbs[i].apply(vm, args);
+        try {
+          cbs[i].apply(vm, args);
+        } catch (e) {
+          handleError(e, vm, ("event handler for \"" + event + "\""));
+        }
       }
     }
     return vm
@@ -22983,6 +24924,8 @@ function eventsMixin (Vue) {
 }
 
 /*  */
+
+
 
 /**
  * Runtime helper for resolving raw children VNodes into a slot object.
@@ -22995,34 +24938,40 @@ function resolveSlots (
   if (!children) {
     return slots
   }
-  var defaultSlot = [];
   for (var i = 0, l = children.length; i < l; i++) {
     var child = children[i];
+    var data = child.data;
+    // remove slot attribute if the node is resolved as a Vue slot node
+    if (data && data.attrs && data.attrs.slot) {
+      delete data.attrs.slot;
+    }
     // named slots should only be respected if the vnode was rendered in the
     // same context.
-    if ((child.context === context || child.functionalContext === context) &&
-      child.data && child.data.slot != null
+    if ((child.context === context || child.fnContext === context) &&
+      data && data.slot != null
     ) {
-      var name = child.data.slot;
+      var name = data.slot;
       var slot = (slots[name] || (slots[name] = []));
       if (child.tag === 'template') {
-        slot.push.apply(slot, child.children);
+        slot.push.apply(slot, child.children || []);
       } else {
         slot.push(child);
       }
     } else {
-      defaultSlot.push(child);
+      (slots.default || (slots.default = [])).push(child);
     }
   }
-  // ignore whitespace
-  if (!defaultSlot.every(isWhitespace)) {
-    slots.default = defaultSlot;
+  // ignore slots that contains only whitespace
+  for (var name$1 in slots) {
+    if (slots[name$1].every(isWhitespace)) {
+      delete slots[name$1];
+    }
   }
   return slots
 }
 
 function isWhitespace (node) {
-  return node.isComment || node.text === ' '
+  return (node.isComment && !node.asyncFactory) || node.text === ' '
 }
 
 function resolveScopedSlots (
@@ -23043,6 +24992,7 @@ function resolveScopedSlots (
 /*  */
 
 var activeInstance = null;
+var isUpdatingChildComponent = false;
 
 function initLifecycle (vm) {
   var options = vm.$options;
@@ -23090,6 +25040,9 @@ function lifecycleMixin (Vue) {
         vm.$options._parentElm,
         vm.$options._refElm
       );
+      // no need for the ref nodes after initial patch
+      // this prevents keeping a detached DOM tree in memory (#5851)
+      vm.$options._parentElm = vm.$options._refElm = null;
     } else {
       // updates
       vm.$el = vm.__patch__(prevVnode, vnode);
@@ -23154,8 +25107,10 @@ function lifecycleMixin (Vue) {
     if (vm.$el) {
       vm.$el.__vue__ = null;
     }
-    // remove reference to DOM nodes (prevents leak)
-    vm.$options._parentElm = vm.$options._refElm = null;
+    // release circular reference (#6759)
+    if (vm.$vnode) {
+      vm.$vnode.parent = null;
+    }
   };
 }
 
@@ -23199,12 +25154,12 @@ function mountComponent (
       mark(startTag);
       var vnode = vm._render();
       mark(endTag);
-      measure((name + " render"), startTag, endTag);
+      measure(("vue " + name + " render"), startTag, endTag);
 
       mark(startTag);
       vm._update(vnode, hydrating);
       mark(endTag);
-      measure((name + " patch"), startTag, endTag);
+      measure(("vue " + name + " patch"), startTag, endTag);
     };
   } else {
     updateComponent = function () {
@@ -23212,7 +25167,10 @@ function mountComponent (
     };
   }
 
-  vm._watcher = new Watcher(vm, updateComponent, noop);
+  // we set this to vm._watcher inside the watcher's constructor
+  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
+  // component's mounted hook), which relies on vm._watcher being already defined
+  new Watcher(vm, updateComponent, noop, null, true /* isRenderWatcher */);
   hydrating = false;
 
   // manually mounted instance, call mounted on self
@@ -23231,6 +25189,10 @@ function updateChildComponent (
   parentVnode,
   renderChildren
 ) {
+  if (false) {
+    isUpdatingChildComponent = true;
+  }
+
   // determine whether component has slot children
   // we need to do this before overwriting $options._renderChildren
   var hasChildren = !!(
@@ -23242,40 +25204,47 @@ function updateChildComponent (
 
   vm.$options._parentVnode = parentVnode;
   vm.$vnode = parentVnode; // update vm's placeholder node without re-render
+
   if (vm._vnode) { // update child tree's parent
     vm._vnode.parent = parentVnode;
   }
   vm.$options._renderChildren = renderChildren;
 
+  // update $attrs and $listeners hash
+  // these are also reactive so they may trigger child update if the child
+  // used them during render
+  vm.$attrs = parentVnode.data.attrs || emptyObject;
+  vm.$listeners = listeners || emptyObject;
+
   // update props
   if (propsData && vm.$options.props) {
-    observerState.shouldConvert = false;
-    if (false) {
-      observerState.isSettingProps = true;
-    }
+    toggleObserving(false);
     var props = vm._props;
     var propKeys = vm.$options._propKeys || [];
     for (var i = 0; i < propKeys.length; i++) {
       var key = propKeys[i];
-      props[key] = validateProp(key, vm.$options.props, propsData, vm);
+      var propOptions = vm.$options.props; // wtf flow?
+      props[key] = validateProp(key, propOptions, propsData, vm);
     }
-    observerState.shouldConvert = true;
-    if (false) {
-      observerState.isSettingProps = false;
-    }
+    toggleObserving(true);
     // keep a copy of raw propsData
     vm.$options.propsData = propsData;
   }
+
   // update listeners
-  if (listeners) {
-    var oldListeners = vm.$options._parentListeners;
-    vm.$options._parentListeners = listeners;
-    updateComponentListeners(vm, listeners, oldListeners);
-  }
+  listeners = listeners || emptyObject;
+  var oldListeners = vm.$options._parentListeners;
+  vm.$options._parentListeners = listeners;
+  updateComponentListeners(vm, listeners, oldListeners);
+
   // resolve slots + force update if has children
   if (hasChildren) {
     vm.$slots = resolveSlots(renderChildren, parentVnode.context);
     vm.$forceUpdate();
+  }
+
+  if (false) {
+    isUpdatingChildComponent = false;
   }
 }
 
@@ -23321,6 +25290,8 @@ function deactivateChildComponent (vm, direct) {
 }
 
 function callHook (vm, hook) {
+  // #7573 disable dep collection when invoking lifecycle hooks
+  pushTarget();
   var handlers = vm.$options[hook];
   if (handlers) {
     for (var i = 0, j = handlers.length; i < j; i++) {
@@ -23334,6 +25305,7 @@ function callHook (vm, hook) {
   if (vm._hasHookEvent) {
     vm.$emit('hook:' + hook);
   }
+  popTarget();
 }
 
 /*  */
@@ -23410,7 +25382,7 @@ function flushSchedulerQueue () {
 
   // call component updated and activated hooks
   callActivatedHooks(activatedQueue);
-  callUpdateHooks(updatedQueue);
+  callUpdatedHooks(updatedQueue);
 
   // devtool hook
   /* istanbul ignore if */
@@ -23419,7 +25391,7 @@ function flushSchedulerQueue () {
   }
 }
 
-function callUpdateHooks (queue) {
+function callUpdatedHooks (queue) {
   var i = queue.length;
   while (i--) {
     var watcher = queue[i];
@@ -23478,7 +25450,7 @@ function queueWatcher (watcher) {
 
 /*  */
 
-var uid$2 = 0;
+var uid$1 = 0;
 
 /**
  * A watcher parses an expression, collects dependencies,
@@ -23489,9 +25461,13 @@ var Watcher = function Watcher (
   vm,
   expOrFn,
   cb,
-  options
+  options,
+  isRenderWatcher
 ) {
   this.vm = vm;
+  if (isRenderWatcher) {
+    vm._watcher = this;
+  }
   vm._watchers.push(this);
   // options
   if (options) {
@@ -23503,7 +25479,7 @@ var Watcher = function Watcher (
     this.deep = this.user = this.lazy = this.sync = false;
   }
   this.cb = cb;
-  this.id = ++uid$2; // uid for batching
+  this.id = ++uid$1; // uid for batching
   this.active = true;
   this.dirty = this.lazy; // for lazy watchers
   this.deps = [];
@@ -23540,22 +25516,23 @@ Watcher.prototype.get = function get () {
   pushTarget(this);
   var value;
   var vm = this.vm;
-  if (this.user) {
-    try {
-      value = this.getter.call(vm, vm);
-    } catch (e) {
-      handleError(e, vm, ("getter for watcher \"" + (this.expression) + "\""));
-    }
-  } else {
+  try {
     value = this.getter.call(vm, vm);
+  } catch (e) {
+    if (this.user) {
+      handleError(e, vm, ("getter for watcher \"" + (this.expression) + "\""));
+    } else {
+      throw e
+    }
+  } finally {
+    // "touch" every property so they are all tracked as
+    // dependencies for deep watching
+    if (this.deep) {
+      traverse(value);
+    }
+    popTarget();
+    this.cleanupDeps();
   }
-  // "touch" every property so they are all tracked as
-  // dependencies for deep watching
-  if (this.deep) {
-    traverse(value);
-  }
-  popTarget();
-  this.cleanupDeps();
   return value
 };
 
@@ -23684,40 +25661,6 @@ Watcher.prototype.teardown = function teardown () {
   }
 };
 
-/**
- * Recursively traverse an object to evoke all converted
- * getters, so that every nested property inside the object
- * is collected as a "deep" dependency.
- */
-var seenObjects = new _Set();
-function traverse (val) {
-  seenObjects.clear();
-  _traverse(val, seenObjects);
-}
-
-function _traverse (val, seen) {
-  var i, keys;
-  var isA = Array.isArray(val);
-  if ((!isA && !isObject(val)) || !Object.isExtensible(val)) {
-    return
-  }
-  if (val.__ob__) {
-    var depId = val.__ob__.dep.id;
-    if (seen.has(depId)) {
-      return
-    }
-    seen.add(depId);
-  }
-  if (isA) {
-    i = val.length;
-    while (i--) { _traverse(val[i], seen); }
-  } else {
-    keys = Object.keys(val);
-    i = keys.length;
-    while (i--) { _traverse(val[keys[i]], seen); }
-  }
-}
-
 /*  */
 
 var sharedPropertyDefinition = {
@@ -23748,14 +25691,10 @@ function initState (vm) {
     observe(vm._data = {}, true /* asRootData */);
   }
   if (opts.computed) { initComputed(vm, opts.computed); }
-  if (opts.watch) { initWatch(vm, opts.watch); }
+  if (opts.watch && opts.watch !== nativeWatch) {
+    initWatch(vm, opts.watch);
+  }
 }
-
-var isReservedProp = {
-  key: 1,
-  ref: 1,
-  slot: 1
-};
 
 function initProps (vm, propsOptions) {
   var propsData = vm.$options.propsData || {};
@@ -23765,20 +25704,24 @@ function initProps (vm, propsOptions) {
   var keys = vm.$options._propKeys = [];
   var isRoot = !vm.$parent;
   // root instance props should be converted
-  observerState.shouldConvert = isRoot;
+  if (!isRoot) {
+    toggleObserving(false);
+  }
   var loop = function ( key ) {
     keys.push(key);
     var value = validateProp(key, propsOptions, propsData, vm);
     /* istanbul ignore else */
     if (false) {
-      if (isReservedProp[key] || config.isReservedAttr(key)) {
+      var hyphenatedKey = hyphenate(key);
+      if (isReservedAttribute(hyphenatedKey) ||
+          config.isReservedAttr(hyphenatedKey)) {
         warn(
-          ("\"" + key + "\" is a reserved attribute and cannot be used as component prop."),
+          ("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop."),
           vm
         );
       }
-      defineReactive$$1(props, key, value, function () {
-        if (vm.$parent && !observerState.isSettingProps) {
+      defineReactive(props, key, value, function () {
+        if (vm.$parent && !isUpdatingChildComponent) {
           warn(
             "Avoid mutating a prop directly since the value will be " +
             "overwritten whenever the parent component re-renders. " +
@@ -23789,7 +25732,7 @@ function initProps (vm, propsOptions) {
         }
       });
     } else {
-      defineReactive$$1(props, key, value);
+      defineReactive(props, key, value);
     }
     // static props are already proxied on the component's prototype
     // during Vue.extend(). We only need to proxy props defined at
@@ -23800,7 +25743,7 @@ function initProps (vm, propsOptions) {
   };
 
   for (var key in propsOptions) loop( key );
-  observerState.shouldConvert = true;
+  toggleObserving(true);
 }
 
 function initData (vm) {
@@ -23819,16 +25762,26 @@ function initData (vm) {
   // proxy data on instance
   var keys = Object.keys(data);
   var props = vm.$options.props;
+  var methods = vm.$options.methods;
   var i = keys.length;
   while (i--) {
-    if (props && hasOwn(props, keys[i])) {
+    var key = keys[i];
+    if (false) {
+      if (methods && hasOwn(methods, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a data property."),
+          vm
+        );
+      }
+    }
+    if (props && hasOwn(props, key)) {
       "production" !== 'production' && warn(
-        "The data property \"" + (keys[i]) + "\" is already declared as a prop. " +
+        "The data property \"" + key + "\" is already declared as a prop. " +
         "Use prop default value instead.",
         vm
       );
-    } else if (!isReserved(keys[i])) {
-      proxy(vm, "_data", keys[i]);
+    } else if (!isReserved(key)) {
+      proxy(vm, "_data", key);
     }
   }
   // observe data
@@ -23836,33 +25789,45 @@ function initData (vm) {
 }
 
 function getData (data, vm) {
+  // #7573 disable dep collection when invoking data getters
+  pushTarget();
   try {
-    return data.call(vm)
+    return data.call(vm, vm)
   } catch (e) {
     handleError(e, vm, "data()");
     return {}
+  } finally {
+    popTarget();
   }
 }
 
 var computedWatcherOptions = { lazy: true };
 
 function initComputed (vm, computed) {
+  // $flow-disable-line
   var watchers = vm._computedWatchers = Object.create(null);
+  // computed properties are just getters during SSR
+  var isSSR = isServerRendering();
 
   for (var key in computed) {
     var userDef = computed[key];
     var getter = typeof userDef === 'function' ? userDef : userDef.get;
     if (false) {
-      if (getter === undefined) {
-        warn(
-          ("No getter function has been defined for computed property \"" + key + "\"."),
-          vm
-        );
-        getter = noop;
-      }
+      warn(
+        ("Getter is missing for computed property \"" + key + "\"."),
+        vm
+      );
     }
-    // create internal watcher for the computed property.
-    watchers[key] = new Watcher(vm, getter, noop, computedWatcherOptions);
+
+    if (!isSSR) {
+      // create internal watcher for the computed property.
+      watchers[key] = new Watcher(
+        vm,
+        getter || noop,
+        noop,
+        computedWatcherOptions
+      );
+    }
 
     // component-defined computed properties are already defined on the
     // component prototype. We only need to define computed properties defined
@@ -23879,19 +25844,34 @@ function initComputed (vm, computed) {
   }
 }
 
-function defineComputed (target, key, userDef) {
+function defineComputed (
+  target,
+  key,
+  userDef
+) {
+  var shouldCache = !isServerRendering();
   if (typeof userDef === 'function') {
-    sharedPropertyDefinition.get = createComputedGetter(key);
+    sharedPropertyDefinition.get = shouldCache
+      ? createComputedGetter(key)
+      : userDef;
     sharedPropertyDefinition.set = noop;
   } else {
     sharedPropertyDefinition.get = userDef.get
-      ? userDef.cache !== false
+      ? shouldCache && userDef.cache !== false
         ? createComputedGetter(key)
         : userDef.get
       : noop;
     sharedPropertyDefinition.set = userDef.set
       ? userDef.set
       : noop;
+  }
+  if (false) {
+    sharedPropertyDefinition.set = function () {
+      warn(
+        ("Computed property \"" + key + "\" was assigned to but it has no setter."),
+        this
+      );
+    };
   }
   Object.defineProperty(target, key, sharedPropertyDefinition);
 }
@@ -23914,22 +25894,28 @@ function createComputedGetter (key) {
 function initMethods (vm, methods) {
   var props = vm.$options.props;
   for (var key in methods) {
-    vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
     if (false) {
       if (methods[key] == null) {
         warn(
-          "method \"" + key + "\" has an undefined value in the component definition. " +
+          "Method \"" + key + "\" has an undefined value in the component definition. " +
           "Did you reference the function correctly?",
           vm
         );
       }
       if (props && hasOwn(props, key)) {
         warn(
-          ("method \"" + key + "\" has already been defined as a prop."),
+          ("Method \"" + key + "\" has already been defined as a prop."),
           vm
         );
       }
+      if ((key in vm) && isReserved(key)) {
+        warn(
+          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
+          "Avoid defining component methods that start with _ or $."
+        );
+      }
     }
+    vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
   }
 }
 
@@ -23946,8 +25932,12 @@ function initWatch (vm, watch) {
   }
 }
 
-function createWatcher (vm, key, handler) {
-  var options;
+function createWatcher (
+  vm,
+  expOrFn,
+  handler,
+  options
+) {
   if (isPlainObject(handler)) {
     options = handler;
     handler = handler.handler;
@@ -23955,7 +25945,7 @@ function createWatcher (vm, key, handler) {
   if (typeof handler === 'string') {
     handler = vm[handler];
   }
-  vm.$watch(key, handler, options);
+  return vm.$watch(expOrFn, handler, options)
 }
 
 function stateMixin (Vue) {
@@ -23990,6 +25980,9 @@ function stateMixin (Vue) {
     options
   ) {
     var vm = this;
+    if (isPlainObject(cb)) {
+      return createWatcher(vm, expOrFn, cb, options)
+    }
     options = options || {};
     options.user = true;
     var watcher = new Watcher(vm, expOrFn, cb, options);
@@ -24016,10 +26009,11 @@ function initProvide (vm) {
 function initInjections (vm) {
   var result = resolveInject(vm.$options.inject, vm);
   if (result) {
+    toggleObserving(false);
     Object.keys(result).forEach(function (key) {
       /* istanbul ignore else */
       if (false) {
-        defineReactive$$1(vm, key, result[key], function () {
+        defineReactive(vm, key, result[key], function () {
           warn(
             "Avoid mutating an injected value directly since the changes will be " +
             "overwritten whenever the provided component re-renders. " +
@@ -24028,34 +26022,44 @@ function initInjections (vm) {
           );
         });
       } else {
-        defineReactive$$1(vm, key, result[key]);
+        defineReactive(vm, key, result[key]);
       }
     });
+    toggleObserving(true);
   }
 }
 
 function resolveInject (inject, vm) {
   if (inject) {
     // inject is :any because flow is not smart enough to figure out cached
-    // isArray here
-    var isArray = Array.isArray(inject);
     var result = Object.create(null);
-    var keys = isArray
-      ? inject
-      : hasSymbol
-        ? Reflect.ownKeys(inject)
-        : Object.keys(inject);
+    var keys = hasSymbol
+      ? Reflect.ownKeys(inject).filter(function (key) {
+        /* istanbul ignore next */
+        return Object.getOwnPropertyDescriptor(inject, key).enumerable
+      })
+      : Object.keys(inject);
 
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
-      var provideKey = isArray ? key : inject[key];
+      var provideKey = inject[key].from;
       var source = vm;
       while (source) {
-        if (source._provided && provideKey in source._provided) {
+        if (source._provided && hasOwn(source._provided, provideKey)) {
           result[key] = source._provided[provideKey];
           break
         }
         source = source.$parent;
+      }
+      if (!source) {
+        if ('default' in inject[key]) {
+          var provideDefault = inject[key].default;
+          result[key] = typeof provideDefault === 'function'
+            ? provideDefault.call(vm)
+            : provideDefault;
+        } else if (false) {
+          warn(("Injection \"" + key + "\" not found"), vm);
+        }
       }
     }
     return result
@@ -24064,44 +26068,397 @@ function resolveInject (inject, vm) {
 
 /*  */
 
+/**
+ * Runtime helper for rendering v-for lists.
+ */
+function renderList (
+  val,
+  render
+) {
+  var ret, i, l, keys, key;
+  if (Array.isArray(val) || typeof val === 'string') {
+    ret = new Array(val.length);
+    for (i = 0, l = val.length; i < l; i++) {
+      ret[i] = render(val[i], i);
+    }
+  } else if (typeof val === 'number') {
+    ret = new Array(val);
+    for (i = 0; i < val; i++) {
+      ret[i] = render(i + 1, i);
+    }
+  } else if (isObject(val)) {
+    keys = Object.keys(val);
+    ret = new Array(keys.length);
+    for (i = 0, l = keys.length; i < l; i++) {
+      key = keys[i];
+      ret[i] = render(val[key], key, i);
+    }
+  }
+  if (isDef(ret)) {
+    (ret)._isVList = true;
+  }
+  return ret
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering <slot>
+ */
+function renderSlot (
+  name,
+  fallback,
+  props,
+  bindObject
+) {
+  var scopedSlotFn = this.$scopedSlots[name];
+  var nodes;
+  if (scopedSlotFn) { // scoped slot
+    props = props || {};
+    if (bindObject) {
+      if (false) {
+        warn(
+          'slot v-bind without argument expects an Object',
+          this
+        );
+      }
+      props = extend(extend({}, bindObject), props);
+    }
+    nodes = scopedSlotFn(props) || fallback;
+  } else {
+    var slotNodes = this.$slots[name];
+    // warn duplicate slot usage
+    if (slotNodes) {
+      if (false) {
+        warn(
+          "Duplicate presence of slot \"" + name + "\" found in the same render tree " +
+          "- this will likely cause render errors.",
+          this
+        );
+      }
+      slotNodes._rendered = true;
+    }
+    nodes = slotNodes || fallback;
+  }
+
+  var target = props && props.slot;
+  if (target) {
+    return this.$createElement('template', { slot: target }, nodes)
+  } else {
+    return nodes
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for resolving filters
+ */
+function resolveFilter (id) {
+  return resolveAsset(this.$options, 'filters', id, true) || identity
+}
+
+/*  */
+
+function isKeyNotMatch (expect, actual) {
+  if (Array.isArray(expect)) {
+    return expect.indexOf(actual) === -1
+  } else {
+    return expect !== actual
+  }
+}
+
+/**
+ * Runtime helper for checking keyCodes from config.
+ * exposed as Vue.prototype._k
+ * passing in eventKeyName as last argument separately for backwards compat
+ */
+function checkKeyCodes (
+  eventKeyCode,
+  key,
+  builtInKeyCode,
+  eventKeyName,
+  builtInKeyName
+) {
+  var mappedKeyCode = config.keyCodes[key] || builtInKeyCode;
+  if (builtInKeyName && eventKeyName && !config.keyCodes[key]) {
+    return isKeyNotMatch(builtInKeyName, eventKeyName)
+  } else if (mappedKeyCode) {
+    return isKeyNotMatch(mappedKeyCode, eventKeyCode)
+  } else if (eventKeyName) {
+    return hyphenate(eventKeyName) !== key
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for merging v-bind="object" into a VNode's data.
+ */
+function bindObjectProps (
+  data,
+  tag,
+  value,
+  asProp,
+  isSync
+) {
+  if (value) {
+    if (!isObject(value)) {
+      "production" !== 'production' && warn(
+        'v-bind without argument expects an Object or Array value',
+        this
+      );
+    } else {
+      if (Array.isArray(value)) {
+        value = toObject(value);
+      }
+      var hash;
+      var loop = function ( key ) {
+        if (
+          key === 'class' ||
+          key === 'style' ||
+          isReservedAttribute(key)
+        ) {
+          hash = data;
+        } else {
+          var type = data.attrs && data.attrs.type;
+          hash = asProp || config.mustUseProp(tag, type, key)
+            ? data.domProps || (data.domProps = {})
+            : data.attrs || (data.attrs = {});
+        }
+        if (!(key in hash)) {
+          hash[key] = value[key];
+
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on[("update:" + key)] = function ($event) {
+              value[key] = $event;
+            };
+          }
+        }
+      };
+
+      for (var key in value) loop( key );
+    }
+  }
+  return data
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering static trees.
+ */
+function renderStatic (
+  index,
+  isInFor
+) {
+  var cached = this._staticTrees || (this._staticTrees = []);
+  var tree = cached[index];
+  // if has already-rendered static tree and not inside v-for,
+  // we can reuse the same tree.
+  if (tree && !isInFor) {
+    return tree
+  }
+  // otherwise, render a fresh tree.
+  tree = cached[index] = this.$options.staticRenderFns[index].call(
+    this._renderProxy,
+    null,
+    this // for render fns generated for functional component templates
+  );
+  markStatic(tree, ("__static__" + index), false);
+  return tree
+}
+
+/**
+ * Runtime helper for v-once.
+ * Effectively it means marking the node as static with a unique key.
+ */
+function markOnce (
+  tree,
+  index,
+  key
+) {
+  markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
+  return tree
+}
+
+function markStatic (
+  tree,
+  key,
+  isOnce
+) {
+  if (Array.isArray(tree)) {
+    for (var i = 0; i < tree.length; i++) {
+      if (tree[i] && typeof tree[i] !== 'string') {
+        markStaticNode(tree[i], (key + "_" + i), isOnce);
+      }
+    }
+  } else {
+    markStaticNode(tree, key, isOnce);
+  }
+}
+
+function markStaticNode (node, key, isOnce) {
+  node.isStatic = true;
+  node.key = key;
+  node.isOnce = isOnce;
+}
+
+/*  */
+
+function bindObjectListeners (data, value) {
+  if (value) {
+    if (!isPlainObject(value)) {
+      "production" !== 'production' && warn(
+        'v-on without argument expects an Object value',
+        this
+      );
+    } else {
+      var on = data.on = data.on ? extend({}, data.on) : {};
+      for (var key in value) {
+        var existing = on[key];
+        var ours = value[key];
+        on[key] = existing ? [].concat(existing, ours) : ours;
+      }
+    }
+  }
+  return data
+}
+
+/*  */
+
+function installRenderHelpers (target) {
+  target._o = markOnce;
+  target._n = toNumber;
+  target._s = toString;
+  target._l = renderList;
+  target._t = renderSlot;
+  target._q = looseEqual;
+  target._i = looseIndexOf;
+  target._m = renderStatic;
+  target._f = resolveFilter;
+  target._k = checkKeyCodes;
+  target._b = bindObjectProps;
+  target._v = createTextVNode;
+  target._e = createEmptyVNode;
+  target._u = resolveScopedSlots;
+  target._g = bindObjectListeners;
+}
+
+/*  */
+
+function FunctionalRenderContext (
+  data,
+  props,
+  children,
+  parent,
+  Ctor
+) {
+  var options = Ctor.options;
+  // ensure the createElement function in functional components
+  // gets a unique context - this is necessary for correct named slot check
+  var contextVm;
+  if (hasOwn(parent, '_uid')) {
+    contextVm = Object.create(parent);
+    // $flow-disable-line
+    contextVm._original = parent;
+  } else {
+    // the context vm passed in is a functional context as well.
+    // in this case we want to make sure we are able to get a hold to the
+    // real context instance.
+    contextVm = parent;
+    // $flow-disable-line
+    parent = parent._original;
+  }
+  var isCompiled = isTrue(options._compiled);
+  var needNormalization = !isCompiled;
+
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () { return resolveSlots(children, parent); };
+
+  // support for compiled functional template
+  if (isCompiled) {
+    // exposing $options for renderStatic()
+    this.$options = options;
+    // pre-resolve slots for renderSlot()
+    this.$slots = this.slots();
+    this.$scopedSlots = data.scopedSlots || emptyObject;
+  }
+
+  if (options._scopeId) {
+    this._c = function (a, b, c, d) {
+      var vnode = createElement(contextVm, a, b, c, d, needNormalization);
+      if (vnode && !Array.isArray(vnode)) {
+        vnode.fnScopeId = options._scopeId;
+        vnode.fnContext = parent;
+      }
+      return vnode
+    };
+  } else {
+    this._c = function (a, b, c, d) { return createElement(contextVm, a, b, c, d, needNormalization); };
+  }
+}
+
+installRenderHelpers(FunctionalRenderContext.prototype);
+
 function createFunctionalComponent (
   Ctor,
   propsData,
   data,
-  context,
+  contextVm,
   children
 ) {
+  var options = Ctor.options;
   var props = {};
-  var propOptions = Ctor.options.props;
+  var propOptions = options.props;
   if (isDef(propOptions)) {
     for (var key in propOptions) {
-      props[key] = validateProp(key, propOptions, propsData || {});
+      props[key] = validateProp(key, propOptions, propsData || emptyObject);
     }
   } else {
     if (isDef(data.attrs)) { mergeProps(props, data.attrs); }
     if (isDef(data.props)) { mergeProps(props, data.props); }
   }
-  // ensure the createElement function in functional components
-  // gets a unique context - this is necessary for correct named slot check
-  var _context = Object.create(context);
-  var h = function (a, b, c, d) { return createElement(_context, a, b, c, d, true); };
-  var vnode = Ctor.options.render.call(null, h, {
-    data: data,
-    props: props,
-    children: children,
-    parent: context,
-    listeners: data.on || {},
-    injections: resolveInject(Ctor.options.inject, context),
-    slots: function () { return resolveSlots(children, context); }
-  });
+
+  var renderContext = new FunctionalRenderContext(
+    data,
+    props,
+    children,
+    contextVm,
+    Ctor
+  );
+
+  var vnode = options.render.call(null, renderContext._c, renderContext);
+
   if (vnode instanceof VNode) {
-    vnode.functionalContext = context;
-    vnode.functionalOptions = Ctor.options;
-    if (data.slot) {
-      (vnode.data || (vnode.data = {})).slot = data.slot;
+    return cloneAndMarkFunctionalResult(vnode, data, renderContext.parent, options)
+  } else if (Array.isArray(vnode)) {
+    var vnodes = normalizeChildren(vnode) || [];
+    var res = new Array(vnodes.length);
+    for (var i = 0; i < vnodes.length; i++) {
+      res[i] = cloneAndMarkFunctionalResult(vnodes[i], data, renderContext.parent, options);
     }
+    return res
   }
-  return vnode
+}
+
+function cloneAndMarkFunctionalResult (vnode, data, contextVm, options) {
+  // #7817 clone node before setting fnContext, otherwise if the node is reused
+  // (e.g. it was from a cached normal slot) the fnContext causes named slots
+  // that should not be matched to match.
+  var clone = cloneVNode(vnode);
+  clone.fnContext = contextVm;
+  clone.fnOptions = options;
+  if (data.slot) {
+    (clone.data || (clone.data = {})).slot = data.slot;
+  }
+  return clone
 }
 
 function mergeProps (to, from) {
@@ -24112,7 +26469,26 @@ function mergeProps (to, from) {
 
 /*  */
 
-// hooks to be invoked on component VNodes during patch
+
+
+
+// Register the component hook to weex native render engine.
+// The hook will be triggered by native, not javascript.
+
+
+// Updates the state of the component to weex native render engine.
+
+/*  */
+
+// https://github.com/Hanks10100/weex-native-directive/tree/master/component
+
+// listening on native callback
+
+/*  */
+
+/*  */
+
+// inline hooks to be invoked on component VNodes during patch
 var componentVNodeHooks = {
   init: function init (
     vnode,
@@ -24120,7 +26496,15 @@ var componentVNodeHooks = {
     parentElm,
     refElm
   ) {
-    if (!vnode.componentInstance || vnode.componentInstance._isDestroyed) {
+    if (
+      vnode.componentInstance &&
+      !vnode.componentInstance._isDestroyed &&
+      vnode.data.keepAlive
+    ) {
+      // kept-alive components, treat as a patch
+      var mountedNode = vnode; // work around flow
+      componentVNodeHooks.prepatch(mountedNode, mountedNode);
+    } else {
       var child = vnode.componentInstance = createComponentInstanceForVnode(
         vnode,
         activeInstance,
@@ -24128,10 +26512,6 @@ var componentVNodeHooks = {
         refElm
       );
       child.$mount(hydrating ? vnode.elm : undefined, hydrating);
-    } else if (vnode.data.keepAlive) {
-      // kept-alive components, treat as a patch
-      var mountedNode = vnode; // work around flow
-      componentVNodeHooks.prepatch(mountedNode, mountedNode);
     }
   },
 
@@ -24210,20 +26590,29 @@ function createComponent (
   }
 
   // async component
+  var asyncFactory;
   if (isUndef(Ctor.cid)) {
-    Ctor = resolveAsyncComponent(Ctor, baseCtor, context);
+    asyncFactory = Ctor;
+    Ctor = resolveAsyncComponent(asyncFactory, baseCtor, context);
     if (Ctor === undefined) {
-      // return nothing if this is indeed an async component
-      // wait for the callback to trigger parent update.
-      return
+      // return a placeholder node for async component, which is rendered
+      // as a comment node but preserves all the raw information for the node.
+      // the information will be used for async server-rendering and hydration.
+      return createAsyncPlaceholder(
+        asyncFactory,
+        data,
+        context,
+        children,
+        tag
+      )
     }
   }
+
+  data = data || {};
 
   // resolve constructor options in case global mixins are applied after
   // component constructor creation
   resolveConstructorOptions(Ctor);
-
-  data = data || {};
 
   // transform component v-model data into props & events
   if (isDef(data.model)) {
@@ -24242,24 +26631,37 @@ function createComponent (
   // child component listeners instead of DOM listeners
   var listeners = data.on;
   // replace with listeners with .native modifier
+  // so it gets processed during parent component patch.
   data.on = data.nativeOn;
 
   if (isTrue(Ctor.options.abstract)) {
     // abstract components do not keep anything
-    // other than props & listeners
+    // other than props & listeners & slot
+
+    // work around flow
+    var slot = data.slot;
     data = {};
+    if (slot) {
+      data.slot = slot;
+    }
   }
 
-  // merge component management hooks onto the placeholder node
-  mergeHooks(data);
+  // install component management hooks onto the placeholder node
+  installComponentHooks(data);
 
   // return a placeholder vnode
   var name = Ctor.options.name || tag;
   var vnode = new VNode(
     ("vue-component-" + (Ctor.cid) + (name ? ("-" + name) : '')),
     data, undefined, undefined, undefined, context,
-    { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children }
+    { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children },
+    asyncFactory
   );
+
+  // Weex specific: invoke recycle-list optimized @render function for
+  // extracting cell-slot template.
+  // https://github.com/Hanks10100/weex-native-directive/tree/master/component
+  /* istanbul ignore if */
   return vnode
 }
 
@@ -24269,15 +26671,10 @@ function createComponentInstanceForVnode (
   parentElm,
   refElm
 ) {
-  var vnodeComponentOptions = vnode.componentOptions;
   var options = {
     _isComponent: true,
     parent: parent,
-    propsData: vnodeComponentOptions.propsData,
-    _componentTag: vnodeComponentOptions.tag,
     _parentVnode: vnode,
-    _parentListeners: vnodeComponentOptions.listeners,
-    _renderChildren: vnodeComponentOptions.children,
     _parentElm: parentElm || null,
     _refElm: refElm || null
   };
@@ -24287,25 +26684,14 @@ function createComponentInstanceForVnode (
     options.render = inlineTemplate.render;
     options.staticRenderFns = inlineTemplate.staticRenderFns;
   }
-  return new vnodeComponentOptions.Ctor(options)
+  return new vnode.componentOptions.Ctor(options)
 }
 
-function mergeHooks (data) {
-  if (!data.hook) {
-    data.hook = {};
-  }
+function installComponentHooks (data) {
+  var hooks = data.hook || (data.hook = {});
   for (var i = 0; i < hooksToMerge.length; i++) {
     var key = hooksToMerge[i];
-    var fromParent = data.hook[key];
-    var ours = componentVNodeHooks[key];
-    data.hook[key] = fromParent ? mergeHook$1(ours, fromParent) : ours;
-  }
-}
-
-function mergeHook$1 (one, two) {
-  return function (a, b, c, d) {
-    one(a, b, c, d);
-    two(a, b, c, d);
+    hooks[key] = componentVNodeHooks[key];
   }
 }
 
@@ -24363,9 +26749,24 @@ function _createElement (
     );
     return createEmptyVNode()
   }
+  // object syntax in v-bind
+  if (isDef(data) && isDef(data.is)) {
+    tag = data.is;
+  }
   if (!tag) {
     // in case of component :is set to falsy value
     return createEmptyVNode()
+  }
+  // warn against non-primitive key
+  if (false
+  ) {
+    {
+      warn(
+        'Avoid using non-primitive value as key, ' +
+        'use string/number value instead.',
+        context
+      );
+    }
   }
   // support single function children as default scoped slot
   if (Array.isArray(children) &&
@@ -24383,7 +26784,7 @@ function _createElement (
   var vnode, ns;
   if (typeof tag === 'string') {
     var Ctor;
-    ns = config.getTagNamespace(tag);
+    ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag);
     if (config.isReservedTag(tag)) {
       // platform built-in elements
       vnode = new VNode(
@@ -24406,231 +26807,56 @@ function _createElement (
     // direct component options / constructor
     vnode = createComponent(tag, data, context, children);
   }
-  if (isDef(vnode)) {
-    if (ns) { applyNS(vnode, ns); }
+  if (Array.isArray(vnode)) {
+    return vnode
+  } else if (isDef(vnode)) {
+    if (isDef(ns)) { applyNS(vnode, ns); }
+    if (isDef(data)) { registerDeepBindings(data); }
     return vnode
   } else {
     return createEmptyVNode()
   }
 }
 
-function applyNS (vnode, ns) {
+function applyNS (vnode, ns, force) {
   vnode.ns = ns;
   if (vnode.tag === 'foreignObject') {
     // use default namespace inside foreignObject
-    return
+    ns = undefined;
+    force = true;
   }
   if (isDef(vnode.children)) {
     for (var i = 0, l = vnode.children.length; i < l; i++) {
       var child = vnode.children[i];
-      if (isDef(child.tag) && isUndef(child.ns)) {
-        applyNS(child, ns);
+      if (isDef(child.tag) && (
+        isUndef(child.ns) || (isTrue(force) && child.tag !== 'svg'))) {
+        applyNS(child, ns, force);
       }
     }
   }
 }
 
-/*  */
-
-/**
- * Runtime helper for rendering v-for lists.
- */
-function renderList (
-  val,
-  render
-) {
-  var ret, i, l, keys, key;
-  if (Array.isArray(val) || typeof val === 'string') {
-    ret = new Array(val.length);
-    for (i = 0, l = val.length; i < l; i++) {
-      ret[i] = render(val[i], i);
-    }
-  } else if (typeof val === 'number') {
-    ret = new Array(val);
-    for (i = 0; i < val; i++) {
-      ret[i] = render(i + 1, i);
-    }
-  } else if (isObject(val)) {
-    keys = Object.keys(val);
-    ret = new Array(keys.length);
-    for (i = 0, l = keys.length; i < l; i++) {
-      key = keys[i];
-      ret[i] = render(val[key], key, i);
-    }
+// ref #5318
+// necessary to ensure parent re-render when deep bindings like :style and
+// :class are used on slot nodes
+function registerDeepBindings (data) {
+  if (isObject(data.style)) {
+    traverse(data.style);
   }
-  if (isDef(ret)) {
-    (ret)._isVList = true;
+  if (isObject(data.class)) {
+    traverse(data.class);
   }
-  return ret
-}
-
-/*  */
-
-/**
- * Runtime helper for rendering <slot>
- */
-function renderSlot (
-  name,
-  fallback,
-  props,
-  bindObject
-) {
-  var scopedSlotFn = this.$scopedSlots[name];
-  if (scopedSlotFn) { // scoped slot
-    props = props || {};
-    if (bindObject) {
-      extend(props, bindObject);
-    }
-    return scopedSlotFn(props) || fallback
-  } else {
-    var slotNodes = this.$slots[name];
-    // warn duplicate slot usage
-    if (slotNodes && "production" !== 'production') {
-      slotNodes._rendered && warn(
-        "Duplicate presence of slot \"" + name + "\" found in the same render tree " +
-        "- this will likely cause render errors.",
-        this
-      );
-      slotNodes._rendered = true;
-    }
-    return slotNodes || fallback
-  }
-}
-
-/*  */
-
-/**
- * Runtime helper for resolving filters
- */
-function resolveFilter (id) {
-  return resolveAsset(this.$options, 'filters', id, true) || identity
-}
-
-/*  */
-
-/**
- * Runtime helper for checking keyCodes from config.
- */
-function checkKeyCodes (
-  eventKeyCode,
-  key,
-  builtInAlias
-) {
-  var keyCodes = config.keyCodes[key] || builtInAlias;
-  if (Array.isArray(keyCodes)) {
-    return keyCodes.indexOf(eventKeyCode) === -1
-  } else {
-    return keyCodes !== eventKeyCode
-  }
-}
-
-/*  */
-
-/**
- * Runtime helper for merging v-bind="object" into a VNode's data.
- */
-function bindObjectProps (
-  data,
-  tag,
-  value,
-  asProp
-) {
-  if (value) {
-    if (!isObject(value)) {
-      "production" !== 'production' && warn(
-        'v-bind without argument expects an Object or Array value',
-        this
-      );
-    } else {
-      if (Array.isArray(value)) {
-        value = toObject(value);
-      }
-      var hash;
-      for (var key in value) {
-        if (key === 'class' || key === 'style') {
-          hash = data;
-        } else {
-          var type = data.attrs && data.attrs.type;
-          hash = asProp || config.mustUseProp(tag, type, key)
-            ? data.domProps || (data.domProps = {})
-            : data.attrs || (data.attrs = {});
-        }
-        if (!(key in hash)) {
-          hash[key] = value[key];
-        }
-      }
-    }
-  }
-  return data
-}
-
-/*  */
-
-/**
- * Runtime helper for rendering static trees.
- */
-function renderStatic (
-  index,
-  isInFor
-) {
-  var tree = this._staticTrees[index];
-  // if has already-rendered static tree and not inside v-for,
-  // we can reuse the same tree by doing a shallow clone.
-  if (tree && !isInFor) {
-    return Array.isArray(tree)
-      ? cloneVNodes(tree)
-      : cloneVNode(tree)
-  }
-  // otherwise, render a fresh tree.
-  tree = this._staticTrees[index] =
-    this.$options.staticRenderFns[index].call(this._renderProxy);
-  markStatic(tree, ("__static__" + index), false);
-  return tree
-}
-
-/**
- * Runtime helper for v-once.
- * Effectively it means marking the node as static with a unique key.
- */
-function markOnce (
-  tree,
-  index,
-  key
-) {
-  markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
-  return tree
-}
-
-function markStatic (
-  tree,
-  key,
-  isOnce
-) {
-  if (Array.isArray(tree)) {
-    for (var i = 0; i < tree.length; i++) {
-      if (tree[i] && typeof tree[i] !== 'string') {
-        markStaticNode(tree[i], (key + "_" + i), isOnce);
-      }
-    }
-  } else {
-    markStaticNode(tree, key, isOnce);
-  }
-}
-
-function markStaticNode (node, key, isOnce) {
-  node.isStatic = true;
-  node.key = key;
-  node.isOnce = isOnce;
 }
 
 /*  */
 
 function initRender (vm) {
   vm._vnode = null; // the root of the child tree
-  vm._staticTrees = null;
-  var parentVnode = vm.$vnode = vm.$options._parentVnode; // the placeholder node in parent tree
+  vm._staticTrees = null; // v-once cached trees
+  var options = vm.$options;
+  var parentVnode = vm.$vnode = options._parentVnode; // the placeholder node in parent tree
   var renderContext = parentVnode && parentVnode.context;
-  vm.$slots = resolveSlots(vm.$options._renderChildren, renderContext);
+  vm.$slots = resolveSlots(options._renderChildren, renderContext);
   vm.$scopedSlots = emptyObject;
   // bind the createElement fn to this instance
   // so that we get proper render context inside it.
@@ -24640,9 +26866,29 @@ function initRender (vm) {
   // normalization is always applied for the public version, used in
   // user-written render functions.
   vm.$createElement = function (a, b, c, d) { return createElement(vm, a, b, c, d, true); };
+
+  // $attrs & $listeners are exposed for easier HOC creation.
+  // they need to be reactive so that HOCs using them are always updated
+  var parentData = parentVnode && parentVnode.data;
+
+  /* istanbul ignore else */
+  if (false) {
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
+    }, true);
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
+    }, true);
+  } else {
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, null, true);
+  }
 }
 
 function renderMixin (Vue) {
+  // install runtime convenience helpers
+  installRenderHelpers(Vue.prototype);
+
   Vue.prototype.$nextTick = function (fn) {
     return nextTick(fn, this)
   };
@@ -24651,21 +26897,20 @@ function renderMixin (Vue) {
     var vm = this;
     var ref = vm.$options;
     var render = ref.render;
-    var staticRenderFns = ref.staticRenderFns;
     var _parentVnode = ref._parentVnode;
 
-    if (vm._isMounted) {
-      // clone slot nodes on re-renders
+    // reset _rendered flag on slots for duplicate slot check
+    if (false) {
       for (var key in vm.$slots) {
-        vm.$slots[key] = cloneVNodes(vm.$slots[key]);
+        // $flow-disable-line
+        vm.$slots[key]._rendered = false;
       }
     }
 
-    vm.$scopedSlots = (_parentVnode && _parentVnode.data.scopedSlots) || emptyObject;
-
-    if (staticRenderFns && !vm._staticTrees) {
-      vm._staticTrees = [];
+    if (_parentVnode) {
+      vm.$scopedSlots = _parentVnode.data.scopedSlots || emptyObject;
     }
+
     // set parent vnode. this allows render functions to have access
     // to the data on the placeholder node.
     vm.$vnode = _parentVnode;
@@ -24674,14 +26919,21 @@ function renderMixin (Vue) {
     try {
       vnode = render.call(vm._renderProxy, vm.$createElement);
     } catch (e) {
-      handleError(e, vm, "render function");
+      handleError(e, vm, "render");
       // return error render result,
       // or previous vnode to prevent render error causing blank component
       /* istanbul ignore else */
       if (false) {
-        vnode = vm.$options.renderError
-          ? vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e)
-          : vm._vnode;
+        if (vm.$options.renderError) {
+          try {
+            vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
+          } catch (e) {
+            handleError(e, vm, "renderError");
+            vnode = vm._vnode;
+          }
+        } else {
+          vnode = vm._vnode;
+        }
       } else {
         vnode = vm._vnode;
       }
@@ -24701,40 +26953,22 @@ function renderMixin (Vue) {
     vnode.parent = _parentVnode;
     return vnode
   };
-
-  // internal render helpers.
-  // these are exposed on the instance prototype to reduce generated render
-  // code size.
-  Vue.prototype._o = markOnce;
-  Vue.prototype._n = toNumber;
-  Vue.prototype._s = toString;
-  Vue.prototype._l = renderList;
-  Vue.prototype._t = renderSlot;
-  Vue.prototype._q = looseEqual;
-  Vue.prototype._i = looseIndexOf;
-  Vue.prototype._m = renderStatic;
-  Vue.prototype._f = resolveFilter;
-  Vue.prototype._k = checkKeyCodes;
-  Vue.prototype._b = bindObjectProps;
-  Vue.prototype._v = createTextVNode;
-  Vue.prototype._e = createEmptyVNode;
-  Vue.prototype._u = resolveScopedSlots;
 }
 
 /*  */
 
-var uid$1 = 0;
+var uid$3 = 0;
 
 function initMixin (Vue) {
   Vue.prototype._init = function (options) {
     var vm = this;
     // a uid
-    vm._uid = uid$1++;
+    vm._uid = uid$3++;
 
     var startTag, endTag;
     /* istanbul ignore if */
     if (false) {
-      startTag = "vue-perf-init:" + (vm._uid);
+      startTag = "vue-perf-start:" + (vm._uid);
       endTag = "vue-perf-end:" + (vm._uid);
       mark(startTag);
     }
@@ -24775,7 +27009,7 @@ function initMixin (Vue) {
     if (false) {
       vm._name = formatComponentName(vm, false);
       mark(endTag);
-      measure(((vm._name) + " init"), startTag, endTag);
+      measure(("vue " + (vm._name) + " init"), startTag, endTag);
     }
 
     if (vm.$options.el) {
@@ -24787,14 +27021,18 @@ function initMixin (Vue) {
 function initInternalComponent (vm, options) {
   var opts = vm.$options = Object.create(vm.constructor.options);
   // doing this because it's faster than dynamic enumeration.
+  var parentVnode = options._parentVnode;
   opts.parent = options.parent;
-  opts.propsData = options.propsData;
-  opts._parentVnode = options._parentVnode;
-  opts._parentListeners = options._parentListeners;
-  opts._renderChildren = options._renderChildren;
-  opts._componentTag = options._componentTag;
+  opts._parentVnode = parentVnode;
   opts._parentElm = options._parentElm;
   opts._refElm = options._refElm;
+
+  var vnodeComponentOptions = parentVnode.componentOptions;
+  opts.propsData = vnodeComponentOptions.propsData;
+  opts._parentListeners = vnodeComponentOptions.listeners;
+  opts._renderChildren = vnodeComponentOptions.children;
+  opts._componentTag = vnodeComponentOptions.tag;
+
   if (options.render) {
     opts.render = options.render;
     opts.staticRenderFns = options.staticRenderFns;
@@ -24858,7 +27096,7 @@ function dedupe (latest, extended, sealed) {
   }
 }
 
-function Vue$3 (options) {
+function Vue (options) {
   if (false
   ) {
     warn('Vue is a constructor and should be called with the `new` keyword');
@@ -24866,20 +27104,21 @@ function Vue$3 (options) {
   this._init(options);
 }
 
-initMixin(Vue$3);
-stateMixin(Vue$3);
-eventsMixin(Vue$3);
-lifecycleMixin(Vue$3);
-renderMixin(Vue$3);
+initMixin(Vue);
+stateMixin(Vue);
+eventsMixin(Vue);
+lifecycleMixin(Vue);
+renderMixin(Vue);
 
 /*  */
 
 function initUse (Vue) {
   Vue.use = function (plugin) {
-    /* istanbul ignore if */
-    if (plugin.installed) {
+    var installedPlugins = (this._installedPlugins || (this._installedPlugins = []));
+    if (installedPlugins.indexOf(plugin) > -1) {
       return this
     }
+
     // additional parameters
     var args = toArray(arguments, 1);
     args.unshift(this);
@@ -24888,7 +27127,7 @@ function initUse (Vue) {
     } else if (typeof plugin === 'function') {
       plugin.apply(null, args);
     }
-    plugin.installed = true;
+    installedPlugins.push(plugin);
     return this
   };
 }
@@ -24927,13 +27166,7 @@ function initExtend (Vue) {
 
     var name = extendOptions.name || Super.options.name;
     if (false) {
-      if (!/^[a-zA-Z][\w-]*$/.test(name)) {
-        warn(
-          'Invalid component name: "' + name + '". Component names ' +
-          'can only contain alphanumeric characters and the hyphen, ' +
-          'and must start with a letter.'
-        );
-      }
+      validateComponentName(name);
     }
 
     var Sub = function VueComponent (options) {
@@ -25016,12 +27249,7 @@ function initAssetRegisters (Vue) {
       } else {
         /* istanbul ignore if */
         if (false) {
-          if (type === 'component' && config.isReservedTag(id)) {
-            warn(
-              'Do not use built-in or reserved HTML elements as component ' +
-              'id: ' + id
-            );
-          }
+          validateComponentName(id);
         }
         if (type === 'component' && isPlainObject(definition)) {
           definition.name = definition.name || id;
@@ -25039,14 +27267,14 @@ function initAssetRegisters (Vue) {
 
 /*  */
 
-var patternTypes = [String, RegExp];
-
 function getComponentName (opts) {
   return opts && (opts.Ctor.options.name || opts.tag)
 }
 
 function matches (pattern, name) {
-  if (typeof pattern === 'string') {
+  if (Array.isArray(pattern)) {
+    return pattern.indexOf(name) > -1
+  } else if (typeof pattern === 'string') {
     return pattern.split(',').indexOf(name) > -1
   } else if (isRegExp(pattern)) {
     return pattern.test(name)
@@ -25055,26 +27283,36 @@ function matches (pattern, name) {
   return false
 }
 
-function pruneCache (cache, current, filter) {
+function pruneCache (keepAliveInstance, filter) {
+  var cache = keepAliveInstance.cache;
+  var keys = keepAliveInstance.keys;
+  var _vnode = keepAliveInstance._vnode;
   for (var key in cache) {
     var cachedNode = cache[key];
     if (cachedNode) {
       var name = getComponentName(cachedNode.componentOptions);
       if (name && !filter(name)) {
-        if (cachedNode !== current) {
-          pruneCacheEntry(cachedNode);
-        }
-        cache[key] = null;
+        pruneCacheEntry(cache, key, keys, _vnode);
       }
     }
   }
 }
 
-function pruneCacheEntry (vnode) {
-  if (vnode) {
-    vnode.componentInstance.$destroy();
+function pruneCacheEntry (
+  cache,
+  key,
+  keys,
+  current
+) {
+  var cached$$1 = cache[key];
+  if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
+    cached$$1.componentInstance.$destroy();
   }
+  cache[key] = null;
+  remove(keys, key);
 }
+
+var patternTypes = [String, RegExp, Array];
 
 var KeepAlive = {
   name: 'keep-alive',
@@ -25082,61 +27320,84 @@ var KeepAlive = {
 
   props: {
     include: patternTypes,
-    exclude: patternTypes
+    exclude: patternTypes,
+    max: [String, Number]
   },
 
   created: function created () {
     this.cache = Object.create(null);
+    this.keys = [];
   },
 
   destroyed: function destroyed () {
     var this$1 = this;
 
     for (var key in this$1.cache) {
-      pruneCacheEntry(this$1.cache[key]);
+      pruneCacheEntry(this$1.cache, key, this$1.keys);
     }
   },
 
-  watch: {
-    include: function include (val) {
-      pruneCache(this.cache, this._vnode, function (name) { return matches(val, name); });
-    },
-    exclude: function exclude (val) {
-      pruneCache(this.cache, this._vnode, function (name) { return !matches(val, name); });
-    }
+  mounted: function mounted () {
+    var this$1 = this;
+
+    this.$watch('include', function (val) {
+      pruneCache(this$1, function (name) { return matches(val, name); });
+    });
+    this.$watch('exclude', function (val) {
+      pruneCache(this$1, function (name) { return !matches(val, name); });
+    });
   },
 
   render: function render () {
-    var vnode = getFirstComponentChild(this.$slots.default);
+    var slot = this.$slots.default;
+    var vnode = getFirstComponentChild(slot);
     var componentOptions = vnode && vnode.componentOptions;
     if (componentOptions) {
       // check pattern
       var name = getComponentName(componentOptions);
-      if (name && (
-        (this.include && !matches(this.include, name)) ||
-        (this.exclude && matches(this.exclude, name))
-      )) {
+      var ref = this;
+      var include = ref.include;
+      var exclude = ref.exclude;
+      if (
+        // not included
+        (include && (!name || !matches(include, name))) ||
+        // excluded
+        (exclude && name && matches(exclude, name))
+      ) {
         return vnode
       }
+
+      var ref$1 = this;
+      var cache = ref$1.cache;
+      var keys = ref$1.keys;
       var key = vnode.key == null
         // same constructor may get registered as different local components
         // so cid alone is not enough (#3269)
         ? componentOptions.Ctor.cid + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
         : vnode.key;
-      if (this.cache[key]) {
-        vnode.componentInstance = this.cache[key].componentInstance;
+      if (cache[key]) {
+        vnode.componentInstance = cache[key].componentInstance;
+        // make current key freshest
+        remove(keys, key);
+        keys.push(key);
       } else {
-        this.cache[key] = vnode;
+        cache[key] = vnode;
+        keys.push(key);
+        // prune oldest entry
+        if (this.max && keys.length > parseInt(this.max)) {
+          pruneCacheEntry(cache, keys[0], keys, this._vnode);
+        }
       }
+
       vnode.data.keepAlive = true;
     }
-    return vnode
+    return vnode || (slot && slot[0])
   }
-};
+}
 
 var builtInComponents = {
   KeepAlive: KeepAlive
-};
+}
 
 /*  */
 
@@ -25160,7 +27421,7 @@ function initGlobalAPI (Vue) {
     warn: warn,
     extend: extend,
     mergeOptions: mergeOptions,
-    defineReactive: defineReactive$$1
+    defineReactive: defineReactive
   };
 
   Vue.set = set;
@@ -25184,20 +27445,25 @@ function initGlobalAPI (Vue) {
   initAssetRegisters(Vue);
 }
 
-initGlobalAPI(Vue$3);
+initGlobalAPI(Vue);
 
-Object.defineProperty(Vue$3.prototype, '$isServer', {
+Object.defineProperty(Vue.prototype, '$isServer', {
   get: isServerRendering
 });
 
-Object.defineProperty(Vue$3.prototype, '$ssrContext', {
+Object.defineProperty(Vue.prototype, '$ssrContext', {
   get: function get () {
     /* istanbul ignore next */
-    return this.$vnode.ssrContext
+    return this.$vnode && this.$vnode.ssrContext
   }
 });
 
-Vue$3.version = '2.3.4';
+// expose FunctionalRenderContext for ssr runtime helper installation
+Object.defineProperty(Vue, 'FunctionalRenderContext', {
+  value: FunctionalRenderContext
+});
+
+Vue.version = '2.5.17';
 
 /*  */
 
@@ -25206,7 +27472,7 @@ Vue$3.version = '2.3.4';
 var isReservedAttr = makeMap('style,class');
 
 // attributes that should be using props for binding
-var acceptValue = makeMap('input,textarea,option,select');
+var acceptValue = makeMap('input,textarea,option,select,progress');
 var mustUseProp = function (tag, type, attr) {
   return (
     (attr === 'value' && acceptValue(tag)) && type !== 'button' ||
@@ -25249,16 +27515,16 @@ function genClassForVnode (vnode) {
   var childNode = vnode;
   while (isDef(childNode.componentInstance)) {
     childNode = childNode.componentInstance._vnode;
-    if (childNode.data) {
+    if (childNode && childNode.data) {
       data = mergeClassData(childNode.data, data);
     }
   }
   while (isDef(parentNode = parentNode.parent)) {
-    if (parentNode.data) {
+    if (parentNode && parentNode.data) {
       data = mergeClassData(data, parentNode.data);
     }
   }
-  return genClassFromData(data)
+  return renderClass(data.staticClass, data.class)
 }
 
 function mergeClassData (child, parent) {
@@ -25270,9 +27536,10 @@ function mergeClassData (child, parent) {
   }
 }
 
-function genClassFromData (data) {
-  var dynamicClass = data.class;
-  var staticClass = data.staticClass;
+function renderClass (
+  staticClass,
+  dynamicClass
+) {
   if (isDef(staticClass) || isDef(dynamicClass)) {
     return concat(staticClass, stringifyClass(dynamicClass))
   }
@@ -25285,31 +27552,39 @@ function concat (a, b) {
 }
 
 function stringifyClass (value) {
-  if (isUndef(value)) {
-    return ''
+  if (Array.isArray(value)) {
+    return stringifyArray(value)
+  }
+  if (isObject(value)) {
+    return stringifyObject(value)
   }
   if (typeof value === 'string') {
     return value
   }
-  var res = '';
-  if (Array.isArray(value)) {
-    var stringified;
-    for (var i = 0, l = value.length; i < l; i++) {
-      if (isDef(value[i])) {
-        if (isDef(stringified = stringifyClass(value[i])) && stringified !== '') {
-          res += stringified + ' ';
-        }
-      }
-    }
-    return res.slice(0, -1)
-  }
-  if (isObject(value)) {
-    for (var key in value) {
-      if (value[key]) { res += key + ' '; }
-    }
-    return res.slice(0, -1)
-  }
   /* istanbul ignore next */
+  return ''
+}
+
+function stringifyArray (value) {
+  var res = '';
+  var stringified;
+  for (var i = 0, l = value.length; i < l; i++) {
+    if (isDef(stringified = stringifyClass(value[i])) && stringified !== '') {
+      if (res) { res += ' '; }
+      res += stringified;
+    }
+  }
+  return res
+}
+
+function stringifyObject (value) {
+  var res = '';
+  for (var key in value) {
+    if (value[key]) {
+      if (res) { res += ' '; }
+      res += key;
+    }
+  }
   return res
 }
 
@@ -25323,7 +27598,7 @@ var namespaceMap = {
 var isHTMLTag = makeMap(
   'html,body,base,head,link,meta,style,title,' +
   'address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,' +
-  'div,dd,dl,dt,figcaption,figure,hr,img,li,main,ol,p,pre,ul,' +
+  'div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,' +
   'a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,' +
   's,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,' +
   'embed,object,param,source,canvas,script,noscript,del,ins,' +
@@ -25331,7 +27606,7 @@ var isHTMLTag = makeMap(
   'button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,' +
   'output,progress,select,textarea,' +
   'details,dialog,menu,menuitem,summary,' +
-  'content,element,shadow,template'
+  'content,element,shadow,template,blockquote,iframe,tfoot'
 );
 
 // this map is intentionally selective, only covering SVG elements that may
@@ -25385,6 +27660,8 @@ function isUnknownElement (tag) {
     return (unknownElementCache[tag] = /HTMLUnknownElement/.test(el.toString()))
   }
 }
+
+var isTextInputType = makeMap('text,number,password,search,email,tel,url');
 
 /*  */
 
@@ -25460,8 +27737,8 @@ function setTextContent (node, text) {
   node.textContent = text;
 }
 
-function setAttribute (node, key, val) {
-  node.setAttribute(key, val);
+function setStyleScope (node, scopeId) {
+  node.setAttribute(scopeId, '');
 }
 
 
@@ -25477,7 +27754,7 @@ var nodeOps = Object.freeze({
 	nextSibling: nextSibling,
 	tagName: tagName,
 	setTextContent: setTextContent,
-	setAttribute: setAttribute
+	setStyleScope: setStyleScope
 });
 
 /*  */
@@ -25495,11 +27772,11 @@ var ref = {
   destroy: function destroy (vnode) {
     registerRef(vnode, true);
   }
-};
+}
 
 function registerRef (vnode, isRemoval) {
   var key = vnode.data.ref;
-  if (!key) { return }
+  if (!isDef(key)) { return }
 
   var vm = vnode.context;
   var ref = vnode.componentInstance || vnode.elm;
@@ -25512,10 +27789,11 @@ function registerRef (vnode, isRemoval) {
     }
   } else {
     if (vnode.data.refInFor) {
-      if (Array.isArray(refs[key]) && refs[key].indexOf(ref) < 0) {
-        refs[key].push(ref);
-      } else {
+      if (!Array.isArray(refs[key])) {
         refs[key] = [ref];
+      } else if (refs[key].indexOf(ref) < 0) {
+        // $flow-disable-line
+        refs[key].push(ref);
       }
     } else {
       refs[key] = ref;
@@ -25531,8 +27809,6 @@ function registerRef (vnode, isRemoval) {
  *
  * modified by Evan You (@yyx990803)
  *
-
-/*
  * Not type-checking this because this file is perf-critical and the cost
  * of making flow understand it is not worth it.
  */
@@ -25543,22 +27819,27 @@ var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
 
 function sameVnode (a, b) {
   return (
-    a.key === b.key &&
-    a.tag === b.tag &&
-    a.isComment === b.isComment &&
-    isDef(a.data) === isDef(b.data) &&
-    sameInputType(a, b)
+    a.key === b.key && (
+      (
+        a.tag === b.tag &&
+        a.isComment === b.isComment &&
+        isDef(a.data) === isDef(b.data) &&
+        sameInputType(a, b)
+      ) || (
+        isTrue(a.isAsyncPlaceholder) &&
+        a.asyncFactory === b.asyncFactory &&
+        isUndef(b.asyncFactory.error)
+      )
+    )
   )
 }
 
-// Some browsers do not support dynamically changing type for <input>
-// so they need to be treated as different nodes
 function sameInputType (a, b) {
   if (a.tag !== 'input') { return true }
   var i;
   var typeA = isDef(i = a.data) && isDef(i = i.attrs) && i.type;
   var typeB = isDef(i = b.data) && isDef(i = i.attrs) && i.type;
-  return typeA === typeB
+  return typeA === typeB || isTextInputType(typeA) && isTextInputType(typeB)
 }
 
 function createKeyToOldIdx (children, beginIdx, endIdx) {
@@ -25592,13 +27873,13 @@ function createPatchFunction (backend) {
   }
 
   function createRmCb (childElm, listeners) {
-    function remove$$1 () {
-      if (--remove$$1.listeners === 0) {
+    function remove () {
+      if (--remove.listeners === 0) {
         removeNode(childElm);
       }
     }
-    remove$$1.listeners = listeners;
-    return remove$$1
+    remove.listeners = listeners;
+    return remove
   }
 
   function removeNode (el) {
@@ -25609,8 +27890,42 @@ function createPatchFunction (backend) {
     }
   }
 
-  var inPre = 0;
-  function createElm (vnode, insertedVnodeQueue, parentElm, refElm, nested) {
+  function isUnknownElement$$1 (vnode, inVPre) {
+    return (
+      !inVPre &&
+      !vnode.ns &&
+      !(
+        config.ignoredElements.length &&
+        config.ignoredElements.some(function (ignore) {
+          return isRegExp(ignore)
+            ? ignore.test(vnode.tag)
+            : ignore === vnode.tag
+        })
+      ) &&
+      config.isUnknownElement(vnode.tag)
+    )
+  }
+
+  var creatingElmInVPre = 0;
+
+  function createElm (
+    vnode,
+    insertedVnodeQueue,
+    parentElm,
+    refElm,
+    nested,
+    ownerArray,
+    index
+  ) {
+    if (isDef(vnode.elm) && isDef(ownerArray)) {
+      // This vnode was used in a previous render!
+      // now it's used as a new node, overwriting its elm would cause
+      // potential patch errors down the road when it's used as an insertion
+      // reference node. Instead, we clone the node on-demand before creating
+      // associated DOM element for it.
+      vnode = ownerArray[index] = cloneVNode(vnode);
+    }
+
     vnode.isRootInsert = !nested; // for transition enter check
     if (createComponent(vnode, insertedVnodeQueue, parentElm, refElm)) {
       return
@@ -25622,14 +27937,9 @@ function createPatchFunction (backend) {
     if (isDef(tag)) {
       if (false) {
         if (data && data.pre) {
-          inPre++;
+          creatingElmInVPre++;
         }
-        if (
-          !inPre &&
-          !vnode.ns &&
-          !(config.ignoredElements.length && config.ignoredElements.indexOf(tag) > -1) &&
-          config.isUnknownElement(tag)
-        ) {
+        if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
           warn(
             'Unknown custom element: <' + tag + '> - did you ' +
             'register the component correctly? For recursive components, ' +
@@ -25638,6 +27948,7 @@ function createPatchFunction (backend) {
           );
         }
       }
+
       vnode.elm = vnode.ns
         ? nodeOps.createElementNS(vnode.ns, tag)
         : nodeOps.createElement(tag, vnode);
@@ -25653,7 +27964,7 @@ function createPatchFunction (backend) {
       }
 
       if (false) {
-        inPre--;
+        creatingElmInVPre--;
       }
     } else if (isTrue(vnode.isComment)) {
       vnode.elm = nodeOps.createComment(vnode.text);
@@ -25725,11 +28036,11 @@ function createPatchFunction (backend) {
     insert(parentElm, vnode.elm, refElm);
   }
 
-  function insert (parent, elm, ref) {
+  function insert (parent, elm, ref$$1) {
     if (isDef(parent)) {
-      if (isDef(ref)) {
-        if (ref.parentNode === parent) {
-          nodeOps.insertBefore(parent, elm, ref);
+      if (isDef(ref$$1)) {
+        if (ref$$1.parentNode === parent) {
+          nodeOps.insertBefore(parent, elm, ref$$1);
         }
       } else {
         nodeOps.appendChild(parent, elm);
@@ -25739,11 +28050,14 @@ function createPatchFunction (backend) {
 
   function createChildren (vnode, children, insertedVnodeQueue) {
     if (Array.isArray(children)) {
+      if (false) {
+        checkDuplicateKeys(children);
+      }
       for (var i = 0; i < children.length; ++i) {
-        createElm(children[i], insertedVnodeQueue, vnode.elm, null, true);
+        createElm(children[i], insertedVnodeQueue, vnode.elm, null, true, children, i);
       }
     } else if (isPrimitive(vnode.text)) {
-      nodeOps.appendChild(vnode.elm, nodeOps.createTextNode(vnode.text));
+      nodeOps.appendChild(vnode.elm, nodeOps.createTextNode(String(vnode.text)));
     }
   }
 
@@ -25770,25 +28084,30 @@ function createPatchFunction (backend) {
   // of going through the normal attribute patching process.
   function setScope (vnode) {
     var i;
-    var ancestor = vnode;
-    while (ancestor) {
-      if (isDef(i = ancestor.context) && isDef(i = i.$options._scopeId)) {
-        nodeOps.setAttribute(vnode.elm, i, '');
+    if (isDef(i = vnode.fnScopeId)) {
+      nodeOps.setStyleScope(vnode.elm, i);
+    } else {
+      var ancestor = vnode;
+      while (ancestor) {
+        if (isDef(i = ancestor.context) && isDef(i = i.$options._scopeId)) {
+          nodeOps.setStyleScope(vnode.elm, i);
+        }
+        ancestor = ancestor.parent;
       }
-      ancestor = ancestor.parent;
     }
     // for slot content they should also get the scopeId from the host instance.
     if (isDef(i = activeInstance) &&
       i !== vnode.context &&
+      i !== vnode.fnContext &&
       isDef(i = i.$options._scopeId)
     ) {
-      nodeOps.setAttribute(vnode.elm, i, '');
+      nodeOps.setStyleScope(vnode.elm, i);
     }
   }
 
   function addVnodes (parentElm, refElm, vnodes, startIdx, endIdx, insertedVnodeQueue) {
     for (; startIdx <= endIdx; ++startIdx) {
-      createElm(vnodes[startIdx], insertedVnodeQueue, parentElm, refElm);
+      createElm(vnodes[startIdx], insertedVnodeQueue, parentElm, refElm, false, vnodes, startIdx);
     }
   }
 
@@ -25858,12 +28177,16 @@ function createPatchFunction (backend) {
     var newEndIdx = newCh.length - 1;
     var newStartVnode = newCh[0];
     var newEndVnode = newCh[newEndIdx];
-    var oldKeyToIdx, idxInOld, elmToMove, refElm;
+    var oldKeyToIdx, idxInOld, vnodeToMove, refElm;
 
     // removeOnly is a special flag used only by <transition-group>
     // to ensure removed elements stay in correct relative positions
     // during leaving transitions
     var canMove = !removeOnly;
+
+    if (false) {
+      checkDuplicateKeys(newCh);
+    }
 
     while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
       if (isUndef(oldStartVnode)) {
@@ -25890,30 +28213,23 @@ function createPatchFunction (backend) {
         newStartVnode = newCh[++newStartIdx];
       } else {
         if (isUndef(oldKeyToIdx)) { oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx); }
-        idxInOld = isDef(newStartVnode.key) ? oldKeyToIdx[newStartVnode.key] : null;
+        idxInOld = isDef(newStartVnode.key)
+          ? oldKeyToIdx[newStartVnode.key]
+          : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx);
         if (isUndef(idxInOld)) { // New element
-          createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
-          newStartVnode = newCh[++newStartIdx];
+          createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx);
         } else {
-          elmToMove = oldCh[idxInOld];
-          /* istanbul ignore if */
-          if (false) {
-            warn(
-              'It seems there are duplicate keys that is causing an update error. ' +
-              'Make sure each v-for item has a unique key.'
-            );
-          }
-          if (sameVnode(elmToMove, newStartVnode)) {
-            patchVnode(elmToMove, newStartVnode, insertedVnodeQueue);
+          vnodeToMove = oldCh[idxInOld];
+          if (sameVnode(vnodeToMove, newStartVnode)) {
+            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue);
             oldCh[idxInOld] = undefined;
-            canMove && nodeOps.insertBefore(parentElm, newStartVnode.elm, oldStartVnode.elm);
-            newStartVnode = newCh[++newStartIdx];
+            canMove && nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm);
           } else {
             // same key but different element. treat as new element
-            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
-            newStartVnode = newCh[++newStartIdx];
+            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx);
           }
         }
+        newStartVnode = newCh[++newStartIdx];
       }
     }
     if (oldStartIdx > oldEndIdx) {
@@ -25924,10 +28240,47 @@ function createPatchFunction (backend) {
     }
   }
 
+  function checkDuplicateKeys (children) {
+    var seenKeys = {};
+    for (var i = 0; i < children.length; i++) {
+      var vnode = children[i];
+      var key = vnode.key;
+      if (isDef(key)) {
+        if (seenKeys[key]) {
+          warn(
+            ("Duplicate keys detected: '" + key + "'. This may cause an update error."),
+            vnode.context
+          );
+        } else {
+          seenKeys[key] = true;
+        }
+      }
+    }
+  }
+
+  function findIdxInOld (node, oldCh, start, end) {
+    for (var i = start; i < end; i++) {
+      var c = oldCh[i];
+      if (isDef(c) && sameVnode(node, c)) { return i }
+    }
+  }
+
   function patchVnode (oldVnode, vnode, insertedVnodeQueue, removeOnly) {
     if (oldVnode === vnode) {
       return
     }
+
+    var elm = vnode.elm = oldVnode.elm;
+
+    if (isTrue(oldVnode.isAsyncPlaceholder)) {
+      if (isDef(vnode.asyncFactory.resolved)) {
+        hydrate(oldVnode.elm, vnode, insertedVnodeQueue);
+      } else {
+        vnode.isAsyncPlaceholder = true;
+      }
+      return
+    }
+
     // reuse element for static trees.
     // note we only do this if the vnode is cloned -
     // if the new node is not cloned it means the render functions have been
@@ -25937,16 +28290,16 @@ function createPatchFunction (backend) {
       vnode.key === oldVnode.key &&
       (isTrue(vnode.isCloned) || isTrue(vnode.isOnce))
     ) {
-      vnode.elm = oldVnode.elm;
       vnode.componentInstance = oldVnode.componentInstance;
       return
     }
+
     var i;
     var data = vnode.data;
     if (isDef(data) && isDef(i = data.hook) && isDef(i = i.prepatch)) {
       i(oldVnode, vnode);
     }
-    var elm = vnode.elm = oldVnode.elm;
+
     var oldCh = oldVnode.children;
     var ch = vnode.children;
     if (isDef(data) && isPatchable(vnode)) {
@@ -25984,22 +28337,32 @@ function createPatchFunction (backend) {
     }
   }
 
-  var bailed = false;
+  var hydrationBailed = false;
   // list of modules that can skip create hook during hydration because they
   // are already rendered on the client or has no need for initialization
-  var isRenderedModule = makeMap('attrs,style,class,staticClass,staticStyle,key');
+  // Note: style is excluded because it relies on initial clone for future
+  // deep updates (#7063).
+  var isRenderedModule = makeMap('attrs,class,staticClass,staticStyle,key');
 
   // Note: this is a browser-only function so we can assume elms are DOM nodes.
-  function hydrate (elm, vnode, insertedVnodeQueue) {
-    if (false) {
-      if (!assertNodeMatch(elm, vnode)) {
-        return false
-      }
-    }
-    vnode.elm = elm;
+  function hydrate (elm, vnode, insertedVnodeQueue, inVPre) {
+    var i;
     var tag = vnode.tag;
     var data = vnode.data;
     var children = vnode.children;
+    inVPre = inVPre || (data && data.pre);
+    vnode.elm = elm;
+
+    if (isTrue(vnode.isComment) && isDef(vnode.asyncFactory)) {
+      vnode.isAsyncPlaceholder = true;
+      return true
+    }
+    // assert node match
+    if (false) {
+      if (!assertNodeMatch(elm, vnode, inVPre)) {
+        return false
+      }
+    }
     if (isDef(data)) {
       if (isDef(i = data.hook) && isDef(i = i.init)) { i(vnode, true /* hydrating */); }
       if (isDef(i = vnode.componentInstance)) {
@@ -26014,34 +28377,57 @@ function createPatchFunction (backend) {
         if (!elm.hasChildNodes()) {
           createChildren(vnode, children, insertedVnodeQueue);
         } else {
-          var childrenMatch = true;
-          var childNode = elm.firstChild;
-          for (var i$1 = 0; i$1 < children.length; i$1++) {
-            if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue)) {
-              childrenMatch = false;
-              break
+          // v-html and domProps: innerHTML
+          if (isDef(i = data) && isDef(i = i.domProps) && isDef(i = i.innerHTML)) {
+            if (i !== elm.innerHTML) {
+              /* istanbul ignore if */
+              if (false
+              ) {
+                hydrationBailed = true;
+                console.warn('Parent: ', elm);
+                console.warn('server innerHTML: ', i);
+                console.warn('client innerHTML: ', elm.innerHTML);
+              }
+              return false
             }
-            childNode = childNode.nextSibling;
-          }
-          // if childNode is not null, it means the actual childNodes list is
-          // longer than the virtual children list.
-          if (!childrenMatch || childNode) {
-            if (false
-            ) {
-              bailed = true;
-              console.warn('Parent: ', elm);
-              console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
+          } else {
+            // iterate and compare children lists
+            var childrenMatch = true;
+            var childNode = elm.firstChild;
+            for (var i$1 = 0; i$1 < children.length; i$1++) {
+              if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue, inVPre)) {
+                childrenMatch = false;
+                break
+              }
+              childNode = childNode.nextSibling;
             }
-            return false
+            // if childNode is not null, it means the actual childNodes list is
+            // longer than the virtual children list.
+            if (!childrenMatch || childNode) {
+              /* istanbul ignore if */
+              if (false
+              ) {
+                hydrationBailed = true;
+                console.warn('Parent: ', elm);
+                console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
+              }
+              return false
+            }
           }
         }
       }
       if (isDef(data)) {
+        var fullInvoke = false;
         for (var key in data) {
           if (!isRenderedModule(key)) {
+            fullInvoke = true;
             invokeCreateHooks(vnode, insertedVnodeQueue);
             break
           }
+        }
+        if (!fullInvoke && data['class']) {
+          // ensure collecting deps for deep class bindings for future updates
+          traverse(data['class']);
         }
       }
     } else if (elm.data !== vnode.text) {
@@ -26050,10 +28436,10 @@ function createPatchFunction (backend) {
     return true
   }
 
-  function assertNodeMatch (node, vnode) {
+  function assertNodeMatch (node, vnode, inVPre) {
     if (isDef(vnode.tag)) {
-      return (
-        vnode.tag.indexOf('vue-component') === 0 ||
+      return vnode.tag.indexOf('vue-component') === 0 || (
+        !isUnknownElement$$1(vnode, inVPre) &&
         vnode.tag.toLowerCase() === (node.tagName && node.tagName.toLowerCase())
       )
     } else {
@@ -26106,9 +28492,12 @@ function createPatchFunction (backend) {
           // create an empty node and replace it
           oldVnode = emptyNodeAt(oldVnode);
         }
+
         // replacing existing element
         var oldElm = oldVnode.elm;
         var parentElm$1 = nodeOps.parentNode(oldElm);
+
+        // create new node
         createElm(
           vnode,
           insertedVnodeQueue,
@@ -26119,21 +28508,37 @@ function createPatchFunction (backend) {
           nodeOps.nextSibling(oldElm)
         );
 
+        // update parent placeholder node element, recursively
         if (isDef(vnode.parent)) {
-          // component root element replaced.
-          // update parent placeholder node element, recursively
           var ancestor = vnode.parent;
+          var patchable = isPatchable(vnode);
           while (ancestor) {
-            ancestor.elm = vnode.elm;
-            ancestor = ancestor.parent;
-          }
-          if (isPatchable(vnode)) {
-            for (var i = 0; i < cbs.create.length; ++i) {
-              cbs.create[i](emptyNode, vnode.parent);
+            for (var i = 0; i < cbs.destroy.length; ++i) {
+              cbs.destroy[i](ancestor);
             }
+            ancestor.elm = vnode.elm;
+            if (patchable) {
+              for (var i$1 = 0; i$1 < cbs.create.length; ++i$1) {
+                cbs.create[i$1](emptyNode, ancestor);
+              }
+              // #6513
+              // invoke insert hooks that may have been merged by create hooks.
+              // e.g. for directives that uses the "inserted" hook.
+              var insert = ancestor.data.hook.insert;
+              if (insert.merged) {
+                // start at index 1 to avoid re-invoking component mounted hook
+                for (var i$2 = 1; i$2 < insert.fns.length; i$2++) {
+                  insert.fns[i$2]();
+                }
+              }
+            } else {
+              registerRef(ancestor);
+            }
+            ancestor = ancestor.parent;
           }
         }
 
+        // destroy old node
         if (isDef(parentElm$1)) {
           removeVnodes(parentElm$1, [oldVnode], 0, 0);
         } else if (isDef(oldVnode.tag)) {
@@ -26155,7 +28560,7 @@ var directives = {
   destroy: function unbindDirectives (vnode) {
     updateDirectives(vnode, emptyNode);
   }
-};
+}
 
 function updateDirectives (oldVnode, vnode) {
   if (oldVnode.data.directives || vnode.data.directives) {
@@ -26199,14 +28604,14 @@ function _update (oldVnode, vnode) {
       }
     };
     if (isCreate) {
-      mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'insert', callInsert);
+      mergeVNodeHook(vnode, 'insert', callInsert);
     } else {
       callInsert();
     }
   }
 
   if (dirsWithPostpatch.length) {
-    mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'postpatch', function () {
+    mergeVNodeHook(vnode, 'postpatch', function () {
       for (var i = 0; i < dirsWithPostpatch.length; i++) {
         callHook$1(dirsWithPostpatch[i], 'componentUpdated', vnode, oldVnode);
       }
@@ -26231,17 +28636,20 @@ function normalizeDirectives$1 (
 ) {
   var res = Object.create(null);
   if (!dirs) {
+    // $flow-disable-line
     return res
   }
   var i, dir;
   for (i = 0; i < dirs.length; i++) {
     dir = dirs[i];
     if (!dir.modifiers) {
+      // $flow-disable-line
       dir.modifiers = emptyModifiers;
     }
     res[getRawDirName(dir)] = dir;
     dir.def = resolveAsset(vm.$options, 'directives', dir.name, true);
   }
+  // $flow-disable-line
   return res
 }
 
@@ -26263,11 +28671,15 @@ function callHook$1 (dir, hook, vnode, oldVnode, isDestroy) {
 var baseModules = [
   ref,
   directives
-];
+]
 
 /*  */
 
 function updateAttrs (oldVnode, vnode) {
+  var opts = vnode.componentOptions;
+  if (isDef(opts) && opts.Ctor.options.inheritAttrs === false) {
+    return
+  }
   if (isUndef(oldVnode.data.attrs) && isUndef(vnode.data.attrs)) {
     return
   }
@@ -26288,8 +28700,9 @@ function updateAttrs (oldVnode, vnode) {
     }
   }
   // #4391: in IE9, setting type can reset value for input[type=radio]
+  // #6666: IE/Edge forces progress value down to 1 before setting a max
   /* istanbul ignore if */
-  if (isIE9 && attrs.value !== oldAttrs.value) {
+  if ((isIE || isEdge) && attrs.value !== oldAttrs.value) {
     setAttr(elm, 'value', attrs.value);
   }
   for (key in oldAttrs) {
@@ -26304,13 +28717,20 @@ function updateAttrs (oldVnode, vnode) {
 }
 
 function setAttr (el, key, value) {
-  if (isBooleanAttr(key)) {
+  if (el.tagName.indexOf('-') > -1) {
+    baseSetAttr(el, key, value);
+  } else if (isBooleanAttr(key)) {
     // set attribute for blank value
     // e.g. <option disabled>Select one</option>
     if (isFalsyAttrValue(value)) {
       el.removeAttribute(key);
     } else {
-      el.setAttribute(key, key);
+      // technically allowfullscreen is a boolean attribute for <iframe>,
+      // but Flash expects a value of "true" when used on <embed> tag
+      value = key === 'allowfullscreen' && el.tagName === 'EMBED'
+        ? 'true'
+        : key;
+      el.setAttribute(key, value);
     }
   } else if (isEnumeratedAttr(key)) {
     el.setAttribute(key, isFalsyAttrValue(value) || value === 'false' ? 'false' : 'true');
@@ -26321,18 +28741,39 @@ function setAttr (el, key, value) {
       el.setAttributeNS(xlinkNS, key, value);
     }
   } else {
-    if (isFalsyAttrValue(value)) {
-      el.removeAttribute(key);
-    } else {
-      el.setAttribute(key, value);
+    baseSetAttr(el, key, value);
+  }
+}
+
+function baseSetAttr (el, key, value) {
+  if (isFalsyAttrValue(value)) {
+    el.removeAttribute(key);
+  } else {
+    // #7138: IE10 & 11 fires input event when setting placeholder on
+    // <textarea>... block the first input event and remove the blocker
+    // immediately.
+    /* istanbul ignore if */
+    if (
+      isIE && !isIE9 &&
+      el.tagName === 'TEXTAREA' &&
+      key === 'placeholder' && !el.__ieph
+    ) {
+      var blocker = function (e) {
+        e.stopImmediatePropagation();
+        el.removeEventListener('input', blocker);
+      };
+      el.addEventListener('input', blocker);
+      // $flow-disable-line
+      el.__ieph = true; /* IE placeholder patched */
     }
+    el.setAttribute(key, value);
   }
 }
 
 var attrs = {
   create: updateAttrs,
   update: updateAttrs
-};
+}
 
 /*  */
 
@@ -26370,7 +28811,7 @@ function updateClass (oldVnode, vnode) {
 var klass = {
   create: updateClass,
   update: updateClass
-};
+}
 
 /*  */
 
@@ -26466,7 +28907,7 @@ function wrapFilter (exp, filter) {
   } else {
     var name = filter.slice(0, i);
     var args = filter.slice(i + 1);
-    return ("_f(\"" + name + "\")(" + exp + "," + args)
+    return ("_f(\"" + name + "\")(" + exp + (args !== ')' ? ',' + args : args))
   }
 }
 
@@ -26487,10 +28928,18 @@ function pluckModuleFunction (
 
 function addProp (el, name, value) {
   (el.props || (el.props = [])).push({ name: name, value: value });
+  el.plain = false;
 }
 
 function addAttr (el, name, value) {
   (el.attrs || (el.attrs = [])).push({ name: name, value: value });
+  el.plain = false;
+}
+
+// add a raw attr (use this in preTransforms)
+function addRawAttr (el, name, value) {
+  el.attrsMap[name] = value;
+  el.attrsList.push({ name: name, value: value });
 }
 
 function addDirective (
@@ -26502,6 +28951,7 @@ function addDirective (
   modifiers
 ) {
   (el.directives || (el.directives = [])).push({ name: name, rawName: rawName, value: value, arg: arg, modifiers: modifiers });
+  el.plain = false;
 }
 
 function addHandler (
@@ -26512,6 +28962,7 @@ function addHandler (
   important,
   warn
 ) {
+  modifiers = modifiers || emptyObject;
   // warn prevent and passive modifier
   /* istanbul ignore if */
   if (
@@ -26522,28 +28973,49 @@ function addHandler (
       'Passive handler can\'t prevent default event.'
     );
   }
+
   // check capture modifier
-  if (modifiers && modifiers.capture) {
+  if (modifiers.capture) {
     delete modifiers.capture;
     name = '!' + name; // mark the event as captured
   }
-  if (modifiers && modifiers.once) {
+  if (modifiers.once) {
     delete modifiers.once;
     name = '~' + name; // mark the event as once
   }
   /* istanbul ignore if */
-  if (modifiers && modifiers.passive) {
+  if (modifiers.passive) {
     delete modifiers.passive;
     name = '&' + name; // mark the event as passive
   }
+
+  // normalize click.right and click.middle since they don't actually fire
+  // this is technically browser-specific, but at least for now browsers are
+  // the only target envs that have right/middle clicks.
+  if (name === 'click') {
+    if (modifiers.right) {
+      name = 'contextmenu';
+      delete modifiers.right;
+    } else if (modifiers.middle) {
+      name = 'mouseup';
+    }
+  }
+
   var events;
-  if (modifiers && modifiers.native) {
+  if (modifiers.native) {
     delete modifiers.native;
     events = el.nativeEvents || (el.nativeEvents = {});
   } else {
     events = el.events || (el.events = {});
   }
-  var newHandler = { value: value, modifiers: modifiers };
+
+  var newHandler = {
+    value: value.trim()
+  };
+  if (modifiers !== emptyObject) {
+    newHandler.modifiers = modifiers;
+  }
+
   var handlers = events[name];
   /* istanbul ignore if */
   if (Array.isArray(handlers)) {
@@ -26553,6 +29025,8 @@ function addHandler (
   } else {
     events[name] = newHandler;
   }
+
+  el.plain = false;
 }
 
 function getBindingAttr (
@@ -26573,7 +29047,15 @@ function getBindingAttr (
   }
 }
 
-function getAndRemoveAttr (el, name) {
+// note: this only removes the attr from the Array (attrsList) so that it
+// doesn't get processed by processAttrs.
+// By default it does NOT remove it from the map (attrsMap) because the map is
+// needed during codegen.
+function getAndRemoveAttr (
+  el,
+  name,
+  removeFromMap
+) {
   var val;
   if ((val = el.attrsMap[name]) != null) {
     var list = el.attrsList;
@@ -26583,6 +29065,9 @@ function getAndRemoveAttr (el, name) {
         break
       }
     }
+  }
+  if (removeFromMap) {
+    delete el.attrsMap[name];
   }
   return val
 }
@@ -26606,8 +29091,8 @@ function genComponentModel (
   if (trim) {
     valueExpression =
       "(typeof " + baseValueExpression + " === 'string'" +
-        "? " + baseValueExpression + ".trim()" +
-        ": " + baseValueExpression + ")";
+      "? " + baseValueExpression + ".trim()" +
+      ": " + baseValueExpression + ")";
   }
   if (number) {
     valueExpression = "_n(" + valueExpression + ")";
@@ -26628,28 +29113,26 @@ function genAssignmentCode (
   value,
   assignment
 ) {
-  var modelRs = parseModel(value);
-  if (modelRs.idx === null) {
+  var res = parseModel(value);
+  if (res.key === null) {
     return (value + "=" + assignment)
   } else {
-    return "var $$exp = " + (modelRs.exp) + ", $$idx = " + (modelRs.idx) + ";" +
-      "if (!Array.isArray($$exp)){" +
-        value + "=" + assignment + "}" +
-      "else{$$exp.splice($$idx, 1, " + assignment + ")}"
+    return ("$set(" + (res.exp) + ", " + (res.key) + ", " + assignment + ")")
   }
 }
 
 /**
- * parse directive model to do the array update transform. a[idx] = val => $$a.splice($$idx, 1, val)
+ * Parse a v-model expression into a base path and a final key segment.
+ * Handles both dot-path and possible square brackets.
  *
- * for loop possible cases:
+ * Possible cases:
  *
  * - test
- * - test[idx]
- * - test[test1[idx]]
- * - test["a"][idx]
- * - xxx.test[a[a].test1[idx]]
- * - test.xxx.a["asa"][test1[idx]]
+ * - test[key]
+ * - test[test1[key]]
+ * - test["a"][key]
+ * - xxx.test[a[a].test1[key]]
+ * - test.xxx.a["asa"][test1[key]]
  *
  */
 
@@ -26660,17 +29143,31 @@ var index$1;
 var expressionPos;
 var expressionEndPos;
 
+
+
 function parseModel (val) {
-  str = val;
-  len = str.length;
-  index$1 = expressionPos = expressionEndPos = 0;
+  // Fix https://github.com/vuejs/vue/pull/7730
+  // allow v-model="obj.val " (trailing whitespace)
+  val = val.trim();
+  len = val.length;
 
   if (val.indexOf('[') < 0 || val.lastIndexOf(']') < len - 1) {
-    return {
-      exp: val,
-      idx: null
+    index$1 = val.lastIndexOf('.');
+    if (index$1 > -1) {
+      return {
+        exp: val.slice(0, index$1),
+        key: '"' + val.slice(index$1 + 1) + '"'
+      }
+    } else {
+      return {
+        exp: val,
+        key: null
+      }
     }
   }
+
+  str = val;
+  index$1 = expressionPos = expressionEndPos = 0;
 
   while (!eof()) {
     chr = next();
@@ -26683,8 +29180,8 @@ function parseModel (val) {
   }
 
   return {
-    exp: val.substring(0, expressionPos),
-    idx: val.substring(expressionPos + 1, expressionEndPos)
+    exp: val.slice(0, expressionPos),
+    key: val.slice(expressionPos + 1, expressionEndPos)
   }
 }
 
@@ -26749,13 +29246,6 @@ function model (
   var type = el.attrsMap.type;
 
   if (false) {
-    var dynamicType = el.attrsMap['v-bind:type'] || el.attrsMap[':type'];
-    if (tag === 'input' && dynamicType) {
-      warn$1(
-        "<input :type=\"" + dynamicType + "\" v-model=\"" + value + "\">:\n" +
-        "v-model does not support dynamic input types. Use v-if branches instead."
-      );
-    }
     // inputs with type="file" are read only and setting the input's
     // value will throw an error.
     if (tag === 'input' && type === 'file') {
@@ -26766,7 +29256,11 @@ function model (
     }
   }
 
-  if (tag === 'select') {
+  if (el.component) {
+    genComponentModel(el, value, modifiers);
+    // component v-model doesn't need extra runtime
+    return false
+  } else if (tag === 'select') {
     genSelect(el, value, modifiers);
   } else if (tag === 'input' && type === 'checkbox') {
     genCheckboxModel(el, value, modifiers);
@@ -26802,42 +29296,42 @@ function genCheckboxModel (
   var falseValueBinding = getBindingAttr(el, 'false-value') || 'false';
   addProp(el, 'checked',
     "Array.isArray(" + value + ")" +
-      "?_i(" + value + "," + valueBinding + ")>-1" + (
-        trueValueBinding === 'true'
-          ? (":(" + value + ")")
-          : (":_q(" + value + "," + trueValueBinding + ")")
-      )
+    "?_i(" + value + "," + valueBinding + ")>-1" + (
+      trueValueBinding === 'true'
+        ? (":(" + value + ")")
+        : (":_q(" + value + "," + trueValueBinding + ")")
+    )
   );
-  addHandler(el, CHECKBOX_RADIO_TOKEN,
+  addHandler(el, 'change',
     "var $$a=" + value + "," +
         '$$el=$event.target,' +
         "$$c=$$el.checked?(" + trueValueBinding + "):(" + falseValueBinding + ");" +
     'if(Array.isArray($$a)){' +
       "var $$v=" + (number ? '_n(' + valueBinding + ')' : valueBinding) + "," +
           '$$i=_i($$a,$$v);' +
-      "if($$c){$$i<0&&(" + value + "=$$a.concat($$v))}" +
-      "else{$$i>-1&&(" + value + "=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}" +
+      "if($$el.checked){$$i<0&&(" + (genAssignmentCode(value, '$$a.concat([$$v])')) + ")}" +
+      "else{$$i>-1&&(" + (genAssignmentCode(value, '$$a.slice(0,$$i).concat($$a.slice($$i+1))')) + ")}" +
     "}else{" + (genAssignmentCode(value, '$$c')) + "}",
     null, true
   );
 }
 
 function genRadioModel (
-    el,
-    value,
-    modifiers
+  el,
+  value,
+  modifiers
 ) {
   var number = modifiers && modifiers.number;
   var valueBinding = getBindingAttr(el, 'value') || 'null';
   valueBinding = number ? ("_n(" + valueBinding + ")") : valueBinding;
   addProp(el, 'checked', ("_q(" + value + "," + valueBinding + ")"));
-  addHandler(el, CHECKBOX_RADIO_TOKEN, genAssignmentCode(value, valueBinding), null, true);
+  addHandler(el, 'change', genAssignmentCode(value, valueBinding), null, true);
 }
 
 function genSelect (
-    el,
-    value,
-    modifiers
+  el,
+  value,
+  modifiers
 ) {
   var number = modifiers && modifiers.number;
   var selectedVal = "Array.prototype.filter" +
@@ -26857,6 +29351,21 @@ function genDefaultModel (
   modifiers
 ) {
   var type = el.attrsMap.type;
+
+  // warn if v-bind:value conflicts with v-model
+  // except for inputs with v-bind:type
+  if (false) {
+    var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
+    var typeBinding = el.attrsMap['v-bind:type'] || el.attrsMap[':type'];
+    if (value$1 && !typeBinding) {
+      var binding = el.attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
+      warn$1(
+        binding + "=\"" + value$1 + "\" conflicts with v-model on the same element " +
+        'because the latter already expands to a value binding internally'
+      );
+    }
+  }
+
   var ref = modifiers || {};
   var lazy = ref.lazy;
   var number = ref.number;
@@ -26883,7 +29392,7 @@ function genDefaultModel (
 
   addProp(el, 'value', ("(" + value + ")"));
   addHandler(el, event, code, null, true);
-  if (trim || number || type === 'number') {
+  if (trim || number) {
     addHandler(el, 'blur', '$forceUpdate()');
   }
 }
@@ -26895,23 +29404,33 @@ function genDefaultModel (
 // the whole point is ensuring the v-model callback gets called before
 // user-attached handlers.
 function normalizeEvents (on) {
-  var event;
   /* istanbul ignore if */
   if (isDef(on[RANGE_TOKEN])) {
     // IE input[type=range] only supports `change` event
-    event = isIE ? 'change' : 'input';
+    var event = isIE ? 'change' : 'input';
     on[event] = [].concat(on[RANGE_TOKEN], on[event] || []);
     delete on[RANGE_TOKEN];
   }
+  // This was originally intended to fix #4521 but no longer necessary
+  // after 2.5. Keeping it for backwards compat with generated code from < 2.4
+  /* istanbul ignore if */
   if (isDef(on[CHECKBOX_RADIO_TOKEN])) {
-    // Chrome fires microtasks in between click/change, leads to #4521
-    event = isChrome ? 'click' : 'change';
-    on[event] = [].concat(on[CHECKBOX_RADIO_TOKEN], on[event] || []);
+    on.change = [].concat(on[CHECKBOX_RADIO_TOKEN], on.change || []);
     delete on[CHECKBOX_RADIO_TOKEN];
   }
 }
 
 var target$1;
+
+function createOnceHandler (handler, event, capture) {
+  var _target = target$1; // save current target element in closure
+  return function onceHandler () {
+    var res = handler.apply(null, arguments);
+    if (res !== null) {
+      remove$2(event, onceHandler, capture, _target);
+    }
+  }
+}
 
 function add$1 (
   event,
@@ -26920,18 +29439,8 @@ function add$1 (
   capture,
   passive
 ) {
-  if (once$$1) {
-    var oldHandler = handler;
-    var _target = target$1; // save current target element in closure
-    handler = function (ev) {
-      var res = arguments.length === 1
-        ? oldHandler(ev)
-        : oldHandler.apply(null, arguments);
-      if (res !== null) {
-        remove$2(event, handler, capture, _target);
-      }
-    };
-  }
+  handler = withMacroTask(handler);
+  if (once$$1) { handler = createOnceHandler(handler, event, capture); }
   target$1.addEventListener(
     event,
     handler,
@@ -26947,7 +29456,11 @@ function remove$2 (
   capture,
   _target
 ) {
-  (_target || target$1).removeEventListener(event, handler, capture);
+  (_target || target$1).removeEventListener(
+    event,
+    handler._withTask || handler,
+    capture
+  );
 }
 
 function updateDOMListeners (oldVnode, vnode) {
@@ -26959,12 +29472,13 @@ function updateDOMListeners (oldVnode, vnode) {
   target$1 = vnode.elm;
   normalizeEvents(on);
   updateListeners(on, oldOn, add$1, remove$2, vnode.context);
+  target$1 = undefined;
 }
 
 var events = {
   create: updateDOMListeners,
   update: updateDOMListeners
-};
+}
 
 /*  */
 
@@ -26994,6 +29508,11 @@ function updateDOMProps (oldVnode, vnode) {
     if (key === 'textContent' || key === 'innerHTML') {
       if (vnode.children) { vnode.children.length = 0; }
       if (cur === oldProps[key]) { continue }
+      // #6601 work around Chrome version <= 55 bug where single textNode
+      // replaced by innerHTML/textContent retains its parentNode property
+      if (elm.childNodes.length === 1) {
+        elm.removeChild(elm.childNodes[0]);
+      }
     }
 
     if (key === 'value') {
@@ -27002,7 +29521,7 @@ function updateDOMProps (oldVnode, vnode) {
       elm._value = cur;
       // avoid resetting cursor position when value is the same
       var strCur = isUndef(cur) ? '' : String(cur);
-      if (shouldUpdateValue(elm, vnode, strCur)) {
+      if (shouldUpdateValue(elm, strCur)) {
         elm.value = strCur;
       }
     } else {
@@ -27014,31 +29533,38 @@ function updateDOMProps (oldVnode, vnode) {
 // check platforms/web/util/attrs.js acceptValue
 
 
-function shouldUpdateValue (
-  elm,
-  vnode,
-  checkVal
-) {
+function shouldUpdateValue (elm, checkVal) {
   return (!elm.composing && (
-    vnode.tag === 'option' ||
-    isDirty(elm, checkVal) ||
-    isInputChanged(elm, checkVal)
+    elm.tagName === 'OPTION' ||
+    isNotInFocusAndDirty(elm, checkVal) ||
+    isDirtyWithModifiers(elm, checkVal)
   ))
 }
 
-function isDirty (elm, checkVal) {
-  // return true when textbox (.number and .trim) loses focus and its value is not equal to the updated value
-  return document.activeElement !== elm && elm.value !== checkVal
+function isNotInFocusAndDirty (elm, checkVal) {
+  // return true when textbox (.number and .trim) loses focus and its value is
+  // not equal to the updated value
+  var notInFocus = true;
+  // #6157
+  // work around IE bug when accessing document.activeElement in an iframe
+  try { notInFocus = document.activeElement !== elm; } catch (e) {}
+  return notInFocus && elm.value !== checkVal
 }
 
-function isInputChanged (elm, newVal) {
+function isDirtyWithModifiers (elm, newVal) {
   var value = elm.value;
   var modifiers = elm._vModifiers; // injected by v-model runtime
-  if ((isDef(modifiers) && modifiers.number) || elm.type === 'number') {
-    return toNumber(value) !== toNumber(newVal)
-  }
-  if (isDef(modifiers) && modifiers.trim) {
-    return value.trim() !== newVal.trim()
+  if (isDef(modifiers)) {
+    if (modifiers.lazy) {
+      // inputs with lazy should only be updated when not in focus
+      return false
+    }
+    if (modifiers.number) {
+      return toNumber(value) !== toNumber(newVal)
+    }
+    if (modifiers.trim) {
+      return value.trim() !== newVal.trim()
+    }
   }
   return value !== newVal
 }
@@ -27046,7 +29572,7 @@ function isInputChanged (elm, newVal) {
 var domProps = {
   create: updateDOMProps,
   update: updateDOMProps
-};
+}
 
 /*  */
 
@@ -27096,7 +29622,10 @@ function getStyle (vnode, checkChild) {
     var childNode = vnode;
     while (childNode.componentInstance) {
       childNode = childNode.componentInstance._vnode;
-      if (childNode.data && (styleData = normalizeStyleData(childNode.data))) {
+      if (
+        childNode && childNode.data &&
+        (styleData = normalizeStyleData(childNode.data))
+      ) {
         extend(res, styleData);
       }
     }
@@ -27140,20 +29669,20 @@ var setProp = function (el, name, val) {
   }
 };
 
-var prefixes = ['Webkit', 'Moz', 'ms'];
+var vendorNames = ['Webkit', 'Moz', 'ms'];
 
-var testEl;
+var emptyStyle;
 var normalize = cached(function (prop) {
-  testEl = testEl || document.createElement('div');
+  emptyStyle = emptyStyle || document.createElement('div').style;
   prop = camelize(prop);
-  if (prop !== 'filter' && (prop in testEl.style)) {
+  if (prop !== 'filter' && (prop in emptyStyle)) {
     return prop
   }
-  var upper = prop.charAt(0).toUpperCase() + prop.slice(1);
-  for (var i = 0; i < prefixes.length; i++) {
-    var prefixed = prefixes[i] + upper;
-    if (prefixed in testEl.style) {
-      return prefixed
+  var capName = prop.charAt(0).toUpperCase() + prop.slice(1);
+  for (var i = 0; i < vendorNames.length; i++) {
+    var name = vendorNames[i] + capName;
+    if (name in emptyStyle) {
+      return name
     }
   }
 });
@@ -27179,7 +29708,7 @@ function updateStyle (oldVnode, vnode) {
   var style = normalizeStyleBinding(vnode.data.style) || {};
 
   // store normalized style under a different key for next diff
-  // make sure to clone it if it's reactive, since the user likley wants
+  // make sure to clone it if it's reactive, since the user likely wants
   // to mutate it.
   vnode.data.normalizedStyle = isDef(style.__ob__)
     ? extend({}, style)
@@ -27204,7 +29733,7 @@ function updateStyle (oldVnode, vnode) {
 var style = {
   create: updateStyle,
   update: updateStyle
-};
+}
 
 /*  */
 
@@ -27250,32 +29779,40 @@ function removeClass (el, cls) {
     } else {
       el.classList.remove(cls);
     }
+    if (!el.classList.length) {
+      el.removeAttribute('class');
+    }
   } else {
     var cur = " " + (el.getAttribute('class') || '') + " ";
     var tar = ' ' + cls + ' ';
     while (cur.indexOf(tar) >= 0) {
       cur = cur.replace(tar, ' ');
     }
-    el.setAttribute('class', cur.trim());
+    cur = cur.trim();
+    if (cur) {
+      el.setAttribute('class', cur);
+    } else {
+      el.removeAttribute('class');
+    }
   }
 }
 
 /*  */
 
-function resolveTransition (def$$1) {
-  if (!def$$1) {
+function resolveTransition (def) {
+  if (!def) {
     return
   }
   /* istanbul ignore else */
-  if (typeof def$$1 === 'object') {
+  if (typeof def === 'object') {
     var res = {};
-    if (def$$1.css !== false) {
-      extend(res, autoCssTransition(def$$1.name || 'v'));
+    if (def.css !== false) {
+      extend(res, autoCssTransition(def.name || 'v'));
     }
-    extend(res, def$$1);
+    extend(res, def);
     return res
-  } else if (typeof def$$1 === 'string') {
-    return autoCssTransition(def$$1)
+  } else if (typeof def === 'string') {
+    return autoCssTransition(def)
   }
 }
 
@@ -27316,9 +29853,11 @@ if (hasTransition) {
 }
 
 // binding to window is necessary to make hot reload work in IE in strict mode
-var raf = inBrowser && window.requestAnimationFrame
-  ? window.requestAnimationFrame.bind(window)
-  : setTimeout;
+var raf = inBrowser
+  ? window.requestAnimationFrame
+    ? window.requestAnimationFrame.bind(window)
+    : setTimeout
+  : /* istanbul ignore next */ function (fn) { return fn(); };
 
 function nextFrame (fn) {
   raf(function () {
@@ -27327,8 +29866,11 @@ function nextFrame (fn) {
 }
 
 function addTransitionClass (el, cls) {
-  (el._transitionClasses || (el._transitionClasses = [])).push(cls);
-  addClass(el, cls);
+  var transitionClasses = el._transitionClasses || (el._transitionClasses = []);
+  if (transitionClasses.indexOf(cls) < 0) {
+    transitionClasses.push(cls);
+    addClass(el, cls);
+  }
 }
 
 function removeTransitionClass (el, cls) {
@@ -27545,7 +30087,7 @@ function enter (vnode, toggleDisplay) {
 
   if (!vnode.data.show) {
     // remove pending leave element on enter by injecting an insert hook
-    mergeVNodeHook(vnode.data.hook || (vnode.data.hook = {}), 'insert', function () {
+    mergeVNodeHook(vnode, 'insert', function () {
       var parent = el.parentNode;
       var pendingNode = parent && parent._pending && parent._pending[vnode.key];
       if (pendingNode &&
@@ -27564,13 +30106,15 @@ function enter (vnode, toggleDisplay) {
     addTransitionClass(el, startClass);
     addTransitionClass(el, activeClass);
     nextFrame(function () {
-      addTransitionClass(el, toClass);
       removeTransitionClass(el, startClass);
-      if (!cb.cancelled && !userWantsControl) {
-        if (isValidDuration(explicitEnterDuration)) {
-          setTimeout(cb, explicitEnterDuration);
-        } else {
-          whenTransitionEnds(el, type, cb);
+      if (!cb.cancelled) {
+        addTransitionClass(el, toClass);
+        if (!userWantsControl) {
+          if (isValidDuration(explicitEnterDuration)) {
+            setTimeout(cb, explicitEnterDuration);
+          } else {
+            whenTransitionEnds(el, type, cb);
+          }
         }
       }
     });
@@ -27596,12 +30140,12 @@ function leave (vnode, rm) {
   }
 
   var data = resolveTransition(vnode.data.transition);
-  if (isUndef(data)) {
+  if (isUndef(data) || el.nodeType !== 1) {
     return rm()
   }
 
   /* istanbul ignore if */
-  if (isDef(el._leaveCb) || el.nodeType !== 1) {
+  if (isDef(el._leaveCb)) {
     return
   }
 
@@ -27670,13 +30214,15 @@ function leave (vnode, rm) {
       addTransitionClass(el, leaveClass);
       addTransitionClass(el, leaveActiveClass);
       nextFrame(function () {
-        addTransitionClass(el, leaveToClass);
         removeTransitionClass(el, leaveClass);
-        if (!cb.cancelled && !userWantsControl) {
-          if (isValidDuration(explicitLeaveDuration)) {
-            setTimeout(cb, explicitLeaveDuration);
-          } else {
-            whenTransitionEnds(el, type, cb);
+        if (!cb.cancelled) {
+          addTransitionClass(el, leaveToClass);
+          if (!userWantsControl) {
+            if (isValidDuration(explicitLeaveDuration)) {
+              setTimeout(cb, explicitLeaveDuration);
+            } else {
+              whenTransitionEnds(el, type, cb);
+            }
           }
         }
       });
@@ -27749,7 +30295,7 @@ var transition = inBrowser ? {
       rm();
     }
   }
-} : {};
+} : {}
 
 var platformModules = [
   attrs,
@@ -27758,7 +30304,7 @@ var platformModules = [
   domProps,
   style,
   transition
-];
+]
 
 /*  */
 
@@ -27784,29 +30330,28 @@ if (isIE9) {
   });
 }
 
-var model$1 = {
-  inserted: function inserted (el, binding, vnode) {
+var directive = {
+  inserted: function inserted (el, binding, vnode, oldVnode) {
     if (vnode.tag === 'select') {
-      var cb = function () {
+      // #6903
+      if (oldVnode.elm && !oldVnode.elm._vOptions) {
+        mergeVNodeHook(vnode, 'postpatch', function () {
+          directive.componentUpdated(el, binding, vnode);
+        });
+      } else {
         setSelected(el, binding, vnode.context);
-      };
-      cb();
-      /* istanbul ignore if */
-      if (isIE || isEdge) {
-        setTimeout(cb, 0);
       }
-    } else if (vnode.tag === 'textarea' || el.type === 'text' || el.type === 'password') {
+      el._vOptions = [].map.call(el.options, getValue);
+    } else if (vnode.tag === 'textarea' || isTextInputType(el.type)) {
       el._vModifiers = binding.modifiers;
       if (!binding.modifiers.lazy) {
+        el.addEventListener('compositionstart', onCompositionStart);
+        el.addEventListener('compositionend', onCompositionEnd);
         // Safari < 10.2 & UIWebView doesn't fire compositionend when
         // switching focus before confirming composition choice
         // this also fixes the issue where some browsers e.g. iOS Chrome
         // fires "change" instead of "input" on autocomplete.
         el.addEventListener('change', onCompositionEnd);
-        if (!isAndroid) {
-          el.addEventListener('compositionstart', onCompositionStart);
-          el.addEventListener('compositionend', onCompositionEnd);
-        }
         /* istanbul ignore if */
         if (isIE9) {
           el.vmodel = true;
@@ -27814,6 +30359,7 @@ var model$1 = {
       }
     }
   },
+
   componentUpdated: function componentUpdated (el, binding, vnode) {
     if (vnode.tag === 'select') {
       setSelected(el, binding, vnode.context);
@@ -27821,17 +30367,33 @@ var model$1 = {
       // it's possible that the value is out-of-sync with the rendered options.
       // detect such cases and filter out values that no longer has a matching
       // option in the DOM.
-      var needReset = el.multiple
-        ? binding.value.some(function (v) { return hasNoMatchingOption(v, el.options); })
-        : binding.value !== binding.oldValue && hasNoMatchingOption(binding.value, el.options);
-      if (needReset) {
-        trigger(el, 'change');
+      var prevOptions = el._vOptions;
+      var curOptions = el._vOptions = [].map.call(el.options, getValue);
+      if (curOptions.some(function (o, i) { return !looseEqual(o, prevOptions[i]); })) {
+        // trigger change event if
+        // no matching option found for at least one value
+        var needReset = el.multiple
+          ? binding.value.some(function (v) { return hasNoMatchingOption(v, curOptions); })
+          : binding.value !== binding.oldValue && hasNoMatchingOption(binding.value, curOptions);
+        if (needReset) {
+          trigger(el, 'change');
+        }
       }
     }
   }
 };
 
 function setSelected (el, binding, vm) {
+  actuallySetSelected(el, binding, vm);
+  /* istanbul ignore if */
+  if (isIE || isEdge) {
+    setTimeout(function () {
+      actuallySetSelected(el, binding, vm);
+    }, 0);
+  }
+}
+
+function actuallySetSelected (el, binding, vm) {
   var value = binding.value;
   var isMultiple = el.multiple;
   if (isMultiple && !Array.isArray(value)) {
@@ -27865,12 +30427,7 @@ function setSelected (el, binding, vm) {
 }
 
 function hasNoMatchingOption (value, options) {
-  for (var i = 0, l = options.length; i < l; i++) {
-    if (looseEqual(getValue(options[i]), value)) {
-      return false
-    }
-  }
-  return true
+  return options.every(function (o) { return !looseEqual(o, value); })
 }
 
 function getValue (option) {
@@ -27910,10 +30467,10 @@ var show = {
     var value = ref.value;
 
     vnode = locateNode(vnode);
-    var transition = vnode.data && vnode.data.transition;
+    var transition$$1 = vnode.data && vnode.data.transition;
     var originalDisplay = el.__vOriginalDisplay =
       el.style.display === 'none' ? '' : el.style.display;
-    if (value && transition && !isIE9) {
+    if (value && transition$$1) {
       vnode.data.show = true;
       enter(vnode, function () {
         el.style.display = originalDisplay;
@@ -27928,10 +30485,10 @@ var show = {
     var oldValue = ref.oldValue;
 
     /* istanbul ignore if */
-    if (value === oldValue) { return }
+    if (!value === !oldValue) { return }
     vnode = locateNode(vnode);
-    var transition = vnode.data && vnode.data.transition;
-    if (transition && !isIE9) {
+    var transition$$1 = vnode.data && vnode.data.transition;
+    if (transition$$1) {
       vnode.data.show = true;
       if (value) {
         enter(vnode, function () {
@@ -27958,12 +30515,12 @@ var show = {
       el.style.display = el.__vOriginalDisplay;
     }
   }
-};
+}
 
 var platformDirectives = {
-  model: model$1,
+  model: directive,
   show: show
-};
+}
 
 /*  */
 
@@ -28049,7 +30606,7 @@ var Transition = {
     }
 
     // filter out text nodes (possible whitespaces)
-    children = children.filter(function (c) { return c.tag; });
+    children = children.filter(function (c) { return c.tag || isAsyncPlaceholder(c); });
     /* istanbul ignore if */
     if (!children.length) {
       return
@@ -28100,7 +30657,9 @@ var Transition = {
     // during entering.
     var id = "__transition-" + (this._uid) + "-";
     child.key = child.key == null
-      ? id + child.tag
+      ? child.isComment
+        ? id + 'comment'
+        : id + child.tag
       : isPrimitive(child.key)
         ? (String(child.key).indexOf(id) === 0 ? child.key : id + child.key)
         : child.key;
@@ -28115,10 +30674,17 @@ var Transition = {
       child.data.show = true;
     }
 
-    if (oldChild && oldChild.data && !isSameChild(child, oldChild)) {
+    if (
+      oldChild &&
+      oldChild.data &&
+      !isSameChild(child, oldChild) &&
+      !isAsyncPlaceholder(oldChild) &&
+      // #6687 component root is a comment node
+      !(oldChild.componentInstance && oldChild.componentInstance._vnode.isComment)
+    ) {
       // replace old child transition data with fresh one
       // important for dynamic transitions!
-      var oldData = oldChild && (oldChild.data.transition = extend({}, data));
+      var oldData = oldChild.data.transition = extend({}, data);
       // handle transition mode
       if (mode === 'out-in') {
         // return placeholder node and queue update when leave finishes
@@ -28129,6 +30695,9 @@ var Transition = {
         });
         return placeholder(h, rawChild)
       } else if (mode === 'in-out') {
+        if (isAsyncPlaceholder(child)) {
+          return oldRawChild
+        }
         var delayedLeave;
         var performLeave = function () { delayedLeave(); };
         mergeVNodeHook(data, 'afterEnter', performLeave);
@@ -28139,7 +30708,7 @@ var Transition = {
 
     return rawChild
   }
-};
+}
 
 /*  */
 
@@ -28232,8 +30801,9 @@ var TransitionGroup = {
     children.forEach(applyTranslation);
 
     // force reflow to put everything in position
-    var body = document.body;
-    var f = body.offsetHeight; // eslint-disable-line
+    // assign to this to avoid being removed in tree-shaking
+    // $flow-disable-line
+    this._reflow = document.body.offsetHeight;
 
     children.forEach(function (c) {
       if (c.data.moved) {
@@ -28258,7 +30828,8 @@ var TransitionGroup = {
       if (!hasTransition) {
         return false
       }
-      if (this._hasMove != null) {
+      /* istanbul ignore if */
+      if (this._hasMove) {
         return this._hasMove
       }
       // Detect whether an element with the move class applied has
@@ -28278,7 +30849,7 @@ var TransitionGroup = {
       return (this._hasMove = info.hasTransform)
     }
   }
-};
+}
 
 function callPendingCbs (c) {
   /* istanbul ignore if */
@@ -28311,26 +30882,26 @@ function applyTranslation (c) {
 var platformComponents = {
   Transition: Transition,
   TransitionGroup: TransitionGroup
-};
+}
 
 /*  */
 
 // install platform specific utils
-Vue$3.config.mustUseProp = mustUseProp;
-Vue$3.config.isReservedTag = isReservedTag;
-Vue$3.config.isReservedAttr = isReservedAttr;
-Vue$3.config.getTagNamespace = getTagNamespace;
-Vue$3.config.isUnknownElement = isUnknownElement;
+Vue.config.mustUseProp = mustUseProp;
+Vue.config.isReservedTag = isReservedTag;
+Vue.config.isReservedAttr = isReservedAttr;
+Vue.config.getTagNamespace = getTagNamespace;
+Vue.config.isUnknownElement = isUnknownElement;
 
 // install platform runtime directives & components
-extend(Vue$3.options.directives, platformDirectives);
-extend(Vue$3.options.components, platformComponents);
+extend(Vue.options.directives, platformDirectives);
+extend(Vue.options.components, platformComponents);
 
 // install platform patch function
-Vue$3.prototype.__patch__ = inBrowser ? patch : noop;
+Vue.prototype.__patch__ = inBrowser ? patch : noop;
 
 // public mount method
-Vue$3.prototype.$mount = function (
+Vue.prototype.$mount = function (
   el,
   hydrating
 ) {
@@ -28340,39 +30911,176 @@ Vue$3.prototype.$mount = function (
 
 // devtools global hook
 /* istanbul ignore next */
-setTimeout(function () {
-  if (config.devtools) {
-    if (devtools) {
-      devtools.emit('init', Vue$3);
-    } else if (false) {
+if (inBrowser) {
+  setTimeout(function () {
+    if (config.devtools) {
+      if (devtools) {
+        devtools.emit('init', Vue);
+      } else if (
+        false
+      ) {
+        console[console.info ? 'info' : 'log'](
+          'Download the Vue Devtools extension for a better development experience:\n' +
+          'https://github.com/vuejs/vue-devtools'
+        );
+      }
+    }
+    if (false
+    ) {
       console[console.info ? 'info' : 'log'](
-        'Download the Vue Devtools extension for a better development experience:\n' +
-        'https://github.com/vuejs/vue-devtools'
+        "You are running Vue in development mode.\n" +
+        "Make sure to turn on production mode when deploying for production.\n" +
+        "See more tips at https://vuejs.org/guide/deployment.html"
       );
     }
-  }
-  if (false
-  ) {
-    console[console.info ? 'info' : 'log'](
-      "You are running Vue in development mode.\n" +
-      "Make sure to turn on production mode when deploying for production.\n" +
-      "See more tips at https://vuejs.org/guide/deployment.html"
-    );
-  }
-}, 0);
+  }, 0);
+}
 
 /*  */
 
-// check whether current browser encodes a char inside attribute values
-function shouldDecode (content, encoded) {
-  var div = document.createElement('div');
-  div.innerHTML = "<div a=\"" + content + "\">";
-  return div.innerHTML.indexOf(encoded) > 0
+var defaultTagRE = /\{\{((?:.|\n)+?)\}\}/g;
+var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
+
+var buildRegex = cached(function (delimiters) {
+  var open = delimiters[0].replace(regexEscapeRE, '\\$&');
+  var close = delimiters[1].replace(regexEscapeRE, '\\$&');
+  return new RegExp(open + '((?:.|\\n)+?)' + close, 'g')
+});
+
+
+
+function parseText (
+  text,
+  delimiters
+) {
+  var tagRE = delimiters ? buildRegex(delimiters) : defaultTagRE;
+  if (!tagRE.test(text)) {
+    return
+  }
+  var tokens = [];
+  var rawTokens = [];
+  var lastIndex = tagRE.lastIndex = 0;
+  var match, index, tokenValue;
+  while ((match = tagRE.exec(text))) {
+    index = match.index;
+    // push text token
+    if (index > lastIndex) {
+      rawTokens.push(tokenValue = text.slice(lastIndex, index));
+      tokens.push(JSON.stringify(tokenValue));
+    }
+    // tag token
+    var exp = parseFilters(match[1].trim());
+    tokens.push(("_s(" + exp + ")"));
+    rawTokens.push({ '@binding': exp });
+    lastIndex = index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    rawTokens.push(tokenValue = text.slice(lastIndex));
+    tokens.push(JSON.stringify(tokenValue));
+  }
+  return {
+    expression: tokens.join('+'),
+    tokens: rawTokens
+  }
 }
 
-// #3663
-// IE encodes newlines inside attribute values while other browsers don't
-var shouldDecodeNewlines = inBrowser ? shouldDecode('\n', '&#10;') : false;
+/*  */
+
+function transformNode (el, options) {
+  var warn = options.warn || baseWarn;
+  var staticClass = getAndRemoveAttr(el, 'class');
+  if (false) {
+    var res = parseText(staticClass, options.delimiters);
+    if (res) {
+      warn(
+        "class=\"" + staticClass + "\": " +
+        'Interpolation inside attributes has been removed. ' +
+        'Use v-bind or the colon shorthand instead. For example, ' +
+        'instead of <div class="{{ val }}">, use <div :class="val">.'
+      );
+    }
+  }
+  if (staticClass) {
+    el.staticClass = JSON.stringify(staticClass);
+  }
+  var classBinding = getBindingAttr(el, 'class', false /* getStatic */);
+  if (classBinding) {
+    el.classBinding = classBinding;
+  }
+}
+
+function genData (el) {
+  var data = '';
+  if (el.staticClass) {
+    data += "staticClass:" + (el.staticClass) + ",";
+  }
+  if (el.classBinding) {
+    data += "class:" + (el.classBinding) + ",";
+  }
+  return data
+}
+
+var klass$1 = {
+  staticKeys: ['staticClass'],
+  transformNode: transformNode,
+  genData: genData
+}
+
+/*  */
+
+function transformNode$1 (el, options) {
+  var warn = options.warn || baseWarn;
+  var staticStyle = getAndRemoveAttr(el, 'style');
+  if (staticStyle) {
+    /* istanbul ignore if */
+    if (false) {
+      var res = parseText(staticStyle, options.delimiters);
+      if (res) {
+        warn(
+          "style=\"" + staticStyle + "\": " +
+          'Interpolation inside attributes has been removed. ' +
+          'Use v-bind or the colon shorthand instead. For example, ' +
+          'instead of <div style="{{ val }}">, use <div :style="val">.'
+        );
+      }
+    }
+    el.staticStyle = JSON.stringify(parseStyleText(staticStyle));
+  }
+
+  var styleBinding = getBindingAttr(el, 'style', false /* getStatic */);
+  if (styleBinding) {
+    el.styleBinding = styleBinding;
+  }
+}
+
+function genData$1 (el) {
+  var data = '';
+  if (el.staticStyle) {
+    data += "staticStyle:" + (el.staticStyle) + ",";
+  }
+  if (el.styleBinding) {
+    data += "style:(" + (el.styleBinding) + "),";
+  }
+  return data
+}
+
+var style$1 = {
+  staticKeys: ['staticStyle'],
+  transformNode: transformNode$1,
+  genData: genData$1
+}
+
+/*  */
+
+var decoder;
+
+var he = {
+  decode: function decode (html) {
+    decoder = decoder || document.createElement('div');
+    decoder.innerHTML = html;
+    return decoder.textContent
+  }
+}
 
 /*  */
 
@@ -28397,16 +31105,6 @@ var isNonPhrasingTag = makeMap(
   'title,tr,track'
 );
 
-/*  */
-
-var decoder;
-
-function decode (html) {
-  decoder = decoder || document.createElement('div');
-  decoder.innerHTML = html;
-  return decoder.textContent
-}
-
 /**
  * Not type-checking this file because it's mostly vendor code.
  */
@@ -28419,31 +31117,17 @@ function decode (html) {
  */
 
 // Regular Expressions for parsing tags and attributes
-var singleAttrIdentifier = /([^\s"'<>/=]+)/;
-var singleAttrAssign = /(?:=)/;
-var singleAttrValues = [
-  // attr value double quotes
-  /"([^"]*)"+/.source,
-  // attr value, single quotes
-  /'([^']*)'+/.source,
-  // attr value, no quotes
-  /([^\s"'=<>`]+)/.source
-];
-var attribute = new RegExp(
-  '^\\s*' + singleAttrIdentifier.source +
-  '(?:\\s*(' + singleAttrAssign.source + ')' +
-  '\\s*(?:' + singleAttrValues.join('|') + '))?'
-);
-
+var attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
 // could use https://www.w3.org/TR/1999/REC-xml-names-19990114/#NT-QName
 // but for Vue templates we can enforce a simple charset
 var ncname = '[a-zA-Z_][\\w\\-\\.]*';
-var qnameCapture = '((?:' + ncname + '\\:)?' + ncname + ')';
-var startTagOpen = new RegExp('^<' + qnameCapture);
+var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
+var startTagOpen = new RegExp(("^<" + qnameCapture));
 var startTagClose = /^\s*(\/?)>/;
-var endTag = new RegExp('^<\\/' + qnameCapture + '[^>]*>');
+var endTag = new RegExp(("^<\\/" + qnameCapture + "[^>]*>"));
 var doctype = /^<!DOCTYPE [^>]+>/i;
-var comment = /^<!--/;
+// #7298: escape - to avoid being pased as HTML comment when inlined in page
+var comment = /^<!\--/;
 var conditionalComment = /^<!\[/;
 
 var IS_REGEX_CAPTURING_BROKEN = false;
@@ -28460,10 +31144,15 @@ var decodingMap = {
   '&gt;': '>',
   '&quot;': '"',
   '&amp;': '&',
-  '&#10;': '\n'
+  '&#10;': '\n',
+  '&#9;': '\t'
 };
 var encodedAttr = /&(?:lt|gt|quot|amp);/g;
-var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#10);/g;
+var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#10|#9);/g;
+
+// #5992
+var isIgnoreNewlineTag = makeMap('pre,textarea', true);
+var shouldIgnoreFirstNewline = function (tag, html) { return tag && isIgnoreNewlineTag(tag) && html[0] === '\n'; };
 
 function decodeAttr (value, shouldDecodeNewlines) {
   var re = shouldDecodeNewlines ? encodedAttrWithNewLines : encodedAttr;
@@ -28488,6 +31177,9 @@ function parseHTML (html, options) {
           var commentEnd = html.indexOf('-->');
 
           if (commentEnd >= 0) {
+            if (options.shouldKeepComment) {
+              options.comment(html.substring(4, commentEnd));
+            }
             advance(commentEnd + 3);
             continue
           }
@@ -28523,24 +31215,27 @@ function parseHTML (html, options) {
         var startTagMatch = parseStartTag();
         if (startTagMatch) {
           handleStartTag(startTagMatch);
+          if (shouldIgnoreFirstNewline(lastTag, html)) {
+            advance(1);
+          }
           continue
         }
       }
 
-      var text = (void 0), rest$1 = (void 0), next = (void 0);
+      var text = (void 0), rest = (void 0), next = (void 0);
       if (textEnd >= 0) {
-        rest$1 = html.slice(textEnd);
+        rest = html.slice(textEnd);
         while (
-          !endTag.test(rest$1) &&
-          !startTagOpen.test(rest$1) &&
-          !comment.test(rest$1) &&
-          !conditionalComment.test(rest$1)
+          !endTag.test(rest) &&
+          !startTagOpen.test(rest) &&
+          !comment.test(rest) &&
+          !conditionalComment.test(rest)
         ) {
           // < in plain text, be forgiving and treat it as text
-          next = rest$1.indexOf('<', 1);
+          next = rest.indexOf('<', 1);
           if (next < 0) { break }
           textEnd += next;
-          rest$1 = html.slice(textEnd);
+          rest = html.slice(textEnd);
         }
         text = html.substring(0, textEnd);
         advance(textEnd);
@@ -28555,23 +31250,26 @@ function parseHTML (html, options) {
         options.chars(text);
       }
     } else {
+      var endTagLength = 0;
       var stackedTag = lastTag.toLowerCase();
       var reStackedTag = reCache[stackedTag] || (reCache[stackedTag] = new RegExp('([\\s\\S]*?)(</' + stackedTag + '[^>]*>)', 'i'));
-      var endTagLength = 0;
-      var rest = html.replace(reStackedTag, function (all, text, endTag) {
+      var rest$1 = html.replace(reStackedTag, function (all, text, endTag) {
         endTagLength = endTag.length;
         if (!isPlainTextElement(stackedTag) && stackedTag !== 'noscript') {
           text = text
-            .replace(/<!--([\s\S]*?)-->/g, '$1')
+            .replace(/<!\--([\s\S]*?)-->/g, '$1') // #7298
             .replace(/<!\[CDATA\[([\s\S]*?)]]>/g, '$1');
+        }
+        if (shouldIgnoreFirstNewline(stackedTag, text)) {
+          text = text.slice(1);
         }
         if (options.chars) {
           options.chars(text);
         }
         return ''
       });
-      index += html.length - rest.length;
-      html = rest;
+      index += html.length - rest$1.length;
+      html = rest$1;
       parseEndTag(stackedTag, index - endTagLength, index);
     }
 
@@ -28628,7 +31326,7 @@ function parseHTML (html, options) {
       }
     }
 
-    var unary = isUnaryTag$$1(tagName) || tagName === 'html' && lastTag === 'head' || !!unarySlash;
+    var unary = isUnaryTag$$1(tagName) || !!unarySlash;
 
     var l = match.attrs.length;
     var attrs = new Array(l);
@@ -28641,12 +31339,12 @@ function parseHTML (html, options) {
         if (args[5] === '') { delete args[5]; }
       }
       var value = args[3] || args[4] || args[5] || '';
+      var shouldDecodeNewlines = tagName === 'a' && args[1] === 'href'
+        ? options.shouldDecodeNewlinesForHref
+        : options.shouldDecodeNewlines;
       attrs[i] = {
         name: args[1],
-        value: decodeAttr(
-          value,
-          options.shouldDecodeNewlines
-        )
+        value: decodeAttr(value, shouldDecodeNewlines)
       };
     }
 
@@ -28715,55 +31413,17 @@ function parseHTML (html, options) {
 
 /*  */
 
-var defaultTagRE = /\{\{((?:.|\n)+?)\}\}/g;
-var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
-
-var buildRegex = cached(function (delimiters) {
-  var open = delimiters[0].replace(regexEscapeRE, '\\$&');
-  var close = delimiters[1].replace(regexEscapeRE, '\\$&');
-  return new RegExp(open + '((?:.|\\n)+?)' + close, 'g')
-});
-
-function parseText (
-  text,
-  delimiters
-) {
-  var tagRE = delimiters ? buildRegex(delimiters) : defaultTagRE;
-  if (!tagRE.test(text)) {
-    return
-  }
-  var tokens = [];
-  var lastIndex = tagRE.lastIndex = 0;
-  var match, index;
-  while ((match = tagRE.exec(text))) {
-    index = match.index;
-    // push text token
-    if (index > lastIndex) {
-      tokens.push(JSON.stringify(text.slice(lastIndex, index)));
-    }
-    // tag token
-    var exp = parseFilters(match[1].trim());
-    tokens.push(("_s(" + exp + ")"));
-    lastIndex = index + match[0].length;
-  }
-  if (lastIndex < text.length) {
-    tokens.push(JSON.stringify(text.slice(lastIndex)));
-  }
-  return tokens.join('+')
-}
-
-/*  */
-
 var onRE = /^@|^v-on:/;
 var dirRE = /^v-|^@|^:/;
-var forAliasRE = /(.*?)\s+(?:in|of)\s+(.*)/;
-var forIteratorRE = /\((\{[^}]*\}|[^,]*),([^,]*)(?:,([^,]*))?\)/;
+var forAliasRE = /([^]*?)\s+(?:in|of)\s+([^]*)/;
+var forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
+var stripParensRE = /^\(|\)$/g;
 
 var argRE = /:(.*)$/;
 var bindRE = /^:|^v-bind:/;
 var modifierRE = /\.[^.]+/g;
 
-var decodeHTMLCached = cached(decode);
+var decodeHTMLCached = cached(he.decode);
 
 // configurable state
 var warn$2;
@@ -28775,6 +31435,23 @@ var platformIsPreTag;
 var platformMustUseProp;
 var platformGetTagNamespace;
 
+
+
+function createASTElement (
+  tag,
+  attrs,
+  parent
+) {
+  return {
+    type: 1,
+    tag: tag,
+    attrsList: attrs,
+    attrsMap: makeAttrsMap(attrs),
+    parent: parent,
+    children: []
+  }
+}
+
 /**
  * Convert HTML string to AST.
  */
@@ -28783,12 +31460,15 @@ function parse (
   options
 ) {
   warn$2 = options.warn || baseWarn;
-  platformGetTagNamespace = options.getTagNamespace || no;
-  platformMustUseProp = options.mustUseProp || no;
+
   platformIsPreTag = options.isPreTag || no;
-  preTransforms = pluckModuleFunction(options.modules, 'preTransformNode');
+  platformMustUseProp = options.mustUseProp || no;
+  platformGetTagNamespace = options.getTagNamespace || no;
+
   transforms = pluckModuleFunction(options.modules, 'transformNode');
+  preTransforms = pluckModuleFunction(options.modules, 'preTransformNode');
   postTransforms = pluckModuleFunction(options.modules, 'postTransformNode');
+
   delimiters = options.delimiters;
 
   var stack = [];
@@ -28806,13 +31486,17 @@ function parse (
     }
   }
 
-  function endPre (element) {
+  function closeElement (element) {
     // check pre state
     if (element.pre) {
       inVPre = false;
     }
     if (platformIsPreTag(element.tag)) {
       inPre = false;
+    }
+    // apply post-transforms
+    for (var i = 0; i < postTransforms.length; i++) {
+      postTransforms[i](element, options);
     }
   }
 
@@ -28822,6 +31506,8 @@ function parse (
     isUnaryTag: options.isUnaryTag,
     canBeLeftOpenTag: options.canBeLeftOpenTag,
     shouldDecodeNewlines: options.shouldDecodeNewlines,
+    shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
+    shouldKeepComment: options.comments,
     start: function start (tag, attrs, unary) {
       // check namespace.
       // inherit parent ns if there is one
@@ -28833,14 +31519,7 @@ function parse (
         attrs = guardIESVGBug(attrs);
       }
 
-      var element = {
-        type: 1,
-        tag: tag,
-        attrsList: attrs,
-        attrsMap: makeAttrsMap(attrs),
-        parent: currentParent,
-        children: []
-      };
+      var element = createASTElement(tag, attrs, currentParent);
       if (ns) {
         element.ns = ns;
       }
@@ -28856,7 +31535,7 @@ function parse (
 
       // apply pre-transforms
       for (var i = 0; i < preTransforms.length; i++) {
-        preTransforms[i](element, options);
+        element = preTransforms[i](element, options) || element;
       }
 
       if (!inVPre) {
@@ -28870,23 +31549,13 @@ function parse (
       }
       if (inVPre) {
         processRawAttrs(element);
-      } else {
+      } else if (!element.processed) {
+        // structural directives
         processFor(element);
         processIf(element);
         processOnce(element);
-        processKey(element);
-
-        // determine whether this is a plain element after
-        // removing structural attributes
-        element.plain = !element.key && !attrs.length;
-
-        processRef(element);
-        processSlot(element);
-        processComponent(element);
-        for (var i$1 = 0; i$1 < transforms.length; i$1++) {
-          transforms[i$1](element, options);
-        }
-        processAttrs(element);
+        // element-scope stuff
+        processElement(element, options);
       }
 
       function checkRootConstraints (el) {
@@ -28941,11 +31610,7 @@ function parse (
         currentParent = element;
         stack.push(element);
       } else {
-        endPre(element);
-      }
-      // apply post-transforms
-      for (var i$2 = 0; i$2 < postTransforms.length; i$2++) {
-        postTransforms[i$2](element, options);
+        closeElement(element);
       }
     },
 
@@ -28959,7 +31624,7 @@ function parse (
       // pop stack
       stack.length -= 1;
       currentParent = stack[stack.length - 1];
-      endPre(element);
+      closeElement(element);
     },
 
     chars: function chars (text) {
@@ -28991,11 +31656,12 @@ function parse (
         // only preserve whitespace if its not right after a starting tag
         : preserveWhitespace && children.length ? ' ' : '';
       if (text) {
-        var expression;
-        if (!inVPre && text !== ' ' && (expression = parseText(text, delimiters))) {
+        var res;
+        if (!inVPre && text !== ' ' && (res = parseText(text, delimiters))) {
           children.push({
             type: 2,
-            expression: expression,
+            expression: res.expression,
+            tokens: res.tokens,
             text: text
           });
         } else if (text !== ' ' || !children.length || children[children.length - 1].text !== ' ') {
@@ -29005,6 +31671,13 @@ function parse (
           });
         }
       }
+    },
+    comment: function comment (text) {
+      currentParent.children.push({
+        type: 3,
+        text: text,
+        isComment: true
+      });
     }
   });
   return root
@@ -29032,6 +31705,22 @@ function processRawAttrs (el) {
   }
 }
 
+function processElement (element, options) {
+  processKey(element);
+
+  // determine whether this is a plain element after
+  // removing structural attributes
+  element.plain = !element.key && !element.attrsList.length;
+
+  processRef(element);
+  processSlot(element);
+  processComponent(element);
+  for (var i = 0; i < transforms.length; i++) {
+    element = transforms[i](element, options) || element;
+  }
+  processAttrs(element);
+}
+
 function processKey (el) {
   var exp = getBindingAttr(el, 'key');
   if (exp) {
@@ -29053,26 +31742,36 @@ function processRef (el) {
 function processFor (el) {
   var exp;
   if ((exp = getAndRemoveAttr(el, 'v-for'))) {
-    var inMatch = exp.match(forAliasRE);
-    if (!inMatch) {
-      "production" !== 'production' && warn$2(
+    var res = parseFor(exp);
+    if (res) {
+      extend(el, res);
+    } else if (false) {
+      warn$2(
         ("Invalid v-for expression: " + exp)
       );
-      return
-    }
-    el.for = inMatch[2].trim();
-    var alias = inMatch[1].trim();
-    var iteratorMatch = alias.match(forIteratorRE);
-    if (iteratorMatch) {
-      el.alias = iteratorMatch[1].trim();
-      el.iterator1 = iteratorMatch[2].trim();
-      if (iteratorMatch[3]) {
-        el.iterator2 = iteratorMatch[3].trim();
-      }
-    } else {
-      el.alias = alias;
     }
   }
+}
+
+
+
+function parseFor (exp) {
+  var inMatch = exp.match(forAliasRE);
+  if (!inMatch) { return }
+  var res = {};
+  res.for = inMatch[2].trim();
+  var alias = inMatch[1].trim().replace(stripParensRE, '');
+  var iteratorMatch = alias.match(forIteratorRE);
+  if (iteratorMatch) {
+    res.alias = alias.replace(forIteratorRE, '');
+    res.iterator1 = iteratorMatch[1].trim();
+    if (iteratorMatch[2]) {
+      res.iterator2 = iteratorMatch[2].trim();
+    }
+  } else {
+    res.alias = alias;
+  }
+  return res
 }
 
 function processIf (el) {
@@ -29151,12 +31850,40 @@ function processSlot (el) {
       );
     }
   } else {
+    var slotScope;
+    if (el.tag === 'template') {
+      slotScope = getAndRemoveAttr(el, 'scope');
+      /* istanbul ignore if */
+      if (false) {
+        warn$2(
+          "the \"scope\" attribute for scoped slots have been deprecated and " +
+          "replaced by \"slot-scope\" since 2.5. The new \"slot-scope\" attribute " +
+          "can also be used on plain elements in addition to <template> to " +
+          "denote scoped slots.",
+          true
+        );
+      }
+      el.slotScope = slotScope || getAndRemoveAttr(el, 'slot-scope');
+    } else if ((slotScope = getAndRemoveAttr(el, 'slot-scope'))) {
+      /* istanbul ignore if */
+      if (false) {
+        warn$2(
+          "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
+          "(v-for takes higher priority). Use a wrapper <template> for the " +
+          "scoped slot to make it clearer.",
+          true
+        );
+      }
+      el.slotScope = slotScope;
+    }
     var slotTarget = getBindingAttr(el, 'slot');
     if (slotTarget) {
       el.slotTarget = slotTarget === '""' ? '"default"' : slotTarget;
-    }
-    if (el.tag === 'template') {
-      el.slotScope = getAndRemoveAttr(el, 'scope');
+      // preserve slot as an attribute for native shadow DOM compat
+      // only for non-scoped slots.
+      if (el.tag !== 'template' && !el.slotScope) {
+        addAttr(el, 'slot', slotTarget);
+      }
     }
   }
 }
@@ -29206,7 +31933,9 @@ function processAttrs (el) {
             );
           }
         }
-        if (isProp || platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+        if (isProp || (
+          !el.component && platformMustUseProp(el.tag, el.attrsMap.type, name)
+        )) {
           addProp(el, name, value);
         } else {
           addAttr(el, name, value);
@@ -29230,8 +31959,8 @@ function processAttrs (el) {
     } else {
       // literal attribute
       if (false) {
-        var expression = parseText(value, delimiters);
-        if (expression) {
+        var res = parseText(value, delimiters);
+        if (res) {
           warn$2(
             name + "=\"" + value + "\": " +
             'Interpolation inside attributes has been removed. ' +
@@ -29241,6 +31970,13 @@ function processAttrs (el) {
         }
       }
       addAttr(el, name, JSON.stringify(value));
+      // #6887 firefox doesn't update muted state if set via attribute
+      // even immediately after element creation
+      if (!el.component &&
+          name === 'muted' &&
+          platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+        addProp(el, name, 'true');
+      }
     }
   }
 }
@@ -29327,6 +32063,131 @@ function checkForAliasModel (el, value) {
 
 /*  */
 
+/**
+ * Expand input[v-model] with dyanmic type bindings into v-if-else chains
+ * Turn this:
+ *   <input v-model="data[type]" :type="type">
+ * into this:
+ *   <input v-if="type === 'checkbox'" type="checkbox" v-model="data[type]">
+ *   <input v-else-if="type === 'radio'" type="radio" v-model="data[type]">
+ *   <input v-else :type="type" v-model="data[type]">
+ */
+
+function preTransformNode (el, options) {
+  if (el.tag === 'input') {
+    var map = el.attrsMap;
+    if (!map['v-model']) {
+      return
+    }
+
+    var typeBinding;
+    if (map[':type'] || map['v-bind:type']) {
+      typeBinding = getBindingAttr(el, 'type');
+    }
+    if (!map.type && !typeBinding && map['v-bind']) {
+      typeBinding = "(" + (map['v-bind']) + ").type";
+    }
+
+    if (typeBinding) {
+      var ifCondition = getAndRemoveAttr(el, 'v-if', true);
+      var ifConditionExtra = ifCondition ? ("&&(" + ifCondition + ")") : "";
+      var hasElse = getAndRemoveAttr(el, 'v-else', true) != null;
+      var elseIfCondition = getAndRemoveAttr(el, 'v-else-if', true);
+      // 1. checkbox
+      var branch0 = cloneASTElement(el);
+      // process for on the main node
+      processFor(branch0);
+      addRawAttr(branch0, 'type', 'checkbox');
+      processElement(branch0, options);
+      branch0.processed = true; // prevent it from double-processed
+      branch0.if = "(" + typeBinding + ")==='checkbox'" + ifConditionExtra;
+      addIfCondition(branch0, {
+        exp: branch0.if,
+        block: branch0
+      });
+      // 2. add radio else-if condition
+      var branch1 = cloneASTElement(el);
+      getAndRemoveAttr(branch1, 'v-for', true);
+      addRawAttr(branch1, 'type', 'radio');
+      processElement(branch1, options);
+      addIfCondition(branch0, {
+        exp: "(" + typeBinding + ")==='radio'" + ifConditionExtra,
+        block: branch1
+      });
+      // 3. other
+      var branch2 = cloneASTElement(el);
+      getAndRemoveAttr(branch2, 'v-for', true);
+      addRawAttr(branch2, ':type', typeBinding);
+      processElement(branch2, options);
+      addIfCondition(branch0, {
+        exp: ifCondition,
+        block: branch2
+      });
+
+      if (hasElse) {
+        branch0.else = true;
+      } else if (elseIfCondition) {
+        branch0.elseif = elseIfCondition;
+      }
+
+      return branch0
+    }
+  }
+}
+
+function cloneASTElement (el) {
+  return createASTElement(el.tag, el.attrsList.slice(), el.parent)
+}
+
+var model$2 = {
+  preTransformNode: preTransformNode
+}
+
+var modules$1 = [
+  klass$1,
+  style$1,
+  model$2
+]
+
+/*  */
+
+function text (el, dir) {
+  if (dir.value) {
+    addProp(el, 'textContent', ("_s(" + (dir.value) + ")"));
+  }
+}
+
+/*  */
+
+function html (el, dir) {
+  if (dir.value) {
+    addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"));
+  }
+}
+
+var directives$1 = {
+  model: model,
+  text: text,
+  html: html
+}
+
+/*  */
+
+var baseOptions = {
+  expectHTML: true,
+  modules: modules$1,
+  directives: directives$1,
+  isPreTag: isPreTag,
+  isUnaryTag: isUnaryTag,
+  mustUseProp: mustUseProp,
+  canBeLeftOpenTag: canBeLeftOpenTag,
+  isReservedTag: isReservedTag,
+  getTagNamespace: getTagNamespace,
+  staticKeys: genStaticKeys(modules$1)
+};
+
+/*  */
+
 var isStaticKey;
 var isPlatformReservedTag;
 
@@ -29380,6 +32241,15 @@ function markStatic$1 (node) {
         node.static = false;
       }
     }
+    if (node.ifConditions) {
+      for (var i$1 = 1, l$1 = node.ifConditions.length; i$1 < l$1; i$1++) {
+        var block = node.ifConditions[i$1].block;
+        markStatic$1(block);
+        if (!block.static) {
+          node.static = false;
+        }
+      }
+    }
   }
 }
 
@@ -29406,14 +32276,10 @@ function markStaticRoots (node, isInFor) {
       }
     }
     if (node.ifConditions) {
-      walkThroughConditionsBlocks(node.ifConditions, isInFor);
+      for (var i$1 = 1, l$1 = node.ifConditions.length; i$1 < l$1; i$1++) {
+        markStaticRoots(node.ifConditions[i$1].block, isInFor);
+      }
     }
-  }
-}
-
-function walkThroughConditionsBlocks (conditionBlocks, isInFor) {
-  for (var i = 1, len = conditionBlocks.length; i < len; i++) {
-    markStaticRoots(conditionBlocks[i].block, isInFor);
   }
 }
 
@@ -29449,10 +32315,10 @@ function isDirectChildOfTemplateFor (node) {
 
 /*  */
 
-var fnExpRE = /^\s*([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/;
-var simplePathRE = /^\s*[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['.*?']|\[".*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*\s*$/;
+var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/;
+var simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/;
 
-// keyCode aliases
+// KeyboardEvent.keyCode aliases
 var keyCodes = {
   esc: 27,
   tab: 9,
@@ -29463,6 +32329,20 @@ var keyCodes = {
   right: 39,
   down: 40,
   'delete': [8, 46]
+};
+
+// KeyboardEvent.key aliases
+var keyNames = {
+  esc: 'Escape',
+  tab: 'Tab',
+  enter: 'Enter',
+  space: ' ',
+  // #7806: IE11 uses key names without `Arrow` prefix for arrow keys.
+  up: ['Up', 'ArrowUp'],
+  left: ['Left', 'ArrowLeft'],
+  right: ['Right', 'ArrowRight'],
+  down: ['Down', 'ArrowDown'],
+  'delete': ['Backspace', 'Delete']
 };
 
 // #4868: modifiers that prevent the execution of the listener
@@ -29490,16 +32370,7 @@ function genHandlers (
 ) {
   var res = isNative ? 'nativeOn:{' : 'on:{';
   for (var name in events) {
-    var handler = events[name];
-    // #5330: warn click.right, since right clicks do not actually fire click events.
-    if (false
-    ) {
-      warn(
-        "Use \"contextmenu\" instead of \"click.right\" since right clicks " +
-        "do not actually fire \"click\" events."
-      );
-    }
-    res += "\"" + name + "\":" + (genHandler(name, handler)) + ",";
+    res += "\"" + name + "\":" + (genHandler(name, events[name])) + ",";
   }
   return res.slice(0, -1) + '}'
 }
@@ -29520,9 +32391,11 @@ function genHandler (
   var isFunctionExpression = fnExpRE.test(handler.value);
 
   if (!handler.modifiers) {
-    return isMethodPath || isFunctionExpression
-      ? handler.value
-      : ("function($event){" + (handler.value) + "}") // inline statement
+    if (isMethodPath || isFunctionExpression) {
+      return handler.value
+    }
+    /* istanbul ignore if */
+    return ("function($event){" + (handler.value) + "}") // inline statement
   } else {
     var code = '';
     var genModifierCode = '';
@@ -29534,6 +32407,14 @@ function genHandler (
         if (keyCodes[key]) {
           keys.push(key);
         }
+      } else if (key === 'exact') {
+        var modifiers = (handler.modifiers);
+        genModifierCode += genGuard(
+          ['ctrl', 'shift', 'alt', 'meta']
+            .filter(function (keyModifier) { return !modifiers[keyModifier]; })
+            .map(function (keyModifier) { return ("$event." + keyModifier + "Key"); })
+            .join('||')
+        );
       } else {
         keys.push(key);
       }
@@ -29546,10 +32427,11 @@ function genHandler (
       code += genModifierCode;
     }
     var handlerCode = isMethodPath
-      ? handler.value + '($event)'
+      ? ("return " + (handler.value) + "($event)")
       : isFunctionExpression
-        ? ("(" + (handler.value) + ")($event)")
+        ? ("return (" + (handler.value) + ")($event)")
         : handler.value;
+    /* istanbul ignore if */
     return ("function($event){" + code + handlerCode + "}")
   }
 }
@@ -29563,105 +32445,115 @@ function genFilterCode (key) {
   if (keyVal) {
     return ("$event.keyCode!==" + keyVal)
   }
-  var alias = keyCodes[key];
-  return ("_k($event.keyCode," + (JSON.stringify(key)) + (alias ? ',' + JSON.stringify(alias) : '') + ")")
+  var keyCode = keyCodes[key];
+  var keyName = keyNames[key];
+  return (
+    "_k($event.keyCode," +
+    (JSON.stringify(key)) + "," +
+    (JSON.stringify(keyCode)) + "," +
+    "$event.key," +
+    "" + (JSON.stringify(keyName)) +
+    ")"
+  )
+}
+
+/*  */
+
+function on (el, dir) {
+  if (false) {
+    warn("v-on without argument does not support modifiers.");
+  }
+  el.wrapListeners = function (code) { return ("_g(" + code + "," + (dir.value) + ")"); };
 }
 
 /*  */
 
 function bind$1 (el, dir) {
   el.wrapData = function (code) {
-    return ("_b(" + code + ",'" + (el.tag) + "'," + (dir.value) + (dir.modifiers && dir.modifiers.prop ? ',true' : '') + ")")
+    return ("_b(" + code + ",'" + (el.tag) + "'," + (dir.value) + "," + (dir.modifiers && dir.modifiers.prop ? 'true' : 'false') + (dir.modifiers && dir.modifiers.sync ? ',true' : '') + ")")
   };
 }
 
 /*  */
 
 var baseDirectives = {
+  on: on,
   bind: bind$1,
   cloak: noop
-};
+}
 
 /*  */
 
-// configurable state
-var warn$3;
-var transforms$1;
-var dataGenFns;
-var platformDirectives$1;
-var isPlatformReservedTag$1;
-var staticRenderFns;
-var onceCount;
-var currentOptions;
+var CodegenState = function CodegenState (options) {
+  this.options = options;
+  this.warn = options.warn || baseWarn;
+  this.transforms = pluckModuleFunction(options.modules, 'transformCode');
+  this.dataGenFns = pluckModuleFunction(options.modules, 'genData');
+  this.directives = extend(extend({}, baseDirectives), options.directives);
+  var isReservedTag = options.isReservedTag || no;
+  this.maybeComponent = function (el) { return !isReservedTag(el.tag); };
+  this.onceId = 0;
+  this.staticRenderFns = [];
+};
+
+
 
 function generate (
   ast,
   options
 ) {
-  // save previous staticRenderFns so generate calls can be nested
-  var prevStaticRenderFns = staticRenderFns;
-  var currentStaticRenderFns = staticRenderFns = [];
-  var prevOnceCount = onceCount;
-  onceCount = 0;
-  currentOptions = options;
-  warn$3 = options.warn || baseWarn;
-  transforms$1 = pluckModuleFunction(options.modules, 'transformCode');
-  dataGenFns = pluckModuleFunction(options.modules, 'genData');
-  platformDirectives$1 = options.directives || {};
-  isPlatformReservedTag$1 = options.isReservedTag || no;
-  var code = ast ? genElement(ast) : '_c("div")';
-  staticRenderFns = prevStaticRenderFns;
-  onceCount = prevOnceCount;
+  var state = new CodegenState(options);
+  var code = ast ? genElement(ast, state) : '_c("div")';
   return {
     render: ("with(this){return " + code + "}"),
-    staticRenderFns: currentStaticRenderFns
+    staticRenderFns: state.staticRenderFns
   }
 }
 
-function genElement (el) {
+function genElement (el, state) {
   if (el.staticRoot && !el.staticProcessed) {
-    return genStatic(el)
+    return genStatic(el, state)
   } else if (el.once && !el.onceProcessed) {
-    return genOnce(el)
+    return genOnce(el, state)
   } else if (el.for && !el.forProcessed) {
-    return genFor(el)
+    return genFor(el, state)
   } else if (el.if && !el.ifProcessed) {
-    return genIf(el)
+    return genIf(el, state)
   } else if (el.tag === 'template' && !el.slotTarget) {
-    return genChildren(el) || 'void 0'
+    return genChildren(el, state) || 'void 0'
   } else if (el.tag === 'slot') {
-    return genSlot(el)
+    return genSlot(el, state)
   } else {
     // component or element
     var code;
     if (el.component) {
-      code = genComponent(el.component, el);
+      code = genComponent(el.component, el, state);
     } else {
-      var data = el.plain ? undefined : genData(el);
+      var data = el.plain ? undefined : genData$2(el, state);
 
-      var children = el.inlineTemplate ? null : genChildren(el, true);
+      var children = el.inlineTemplate ? null : genChildren(el, state, true);
       code = "_c('" + (el.tag) + "'" + (data ? ("," + data) : '') + (children ? ("," + children) : '') + ")";
     }
     // module transforms
-    for (var i = 0; i < transforms$1.length; i++) {
-      code = transforms$1[i](el, code);
+    for (var i = 0; i < state.transforms.length; i++) {
+      code = state.transforms[i](el, code);
     }
     return code
   }
 }
 
 // hoist static sub-trees out
-function genStatic (el) {
+function genStatic (el, state) {
   el.staticProcessed = true;
-  staticRenderFns.push(("with(this){return " + (genElement(el)) + "}"));
-  return ("_m(" + (staticRenderFns.length - 1) + (el.staticInFor ? ',true' : '') + ")")
+  state.staticRenderFns.push(("with(this){return " + (genElement(el, state)) + "}"));
+  return ("_m(" + (state.staticRenderFns.length - 1) + (el.staticInFor ? ',true' : '') + ")")
 }
 
 // v-once
-function genOnce (el) {
+function genOnce (el, state) {
   el.onceProcessed = true;
   if (el.if && !el.ifProcessed) {
-    return genIf(el)
+    return genIf(el, state)
   } else if (el.staticInFor) {
     var key = '';
     var parent = el.parent;
@@ -29673,50 +32565,68 @@ function genOnce (el) {
       parent = parent.parent;
     }
     if (!key) {
-      "production" !== 'production' && warn$3(
+      "production" !== 'production' && state.warn(
         "v-once can only be used inside v-for that is keyed. "
       );
-      return genElement(el)
+      return genElement(el, state)
     }
-    return ("_o(" + (genElement(el)) + "," + (onceCount++) + (key ? ("," + key) : "") + ")")
+    return ("_o(" + (genElement(el, state)) + "," + (state.onceId++) + "," + key + ")")
   } else {
-    return genStatic(el)
+    return genStatic(el, state)
   }
 }
 
-function genIf (el) {
+function genIf (
+  el,
+  state,
+  altGen,
+  altEmpty
+) {
   el.ifProcessed = true; // avoid recursion
-  return genIfConditions(el.ifConditions.slice())
+  return genIfConditions(el.ifConditions.slice(), state, altGen, altEmpty)
 }
 
-function genIfConditions (conditions) {
+function genIfConditions (
+  conditions,
+  state,
+  altGen,
+  altEmpty
+) {
   if (!conditions.length) {
-    return '_e()'
+    return altEmpty || '_e()'
   }
 
   var condition = conditions.shift();
   if (condition.exp) {
-    return ("(" + (condition.exp) + ")?" + (genTernaryExp(condition.block)) + ":" + (genIfConditions(conditions)))
+    return ("(" + (condition.exp) + ")?" + (genTernaryExp(condition.block)) + ":" + (genIfConditions(conditions, state, altGen, altEmpty)))
   } else {
     return ("" + (genTernaryExp(condition.block)))
   }
 
   // v-if with v-once should generate code like (a)?_m(0):_m(1)
   function genTernaryExp (el) {
-    return el.once ? genOnce(el) : genElement(el)
+    return altGen
+      ? altGen(el, state)
+      : el.once
+        ? genOnce(el, state)
+        : genElement(el, state)
   }
 }
 
-function genFor (el) {
+function genFor (
+  el,
+  state,
+  altGen,
+  altHelper
+) {
   var exp = el.for;
   var alias = el.alias;
   var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
   var iterator2 = el.iterator2 ? ("," + (el.iterator2)) : '';
 
-  if (
-    false
+  if (false
   ) {
-    warn$3(
+    state.warn(
       "<" + (el.tag) + " v-for=\"" + alias + " in " + exp + "\">: component lists rendered with " +
       "v-for should have explicit keys. " +
       "See https://vuejs.org/guide/list.html#key for more info.",
@@ -29725,18 +32635,18 @@ function genFor (el) {
   }
 
   el.forProcessed = true; // avoid recursion
-  return "_l((" + exp + ")," +
+  return (altHelper || '_l') + "((" + exp + ")," +
     "function(" + alias + iterator1 + iterator2 + "){" +
-      "return " + (genElement(el)) +
+      "return " + ((altGen || genElement)(el, state)) +
     '})'
 }
 
-function genData (el) {
+function genData$2 (el, state) {
   var data = '{';
 
   // directives first.
   // directives may mutate the el's other properties before they are generated.
-  var dirs = genDirectives(el);
+  var dirs = genDirectives(el, state);
   if (dirs) { data += dirs + ','; }
 
   // key
@@ -29759,8 +32669,8 @@ function genData (el) {
     data += "tag:\"" + (el.tag) + "\",";
   }
   // module data generation functions
-  for (var i = 0; i < dataGenFns.length; i++) {
-    data += dataGenFns[i](el);
+  for (var i = 0; i < state.dataGenFns.length; i++) {
+    data += state.dataGenFns[i](el);
   }
   // attributes
   if (el.attrs) {
@@ -29772,18 +32682,19 @@ function genData (el) {
   }
   // event handlers
   if (el.events) {
-    data += (genHandlers(el.events, false, warn$3)) + ",";
+    data += (genHandlers(el.events, false, state.warn)) + ",";
   }
   if (el.nativeEvents) {
-    data += (genHandlers(el.nativeEvents, true, warn$3)) + ",";
+    data += (genHandlers(el.nativeEvents, true, state.warn)) + ",";
   }
   // slot target
-  if (el.slotTarget) {
+  // only for non-scoped slots
+  if (el.slotTarget && !el.slotScope) {
     data += "slot:" + (el.slotTarget) + ",";
   }
   // scoped slots
   if (el.scopedSlots) {
-    data += (genScopedSlots(el.scopedSlots)) + ",";
+    data += (genScopedSlots(el.scopedSlots, state)) + ",";
   }
   // component v-model
   if (el.model) {
@@ -29791,7 +32702,7 @@ function genData (el) {
   }
   // inline-template
   if (el.inlineTemplate) {
-    var inlineTemplate = genInlineTemplate(el);
+    var inlineTemplate = genInlineTemplate(el, state);
     if (inlineTemplate) {
       data += inlineTemplate + ",";
     }
@@ -29801,10 +32712,14 @@ function genData (el) {
   if (el.wrapData) {
     data = el.wrapData(data);
   }
+  // v-on data wrap
+  if (el.wrapListeners) {
+    data = el.wrapListeners(data);
+  }
   return data
 }
 
-function genDirectives (el) {
+function genDirectives (el, state) {
   var dirs = el.directives;
   if (!dirs) { return }
   var res = 'directives:[';
@@ -29813,11 +32728,11 @@ function genDirectives (el) {
   for (i = 0, l = dirs.length; i < l; i++) {
     dir = dirs[i];
     needRuntime = true;
-    var gen = platformDirectives$1[dir.name] || baseDirectives[dir.name];
+    var gen = state.directives[dir.name];
     if (gen) {
       // compile-time directive that manipulates AST.
       // returns true if it also needs a runtime counterpart.
-      needRuntime = !!gen(el, dir, warn$3);
+      needRuntime = !!gen(el, dir, state.warn);
     }
     if (needRuntime) {
       hasRuntime = true;
@@ -29829,32 +32744,48 @@ function genDirectives (el) {
   }
 }
 
-function genInlineTemplate (el) {
+function genInlineTemplate (el, state) {
   var ast = el.children[0];
   if (false) {
-    warn$3('Inline-template components must have exactly one child element.');
+    state.warn('Inline-template components must have exactly one child element.');
   }
   if (ast.type === 1) {
-    var inlineRenderFns = generate(ast, currentOptions);
+    var inlineRenderFns = generate(ast, state.options);
     return ("inlineTemplate:{render:function(){" + (inlineRenderFns.render) + "},staticRenderFns:[" + (inlineRenderFns.staticRenderFns.map(function (code) { return ("function(){" + code + "}"); }).join(',')) + "]}")
   }
 }
 
-function genScopedSlots (slots) {
-  return ("scopedSlots:_u([" + (Object.keys(slots).map(function (key) { return genScopedSlot(key, slots[key]); }).join(',')) + "])")
+function genScopedSlots (
+  slots,
+  state
+) {
+  return ("scopedSlots:_u([" + (Object.keys(slots).map(function (key) {
+      return genScopedSlot(key, slots[key], state)
+    }).join(',')) + "])")
 }
 
-function genScopedSlot (key, el) {
+function genScopedSlot (
+  key,
+  el,
+  state
+) {
   if (el.for && !el.forProcessed) {
-    return genForScopedSlot(key, el)
+    return genForScopedSlot(key, el, state)
   }
-  return "{key:" + key + ",fn:function(" + (String(el.attrsMap.scope)) + "){" +
+  var fn = "function(" + (String(el.slotScope)) + "){" +
     "return " + (el.tag === 'template'
-      ? genChildren(el) || 'void 0'
-      : genElement(el)) + "}}"
+      ? el.if
+        ? ((el.if) + "?" + (genChildren(el, state) || 'undefined') + ":undefined")
+        : genChildren(el, state) || 'undefined'
+      : genElement(el, state)) + "}";
+  return ("{key:" + key + ",fn:" + fn + "}")
 }
 
-function genForScopedSlot (key, el) {
+function genForScopedSlot (
+  key,
+  el,
+  state
+) {
   var exp = el.for;
   var alias = el.alias;
   var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
@@ -29862,11 +32793,17 @@ function genForScopedSlot (key, el) {
   el.forProcessed = true; // avoid recursion
   return "_l((" + exp + ")," +
     "function(" + alias + iterator1 + iterator2 + "){" +
-      "return " + (genScopedSlot(key, el)) +
+      "return " + (genScopedSlot(key, el, state)) +
     '})'
 }
 
-function genChildren (el, checkSkip) {
+function genChildren (
+  el,
+  state,
+  checkSkip,
+  altGenElement,
+  altGenNode
+) {
   var children = el.children;
   if (children.length) {
     var el$1 = children[0];
@@ -29876,10 +32813,13 @@ function genChildren (el, checkSkip) {
       el$1.tag !== 'template' &&
       el$1.tag !== 'slot'
     ) {
-      return genElement(el$1)
+      return (altGenElement || genElement)(el$1, state)
     }
-    var normalizationType = checkSkip ? getNormalizationType(children) : 0;
-    return ("[" + (children.map(genNode).join(',')) + "]" + (normalizationType ? ("," + normalizationType) : ''))
+    var normalizationType = checkSkip
+      ? getNormalizationType(children, state.maybeComponent)
+      : 0;
+    var gen = altGenNode || genNode;
+    return ("[" + (children.map(function (c) { return gen(c, state); }).join(',')) + "]" + (normalizationType ? ("," + normalizationType) : ''))
   }
 }
 
@@ -29887,7 +32827,10 @@ function genChildren (el, checkSkip) {
 // 0: no normalization needed
 // 1: simple normalization needed (possible 1-level deep nested array)
 // 2: full normalization needed
-function getNormalizationType (children) {
+function getNormalizationType (
+  children,
+  maybeComponent
+) {
   var res = 0;
   for (var i = 0; i < children.length; i++) {
     var el = children[i];
@@ -29911,13 +32854,11 @@ function needsNormalization (el) {
   return el.for !== undefined || el.tag === 'template' || el.tag === 'slot'
 }
 
-function maybeComponent (el) {
-  return !isPlatformReservedTag$1(el.tag)
-}
-
-function genNode (node) {
+function genNode (node, state) {
   if (node.type === 1) {
-    return genElement(node)
+    return genElement(node, state)
+  } if (node.type === 3 && node.isComment) {
+    return genComment(node)
   } else {
     return genText(node)
   }
@@ -29929,9 +32870,13 @@ function genText (text) {
     : transformSpecialNewlines(JSON.stringify(text.text))) + ")")
 }
 
-function genSlot (el) {
+function genComment (comment) {
+  return ("_e(" + (JSON.stringify(comment.text)) + ")")
+}
+
+function genSlot (el, state) {
   var slotName = el.slotName || '"default"';
-  var children = genChildren(el);
+  var children = genChildren(el, state);
   var res = "_t(" + slotName + (children ? ("," + children) : '');
   var attrs = el.attrs && ("{" + (el.attrs.map(function (a) { return ((camelize(a.name)) + ":" + (a.value)); }).join(',')) + "}");
   var bind$$1 = el.attrsMap['v-bind'];
@@ -29948,16 +32893,23 @@ function genSlot (el) {
 }
 
 // componentName is el.component, take it as argument to shun flow's pessimistic refinement
-function genComponent (componentName, el) {
-  var children = el.inlineTemplate ? null : genChildren(el, true);
-  return ("_c(" + componentName + "," + (genData(el)) + (children ? ("," + children) : '') + ")")
+function genComponent (
+  componentName,
+  el,
+  state
+) {
+  var children = el.inlineTemplate ? null : genChildren(el, state, true);
+  return ("_c(" + componentName + "," + (genData$2(el, state)) + (children ? ("," + children) : '') + ")")
 }
 
 function genProps (props) {
   var res = '';
   for (var i = 0; i < props.length; i++) {
     var prop = props[i];
-    res += "\"" + (prop.name) + "\":" + (transformSpecialNewlines(prop.value)) + ",";
+    /* istanbul ignore if */
+    {
+      res += "\"" + (prop.name) + "\":" + (transformSpecialNewlines(prop.value)) + ",";
+    }
   }
   return res.slice(0, -1)
 }
@@ -29983,9 +32935,6 @@ var prohibitedKeywordRE = new RegExp('\\b' + (
 var unaryOperatorsRE = new RegExp('\\b' + (
   'delete,typeof,void'
 ).split(',').join('\\s*\\([^\\)]*\\)|\\b') + '\\s*\\([^\\)]*\\)');
-
-// check valid identifier for v-for
-var identRE = /[A-Za-z_$][\w$]*/;
 
 // strip strings in expressions
 var stripStringRE = /'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*\$\{|\}(?:[^`\\]|\\.)*`|`(?:[^`\\]|\\.)*`/g;
@@ -30044,9 +32993,18 @@ function checkFor (node, text, errors) {
   checkIdentifier(node.iterator2, 'v-for iterator', text, errors);
 }
 
-function checkIdentifier (ident, type, text, errors) {
-  if (typeof ident === 'string' && !identRE.test(ident)) {
-    errors.push(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())));
+function checkIdentifier (
+  ident,
+  type,
+  text,
+  errors
+) {
+  if (typeof ident === 'string') {
+    try {
+      new Function(("var " + ident + "=_"));
+    } catch (e) {
+      errors.push(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())));
+    }
   }
 }
 
@@ -30058,31 +33016,21 @@ function checkExpression (exp, text, errors) {
     if (keywordMatch) {
       errors.push(
         "avoid using JavaScript keyword as property name: " +
-        "\"" + (keywordMatch[0]) + "\" in expression " + (text.trim())
+        "\"" + (keywordMatch[0]) + "\"\n  Raw expression: " + (text.trim())
       );
     } else {
-      errors.push(("invalid expression: " + (text.trim())));
+      errors.push(
+        "invalid expression: " + (e.message) + " in\n\n" +
+        "    " + exp + "\n\n" +
+        "  Raw expression: " + (text.trim()) + "\n"
+      );
     }
   }
 }
 
 /*  */
 
-function baseCompile (
-  template,
-  options
-) {
-  var ast = parse(template.trim(), options);
-  optimize(ast, options);
-  var code = generate(ast, options);
-  return {
-    ast: ast,
-    render: code.render,
-    staticRenderFns: code.staticRenderFns
-  }
-}
-
-function makeFunction (code, errors) {
+function createFunction (code, errors) {
   try {
     return new Function(code)
   } catch (err) {
@@ -30091,55 +33039,17 @@ function makeFunction (code, errors) {
   }
 }
 
-function createCompiler (baseOptions) {
-  var functionCompileCache = Object.create(null);
+function createCompileToFunctionFn (compile) {
+  var cache = Object.create(null);
 
-  function compile (
-    template,
-    options
-  ) {
-    var finalOptions = Object.create(baseOptions);
-    var errors = [];
-    var tips = [];
-    finalOptions.warn = function (msg, tip$$1) {
-      (tip$$1 ? tips : errors).push(msg);
-    };
-
-    if (options) {
-      // merge custom modules
-      if (options.modules) {
-        finalOptions.modules = (baseOptions.modules || []).concat(options.modules);
-      }
-      // merge custom directives
-      if (options.directives) {
-        finalOptions.directives = extend(
-          Object.create(baseOptions.directives),
-          options.directives
-        );
-      }
-      // copy other options
-      for (var key in options) {
-        if (key !== 'modules' && key !== 'directives') {
-          finalOptions[key] = options[key];
-        }
-      }
-    }
-
-    var compiled = baseCompile(template, finalOptions);
-    if (false) {
-      errors.push.apply(errors, detectErrors(compiled.ast));
-    }
-    compiled.errors = errors;
-    compiled.tips = tips;
-    return compiled
-  }
-
-  function compileToFunctions (
+  return function compileToFunctions (
     template,
     options,
     vm
   ) {
-    options = options || {};
+    options = extend({}, options);
+    var warn$$1 = options.warn || warn;
+    delete options.warn;
 
     /* istanbul ignore if */
     if (false) {
@@ -30148,7 +33058,7 @@ function createCompiler (baseOptions) {
         new Function('return 1');
       } catch (e) {
         if (e.toString().match(/unsafe-eval|CSP/)) {
-          warn(
+          warn$$1(
             'It seems you are using the standalone build of Vue.js in an ' +
             'environment with Content Security Policy that prohibits unsafe-eval. ' +
             'The template compiler cannot work in this environment. Consider ' +
@@ -30163,8 +33073,8 @@ function createCompiler (baseOptions) {
     var key = options.delimiters
       ? String(options.delimiters) + template
       : template;
-    if (functionCompileCache[key]) {
-      return functionCompileCache[key]
+    if (cache[key]) {
+      return cache[key]
     }
 
     // compile
@@ -30173,7 +33083,7 @@ function createCompiler (baseOptions) {
     // check compilation errors/tips
     if (false) {
       if (compiled.errors && compiled.errors.length) {
-        warn(
+        warn$$1(
           "Error compiling template:\n\n" + template + "\n\n" +
           compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
           vm
@@ -30187,12 +33097,10 @@ function createCompiler (baseOptions) {
     // turn code into functions
     var res = {};
     var fnGenErrors = [];
-    res.render = makeFunction(compiled.render, fnGenErrors);
-    var l = compiled.staticRenderFns.length;
-    res.staticRenderFns = new Array(l);
-    for (var i = 0; i < l; i++) {
-      res.staticRenderFns[i] = makeFunction(compiled.staticRenderFns[i], fnGenErrors);
-    }
+    res.render = createFunction(compiled.render, fnGenErrors);
+    res.staticRenderFns = compiled.staticRenderFns.map(function (code) {
+      return createFunction(code, fnGenErrors)
+    });
 
     // check function generation errors.
     // this should only happen if there is a bug in the compiler itself.
@@ -30200,7 +33108,7 @@ function createCompiler (baseOptions) {
     /* istanbul ignore if */
     if (false) {
       if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
-        warn(
+        warn$$1(
           "Failed to generate render function:\n\n" +
           fnGenErrors.map(function (ref) {
             var err = ref.err;
@@ -30213,145 +33121,102 @@ function createCompiler (baseOptions) {
       }
     }
 
-    return (functionCompileCache[key] = res)
-  }
-
-  return {
-    compile: compile,
-    compileToFunctions: compileToFunctions
+    return (cache[key] = res)
   }
 }
 
 /*  */
 
-function transformNode (el, options) {
-  var warn = options.warn || baseWarn;
-  var staticClass = getAndRemoveAttr(el, 'class');
-  if (false) {
-    var expression = parseText(staticClass, options.delimiters);
-    if (expression) {
-      warn(
-        "class=\"" + staticClass + "\": " +
-        'Interpolation inside attributes has been removed. ' +
-        'Use v-bind or the colon shorthand instead. For example, ' +
-        'instead of <div class="{{ val }}">, use <div :class="val">.'
-      );
-    }
-  }
-  if (staticClass) {
-    el.staticClass = JSON.stringify(staticClass);
-  }
-  var classBinding = getBindingAttr(el, 'class', false /* getStatic */);
-  if (classBinding) {
-    el.classBinding = classBinding;
-  }
-}
+function createCompilerCreator (baseCompile) {
+  return function createCompiler (baseOptions) {
+    function compile (
+      template,
+      options
+    ) {
+      var finalOptions = Object.create(baseOptions);
+      var errors = [];
+      var tips = [];
+      finalOptions.warn = function (msg, tip) {
+        (tip ? tips : errors).push(msg);
+      };
 
-function genData$1 (el) {
-  var data = '';
-  if (el.staticClass) {
-    data += "staticClass:" + (el.staticClass) + ",";
-  }
-  if (el.classBinding) {
-    data += "class:" + (el.classBinding) + ",";
-  }
-  return data
-}
-
-var klass$1 = {
-  staticKeys: ['staticClass'],
-  transformNode: transformNode,
-  genData: genData$1
-};
-
-/*  */
-
-function transformNode$1 (el, options) {
-  var warn = options.warn || baseWarn;
-  var staticStyle = getAndRemoveAttr(el, 'style');
-  if (staticStyle) {
-    /* istanbul ignore if */
-    if (false) {
-      var expression = parseText(staticStyle, options.delimiters);
-      if (expression) {
-        warn(
-          "style=\"" + staticStyle + "\": " +
-          'Interpolation inside attributes has been removed. ' +
-          'Use v-bind or the colon shorthand instead. For example, ' +
-          'instead of <div style="{{ val }}">, use <div :style="val">.'
-        );
+      if (options) {
+        // merge custom modules
+        if (options.modules) {
+          finalOptions.modules =
+            (baseOptions.modules || []).concat(options.modules);
+        }
+        // merge custom directives
+        if (options.directives) {
+          finalOptions.directives = extend(
+            Object.create(baseOptions.directives || null),
+            options.directives
+          );
+        }
+        // copy other options
+        for (var key in options) {
+          if (key !== 'modules' && key !== 'directives') {
+            finalOptions[key] = options[key];
+          }
+        }
       }
+
+      var compiled = baseCompile(template, finalOptions);
+      if (false) {
+        errors.push.apply(errors, detectErrors(compiled.ast));
+      }
+      compiled.errors = errors;
+      compiled.tips = tips;
+      return compiled
     }
-    el.staticStyle = JSON.stringify(parseStyleText(staticStyle));
-  }
 
-  var styleBinding = getBindingAttr(el, 'style', false /* getStatic */);
-  if (styleBinding) {
-    el.styleBinding = styleBinding;
-  }
-}
-
-function genData$2 (el) {
-  var data = '';
-  if (el.staticStyle) {
-    data += "staticStyle:" + (el.staticStyle) + ",";
-  }
-  if (el.styleBinding) {
-    data += "style:(" + (el.styleBinding) + "),";
-  }
-  return data
-}
-
-var style$1 = {
-  staticKeys: ['staticStyle'],
-  transformNode: transformNode$1,
-  genData: genData$2
-};
-
-var modules$1 = [
-  klass$1,
-  style$1
-];
-
-/*  */
-
-function text (el, dir) {
-  if (dir.value) {
-    addProp(el, 'textContent', ("_s(" + (dir.value) + ")"));
+    return {
+      compile: compile,
+      compileToFunctions: createCompileToFunctionFn(compile)
+    }
   }
 }
 
 /*  */
 
-function html (el, dir) {
-  if (dir.value) {
-    addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"));
+// `createCompilerCreator` allows creating compilers that use alternative
+// parser/optimizer/codegen, e.g the SSR optimizing compiler.
+// Here we just export a default compiler using the default parts.
+var createCompiler = createCompilerCreator(function baseCompile (
+  template,
+  options
+) {
+  var ast = parse(template.trim(), options);
+  if (options.optimize !== false) {
+    optimize(ast, options);
   }
-}
-
-var directives$1 = {
-  model: model,
-  text: text,
-  html: html
-};
+  var code = generate(ast, options);
+  return {
+    ast: ast,
+    render: code.render,
+    staticRenderFns: code.staticRenderFns
+  }
+});
 
 /*  */
-
-var baseOptions = {
-  expectHTML: true,
-  modules: modules$1,
-  directives: directives$1,
-  isPreTag: isPreTag,
-  isUnaryTag: isUnaryTag,
-  mustUseProp: mustUseProp,
-  canBeLeftOpenTag: canBeLeftOpenTag,
-  isReservedTag: isReservedTag,
-  getTagNamespace: getTagNamespace,
-  staticKeys: genStaticKeys(modules$1)
-};
 
 var ref$1 = createCompiler(baseOptions);
 var compileToFunctions = ref$1.compileToFunctions;
+
+/*  */
+
+// check whether current browser encodes a char inside attribute values
+var div;
+function getShouldDecode (href) {
+  div = div || document.createElement('div');
+  div.innerHTML = href ? "<a href=\"\n\"/>" : "<div a=\"\n\"/>";
+  return div.innerHTML.indexOf('&#10;') > 0
+}
+
+// #3663: IE encodes newlines inside attribute values while other browsers don't
+var shouldDecodeNewlines = inBrowser ? getShouldDecode(false) : false;
+// #6828: chrome encodes content in a[href]
+var shouldDecodeNewlinesForHref = inBrowser ? getShouldDecode(true) : false;
 
 /*  */
 
@@ -30360,8 +33225,8 @@ var idToTemplate = cached(function (id) {
   return el && el.innerHTML
 });
 
-var mount = Vue$3.prototype.$mount;
-Vue$3.prototype.$mount = function (
+var mount = Vue.prototype.$mount;
+Vue.prototype.$mount = function (
   el,
   hydrating
 ) {
@@ -30410,7 +33275,9 @@ Vue$3.prototype.$mount = function (
 
       var ref = compileToFunctions(template, {
         shouldDecodeNewlines: shouldDecodeNewlines,
-        delimiters: options.delimiters
+        shouldDecodeNewlinesForHref: shouldDecodeNewlinesForHref,
+        delimiters: options.delimiters,
+        comments: options.comments
       }, this);
       var render = ref.render;
       var staticRenderFns = ref.staticRenderFns;
@@ -30420,7 +33287,7 @@ Vue$3.prototype.$mount = function (
       /* istanbul ignore if */
       if (false) {
         mark('compile end');
-        measure(((this._name) + " compile"), 'compile', 'compile end');
+        measure(("vue " + (this._name) + " compile"), 'compile', 'compile end');
       }
     }
   }
@@ -30441,93 +33308,41 @@ function getOuterHTML (el) {
   }
 }
 
-Vue$3.compile = compileToFunctions;
+Vue.compile = compileToFunctions;
 
-/* harmony default export */ __webpack_exports__["a"] = (Vue$3);
+/* harmony default export */ __webpack_exports__["a"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(30)))
-
-/***/ }),
-/* 122 */
-/***/ (function(module, exports) {
-
-addEventListener.removeEventListener = removeEventListener
-addEventListener.addEventListener = addEventListener
-
-module.exports = addEventListener
-
-var Events = null
-
-function addEventListener(el, eventName, listener, useCapture) {
-  Events = Events || (
-    document.addEventListener ?
-    {add: stdAttach, rm: stdDetach} :
-    {add: oldIEAttach, rm: oldIEDetach}
-  )
-  
-  return Events.add(el, eventName, listener, useCapture)
-}
-
-function removeEventListener(el, eventName, listener, useCapture) {
-  Events = Events || (
-    document.addEventListener ?
-    {add: stdAttach, rm: stdDetach} :
-    {add: oldIEAttach, rm: oldIEDetach}
-  )
-  
-  return Events.rm(el, eventName, listener, useCapture)
-}
-
-function stdAttach(el, eventName, listener, useCapture) {
-  el.addEventListener(eventName, listener, useCapture)
-}
-
-function stdDetach(el, eventName, listener, useCapture) {
-  el.removeEventListener(eventName, listener, useCapture)
-}
-
-function oldIEAttach(el, eventName, listener, useCapture) {
-  if(useCapture) {
-    throw new Error('cannot useCapture in oldIE')
-  }
-
-  el.attachEvent('on' + eventName, listener)
-}
-
-function oldIEDetach(el, eventName, listener, useCapture) {
-  el.detachEvent('on' + eventName, listener)
-}
-
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(13), __webpack_require__(279).setImmediate))
 
 /***/ }),
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(134), __esModule: true };
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(136), __esModule: true };
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(137), __esModule: true };
-
-/***/ }),
-/* 129 */
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(138), __esModule: true };
 
 /***/ }),
-/* 130 */
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(140), __esModule: true };
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(141), __esModule: true };
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(142), __esModule: true };
+
+/***/ }),
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30542,7 +33357,7 @@ exports.default = function (instance, Constructor) {
 };
 
 /***/ }),
-/* 131 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30550,7 +33365,7 @@ exports.default = function (instance, Constructor) {
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(129);
+var _defineProperty = __webpack_require__(133);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -30575,7 +33390,7 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 132 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30583,7 +33398,7 @@ exports.default = function () {
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(128);
+var _assign = __webpack_require__(132);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -30604,7 +33419,7 @@ exports.default = _assign2.default || function (target) {
 };
 
 /***/ }),
-/* 133 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30612,7 +33427,7 @@ exports.default = _assign2.default || function (target) {
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(126);
+var _from = __webpack_require__(130);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -30631,107 +33446,117 @@ exports.default = function (arr) {
 };
 
 /***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(68);
-__webpack_require__(164);
-module.exports = __webpack_require__(8).Array.from;
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(168);
-__webpack_require__(68);
-module.exports = __webpack_require__(163);
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var core  = __webpack_require__(8)
-  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(166);
-module.exports = __webpack_require__(8).Object.assign;
-
-/***/ }),
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(69);
 __webpack_require__(167);
-var $Object = __webpack_require__(8).Object;
-module.exports = function defineProperty(it, key, desc){
-  return $Object.defineProperty(it, key, desc);
-};
+module.exports = __webpack_require__(7).Array.from;
+
 
 /***/ }),
 /* 139 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = function(it){
-  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
-  return it;
-};
+__webpack_require__(171);
+__webpack_require__(69);
+module.exports = __webpack_require__(166);
+
 
 /***/ }),
 /* 140 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = function(){ /* empty */ };
+var core = __webpack_require__(7);
+var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
+module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
+  return $JSON.stringify.apply($JSON, arguments);
+};
+
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// false -> Array#indexOf
-// true  -> Array#includes
-var toIObject = __webpack_require__(38)
-  , toLength  = __webpack_require__(65)
-  , toIndex   = __webpack_require__(161);
-module.exports = function(IS_INCLUDES){
-  return function($this, el, fromIndex){
-    var O      = toIObject($this)
-      , length = toLength(O.length)
-      , index  = toIndex(fromIndex, length)
-      , value;
-    // Array#includes uses SameValueZero equality algorithm
-    if(IS_INCLUDES && el != el)while(length > index){
-      value = O[index++];
-      if(value != value)return true;
-    // Array#toIndex ignores holes, Array#includes - not
-    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
-      if(O[index] === el)return IS_INCLUDES || index || 0;
-    } return !IS_INCLUDES && -1;
-  };
-};
+__webpack_require__(169);
+module.exports = __webpack_require__(7).Object.assign;
+
 
 /***/ }),
 /* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(56)
-  , TAG = __webpack_require__(7)('toStringTag')
-  // ES3 wrong here
-  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
-
-// fallback for IE11 Script Access Denied error
-var tryGet = function(it, key){
-  try {
-    return it[key];
-  } catch(e){ /* empty */ }
+__webpack_require__(170);
+var $Object = __webpack_require__(7).Object;
+module.exports = function defineProperty(it, key, desc) {
+  return $Object.defineProperty(it, key, desc);
 };
 
-module.exports = function(it){
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports) {
+
+module.exports = function () { /* empty */ };
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// false -> Array#indexOf
+// true  -> Array#includes
+var toIObject = __webpack_require__(38);
+var toLength = __webpack_require__(66);
+var toAbsoluteIndex = __webpack_require__(164);
+module.exports = function (IS_INCLUDES) {
+  return function ($this, el, fromIndex) {
+    var O = toIObject($this);
+    var length = toLength(O.length);
+    var index = toAbsoluteIndex(fromIndex, length);
+    var value;
+    // Array#includes uses SameValueZero equality algorithm
+    // eslint-disable-next-line no-self-compare
+    if (IS_INCLUDES && el != el) while (length > index) {
+      value = O[index++];
+      // eslint-disable-next-line no-self-compare
+      if (value != value) return true;
+    // Array#indexOf ignores holes, Array#includes - not
+    } else for (;length > index; index++) if (IS_INCLUDES || index in O) {
+      if (O[index] === el) return IS_INCLUDES || index || 0;
+    } return !IS_INCLUDES && -1;
+  };
+};
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = __webpack_require__(56);
+var TAG = __webpack_require__(8)('toStringTag');
+// ES3 wrong here
+var ARG = cof(function () { return arguments; }()) == 'Arguments';
+
+// fallback for IE11 Script Access Denied error
+var tryGet = function (it, key) {
+  try {
+    return it[key];
+  } catch (e) { /* empty */ }
+};
+
+module.exports = function (it) {
   var O, T, B;
   return it === undefined ? 'Undefined' : it === null ? 'Null'
     // @@toStringTag case
@@ -30742,122 +33567,70 @@ module.exports = function(it){
     : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
 
-/***/ }),
-/* 143 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $defineProperty = __webpack_require__(17)
-  , createDesc      = __webpack_require__(35);
-
-module.exports = function(object, index, value){
-  if(index in object)$defineProperty.f(object, index, createDesc(0, value));
-  else object[index] = value;
-};
-
-/***/ }),
-/* 144 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(11).document && document.documentElement;
-
-/***/ }),
-/* 145 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(14) && !__webpack_require__(33)(function(){
-  return Object.defineProperty(__webpack_require__(58)('div'), 'a', {get: function(){ return 7; }}).a != 7;
-});
-
-/***/ }),
-/* 146 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// check on default Array iterator
-var Iterators  = __webpack_require__(16)
-  , ITERATOR   = __webpack_require__(7)('iterator')
-  , ArrayProto = Array.prototype;
-
-module.exports = function(it){
-  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-};
 
 /***/ }),
 /* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// call something on iterator step with safe closing on error
-var anObject = __webpack_require__(13);
-module.exports = function(iterator, fn, value, entries){
-  try {
-    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-  // 7.4.6 IteratorClose(iterator, completion)
-  } catch(e){
-    var ret = iterator['return'];
-    if(ret !== undefined)anObject(ret.call(iterator));
-    throw e;
-  }
+"use strict";
+
+var $defineProperty = __webpack_require__(18);
+var createDesc = __webpack_require__(35);
+
+module.exports = function (object, index, value) {
+  if (index in object) $defineProperty.f(object, index, createDesc(0, value));
+  else object[index] = value;
 };
+
 
 /***/ }),
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+var document = __webpack_require__(11).document;
+module.exports = document && document.documentElement;
 
-var create         = __webpack_require__(153)
-  , descriptor     = __webpack_require__(35)
-  , setToStringTag = __webpack_require__(63)
-  , IteratorPrototype = {};
-
-// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(15)(IteratorPrototype, __webpack_require__(7)('iterator'), function(){ return this; });
-
-module.exports = function(Constructor, NAME, next){
-  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
-  setToStringTag(Constructor, NAME + ' Iterator');
-};
 
 /***/ }),
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ITERATOR     = __webpack_require__(7)('iterator')
-  , SAFE_CLOSING = false;
+module.exports = !__webpack_require__(15) && !__webpack_require__(33)(function () {
+  return Object.defineProperty(__webpack_require__(58)('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
 
-try {
-  var riter = [7][ITERATOR]();
-  riter['return'] = function(){ SAFE_CLOSING = true; };
-  Array.from(riter, function(){ throw 2; });
-} catch(e){ /* empty */ }
-
-module.exports = function(exec, skipClosing){
-  if(!skipClosing && !SAFE_CLOSING)return false;
-  var safe = false;
-  try {
-    var arr  = [7]
-      , iter = arr[ITERATOR]();
-    iter.next = function(){ return {done: safe = true}; };
-    arr[ITERATOR] = function(){ return iter; };
-    exec(arr);
-  } catch(e){ /* empty */ }
-  return safe;
-};
 
 /***/ }),
 /* 150 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = function(done, value){
-  return {value: value, done: !!done};
+// check on default Array iterator
+var Iterators = __webpack_require__(17);
+var ITERATOR = __webpack_require__(8)('iterator');
+var ArrayProto = Array.prototype;
+
+module.exports = function (it) {
+  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
 };
+
 
 /***/ }),
 /* 151 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = true;
+// call something on iterator step with safe closing on error
+var anObject = __webpack_require__(14);
+module.exports = function (iterator, fn, value, entries) {
+  try {
+    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+  // 7.4.6 IteratorClose(iterator, completion)
+  } catch (e) {
+    var ret = iterator['return'];
+    if (ret !== undefined) anObject(ret.call(iterator));
+    throw e;
+  }
+};
+
 
 /***/ }),
 /* 152 */
@@ -30865,61 +33638,120 @@ module.exports = true;
 
 "use strict";
 
-// 19.1.2.1 Object.assign(target, source, ...)
-var getKeys  = __webpack_require__(62)
-  , gOPS     = __webpack_require__(155)
-  , pIE      = __webpack_require__(158)
-  , toObject = __webpack_require__(39)
-  , IObject  = __webpack_require__(60)
-  , $assign  = Object.assign;
+var create = __webpack_require__(156);
+var descriptor = __webpack_require__(35);
+var setToStringTag = __webpack_require__(64);
+var IteratorPrototype = {};
 
-// should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(33)(function(){
-  var A = {}
-    , B = {}
-    , S = Symbol()
-    , K = 'abcdefghijklmnopqrst';
-  A[S] = 7;
-  K.split('').forEach(function(k){ B[k] = k; });
-  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
-  var T     = toObject(target)
-    , aLen  = arguments.length
-    , index = 1
-    , getSymbols = gOPS.f
-    , isEnum     = pIE.f;
-  while(aLen > index){
-    var S      = IObject(arguments[index++])
-      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
-      , length = keys.length
-      , j      = 0
-      , key;
-    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
-  } return T;
-} : $assign;
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+__webpack_require__(16)(IteratorPrototype, __webpack_require__(8)('iterator'), function () { return this; });
+
+module.exports = function (Constructor, NAME, next) {
+  Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
+  setToStringTag(Constructor, NAME + ' Iterator');
+};
+
 
 /***/ }),
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var ITERATOR = __webpack_require__(8)('iterator');
+var SAFE_CLOSING = false;
+
+try {
+  var riter = [7][ITERATOR]();
+  riter['return'] = function () { SAFE_CLOSING = true; };
+  // eslint-disable-next-line no-throw-literal
+  Array.from(riter, function () { throw 2; });
+} catch (e) { /* empty */ }
+
+module.exports = function (exec, skipClosing) {
+  if (!skipClosing && !SAFE_CLOSING) return false;
+  var safe = false;
+  try {
+    var arr = [7];
+    var iter = arr[ITERATOR]();
+    iter.next = function () { return { done: safe = true }; };
+    arr[ITERATOR] = function () { return iter; };
+    exec(arr);
+  } catch (e) { /* empty */ }
+  return safe;
+};
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports) {
+
+module.exports = function (done, value) {
+  return { value: value, done: !!done };
+};
+
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+var getKeys = __webpack_require__(63);
+var gOPS = __webpack_require__(158);
+var pIE = __webpack_require__(161);
+var toObject = __webpack_require__(39);
+var IObject = __webpack_require__(60);
+var $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__(33)(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) { B[k] = k; });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+  } return T;
+} : $assign;
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject    = __webpack_require__(13)
-  , dPs         = __webpack_require__(154)
-  , enumBugKeys = __webpack_require__(59)
-  , IE_PROTO    = __webpack_require__(36)('IE_PROTO')
-  , Empty       = function(){ /* empty */ }
-  , PROTOTYPE   = 'prototype';
+var anObject = __webpack_require__(14);
+var dPs = __webpack_require__(157);
+var enumBugKeys = __webpack_require__(59);
+var IE_PROTO = __webpack_require__(36)('IE_PROTO');
+var Empty = function () { /* empty */ };
+var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
-var createDict = function(){
+var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(58)('iframe')
-    , i      = enumBugKeys.length
-    , lt     = '<'
-    , gt     = '>'
-    , iframeDocument;
+  var iframe = __webpack_require__(58)('iframe');
+  var i = enumBugKeys.length;
+  var lt = '<';
+  var gt = '>';
+  var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(144).appendChild(iframe);
+  __webpack_require__(148).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -30928,15 +33760,15 @@ var createDict = function(){
   iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
   iframeDocument.close();
   createDict = iframeDocument.F;
-  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
+  while (i--) delete createDict[PROTOTYPE][enumBugKeys[i]];
   return createDict();
 };
 
-module.exports = Object.create || function create(O, Properties){
+module.exports = Object.create || function create(O, Properties) {
   var result;
-  if(O !== null){
+  if (O !== null) {
     Empty[PROTOTYPE] = anObject(O);
-    result = new Empty;
+    result = new Empty();
     Empty[PROTOTYPE] = null;
     // add "__proto__" for Object.getPrototypeOf polyfill
     result[IE_PROTO] = O;
@@ -30946,96 +33778,102 @@ module.exports = Object.create || function create(O, Properties){
 
 
 /***/ }),
-/* 154 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var dP       = __webpack_require__(17)
-  , anObject = __webpack_require__(13)
-  , getKeys  = __webpack_require__(62);
-
-module.exports = __webpack_require__(14) ? Object.defineProperties : function defineProperties(O, Properties){
-  anObject(O);
-  var keys   = getKeys(Properties)
-    , length = keys.length
-    , i = 0
-    , P;
-  while(length > i)dP.f(O, P = keys[i++], Properties[P]);
-  return O;
-};
-
-/***/ }),
-/* 155 */
-/***/ (function(module, exports) {
-
-exports.f = Object.getOwnPropertySymbols;
-
-/***/ }),
-/* 156 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has         = __webpack_require__(25)
-  , toObject    = __webpack_require__(39)
-  , IE_PROTO    = __webpack_require__(36)('IE_PROTO')
-  , ObjectProto = Object.prototype;
-
-module.exports = Object.getPrototypeOf || function(O){
-  O = toObject(O);
-  if(has(O, IE_PROTO))return O[IE_PROTO];
-  if(typeof O.constructor == 'function' && O instanceof O.constructor){
-    return O.constructor.prototype;
-  } return O instanceof Object ? ObjectProto : null;
-};
-
-/***/ }),
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has          = __webpack_require__(25)
-  , toIObject    = __webpack_require__(38)
-  , arrayIndexOf = __webpack_require__(141)(false)
-  , IE_PROTO     = __webpack_require__(36)('IE_PROTO');
+var dP = __webpack_require__(18);
+var anObject = __webpack_require__(14);
+var getKeys = __webpack_require__(63);
 
-module.exports = function(object, names){
-  var O      = toIObject(object)
-    , i      = 0
-    , result = []
-    , key;
-  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
-  // Don't enum bug & hidden keys
-  while(names.length > i)if(has(O, key = names[i++])){
-    ~arrayIndexOf(result, key) || result.push(key);
-  }
-  return result;
+module.exports = __webpack_require__(15) ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
+  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
+  return O;
 };
+
 
 /***/ }),
 /* 158 */
 /***/ (function(module, exports) {
 
-exports.f = {}.propertyIsEnumerable;
+exports.f = Object.getOwnPropertySymbols;
+
 
 /***/ }),
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(15);
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+var has = __webpack_require__(26);
+var toObject = __webpack_require__(39);
+var IE_PROTO = __webpack_require__(36)('IE_PROTO');
+var ObjectProto = Object.prototype;
+
+module.exports = Object.getPrototypeOf || function (O) {
+  O = toObject(O);
+  if (has(O, IE_PROTO)) return O[IE_PROTO];
+  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectProto : null;
+};
+
 
 /***/ }),
 /* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(37)
-  , defined   = __webpack_require__(32);
+var has = __webpack_require__(26);
+var toIObject = __webpack_require__(38);
+var arrayIndexOf = __webpack_require__(145)(false);
+var IE_PROTO = __webpack_require__(36)('IE_PROTO');
+
+module.exports = function (object, names) {
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
+  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while (names.length > i) if (has(O, key = names[i++])) {
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
+};
+
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(16);
+
+
+/***/ }),
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__(37);
+var defined = __webpack_require__(32);
 // true  -> String#at
 // false -> String#codePointAt
-module.exports = function(TO_STRING){
-  return function(that, pos){
-    var s = String(defined(that))
-      , i = toInteger(pos)
-      , l = s.length
-      , a, b;
-    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
+module.exports = function (TO_STRING) {
+  return function (that, pos) {
+    var s = String(defined(that));
+    var i = toInteger(pos);
+    var l = s.length;
+    var a, b;
+    if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
     a = s.charCodeAt(i);
     return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
       ? TO_STRING ? s.charAt(i) : a
@@ -31043,82 +33881,86 @@ module.exports = function(TO_STRING){
   };
 };
 
+
 /***/ }),
-/* 161 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(37)
-  , max       = Math.max
-  , min       = Math.min;
-module.exports = function(index, length){
+var toInteger = __webpack_require__(37);
+var max = Math.max;
+var min = Math.min;
+module.exports = function (index, length) {
   index = toInteger(index);
   return index < 0 ? max(index + length, 0) : min(index, length);
 };
 
+
 /***/ }),
-/* 162 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
 var isObject = __webpack_require__(34);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
-module.exports = function(it, S){
-  if(!isObject(it))return it;
+module.exports = function (it, S) {
+  if (!isObject(it)) return it;
   var fn, val;
-  if(S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
-  if(typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it)))return val;
-  if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
   throw TypeError("Can't convert object to primitive value");
 };
 
+
 /***/ }),
-/* 163 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(13)
-  , get      = __webpack_require__(67);
-module.exports = __webpack_require__(8).getIterator = function(it){
+var anObject = __webpack_require__(14);
+var get = __webpack_require__(68);
+module.exports = __webpack_require__(7).getIterator = function (it) {
   var iterFn = get(it);
-  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
+  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
   return anObject(iterFn.call(it));
 };
 
+
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ctx            = __webpack_require__(57)
-  , $export        = __webpack_require__(24)
-  , toObject       = __webpack_require__(39)
-  , call           = __webpack_require__(147)
-  , isArrayIter    = __webpack_require__(146)
-  , toLength       = __webpack_require__(65)
-  , createProperty = __webpack_require__(143)
-  , getIterFn      = __webpack_require__(67);
+var ctx = __webpack_require__(57);
+var $export = __webpack_require__(25);
+var toObject = __webpack_require__(39);
+var call = __webpack_require__(151);
+var isArrayIter = __webpack_require__(150);
+var toLength = __webpack_require__(66);
+var createProperty = __webpack_require__(147);
+var getIterFn = __webpack_require__(68);
 
-$export($export.S + $export.F * !__webpack_require__(149)(function(iter){ Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(153)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
-  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
-    var O       = toObject(arrayLike)
-      , C       = typeof this == 'function' ? this : Array
-      , aLen    = arguments.length
-      , mapfn   = aLen > 1 ? arguments[1] : undefined
-      , mapping = mapfn !== undefined
-      , index   = 0
-      , iterFn  = getIterFn(O)
-      , length, result, step, iterator;
-    if(mapping)mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
+  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+    var O = toObject(arrayLike);
+    var C = typeof this == 'function' ? this : Array;
+    var aLen = arguments.length;
+    var mapfn = aLen > 1 ? arguments[1] : undefined;
+    var mapping = mapfn !== undefined;
+    var index = 0;
+    var iterFn = getIterFn(O);
+    var length, result, step, iterator;
+    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
     // if object isn't iterable or it's array with default iterator - use simple case
-    if(iterFn != undefined && !(C == Array && isArrayIter(iterFn))){
-      for(iterator = iterFn.call(O), result = new C; !(step = iterator.next()).done; index++){
+    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
+      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
         createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
       }
     } else {
       length = toLength(O.length);
-      for(result = new C(length); length > index; index++){
+      for (result = new C(length); length > index; index++) {
         createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
       }
     }
@@ -31129,35 +33971,35 @@ $export($export.S + $export.F * !__webpack_require__(149)(function(iter){ Array.
 
 
 /***/ }),
-/* 165 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(140)
-  , step             = __webpack_require__(150)
-  , Iterators        = __webpack_require__(16)
-  , toIObject        = __webpack_require__(38);
+var addToUnscopables = __webpack_require__(144);
+var step = __webpack_require__(154);
+var Iterators = __webpack_require__(17);
+var toIObject = __webpack_require__(38);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(61)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(61)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
 // 22.1.5.2.1 %ArrayIteratorPrototype%.next()
-}, function(){
-  var O     = this._t
-    , kind  = this._k
-    , index = this._i++;
-  if(!O || index >= O.length){
+}, function () {
+  var O = this._t;
+  var kind = this._k;
+  var index = this._i++;
+  if (!O || index >= O.length) {
     this._t = undefined;
     return step(1);
   }
-  if(kind == 'keys'  )return step(0, index);
-  if(kind == 'values')return step(0, O[index]);
+  if (kind == 'keys') return step(0, index);
+  if (kind == 'values') return step(0, O[index]);
   return step(0, [index, O[index]]);
 }, 'values');
 
@@ -31168,468 +34010,54 @@ addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
 
-/***/ }),
-/* 166 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(24);
-
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(152)});
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(24);
-// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__(14), 'Object', {defineProperty: __webpack_require__(17).f});
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(165);
-var global        = __webpack_require__(11)
-  , hide          = __webpack_require__(15)
-  , Iterators     = __webpack_require__(16)
-  , TO_STRING_TAG = __webpack_require__(7)('toStringTag');
-
-for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
-  var NAME       = collections[i]
-    , Collection = global[NAME]
-    , proto      = Collection && Collection.prototype;
-  if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
-  Iterators[NAME] = Iterators.Array;
-}
 
 /***/ }),
 /* 169 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(25);
 
-function EventEmitter() {
-  this._events = this._events || {};
-  this._maxListeners = this._maxListeners || undefined;
-}
-module.exports = EventEmitter;
-
-// Backwards-compat with node 0.10.x
-EventEmitter.EventEmitter = EventEmitter;
-
-EventEmitter.prototype._events = undefined;
-EventEmitter.prototype._maxListeners = undefined;
-
-// By default EventEmitters will print a warning if more than 10 listeners are
-// added to it. This is a useful default which helps finding memory leaks.
-EventEmitter.defaultMaxListeners = 10;
-
-// Obviously not all Emitters should be limited to 10. This function allows
-// that to be increased. Set to zero for unlimited.
-EventEmitter.prototype.setMaxListeners = function(n) {
-  if (!isNumber(n) || n < 0 || isNaN(n))
-    throw TypeError('n must be a positive number');
-  this._maxListeners = n;
-  return this;
-};
-
-EventEmitter.prototype.emit = function(type) {
-  var er, handler, len, args, i, listeners;
-
-  if (!this._events)
-    this._events = {};
-
-  // If there is no 'error' event listener then throw.
-  if (type === 'error') {
-    if (!this._events.error ||
-        (isObject(this._events.error) && !this._events.error.length)) {
-      er = arguments[1];
-      if (er instanceof Error) {
-        throw er; // Unhandled 'error' event
-      } else {
-        // At least give some kind of context to the user
-        var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
-        err.context = er;
-        throw err;
-      }
-    }
-  }
-
-  handler = this._events[type];
-
-  if (isUndefined(handler))
-    return false;
-
-  if (isFunction(handler)) {
-    switch (arguments.length) {
-      // fast cases
-      case 1:
-        handler.call(this);
-        break;
-      case 2:
-        handler.call(this, arguments[1]);
-        break;
-      case 3:
-        handler.call(this, arguments[1], arguments[2]);
-        break;
-      // slower
-      default:
-        args = Array.prototype.slice.call(arguments, 1);
-        handler.apply(this, args);
-    }
-  } else if (isObject(handler)) {
-    args = Array.prototype.slice.call(arguments, 1);
-    listeners = handler.slice();
-    len = listeners.length;
-    for (i = 0; i < len; i++)
-      listeners[i].apply(this, args);
-  }
-
-  return true;
-};
-
-EventEmitter.prototype.addListener = function(type, listener) {
-  var m;
-
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  if (!this._events)
-    this._events = {};
-
-  // To avoid recursion in the case that type === "newListener"! Before
-  // adding it to the listeners, first emit "newListener".
-  if (this._events.newListener)
-    this.emit('newListener', type,
-              isFunction(listener.listener) ?
-              listener.listener : listener);
-
-  if (!this._events[type])
-    // Optimize the case of one listener. Don't need the extra array object.
-    this._events[type] = listener;
-  else if (isObject(this._events[type]))
-    // If we've already got an array, just append.
-    this._events[type].push(listener);
-  else
-    // Adding the second element, need to change to array.
-    this._events[type] = [this._events[type], listener];
-
-  // Check for listener leak
-  if (isObject(this._events[type]) && !this._events[type].warned) {
-    if (!isUndefined(this._maxListeners)) {
-      m = this._maxListeners;
-    } else {
-      m = EventEmitter.defaultMaxListeners;
-    }
-
-    if (m && m > 0 && this._events[type].length > m) {
-      this._events[type].warned = true;
-      console.error('(node) warning: possible EventEmitter memory ' +
-                    'leak detected. %d listeners added. ' +
-                    'Use emitter.setMaxListeners() to increase limit.',
-                    this._events[type].length);
-      if (typeof console.trace === 'function') {
-        // not supported in IE 10
-        console.trace();
-      }
-    }
-  }
-
-  return this;
-};
-
-EventEmitter.prototype.on = EventEmitter.prototype.addListener;
-
-EventEmitter.prototype.once = function(type, listener) {
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  var fired = false;
-
-  function g() {
-    this.removeListener(type, g);
-
-    if (!fired) {
-      fired = true;
-      listener.apply(this, arguments);
-    }
-  }
-
-  g.listener = listener;
-  this.on(type, g);
-
-  return this;
-};
-
-// emits a 'removeListener' event iff the listener was removed
-EventEmitter.prototype.removeListener = function(type, listener) {
-  var list, position, length, i;
-
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  if (!this._events || !this._events[type])
-    return this;
-
-  list = this._events[type];
-  length = list.length;
-  position = -1;
-
-  if (list === listener ||
-      (isFunction(list.listener) && list.listener === listener)) {
-    delete this._events[type];
-    if (this._events.removeListener)
-      this.emit('removeListener', type, listener);
-
-  } else if (isObject(list)) {
-    for (i = length; i-- > 0;) {
-      if (list[i] === listener ||
-          (list[i].listener && list[i].listener === listener)) {
-        position = i;
-        break;
-      }
-    }
-
-    if (position < 0)
-      return this;
-
-    if (list.length === 1) {
-      list.length = 0;
-      delete this._events[type];
-    } else {
-      list.splice(position, 1);
-    }
-
-    if (this._events.removeListener)
-      this.emit('removeListener', type, listener);
-  }
-
-  return this;
-};
-
-EventEmitter.prototype.removeAllListeners = function(type) {
-  var key, listeners;
-
-  if (!this._events)
-    return this;
-
-  // not listening for removeListener, no need to emit
-  if (!this._events.removeListener) {
-    if (arguments.length === 0)
-      this._events = {};
-    else if (this._events[type])
-      delete this._events[type];
-    return this;
-  }
-
-  // emit removeListener for all listeners on all events
-  if (arguments.length === 0) {
-    for (key in this._events) {
-      if (key === 'removeListener') continue;
-      this.removeAllListeners(key);
-    }
-    this.removeAllListeners('removeListener');
-    this._events = {};
-    return this;
-  }
-
-  listeners = this._events[type];
-
-  if (isFunction(listeners)) {
-    this.removeListener(type, listeners);
-  } else if (listeners) {
-    // LIFO order
-    while (listeners.length)
-      this.removeListener(type, listeners[listeners.length - 1]);
-  }
-  delete this._events[type];
-
-  return this;
-};
-
-EventEmitter.prototype.listeners = function(type) {
-  var ret;
-  if (!this._events || !this._events[type])
-    ret = [];
-  else if (isFunction(this._events[type]))
-    ret = [this._events[type]];
-  else
-    ret = this._events[type].slice();
-  return ret;
-};
-
-EventEmitter.prototype.listenerCount = function(type) {
-  if (this._events) {
-    var evlistener = this._events[type];
-
-    if (isFunction(evlistener))
-      return 1;
-    else if (evlistener)
-      return evlistener.length;
-  }
-  return 0;
-};
-
-EventEmitter.listenerCount = function(emitter, type) {
-  return emitter.listenerCount(type);
-};
-
-function isFunction(arg) {
-  return typeof arg === 'function';
-}
-
-function isNumber(arg) {
-  return typeof arg === 'number';
-}
-
-function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
-}
-
-function isUndefined(arg) {
-  return arg === void 0;
-}
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(155) });
 
 
 /***/ }),
-/* 170 */,
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(25);
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+$export($export.S + $export.F * !__webpack_require__(15), 'Object', { defineProperty: __webpack_require__(18).f });
+
+
+/***/ }),
 /* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = fullscreen
-fullscreen.available = available
-fullscreen.enabled = enabled
+__webpack_require__(168);
+var global = __webpack_require__(11);
+var hide = __webpack_require__(16);
+var Iterators = __webpack_require__(17);
+var TO_STRING_TAG = __webpack_require__(8)('toStringTag');
 
-var EE = __webpack_require__(169).EventEmitter
-var ael = __webpack_require__(122)
-var rel = ael.removeEventListener
+var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
+  'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
+  'MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,' +
+  'SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,' +
+  'TextTrackList,TouchList').split(',');
 
-function available() {
-  return !!shim(document.body)
-}
-
-function enabled() {
-  return !!(document.fullscreenEnabled ||
-    document.webkitFullscreenEnabled ||
-    document.mozFullscreenEnabled ||
-    document.msFullscreenEnabled);
-}
-
-function fullscreen(el) {
-  var doc = el.ownerDocument
-    , body = doc.body
-    , rfs = shim(el)
-    , ee = new EE
-
-  var vendors = ['', 'webkit', 'moz']
-
-  for(var i = 0, len = vendors.length; i < len; ++i) {
-    ael(doc, vendors[i] + 'fullscreenchange', onfullscreenchange)
-    ael(doc, vendors[i] + 'fullscreenerror', onfullscreenerror)
-  }
-  // MS uses different casing:
-  ael(doc, 'MSFullscreenChange', onfullscreenchange)
-  ael(doc, 'MSFullscreenError', onfullscreenerror)
-
-  ee.release = release
-  ee.request = request
-  ee.dispose = dispose
-  ee.target = fullscreenelement
-
-  if(!shim) {
-    setTimeout(function() {
-      ee.emit('error', new Error('fullscreen is not supported'))
-    }, 0)
-  }
-  return ee
-
-  function onfullscreenchange() {
-    if(!fullscreenelement()) {
-      return ee.emit('release')
-    }
-    ee.emit('attain')
-  }
-
-  function onfullscreenerror() {
-    ee.emit('error')
-  }
-
-  function request() {
-    return rfs.apply(el, arguments)
-  }
-
-  function release() {
-
-    var element_exit = (el.exitFullscreen ||
-      el.webkitExitFullscreen ||
-      el.mozCancelFullScreen ||
-      el.mozExitFullScreen ||
-      el.msExitFullscreen);
-
-    if (element_exit) {
-      element_exit.apply(el, arguments);
-      return;
-    }
-
-    var document_exit = (doc.exitFullscreen ||
-      doc.webkitExitFullscreen ||
-      doc.mozCancelFullScreen ||
-      doc.mozExitFullScreen ||
-      doc.msExitFullscreen);
-
-    document_exit.apply(doc, arguments);
-  } 
-
-  function fullscreenelement() {
-    return (0 ||
-      doc.fullscreenElement ||
-      doc.webkitFullscreenElement ||
-      doc.mozFullScreenElement ||
-      doc.msFullscreenElement ||
-      null);
-  }
-
-  function dispose() {
-    for(var i = 0, len = vendors.length; i < len; ++i) {
-      rel(doc, vendors[i] + 'fullscreenchange', onfullscreenchange)
-      rel(doc, vendors[i] + 'fullscreenerror', onfullscreenerror)
-    }
-    // MS uses different casing:
-    rel(doc, 'MSFullscreenChange', onfullscreenchange)
-    rel(doc, 'MSFullscreenError', onfullscreenerror)
-  }
-}
-
-function shim(el) {
-  return (el.requestFullscreen ||
-    el.webkitRequestFullscreen ||
-    el.mozRequestFullScreen ||
-    el.msRequestFullscreen);
+for (var i = 0; i < DOMIterables.length; i++) {
+  var NAME = DOMIterables[i];
+  var Collection = global[NAME];
+  var proto = Collection && Collection.prototype;
+  if (proto && !proto[TO_STRING_TAG]) hide(proto, TO_STRING_TAG, NAME);
+  Iterators[NAME] = Iterators.Array;
 }
 
 
 /***/ }),
-/* 172 */
+/* 172 */,
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31637,11 +34065,11 @@ function shim(el) {
   Developed by Mund
 */
 
-module.exports = __webpack_require__(174)
+module.exports = __webpack_require__(175)
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Physics = __webpack_require__(70)
@@ -31672,51 +34100,54 @@ class ball {
       dragCo: 0
     })
   }
+
   moveY (direction) {
     this.physicsY.power = this.maxPower
-    if (direction === 'up') {
-      direction = 'down'
-    } else {
-      direction = 'up'
-    }
-    this.physicsY.powerDirection = direction
+    this.physicsY.powerDirection = (direction === 'up') ? 'down' : (direction === 'down') ? 'up' : '';
   }
+
   calcPosX () {
     this.physicsX.calcEnergy()
+    const energy = this.physicsX.energyToVelocity(this.physicsX.energy, this.physicsX.mass)
+
     if (this.xDirection === 'left') {
-      this.pos[0] -= this.physicsX.energyToVelocity(this.physicsX.energy, this.physicsX.mass)
-    } else {
-      this.pos[0] += this.physicsX.energyToVelocity(this.physicsX.energy, this.physicsX.mass)
+      this.pos[0] -= energy;
+    } else if (this.xDirection === 'right'){
+      this.pos[0] += energy
     }
   }
+
   calcPosY () {
     this.physicsY.calcEnergy()
+    const energy = this.physicsY.energyToVelocity(this.physicsY.energy, this.physicsY.mass)
+
     if (this.pos[1] + this.size < 0) {
       this.pos[1] = this.fieldWidth
     } else if (this.pos[1] > this.fieldWidth) {
       this.pos[1] = 0 - this.size
     }
-    if (this.physicsY.objectDirection === 'up') {
-      this.pos[1] -= this.physicsY.energyToVelocity(this.physicsY.energy, this.physicsY.mass)
-    } else if (this.physicsY.objectDirection === 'down') {
-      this.pos[1] += this.physicsY.energyToVelocity(this.physicsY.energy, this.physicsY.mass)
+
+    if (this.physicsY.objectDirection === 'down') {
+       this.pos[1] += energy
+    } else if (this.physicsY.objectDirection == 'up') {
+      this.pos[1] -= energy
     }
   }
+
   reset () {
-    this.xDirection = (this.xDirection === 'left' ? 'left' : 'right')
+    this.xDirection = (this.xDirection === 'left') ? 'left' : 'right'
     this.pos[0] = this.startPos[0]
     this.pos[1] = this.startPos[1]
     this.physicsX.energy = this.energyX
     this.physicsY.energy = this.energyY
   }
+
   addEnergyX (amount) {
     this.physicsX.energy += amount
   }
-  calcPos () {
-    // physicsX
-    this.calcPosX()
 
-    // physicsY
+  calcPos () {
+    this.calcPosX()
     this.calcPosY()
   }
 }
@@ -31724,11 +34155,11 @@ module.exports = ball
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Paddle = __webpack_require__(175)
-const Ball = __webpack_require__(173)
+const Paddle = __webpack_require__(176)
+const Ball = __webpack_require__(174)
 
 class Game {
   constructor (options = {}) {
@@ -31754,18 +34185,22 @@ class Game {
     this.ended = false
     this.winner = []
   }
+
   sendControls (controller) {
     controller.forEach((control) => {
       this._controlPaddle(control.paddle, control.action)
       this._controlBall(control.paddle, control.action)
     })
   }
+
   _controlPaddle (paddle, direction) {
     paddle.move(direction)
   }
+
   _controlBall (paddle, direction) {
     if (paddle.controlsBall) this.ball.moveY(direction)
   }
+
   bounce () {
     for (let paddle of this.paddles) {
       const paddleX = {
@@ -31776,37 +34211,46 @@ class Game {
         min: paddle.pos[1],
         max: paddle.pos[1] + paddle.size[1]
       }
+      
+      // Does the ball touch the paddle?
       if (paddleX.min <= this.ball.pos[0] && this.ball.pos[0] <= paddleX.max &&
         paddleY.min <= this.ball.pos[1] + this.ball.size / 2 &&
         this.ball.pos[1] - this.ball.size / 2 <= paddleY.max) {
         this.ball.xDirection = (this.ball.xDirection === 'left' ? 'right' : 'left')
         this.ball.addEnergyX(this.multiplier * paddle.physics.energy + this.reflectEnergy)
+  
         for (const paddle of this.paddles) {
           paddle.controlsBall = false
         }
+  
         paddle.controlsBall = true
       }
     }
   }
+
   goalCheck () {
     if (this.ball.pos[0] < 0 || this.ball.pos[0] > this.fieldSize[0]) {
       for (const paddle of this.paddles) {
         if (paddle.goal === this.ball.xDirection) paddle.points ++
+  
         if (paddle.points >= this.goal) {
           this.ended = true
           this.winner.push(paddle.name)
         }
+ 
         paddle.controlsBall = false
       }
       this.ball.reset()
     }
   }
+
   calcPos () {
     for (const paddle of this.paddles) {
       paddle.calcPos()
     }
     this.ball.calcPos()
   }
+
   update (controller = []) {
     if (!this.paused && !this.ended) {
       this.sendControls(controller)
@@ -31820,7 +34264,7 @@ module.exports = Game
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Physics = __webpack_require__(70)
@@ -31853,10 +34297,12 @@ class Paddle {
       frictionCo: 0.3
     })
   }
+
   move (direction) {
     this.physics.power = this.maxPower
     this.physics.powerDirection = direction
   }
+
   calcPos () {
     this.physics.calcEnergy()
     if (this.physics.objectDirection === 'up') {
@@ -31876,7 +34322,7 @@ module.exports = Paddle
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31973,7 +34419,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 var EMPTY_ARRAY_BUFFER = new ArrayBuffer(0);
@@ -32098,7 +34544,7 @@ module.exports = Buffer;
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32293,6 +34739,7 @@ Framebuffer.createRGBA = function(gl, width, height, data)
     //now create the framebuffer object and attach the texture to it.
     var fbo = new Framebuffer(gl, width, height);
     fbo.enableTexture(texture);
+    //fbo.enableStencil(); // get this back on soon!
 
     //fbo.enableStencil(); // get this back on soon!
 
@@ -32329,7 +34776,7 @@ module.exports = Framebuffer;
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32347,7 +34794,7 @@ var compileProgram = __webpack_require__(75),
  * @param gl {WebGLRenderingContext}
  * @param vertexSrc {string|string[]} The vertex shader source as an array of strings.
  * @param fragmentSrc {string|string[]} The fragment shader source as an array of strings.
- * @param precision {precision]} The float precision of the shader. Options are 'lowp', 'mediump' or 'highp'.
+ * @param precision {string} The float precision of the shader. Options are 'lowp', 'mediump' or 'highp'.
  * @param attributeLocations {object} A key value pair showing which location eact attribute should sit eg {position:0, uvs:1}
  */
 var Shader = function(gl, vertexSrc, fragmentSrc, precision, attributeLocations)
@@ -32401,10 +34848,13 @@ var Shader = function(gl, vertexSrc, fragmentSrc, precision, attributeLocations)
 };
 /**
  * Uses this shader
+ * 
+ * @return {PIXI.glCore.GLShader} Returns itself.
  */
 Shader.prototype.bind = function()
 {
 	this.gl.useProgram(this.program);
+	return this;
 };
 
 /**
@@ -32426,7 +34876,7 @@ module.exports = Shader;
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32523,11 +34973,15 @@ VertexArrayObject.prototype.bind = function()
         {
             this.dirty = false;
             this.activate();
+            return this;
+        }
+        if (this.indexBuffer)
+        {
+            this.indexBuffer.bind();
         }
     }
     else
     {
-
         this.activate();
     }
 
@@ -32694,7 +35148,7 @@ VertexArrayObject.prototype.getSize = function()
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports) {
 
 
@@ -32726,7 +35180,7 @@ module.exports = createContext;
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
@@ -32737,11 +35191,11 @@ module.exports = {
     generateUniformAccessObject: __webpack_require__(79),
     setPrecision: __webpack_require__(81),
     mapSize: __webpack_require__(80),
-    mapType: __webpack_require__(41)
+    mapType: __webpack_require__(42)
 };
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32753,7 +35207,7 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _ismobilejs = __webpack_require__(40);
+var _ismobilejs = __webpack_require__(41);
 
 var _ismobilejs2 = _interopRequireDefault(_ismobilejs);
 
@@ -32807,7 +35261,7 @@ var AccessibilityManager = function () {
             this.createTouchHook();
         }
 
-        // first we create a div that will sit over the pixi element. This is where the div overlays will go.
+        // first we create a div that will sit over the PixiJS element. This is where the div overlays will go.
         var div = document.createElement('div');
 
         div.style.width = DIV_TOUCH_SIZE + 'px';
@@ -32818,7 +35272,7 @@ var AccessibilityManager = function () {
         div.style.zIndex = DIV_TOUCH_ZINDEX;
 
         /**
-         * This is the dom element that will sit over the pixi element. This is where the div overlays will go.
+         * This is the dom element that will sit over the PixiJS element. This is where the div overlays will go.
          *
          * @type {HTMLElement}
          * @private
@@ -32986,7 +35440,7 @@ var AccessibilityManager = function () {
 
         var children = displayObject.children;
 
-        for (var i = children.length - 1; i >= 0; i--) {
+        for (var i = 0; i < children.length; i++) {
             this.updateAccessibleObjects(children[i]);
         }
     };
@@ -33055,6 +35509,14 @@ var AccessibilityManager = function () {
 
                     div.style.width = hitArea.width * sx + 'px';
                     div.style.height = hitArea.height * sy + 'px';
+
+                    // update button titles and hints if they exist and they've changed
+                    if (div.title !== child.accessibleTitle && child.accessibleTitle !== null) {
+                        div.title = child.accessibleTitle;
+                    }
+                    if (div.getAttribute('aria-label') !== child.accessibleHint && child.accessibleHint !== null) {
+                        div.setAttribute('aria-label', child.accessibleHint);
+                    }
                 }
             }
         }
@@ -33113,18 +35575,34 @@ var AccessibilityManager = function () {
             div.style.zIndex = DIV_TOUCH_ZINDEX;
             div.style.borderStyle = 'none';
 
+            // ARIA attributes ensure that button title and hint updates are announced properly
+            if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+                // Chrome doesn't need aria-live to work as intended; in fact it just gets more confused.
+                div.setAttribute('aria-live', 'off');
+            } else {
+                div.setAttribute('aria-live', 'polite');
+            }
+
+            if (navigator.userAgent.match(/rv:.*Gecko\//)) {
+                // FireFox needs this to announce only the new button name
+                div.setAttribute('aria-relevant', 'additions');
+            } else {
+                // required by IE, other browsers don't much care
+                div.setAttribute('aria-relevant', 'text');
+            }
+
             div.addEventListener('click', this._onClick.bind(this));
             div.addEventListener('focus', this._onFocus.bind(this));
             div.addEventListener('focusout', this._onFocusOut.bind(this));
         }
 
-        if (displayObject.accessibleTitle) {
+        if (displayObject.accessibleTitle && displayObject.accessibleTitle !== null) {
             div.title = displayObject.accessibleTitle;
-        } else if (!displayObject.accessibleTitle && !displayObject.accessibleHint) {
-            div.title = 'displayObject ' + this.tabIndex;
+        } else if (!displayObject.accessibleHint || displayObject.accessibleHint === null) {
+            div.title = 'displayObject ' + displayObject.tabIndex;
         }
 
-        if (displayObject.accessibleHint) {
+        if (displayObject.accessibleHint && displayObject.accessibleHint !== null) {
             div.setAttribute('aria-label', displayObject.accessibleHint);
         }
 
@@ -33162,6 +35640,9 @@ var AccessibilityManager = function () {
 
 
     AccessibilityManager.prototype._onFocus = function _onFocus(e) {
+        if (!e.target.getAttribute('aria-live', 'off')) {
+            e.target.setAttribute('aria-live', 'assertive');
+        }
         var interactionManager = this.renderer.plugins.interaction;
 
         interactionManager.dispatchEvent(e.target.displayObject, 'mouseover', interactionManager.eventData);
@@ -33176,6 +35657,9 @@ var AccessibilityManager = function () {
 
 
     AccessibilityManager.prototype._onFocusOut = function _onFocusOut(e) {
+        if (!e.target.getAttribute('aria-live', 'off')) {
+            e.target.setAttribute('aria-live', 'polite');
+        }
         var interactionManager = this.renderer.plugins.interaction;
 
         interactionManager.dispatchEvent(e.target.displayObject, 'mouseout', interactionManager.eventData);
@@ -33201,10 +35685,15 @@ var AccessibilityManager = function () {
      * Is called when the mouse moves across the renderer element
      *
      * @private
+     * @param {MouseEvent} e - The mouse event.
      */
 
 
-    AccessibilityManager.prototype._onMouseMove = function _onMouseMove() {
+    AccessibilityManager.prototype._onMouseMove = function _onMouseMove(e) {
+        if (e.movementX === 0 && e.movementY === 0) {
+            return;
+        }
+
         this.deactivate();
     };
 
@@ -33240,7 +35729,7 @@ core.CanvasRenderer.registerPlugin('accessibility', AccessibilityManager);
 //# sourceMappingURL=AccessibilityManager.js.map
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33257,7 +35746,7 @@ Object.defineProperty(exports, 'accessibleTarget', {
   }
 });
 
-var _AccessibilityManager = __webpack_require__(183);
+var _AccessibilityManager = __webpack_require__(184);
 
 Object.defineProperty(exports, 'AccessibilityManager', {
   enumerable: true,
@@ -33270,7 +35759,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33278,11 +35767,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.__esModule = true;
 
-var _Container2 = __webpack_require__(19);
+var _Container2 = __webpack_require__(20);
 
 var _Container3 = _interopRequireDefault(_Container2);
 
-var _RenderTexture = __webpack_require__(49);
+var _RenderTexture = __webpack_require__(50);
 
 var _RenderTexture2 = _interopRequireDefault(_RenderTexture);
 
@@ -33294,7 +35783,7 @@ var _GraphicsData = __webpack_require__(88);
 
 var _GraphicsData2 = _interopRequireDefault(_GraphicsData);
 
-var _Sprite = __webpack_require__(47);
+var _Sprite = __webpack_require__(48);
 
 var _Sprite2 = _interopRequireDefault(_Sprite);
 
@@ -33304,15 +35793,15 @@ var _utils = __webpack_require__(2);
 
 var _const = __webpack_require__(0);
 
-var _Bounds = __webpack_require__(42);
+var _Bounds = __webpack_require__(43);
 
 var _Bounds2 = _interopRequireDefault(_Bounds);
 
-var _bezierCurveTo2 = __webpack_require__(187);
+var _bezierCurveTo2 = __webpack_require__(188);
 
 var _bezierCurveTo3 = _interopRequireDefault(_bezierCurveTo2);
 
-var _CanvasRenderer = __webpack_require__(20);
+var _CanvasRenderer = __webpack_require__(21);
 
 var _CanvasRenderer2 = _interopRequireDefault(_CanvasRenderer);
 
@@ -33383,6 +35872,14 @@ var Graphics = function (_Container) {
          * @default 0
          */
         _this.lineColor = 0;
+
+        /**
+         * The alignment of any lines drawn (0.5 = middle, 1 = outter, 0 = inner).
+         *
+         * @member {number}
+         * @default 0
+         */
+        _this.lineAlignment = 0.5;
 
         /**
          * Graphics data
@@ -33528,6 +36025,7 @@ var Graphics = function (_Container) {
         clone.fillAlpha = this.fillAlpha;
         clone.lineWidth = this.lineWidth;
         clone.lineColor = this.lineColor;
+        clone.lineAlignment = this.lineAlignment;
         clone.tint = this.tint;
         clone.blendMode = this.blendMode;
         clone.isMask = this.isMask;
@@ -33548,12 +36046,123 @@ var Graphics = function (_Container) {
     };
 
     /**
+     * Calculate length of quadratic curve
+     * @see {@link http://www.malczak.linuxpl.com/blog/quadratic-bezier-curve-length/}
+     * for the detailed explanation of math behind this.
+     *
+     * @private
+     * @param {number} fromX - x-coordinate of curve start point
+     * @param {number} fromY - y-coordinate of curve start point
+     * @param {number} cpX - x-coordinate of curve control point
+     * @param {number} cpY - y-coordinate of curve control point
+     * @param {number} toX - x-coordinate of curve end point
+     * @param {number} toY - y-coordinate of curve end point
+     * @return {number} Length of quadratic curve
+     */
+
+
+    Graphics.prototype._quadraticCurveLength = function _quadraticCurveLength(fromX, fromY, cpX, cpY, toX, toY) {
+        var ax = fromX - (2.0 * cpX + toX);
+        var ay = fromY - (2.0 * cpY + toY);
+        var bx = 2.0 * ((cpX - 2.0) * fromX);
+        var by = 2.0 * ((cpY - 2.0) * fromY);
+        var a = 4.0 * (ax * ax + ay * ay);
+        var b = 4.0 * (ax * bx + ay * by);
+        var c = bx * bx + by * by;
+
+        var s = 2.0 * Math.sqrt(a + b + c);
+        var a2 = Math.sqrt(a);
+        var a32 = 2.0 * a * a2;
+        var c2 = 2.0 * Math.sqrt(c);
+        var ba = b / a2;
+
+        return (a32 * s + a2 * b * (s - c2) + (4.0 * c * a - b * b) * Math.log((2.0 * a2 + ba + s) / (ba + c2))) / (4.0 * a32);
+    };
+
+    /**
+     * Calculate length of bezier curve.
+     * Analytical solution is impossible, since it involves an integral that does not integrate in general.
+     * Therefore numerical solution is used.
+     *
+     * @private
+     * @param {number} fromX - Starting point x
+     * @param {number} fromY - Starting point y
+     * @param {number} cpX - Control point x
+     * @param {number} cpY - Control point y
+     * @param {number} cpX2 - Second Control point x
+     * @param {number} cpY2 - Second Control point y
+     * @param {number} toX - Destination point x
+     * @param {number} toY - Destination point y
+     * @return {number} Length of bezier curve
+     */
+
+
+    Graphics.prototype._bezierCurveLength = function _bezierCurveLength(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY) {
+        var n = 10;
+        var result = 0.0;
+        var t = 0.0;
+        var t2 = 0.0;
+        var t3 = 0.0;
+        var nt = 0.0;
+        var nt2 = 0.0;
+        var nt3 = 0.0;
+        var x = 0.0;
+        var y = 0.0;
+        var dx = 0.0;
+        var dy = 0.0;
+        var prevX = fromX;
+        var prevY = fromY;
+
+        for (var i = 1; i <= n; ++i) {
+            t = i / n;
+            t2 = t * t;
+            t3 = t2 * t;
+            nt = 1.0 - t;
+            nt2 = nt * nt;
+            nt3 = nt2 * nt;
+
+            x = nt3 * fromX + 3.0 * nt2 * t * cpX + 3.0 * nt * t2 * cpX2 + t3 * toX;
+            y = nt3 * fromY + 3.0 * nt2 * t * cpY + 3 * nt * t2 * cpY2 + t3 * toY;
+            dx = prevX - x;
+            dy = prevY - y;
+            prevX = x;
+            prevY = y;
+
+            result += Math.sqrt(dx * dx + dy * dy);
+        }
+
+        return result;
+    };
+
+    /**
+     * Calculate number of segments for the curve based on its length to ensure its smoothness.
+     *
+     * @private
+     * @param {number} length - length of curve
+     * @return {number} Number of segments
+     */
+
+
+    Graphics.prototype._segmentsCount = function _segmentsCount(length) {
+        var result = Math.ceil(length / Graphics.CURVES.maxLength);
+
+        if (result < Graphics.CURVES.minSegments) {
+            result = Graphics.CURVES.minSegments;
+        } else if (result > Graphics.CURVES.maxSegments) {
+            result = Graphics.CURVES.maxSegments;
+        }
+
+        return result;
+    };
+
+    /**
      * Specifies the line style used for subsequent calls to Graphics methods such as the lineTo()
      * method or the drawCircle() method.
      *
      * @param {number} [lineWidth=0] - width of the line to draw, will update the objects stored style
      * @param {number} [color=0] - color of the line to draw, will update the objects stored style
      * @param {number} [alpha=1] - alpha of the line to draw, will update the objects stored style
+     * @param {number} [alignment=1] - alignment of the line to draw, (0 = inner, 0.5 = middle, 1 = outter)
      * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
      */
 
@@ -33562,10 +36171,12 @@ var Graphics = function (_Container) {
         var lineWidth = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
         var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
         var alpha = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+        var alignment = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0.5;
 
         this.lineWidth = lineWidth;
         this.lineColor = color;
         this.lineAlpha = alpha;
+        this.lineAlignment = alignment;
 
         if (this.currentPath) {
             if (this.currentPath.shape.points.length) {
@@ -33580,6 +36191,7 @@ var Graphics = function (_Container) {
                 this.currentPath.lineWidth = this.lineWidth;
                 this.currentPath.lineColor = this.lineColor;
                 this.currentPath.lineAlpha = this.lineAlpha;
+                this.currentPath.lineAlignment = this.lineAlignment;
             }
         }
 
@@ -33642,7 +36254,6 @@ var Graphics = function (_Container) {
             this.moveTo(0, 0);
         }
 
-        var n = 20;
         var points = this.currentPath.shape.points;
         var xa = 0;
         var ya = 0;
@@ -33653,6 +36264,7 @@ var Graphics = function (_Container) {
 
         var fromX = points[points.length - 2];
         var fromY = points[points.length - 1];
+        var n = Graphics.CURVES.adaptive ? this._segmentsCount(this._quadraticCurveLength(fromX, fromY, cpX, cpY, toX, toY)) : 20;
 
         for (var i = 1; i <= n; ++i) {
             var j = i / n;
@@ -33697,7 +36309,9 @@ var Graphics = function (_Container) {
 
         points.length -= 2;
 
-        (0, _bezierCurveTo3.default)(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY, points);
+        var n = Graphics.CURVES.adaptive ? this._segmentsCount(this._bezierCurveLength(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY)) : 20;
+
+        (0, _bezierCurveTo3.default)(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY, n, points);
 
         this.dirty++;
 
@@ -33789,13 +36403,13 @@ var Graphics = function (_Container) {
         }
 
         if (!anticlockwise && endAngle <= startAngle) {
-            endAngle += Math.PI * 2;
+            endAngle += _const.PI_2;
         } else if (anticlockwise && startAngle <= endAngle) {
-            startAngle += Math.PI * 2;
+            startAngle += _const.PI_2;
         }
 
         var sweep = endAngle - startAngle;
-        var segs = Math.ceil(Math.abs(sweep) / (Math.PI * 2)) * 40;
+        var segs = Graphics.CURVES.adaptive ? this._segmentsCount(Math.abs(sweep) * radius) : Math.ceil(Math.abs(sweep) / _const.PI_2) * 40;
 
         if (sweep === 0) {
             return this;
@@ -33955,7 +36569,7 @@ var Graphics = function (_Container) {
     /**
      * Draws a polygon using the given path.
      *
-     * @param {number[]|PIXI.Point[]} path - The path data used to construct the polygon.
+     * @param {number[]|PIXI.Point[]|PIXI.Polygon} path - The path data used to construct the polygon.
      * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
      */
 
@@ -33992,6 +36606,39 @@ var Graphics = function (_Container) {
     };
 
     /**
+     * Draw a star shape with an abitrary number of points.
+     *
+     * @param {number} x - Center X position of the star
+     * @param {number} y - Center Y position of the star
+     * @param {number} points - The number of points of the star, must be > 1
+     * @param {number} radius - The outer radius of the star
+     * @param {number} [innerRadius] - The inner radius between points, default half `radius`
+     * @param {number} [rotation=0] - The rotation of the star in radians, where 0 is vertical
+     * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
+     */
+
+
+    Graphics.prototype.drawStar = function drawStar(x, y, points, radius, innerRadius) {
+        var rotation = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+
+        innerRadius = innerRadius || radius / 2;
+
+        var startAngle = -1 * Math.PI / 2 + rotation;
+        var len = points * 2;
+        var delta = _const.PI_2 / len;
+        var polygon = [];
+
+        for (var i = 0; i < len; i++) {
+            var r = i % 2 ? innerRadius : radius;
+            var angle = i * delta + startAngle;
+
+            polygon.push(x + r * Math.cos(angle), y + r * Math.sin(angle));
+        }
+
+        return this.drawPolygon(polygon);
+    };
+
+    /**
      * Clears the graphics that were drawn to this Graphics object, and resets fill and line style settings.
      *
      * @return {PIXI.Graphics} This Graphics object. Good for chaining method calls
@@ -34001,6 +36648,8 @@ var Graphics = function (_Container) {
     Graphics.prototype.clear = function clear() {
         if (this.lineWidth || this.filling || this.graphicsData.length > 0) {
             this.lineWidth = 0;
+            this.lineAlignment = 0.5;
+
             this.filling = false;
 
             this.boundsDirty = -1;
@@ -34308,7 +36957,7 @@ var Graphics = function (_Container) {
 
         this.currentPath = null;
 
-        var data = new _GraphicsData2.default(this.lineWidth, this.lineColor, this.lineAlpha, this.fillColor, this.fillAlpha, this.filling, this.nativeLines, shape);
+        var data = new _GraphicsData2.default(this.lineWidth, this.lineColor, this.lineAlpha, this.fillColor, this.fillAlpha, this.filling, this.nativeLines, shape, this.lineAlignment);
 
         this.graphicsData.push(data);
 
@@ -34420,9 +37069,9 @@ var Graphics = function (_Container) {
         }
 
         // for each webgl data entry, destroy the WebGLGraphicsData
-        for (var id in this._webgl) {
-            for (var j = 0; j < this._webgl[id].data.length; ++j) {
-                this._webgl[id].data[j].destroy();
+        for (var id in this._webGL) {
+            for (var j = 0; j < this._webGL[id].data.length; ++j) {
+                this._webGL[id].data[j].destroy();
             }
         }
 
@@ -34433,7 +37082,7 @@ var Graphics = function (_Container) {
         this.graphicsData = null;
 
         this.currentPath = null;
-        this._webgl = null;
+        this._webGL = null;
         this._localBounds = null;
     };
 
@@ -34444,10 +37093,32 @@ exports.default = Graphics;
 
 
 Graphics._SPRITE_TEXTURE = null;
+
+/**
+ * Graphics curves resolution settings. If `adaptive` flag is set to `true`,
+ * the resolution is calculated based on the curve's length to ensure better visual quality.
+ * Adaptive draw works with `bezierCurveTo` and `quadraticCurveTo`.
+ *
+ * @static
+ * @constant
+ * @memberof PIXI.Graphics
+ * @name CURVES
+ * @type {object}
+ * @property {boolean} adaptive=false - flag indicating if the resolution should be adaptive
+ * @property {number} maxLength=10 - maximal length of a single segment of the curve (if adaptive = false, ignored)
+ * @property {number} minSegments=8 - minimal number of segments in the curve (if adaptive = false, ignored)
+ * @property {number} maxSegments=2048 - maximal number of segments in the curve (if adaptive = false, ignored)
+ */
+Graphics.CURVES = {
+    adaptive: false,
+    maxLength: 10,
+    minSegments: 8,
+    maxSegments: 2048
+};
 //# sourceMappingURL=Graphics.js.map
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34455,7 +37126,7 @@ Graphics._SPRITE_TEXTURE = null;
 
 exports.__esModule = true;
 
-var _CanvasRenderer = __webpack_require__(20);
+var _CanvasRenderer = __webpack_require__(21);
 
 var _CanvasRenderer2 = _interopRequireDefault(_CanvasRenderer);
 
@@ -34469,7 +37140,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @author Mat Groves
  *
  * Big thanks to the very clever Matt DesLauriers <mattdesl> https://github.com/mattdesl/
- * for creating the original pixi version!
+ * for creating the original PixiJS version!
  * Also a thanks to https://github.com/bchevalier for tweaking the tint and alpha so that they
  * now share 4 bytes on the vertex buffer
  *
@@ -34673,7 +37344,7 @@ var CanvasGraphicsRenderer = function () {
             var fillColor = data.fillColor | 0;
             var lineColor = data.lineColor | 0;
 
-            // super inline cos im an optimization NAZI :)
+            // super inline, cos optimization :)
             data._fillTint = ((fillColor >> 16 & 0xFF) / 255 * tintR * 255 << 16) + ((fillColor >> 8 & 0xFF) / 255 * tintG * 255 << 8) + (fillColor & 0xFF) / 255 * tintB * 255;
 
             data._lineTint = ((lineColor >> 16 & 0xFF) / 255 * tintR * 255 << 16) + ((lineColor >> 8 & 0xFF) / 255 * tintG * 255 << 8) + (lineColor & 0xFF) / 255 * tintB * 255;
@@ -34721,7 +37392,7 @@ _CanvasRenderer2.default.registerPlugin('graphics', CanvasGraphicsRenderer);
 //# sourceMappingURL=CanvasGraphicsRenderer.js.map
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34743,13 +37414,13 @@ exports.default = bezierCurveTo;
  * @param {number} cpY2 - Second Control point y
  * @param {number} toX - Destination point x
  * @param {number} toY - Destination point y
+ * @param {number} n - Number of segments approximating the bezier curve
  * @param {number[]} [path=[]] - Path array to push points into
  * @return {number[]} Array of points of the curve
  */
-function bezierCurveTo(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY) {
-    var path = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : [];
+function bezierCurveTo(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY, n) {
+    var path = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : [];
 
-    var n = 20;
     var dt = 0;
     var dt2 = 0;
     var dt3 = 0;
@@ -34776,7 +37447,7 @@ function bezierCurveTo(fromX, fromY, cpX, cpY, cpX2, cpY2, toX, toY) {
 //# sourceMappingURL=bezierCurveTo.js.map
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34788,35 +37459,35 @@ var _utils = __webpack_require__(2);
 
 var _const = __webpack_require__(0);
 
-var _ObjectRenderer2 = __webpack_require__(28);
+var _ObjectRenderer2 = __webpack_require__(29);
 
 var _ObjectRenderer3 = _interopRequireDefault(_ObjectRenderer2);
 
-var _WebGLRenderer = __webpack_require__(27);
+var _WebGLRenderer = __webpack_require__(28);
 
 var _WebGLRenderer2 = _interopRequireDefault(_WebGLRenderer);
 
-var _WebGLGraphicsData = __webpack_require__(189);
+var _WebGLGraphicsData = __webpack_require__(190);
 
 var _WebGLGraphicsData2 = _interopRequireDefault(_WebGLGraphicsData);
 
-var _PrimitiveShader = __webpack_require__(190);
+var _PrimitiveShader = __webpack_require__(191);
 
 var _PrimitiveShader2 = _interopRequireDefault(_PrimitiveShader);
 
-var _buildPoly = __webpack_require__(192);
+var _buildPoly = __webpack_require__(193);
 
 var _buildPoly2 = _interopRequireDefault(_buildPoly);
 
-var _buildRectangle = __webpack_require__(193);
+var _buildRectangle = __webpack_require__(194);
 
 var _buildRectangle2 = _interopRequireDefault(_buildRectangle);
 
-var _buildRoundedRectangle = __webpack_require__(194);
+var _buildRoundedRectangle = __webpack_require__(195);
 
 var _buildRoundedRectangle2 = _interopRequireDefault(_buildRoundedRectangle);
 
-var _buildCircle = __webpack_require__(191);
+var _buildCircle = __webpack_require__(192);
 
 var _buildCircle2 = _interopRequireDefault(_buildCircle);
 
@@ -35046,7 +37717,7 @@ _WebGLRenderer2.default.registerPlugin('graphics', GraphicsRenderer);
 //# sourceMappingURL=GraphicsRenderer.js.map
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35194,7 +37865,7 @@ exports.default = WebGLGraphicsData;
 //# sourceMappingURL=WebGLGraphicsData.js.map
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35202,7 +37873,7 @@ exports.default = WebGLGraphicsData;
 
 exports.__esModule = true;
 
-var _Shader2 = __webpack_require__(18);
+var _Shader2 = __webpack_require__(19);
 
 var _Shader3 = _interopRequireDefault(_Shader2);
 
@@ -35244,7 +37915,7 @@ exports.default = PrimitiveShader;
 //# sourceMappingURL=PrimitiveShader.js.map
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35253,7 +37924,7 @@ exports.default = PrimitiveShader;
 exports.__esModule = true;
 exports.default = buildCircle;
 
-var _buildLine = __webpack_require__(26);
+var _buildLine = __webpack_require__(27);
 
 var _buildLine2 = _interopRequireDefault(_buildLine);
 
@@ -35331,7 +38002,7 @@ function buildCircle(graphicsData, webGLData, webGLDataNativeLines) {
         graphicsData.points = [];
 
         for (var _i = 0; _i < totalSegs + 1; _i++) {
-            graphicsData.points.push(x + Math.sin(seg * _i) * width, y + Math.cos(seg * _i) * height);
+            graphicsData.points.push(x + Math.sin(seg * -_i) * width, y + Math.cos(seg * -_i) * height);
         }
 
         (0, _buildLine2.default)(graphicsData, webGLData, webGLDataNativeLines);
@@ -35342,7 +38013,7 @@ function buildCircle(graphicsData, webGLData, webGLDataNativeLines) {
 //# sourceMappingURL=buildCircle.js.map
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35351,13 +38022,13 @@ function buildCircle(graphicsData, webGLData, webGLDataNativeLines) {
 exports.__esModule = true;
 exports.default = buildPoly;
 
-var _buildLine = __webpack_require__(26);
+var _buildLine = __webpack_require__(27);
 
 var _buildLine2 = _interopRequireDefault(_buildLine);
 
 var _utils = __webpack_require__(2);
 
-var _earcut = __webpack_require__(69);
+var _earcut = __webpack_require__(40);
 
 var _earcut2 = _interopRequireDefault(_earcut);
 
@@ -35433,7 +38104,7 @@ function buildPoly(graphicsData, webGLData, webGLDataNativeLines) {
 //# sourceMappingURL=buildPoly.js.map
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35442,7 +38113,7 @@ function buildPoly(graphicsData, webGLData, webGLDataNativeLines) {
 exports.__esModule = true;
 exports.default = buildRectangle;
 
-var _buildLine = __webpack_require__(26);
+var _buildLine = __webpack_require__(27);
 
 var _buildLine2 = _interopRequireDefault(_buildLine);
 
@@ -35514,7 +38185,7 @@ function buildRectangle(graphicsData, webGLData, webGLDataNativeLines) {
 //# sourceMappingURL=buildRectangle.js.map
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35523,11 +38194,11 @@ function buildRectangle(graphicsData, webGLData, webGLDataNativeLines) {
 exports.__esModule = true;
 exports.default = buildRoundedRectangle;
 
-var _earcut = __webpack_require__(69);
+var _earcut = __webpack_require__(40);
 
 var _earcut2 = _interopRequireDefault(_earcut);
 
-var _buildLine = __webpack_require__(26);
+var _buildLine = __webpack_require__(27);
 
 var _buildLine2 = _interopRequireDefault(_buildLine);
 
@@ -35675,7 +38346,7 @@ function quadraticBezierCurve(fromX, fromY, cpX, cpY, toX, toY) {
 //# sourceMappingURL=buildRoundedRectangle.js.map
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35683,7 +38354,7 @@ function quadraticBezierCurve(fromX, fromY, cpX, cpY, toX, toY) {
 
 exports.__esModule = true;
 
-var _Rectangle = __webpack_require__(46);
+var _Rectangle = __webpack_require__(47);
 
 var _Rectangle2 = _interopRequireDefault(_Rectangle);
 
@@ -35794,7 +38465,7 @@ exports.default = Circle;
 //# sourceMappingURL=Circle.js.map
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35802,7 +38473,7 @@ exports.default = Circle;
 
 exports.__esModule = true;
 
-var _Rectangle = __webpack_require__(46);
+var _Rectangle = __webpack_require__(47);
 
 var _Rectangle2 = _interopRequireDefault(_Rectangle);
 
@@ -35921,7 +38592,7 @@ exports.default = Ellipse;
 //# sourceMappingURL=Ellipse.js.map
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35929,7 +38600,7 @@ exports.default = Ellipse;
 
 exports.__esModule = true;
 
-var _Point = __webpack_require__(45);
+var _Point = __webpack_require__(46);
 
 var _Point2 = _interopRequireDefault(_Point);
 
@@ -36057,7 +38728,7 @@ exports.default = Polygon;
 //# sourceMappingURL=Polygon.js.map
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36195,7 +38866,7 @@ exports.default = RoundedRectangle;
 //# sourceMappingURL=RoundedRectangle.js.map
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36349,6 +39020,7 @@ var CanvasMaskManager = function () {
 
     CanvasMaskManager.prototype.popMask = function popMask(renderer) {
         renderer.context.restore();
+        renderer.invalidateBlendMode();
     };
 
     /**
@@ -36368,7 +39040,7 @@ exports.default = CanvasMaskManager;
 //# sourceMappingURL=CanvasMaskManager.js.map
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36445,7 +39117,7 @@ function mapCanvasBlendModesToPixi() {
 //# sourceMappingURL=mapCanvasBlendModesToPixi.js.map
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36570,7 +39242,7 @@ exports.default = TextureGarbageCollector;
 //# sourceMappingURL=TextureGarbageCollector.js.map
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36582,7 +39254,7 @@ var _pixiGlCore = __webpack_require__(5);
 
 var _const = __webpack_require__(0);
 
-var _RenderTarget = __webpack_require__(29);
+var _RenderTarget = __webpack_require__(30);
 
 var _RenderTarget2 = _interopRequireDefault(_RenderTarget);
 
@@ -36761,14 +39433,18 @@ var TextureManager = function () {
             return;
         }
 
-        if (texture._glTextures[this.renderer.CONTEXT_UID]) {
+        var uid = this.renderer.CONTEXT_UID;
+        var glTextures = texture._glTextures;
+        var glRenderTargets = texture._glRenderTargets;
+
+        if (glTextures[uid]) {
             this.renderer.unbindTexture(texture);
 
-            texture._glTextures[this.renderer.CONTEXT_UID].destroy();
+            glTextures[uid].destroy();
             texture.off('update', this.updateTexture, this);
             texture.off('dispose', this.destroyTexture, this);
 
-            delete texture._glTextures[this.renderer.CONTEXT_UID];
+            delete glTextures[uid];
 
             if (!skipRemove) {
                 var i = this._managedTextures.indexOf(texture);
@@ -36777,6 +39453,11 @@ var TextureManager = function () {
                     (0, _utils.removeItems)(this._managedTextures, i, 1);
                 }
             }
+        }
+
+        if (glRenderTargets && glRenderTargets[uid]) {
+            glRenderTargets[uid].destroy();
+            delete glRenderTargets[uid];
         }
     };
 
@@ -36822,7 +39503,7 @@ exports.default = TextureManager;
 //# sourceMappingURL=TextureManager.js.map
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36830,7 +39511,7 @@ exports.default = TextureManager;
 
 exports.__esModule = true;
 
-var _mapWebGLBlendModesToPixi = __webpack_require__(210);
+var _mapWebGLBlendModesToPixi = __webpack_require__(211);
 
 var _mapWebGLBlendModesToPixi2 = _interopRequireDefault(_mapWebGLBlendModesToPixi);
 
@@ -37107,7 +39788,7 @@ exports.default = WebGLState;
 //# sourceMappingURL=WebGLState.js.map
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37174,7 +39855,7 @@ function extractUniformsFromString(string) {
 //# sourceMappingURL=extractUniformsFromSrc.js.map
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37192,6 +39873,7 @@ var _math = __webpack_require__(4);
  * @param filterArea {Rectangle} The filter area
  * @param sprite {Sprite} the target sprite
  * @param outputMatrix {Matrix} @alvin
+ * @private
  */
 // TODO playing around here.. this is temporary - (will end up in the shader)
 // this returns a matrix that will normalise map filter cords in the filter to screen space
@@ -37224,36 +39906,13 @@ function calculateNormalizedScreenSpaceMatrix(outputMatrix, filterArea, textureS
 
 // this will map the filter coord so that a texture can be used based on the transform of a sprite
 function calculateSpriteMatrix(outputMatrix, filterArea, textureSize, sprite) {
+    var orig = sprite._texture.orig;
+    var mappedMatrix = outputMatrix.set(textureSize.width, 0, 0, textureSize.height, filterArea.x, filterArea.y);
     var worldTransform = sprite.worldTransform.copy(_math.Matrix.TEMP_MATRIX);
-    var texture = sprite._texture.baseTexture;
-
-    // TODO unwrap?
-    var mappedMatrix = outputMatrix.identity();
-
-    // scale..
-    var ratio = textureSize.height / textureSize.width;
-
-    mappedMatrix.translate(filterArea.x / textureSize.width, filterArea.y / textureSize.height);
-
-    mappedMatrix.scale(1, ratio);
-
-    var translateScaleX = textureSize.width / texture.width;
-    var translateScaleY = textureSize.height / texture.height;
-
-    worldTransform.tx /= texture.width * translateScaleX;
-
-    // this...?  free beer for anyone who can explain why this makes sense!
-    worldTransform.ty /= texture.width * translateScaleX;
-    // worldTransform.ty /= texture.height * translateScaleY;
 
     worldTransform.invert();
     mappedMatrix.prepend(worldTransform);
-
-    // apply inverse scale..
-    mappedMatrix.scale(1, 1 / ratio);
-
-    mappedMatrix.scale(translateScaleX, translateScaleY);
-
+    mappedMatrix.scale(1.0 / orig.width, 1.0 / orig.height);
     mappedMatrix.translate(sprite.anchor.x, sprite.anchor.y);
 
     return mappedMatrix;
@@ -37261,7 +39920,7 @@ function calculateSpriteMatrix(outputMatrix, filterArea, textureSize, sprite) {
 //# sourceMappingURL=filterTransforms.js.map
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37269,11 +39928,11 @@ function calculateSpriteMatrix(outputMatrix, filterArea, textureSize, sprite) {
 
 exports.__esModule = true;
 
-var _WebGLManager2 = __webpack_require__(21);
+var _WebGLManager2 = __webpack_require__(22);
 
 var _WebGLManager3 = _interopRequireDefault(_WebGLManager2);
 
-var _RenderTarget = __webpack_require__(29);
+var _RenderTarget = __webpack_require__(30);
 
 var _RenderTarget2 = _interopRequireDefault(_RenderTarget);
 
@@ -37283,11 +39942,11 @@ var _Quad2 = _interopRequireDefault(_Quad);
 
 var _math = __webpack_require__(4);
 
-var _Shader = __webpack_require__(18);
+var _Shader = __webpack_require__(19);
 
 var _Shader2 = _interopRequireDefault(_Shader);
 
-var _filterTransforms = __webpack_require__(205);
+var _filterTransforms = __webpack_require__(206);
 
 var filterTransforms = _interopRequireWildcard(_filterTransforms);
 
@@ -37309,27 +39968,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @ignore
  * @class
  */
-var FilterState =
-/**
- *
- */
-function FilterState() {
-    _classCallCheck(this, FilterState);
+var FilterState = function () {
+    /**
+     *
+     */
+    function FilterState() {
+        _classCallCheck(this, FilterState);
 
-    this.renderTarget = null;
-    this.sourceFrame = new _math.Rectangle();
-    this.destinationFrame = new _math.Rectangle();
-    this.filters = [];
-    this.target = null;
-    this.resolution = 1;
-};
+        this.renderTarget = null;
+        this.target = null;
+        this.resolution = 1;
+
+        // those three objects are used only for root
+        // re-assigned for everything else
+        this.sourceFrame = new _math.Rectangle();
+        this.destinationFrame = new _math.Rectangle();
+        this.filters = [];
+    }
+
+    /**
+     * clears the state
+     */
+
+
+    FilterState.prototype.clear = function clear() {
+        this.filters = null;
+        this.target = null;
+        this.renderTarget = null;
+    };
+
+    return FilterState;
+}();
+
+var screenKey = 'screen';
 
 /**
  * @class
  * @memberof PIXI
  * @extends PIXI.WebGLManager
  */
-
 
 var FilterManager = function (_WebGLManager) {
     _inherits(FilterManager, _WebGLManager);
@@ -37351,6 +40028,13 @@ var FilterManager = function (_WebGLManager) {
         _this.pool = {};
 
         _this.filterData = null;
+
+        _this.managedFilters = [];
+
+        _this.renderer.on('prerender', _this.onPrerender, _this);
+
+        _this._screenWidth = renderer.view.width;
+        _this._screenHeight = renderer.view.height;
         return _this;
     }
 
@@ -37386,15 +40070,18 @@ var FilterManager = function (_WebGLManager) {
 
         // get the current filter state..
         var currentState = filterData.stack[++filterData.index];
+        var renderTargetFrame = filterData.stack[0].destinationFrame;
 
         if (!currentState) {
             currentState = filterData.stack[filterData.index] = new FilterState();
         }
 
+        var fullScreen = target.filterArea && target.filterArea.x === 0 && target.filterArea.y === 0 && target.filterArea.width === renderer.screen.width && target.filterArea.height === renderer.screen.height;
+
         // for now we go off the filter of the first resolution..
         var resolution = filters[0].resolution;
         var padding = filters[0].padding | 0;
-        var targetBounds = target.filterArea || target.getBounds(true);
+        var targetBounds = fullScreen ? renderer.screen : target.filterArea || target.getBounds(true);
         var sourceFrame = currentState.sourceFrame;
         var destinationFrame = currentState.destinationFrame;
 
@@ -37403,16 +40090,18 @@ var FilterManager = function (_WebGLManager) {
         sourceFrame.width = (targetBounds.width * resolution | 0) / resolution;
         sourceFrame.height = (targetBounds.height * resolution | 0) / resolution;
 
-        if (filterData.stack[0].renderTarget.transform) {//
+        if (!fullScreen) {
+            if (filterData.stack[0].renderTarget.transform) {//
 
-            // TODO we should fit the rect around the transform..
-        } else if (filters[0].autoFit) {
-            sourceFrame.fit(filterData.stack[0].destinationFrame);
+                // TODO we should fit the rect around the transform..
+            } else if (filters[0].autoFit) {
+                sourceFrame.fit(renderTargetFrame);
+            }
+
+            // lets apply the padding After we fit the element to the screen.
+            // this should stop the strange side effects that can occur when cropping to the edges
+            sourceFrame.pad(padding);
         }
-
-        // lets apply the padding After we fit the element to the screen.
-        // this should stop the strange side effects that can occur when cropping to the edges
-        sourceFrame.pad(padding);
 
         destinationFrame.width = sourceFrame.width;
         destinationFrame.height = sourceFrame.height;
@@ -37481,6 +40170,7 @@ var FilterManager = function (_WebGLManager) {
             this.freePotRenderTarget(flop);
         }
 
+        currentState.clear();
         filterData.index--;
 
         if (filterData.index === 0) {
@@ -37513,9 +40203,11 @@ var FilterManager = function (_WebGLManager) {
                     shader = new _Shader2.default(this.gl, filter.vertexSrc, filter.fragmentSrc);
 
                     filter.glShaders[renderer.CONTEXT_UID] = this.shaderCache[filter.glShaderKey] = shader;
+                    this.managedFilters.push(filter);
                 }
             } else {
                 shader = filter.glShaders[renderer.CONTEXT_UID] = new _Shader2.default(this.gl, filter.vertexSrc, filter.fragmentSrc);
+                this.managedFilters.push(filter);
             }
 
             // TODO - this only needs to be done once?
@@ -37547,7 +40239,7 @@ var FilterManager = function (_WebGLManager) {
         var tex = this.renderer.emptyTextures[0];
 
         this.renderer.boundTextures[0] = tex;
-        // this syncs the pixi filters  uniforms with glsl uniforms
+        // this syncs the PixiJS filters  uniforms with glsl uniforms
         this.syncUniforms(shader, filter);
 
         renderer.state.setBlendMode(filter.blendMode);
@@ -37572,7 +40264,7 @@ var FilterManager = function (_WebGLManager) {
         var uniformData = filter.uniformData;
         var uniforms = filter.uniforms;
 
-        // 0 is reserved for the pixi texture so we start at 1!
+        // 0 is reserved for the PixiJS texture so we start at 1!
         var textureCount = 1;
         var currentState = void 0;
 
@@ -37609,7 +40301,9 @@ var FilterManager = function (_WebGLManager) {
 
         // TODO Cacheing layer..
         for (var i in uniformData) {
-            if (uniformData[i].type === 'sampler2D' && uniforms[i] !== 0) {
+            var type = uniformData[i].type;
+
+            if (type === 'sampler2d' && uniforms[i] !== 0) {
                 if (uniforms[i].baseTexture) {
                     shader.uniforms[i] = this.renderer.bindTexture(uniforms[i].baseTexture, textureCount);
                 } else {
@@ -37629,14 +40323,14 @@ var FilterManager = function (_WebGLManager) {
                 }
 
                 textureCount++;
-            } else if (uniformData[i].type === 'mat3') {
-                // check if its pixi matrix..
+            } else if (type === 'mat3') {
+                // check if its PixiJS matrix..
                 if (uniforms[i].a !== undefined) {
                     shader.uniforms[i] = uniforms[i].toArray(true);
                 } else {
                     shader.uniforms[i] = uniforms[i];
                 }
-            } else if (uniformData[i].type === 'vec2') {
+            } else if (type === 'vec2') {
                 // check if its a point..
                 if (uniforms[i].x !== undefined) {
                     var val = shader.uniforms[i] || new Float32Array(2);
@@ -37647,7 +40341,7 @@ var FilterManager = function (_WebGLManager) {
                 } else {
                     shader.uniforms[i] = uniforms[i];
                 }
-            } else if (uniformData[i].type === 'float') {
+            } else if (type === 'float') {
                 if (shader.uniforms.data[i].value !== uniformData[i]) {
                     shader.uniforms[i] = uniforms[i];
                 }
@@ -37735,12 +40429,32 @@ var FilterManager = function (_WebGLManager) {
     /**
      * Destroys this Filter Manager.
      *
+     * @param {boolean} [contextLost=false] context was lost, do not free shaders
+     *
      */
 
 
     FilterManager.prototype.destroy = function destroy() {
+        var contextLost = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+        var renderer = this.renderer;
+        var filters = this.managedFilters;
+
+        renderer.off('prerender', this.onPrerender, this);
+
+        for (var i = 0; i < filters.length; i++) {
+            if (!contextLost) {
+                filters[i].glShaders[renderer.CONTEXT_UID].destroy();
+            }
+            delete filters[i].glShaders[renderer.CONTEXT_UID];
+        }
+
         this.shaderCache = {};
-        this.emptyPool();
+        if (!contextLost) {
+            this.emptyPool();
+        } else {
+            this.pool = {};
+        }
     };
 
     /**
@@ -37759,11 +40473,17 @@ var FilterManager = function (_WebGLManager) {
 
 
     FilterManager.prototype.getPotRenderTarget = function getPotRenderTarget(gl, minWidth, minHeight, resolution) {
-        // TODO you could return a bigger texture if there is not one in the pool?
-        minWidth = _bitTwiddle2.default.nextPow2(minWidth * resolution);
-        minHeight = _bitTwiddle2.default.nextPow2(minHeight * resolution);
+        var key = screenKey;
 
-        var key = (minWidth & 0xFFFF) << 16 | minHeight & 0xFFFF;
+        minWidth *= resolution;
+        minHeight *= resolution;
+
+        if (minWidth !== this._screenWidth || minHeight !== this._screenHeight) {
+            // TODO you could return a bigger texture if there is not one in the pool?
+            minWidth = _bitTwiddle2.default.nextPow2(minWidth);
+            minHeight = _bitTwiddle2.default.nextPow2(minHeight);
+            key = (minWidth & 0xFFFF) << 16 | minHeight & 0xFFFF;
+        }
 
         if (!this.pool[key]) {
             this.pool[key] = [];
@@ -37790,6 +40510,7 @@ var FilterManager = function (_WebGLManager) {
         renderTarget.resolution = resolution;
         renderTarget.defaultFrame.width = renderTarget.size.width = minWidth / resolution;
         renderTarget.defaultFrame.height = renderTarget.size.height = minHeight / resolution;
+        renderTarget.filterPoolKey = key;
 
         return renderTarget;
     };
@@ -37822,11 +40543,29 @@ var FilterManager = function (_WebGLManager) {
 
 
     FilterManager.prototype.freePotRenderTarget = function freePotRenderTarget(renderTarget) {
-        var minWidth = renderTarget.size.width * renderTarget.resolution;
-        var minHeight = renderTarget.size.height * renderTarget.resolution;
-        var key = (minWidth & 0xFFFF) << 16 | minHeight & 0xFFFF;
+        this.pool[renderTarget.filterPoolKey].push(renderTarget);
+    };
 
-        this.pool[key].push(renderTarget);
+    /**
+     * Called before the renderer starts rendering.
+     *
+     */
+
+
+    FilterManager.prototype.onPrerender = function onPrerender() {
+        if (this._screenWidth !== this.renderer.view.width || this._screenHeight !== this.renderer.view.height) {
+            this._screenWidth = this.renderer.view.width;
+            this._screenHeight = this.renderer.view.height;
+
+            var textures = this.pool[screenKey];
+
+            if (textures) {
+                for (var j = 0; j < textures.length; j++) {
+                    textures[j].destroy(true);
+                }
+            }
+            this.pool[screenKey] = [];
+        }
     };
 
     return FilterManager;
@@ -37836,7 +40575,7 @@ exports.default = FilterManager;
 //# sourceMappingURL=FilterManager.js.map
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37844,7 +40583,7 @@ exports.default = FilterManager;
 
 exports.__esModule = true;
 
-var _WebGLManager2 = __webpack_require__(21);
+var _WebGLManager2 = __webpack_require__(22);
 
 var _WebGLManager3 = _interopRequireDefault(_WebGLManager2);
 
@@ -38051,7 +40790,7 @@ exports.default = MaskManager;
 //# sourceMappingURL=MaskManager.js.map
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38059,7 +40798,7 @@ exports.default = MaskManager;
 
 exports.__esModule = true;
 
-var _WebGLManager2 = __webpack_require__(21);
+var _WebGLManager2 = __webpack_require__(22);
 
 var _WebGLManager3 = _interopRequireDefault(_WebGLManager2);
 
@@ -38111,7 +40850,7 @@ var StencilManager = function (_WebGLManager) {
     };
 
     /**
-     * Applies the Mask and adds it to the current filter stack. @alvin
+     * Applies the Mask and adds it to the current stencil stack. @alvin
      *
      * @param {PIXI.Graphics} graphics - The mask
      */
@@ -38123,28 +40862,25 @@ var StencilManager = function (_WebGLManager) {
         this.renderer._activeRenderTarget.attachStencilBuffer();
 
         var gl = this.renderer.gl;
-        var sms = this.stencilMaskStack;
+        var prevMaskCount = this.stencilMaskStack.length;
 
-        if (sms.length === 0) {
+        if (prevMaskCount === 0) {
             gl.enable(gl.STENCIL_TEST);
-            gl.clear(gl.STENCIL_BUFFER_BIT);
-            gl.stencilFunc(gl.ALWAYS, 1, 1);
         }
 
-        sms.push(graphics);
+        this.stencilMaskStack.push(graphics);
 
+        // Increment the refference stencil value where the new mask overlaps with the old ones.
         gl.colorMask(false, false, false, false);
+        gl.stencilFunc(gl.EQUAL, prevMaskCount, this._getBitwiseMask());
         gl.stencilOp(gl.KEEP, gl.KEEP, gl.INCR);
-
         this.renderer.plugins.graphics.render(graphics);
 
-        gl.colorMask(true, true, true, true);
-        gl.stencilFunc(gl.NOTEQUAL, 0, sms.length);
-        gl.stencilOp(gl.KEEP, gl.KEEP, gl.KEEP);
+        this._useCurrent();
     };
 
     /**
-     * TODO @alvin
+     * Removes the last mask from the stencil stack. @alvin
      */
 
 
@@ -38152,23 +40888,45 @@ var StencilManager = function (_WebGLManager) {
         this.renderer.setObjectRenderer(this.renderer.plugins.graphics);
 
         var gl = this.renderer.gl;
-        var sms = this.stencilMaskStack;
+        var graphics = this.stencilMaskStack.pop();
 
-        var graphics = sms.pop();
-
-        if (sms.length === 0) {
+        if (this.stencilMaskStack.length === 0) {
             // the stack is empty!
             gl.disable(gl.STENCIL_TEST);
+            gl.clear(gl.STENCIL_BUFFER_BIT);
+            gl.clearStencil(0);
         } else {
+            // Decrement the refference stencil value where the popped mask overlaps with the other ones
             gl.colorMask(false, false, false, false);
             gl.stencilOp(gl.KEEP, gl.KEEP, gl.DECR);
-
             this.renderer.plugins.graphics.render(graphics);
 
-            gl.colorMask(true, true, true, true);
-            gl.stencilFunc(gl.NOTEQUAL, 0, sms.length);
-            gl.stencilOp(gl.KEEP, gl.KEEP, gl.KEEP);
+            this._useCurrent();
         }
+    };
+
+    /**
+     * Setup renderer to use the current stencil data.
+     */
+
+
+    StencilManager.prototype._useCurrent = function _useCurrent() {
+        var gl = this.renderer.gl;
+
+        gl.colorMask(true, true, true, true);
+        gl.stencilFunc(gl.EQUAL, this.stencilMaskStack.length, this._getBitwiseMask());
+        gl.stencilOp(gl.KEEP, gl.KEEP, gl.KEEP);
+    };
+
+    /**
+     * Fill 1s equal to the number of acitve stencil masks.
+     *
+     * @return {number} The bitwise mask.
+     */
+
+
+    StencilManager.prototype._getBitwiseMask = function _getBitwiseMask() {
+        return (1 << this.stencilMaskStack.length) - 1;
     };
 
     /**
@@ -38190,7 +40948,7 @@ exports.default = StencilManager;
 //# sourceMappingURL=StencilManager.js.map
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38270,7 +41028,7 @@ function generateIfTestSrc(maxIfs) {
 //# sourceMappingURL=checkMaxIfStatmentsInShader.js.map
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38324,7 +41082,7 @@ function mapWebGLBlendModesToPixi(gl) {
 //# sourceMappingURL=mapWebGLBlendModesToPixi.js.map
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38361,7 +41119,7 @@ function mapWebGLDrawModesToPixi(gl) {
 //# sourceMappingURL=mapWebGLDrawModesToPixi.js.map
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38382,7 +41140,7 @@ function validateContext(gl) {
 //# sourceMappingURL=validateContext.js.map
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38390,7 +41148,7 @@ function validateContext(gl) {
 
 exports.__esModule = true;
 
-var _CanvasRenderer = __webpack_require__(20);
+var _CanvasRenderer = __webpack_require__(21);
 
 var _CanvasRenderer2 = _interopRequireDefault(_CanvasRenderer);
 
@@ -38398,7 +41156,7 @@ var _const = __webpack_require__(0);
 
 var _math = __webpack_require__(4);
 
-var _CanvasTinter = __webpack_require__(48);
+var _CanvasTinter = __webpack_require__(49);
 
 var _CanvasTinter2 = _interopRequireDefault(_CanvasTinter);
 
@@ -38412,7 +41170,7 @@ var canvasRenderWorldTransform = new _math.Matrix();
  * @author Mat Groves
  *
  * Big thanks to the very clever Matt DesLauriers <mattdesl> https://github.com/mattdesl/
- * for creating the original pixi version!
+ * for creating the original PixiJS version!
  * Also a thanks to https://github.com/bchevalier for tweaking the tint and alpha so that they now
  * share 4 bytes on the vertex buffer
  *
@@ -38540,7 +41298,7 @@ _CanvasRenderer2.default.registerPlugin('sprite', CanvasSpriteRenderer);
 //# sourceMappingURL=CanvasSpriteRenderer.js.map
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38598,7 +41356,7 @@ exports.default = Buffer;
 //# sourceMappingURL=BatchBuffer.js.map
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38606,27 +41364,27 @@ exports.default = Buffer;
 
 exports.__esModule = true;
 
-var _ObjectRenderer2 = __webpack_require__(28);
+var _ObjectRenderer2 = __webpack_require__(29);
 
 var _ObjectRenderer3 = _interopRequireDefault(_ObjectRenderer2);
 
-var _WebGLRenderer = __webpack_require__(27);
+var _WebGLRenderer = __webpack_require__(28);
 
 var _WebGLRenderer2 = _interopRequireDefault(_WebGLRenderer);
 
-var _createIndicesForQuads = __webpack_require__(51);
+var _createIndicesForQuads = __webpack_require__(52);
 
 var _createIndicesForQuads2 = _interopRequireDefault(_createIndicesForQuads);
 
-var _generateMultiTextureShader = __webpack_require__(216);
+var _generateMultiTextureShader = __webpack_require__(217);
 
 var _generateMultiTextureShader2 = _interopRequireDefault(_generateMultiTextureShader);
 
-var _checkMaxIfStatmentsInShader = __webpack_require__(209);
+var _checkMaxIfStatmentsInShader = __webpack_require__(210);
 
 var _checkMaxIfStatmentsInShader2 = _interopRequireDefault(_checkMaxIfStatmentsInShader);
 
-var _BatchBuffer = __webpack_require__(214);
+var _BatchBuffer = __webpack_require__(215);
 
 var _BatchBuffer2 = _interopRequireDefault(_BatchBuffer);
 
@@ -38876,14 +41634,25 @@ var SpriteRenderer = function (_ObjectRenderer) {
 
         // copy textures..
         for (i = 0; i < MAX_TEXTURES; ++i) {
-            boundTextures[i] = rendererBoundTextures[i];
-            boundTextures[i]._virtalBoundId = i;
+            var bt = rendererBoundTextures[i];
+
+            if (bt._enabled === TICK) {
+                boundTextures[i] = this.renderer.emptyTextures[i];
+                continue;
+            }
+
+            boundTextures[i] = bt;
+            bt._virtalBoundId = i;
+            bt._enabled = TICK;
         }
+        TICK++;
 
         for (i = 0; i < this.currentIndex; ++i) {
             // upload the sprite elemetns...
             // they have all ready been calculated so we just need to push them into the buffer.
             var sprite = sprites[i];
+
+            sprites[i] = null;
 
             nextTexture = sprite._texture.baseTexture;
 
@@ -39145,7 +41914,7 @@ _WebGLRenderer2.default.registerPlugin('sprite', SpriteRenderer);
 //# sourceMappingURL=SpriteRenderer.js.map
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39154,7 +41923,7 @@ _WebGLRenderer2.default.registerPlugin('sprite', SpriteRenderer);
 exports.__esModule = true;
 exports.default = generateMultiTextureShader;
 
-var _Shader = __webpack_require__(18);
+var _Shader = __webpack_require__(19);
 
 var _Shader2 = _interopRequireDefault(_Shader);
 
@@ -39213,7 +41982,7 @@ function generateSampleSrc(maxTextures) {
 //# sourceMappingURL=generateMultiTextureShader.js.map
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39223,7 +41992,7 @@ exports.__esModule = true;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Sprite2 = __webpack_require__(47);
+var _Sprite2 = __webpack_require__(48);
 
 var _Sprite3 = _interopRequireDefault(_Sprite2);
 
@@ -39275,7 +42044,7 @@ var defaultDestroyOptions = {
  * A Text can be created directly from a string and a style object
  *
  * ```js
- * let text = new PIXI.Text('This is a pixi text',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+ * let text = new PIXI.Text('This is a PixiJS text',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
  * ```
  *
  * @class
@@ -39400,8 +42169,8 @@ var Text = function (_Sprite) {
         var maxLineWidth = measured.maxLineWidth;
         var fontProperties = measured.fontProperties;
 
-        this.canvas.width = Math.ceil((width + style.padding * 2) * this.resolution);
-        this.canvas.height = Math.ceil((height + style.padding * 2) * this.resolution);
+        this.canvas.width = Math.ceil((Math.max(1, width) + style.padding * 2) * this.resolution);
+        this.canvas.height = Math.ceil((Math.max(1, height) + style.padding * 2) * this.resolution);
 
         context.scale(this.resolution, this.resolution);
 
@@ -39873,7 +42642,7 @@ exports.default = Text;
 //# sourceMappingURL=Text.js.map
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40042,28 +42811,32 @@ var Spritesheet = function () {
     Spritesheet.prototype._processFrames = function _processFrames(initialFrameIndex) {
         var frameIndex = initialFrameIndex;
         var maxFrames = Spritesheet.BATCH_SIZE;
+        var sourceScale = this.baseTexture.sourceScale;
 
         while (frameIndex - initialFrameIndex < maxFrames && frameIndex < this._frameKeys.length) {
             var i = this._frameKeys[frameIndex];
-            var rect = this._frames[i].frame;
+            var data = this._frames[i];
+            var rect = data.frame;
 
             if (rect) {
                 var frame = null;
                 var trim = null;
-                var orig = new _.Rectangle(0, 0, this._frames[i].sourceSize.w / this.resolution, this._frames[i].sourceSize.h / this.resolution);
+                var sourceSize = data.trimmed !== false && data.sourceSize ? data.sourceSize : data.frame;
 
-                if (this._frames[i].rotated) {
-                    frame = new _.Rectangle(rect.x / this.resolution, rect.y / this.resolution, rect.h / this.resolution, rect.w / this.resolution);
+                var orig = new _.Rectangle(0, 0, Math.floor(sourceSize.w * sourceScale) / this.resolution, Math.floor(sourceSize.h * sourceScale) / this.resolution);
+
+                if (data.rotated) {
+                    frame = new _.Rectangle(Math.floor(rect.x * sourceScale) / this.resolution, Math.floor(rect.y * sourceScale) / this.resolution, Math.floor(rect.h * sourceScale) / this.resolution, Math.floor(rect.w * sourceScale) / this.resolution);
                 } else {
-                    frame = new _.Rectangle(rect.x / this.resolution, rect.y / this.resolution, rect.w / this.resolution, rect.h / this.resolution);
+                    frame = new _.Rectangle(Math.floor(rect.x * sourceScale) / this.resolution, Math.floor(rect.y * sourceScale) / this.resolution, Math.floor(rect.w * sourceScale) / this.resolution, Math.floor(rect.h * sourceScale) / this.resolution);
                 }
 
                 //  Check to see if the sprite is trimmed
-                if (this._frames[i].trimmed) {
-                    trim = new _.Rectangle(this._frames[i].spriteSourceSize.x / this.resolution, this._frames[i].spriteSourceSize.y / this.resolution, rect.w / this.resolution, rect.h / this.resolution);
+                if (data.trimmed !== false && data.spriteSourceSize) {
+                    trim = new _.Rectangle(Math.floor(data.spriteSourceSize.x * sourceScale) / this.resolution, Math.floor(data.spriteSourceSize.y * sourceScale) / this.resolution, Math.floor(rect.w * sourceScale) / this.resolution, Math.floor(rect.h * sourceScale) / this.resolution);
                 }
 
-                this.textures[i] = new _.Texture(this.baseTexture, frame, orig, trim, this._frames[i].rotated ? 2 : 0);
+                this.textures[i] = new _.Texture(this.baseTexture, frame, orig, trim, data.rotated ? 2 : 0);
 
                 // lets also add the frame to pixi's global cache for fromFrame and fromImage functions
                 _.Texture.addToCache(this.textures[i], i);
@@ -40139,7 +42912,7 @@ exports.default = Spritesheet;
 //# sourceMappingURL=Spritesheet.js.map
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40155,7 +42928,7 @@ var _settings2 = _interopRequireDefault(_settings);
 
 var _const = __webpack_require__(0);
 
-var _TickerListener = __webpack_require__(220);
+var _TickerListener = __webpack_require__(221);
 
 var _TickerListener2 = _interopRequireDefault(_TickerListener);
 
@@ -40244,9 +43017,9 @@ var Ticker = function () {
          * this value will have a precision of 1 µs.
          *
          * @member {number}
-         * @default 0
+         * @default -1
          */
-        this.lastTime = 0;
+        this.lastTime = -1;
 
         /**
          * Factor of current {@link PIXI.ticker.Ticker#deltaTime}.
@@ -40617,7 +43390,7 @@ exports.default = Ticker;
 //# sourceMappingURL=Ticker.js.map
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40780,7 +43553,7 @@ var TickerListener = function () {
         }
 
         // Redirect to the next item
-        var redirect = this.previous;
+        var redirect = this.next;
 
         // Remove references
         this.next = hard ? null : redirect;
@@ -40796,7 +43569,7 @@ exports.default = TickerListener;
 //# sourceMappingURL=TickerListener.js.map
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40815,67 +43588,6 @@ function canUploadSameBuffer() {
 //# sourceMappingURL=canUploadSameBuffer.js.map
 
 /***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.default = determineCrossOrigin;
-
-var _url2 = __webpack_require__(117);
-
-var _url3 = _interopRequireDefault(_url2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var tempAnchor = void 0;
-
-/**
- * Sets the `crossOrigin` property for this resource based on if the url
- * for this resource is cross-origin. If crossOrigin was manually set, this
- * function does nothing.
- * Nipped from the resource loader!
- *
- * @ignore
- * @param {string} url - The url to test.
- * @param {object} [loc=window.location] - The location object to test against.
- * @return {string} The crossOrigin value to use (or empty string for none).
- */
-function determineCrossOrigin(url) {
-    var loc = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : window.location;
-
-    // data: and javascript: urls are considered same-origin
-    if (url.indexOf('data:') === 0) {
-        return '';
-    }
-
-    // default is window.location
-    loc = loc || window.location;
-
-    if (!tempAnchor) {
-        tempAnchor = document.createElement('a');
-    }
-
-    // let the browser determine the full href for the url of this resource and then
-    // parse with the node url lib, we can't use the properties of the anchor element
-    // because they don't work in IE9 :(
-    tempAnchor.href = url;
-    url = _url3.default.parse(tempAnchor.href);
-
-    var samePort = !url.port && loc.port === '' || url.port === loc.port;
-
-    // if cross origin
-    if (url.hostname !== loc.hostname || !samePort || url.protocol !== loc.protocol) {
-        return 'anonymous';
-    }
-
-    return '';
-}
-//# sourceMappingURL=determineCrossOrigin.js.map
-
-/***/ }),
 /* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40888,7 +43600,7 @@ exports.default = mapPremultipliedBlendModes;
 var _const = __webpack_require__(0);
 
 /**
- * Corrects pixi blend, takes premultiplied alpha into account
+ * Corrects PixiJS blend, takes premultiplied alpha into account
  *
  * @memberof PIXI
  * @function mapPremultipliedBlendModes
@@ -40933,7 +43645,7 @@ function mapPremultipliedBlendModes() {
 exports.__esModule = true;
 exports.default = maxRecommendedTextures;
 
-var _ismobilejs = __webpack_require__(40);
+var _ismobilejs = __webpack_require__(41);
 
 var _ismobilejs2 = _interopRequireDefault(_ismobilejs);
 
@@ -41181,8 +43893,19 @@ exports.default = deprecation;
 // provide method to give a stack track for warnings
 // useful for tracking-down where deprecated methods/properties/classes
 // are being used within the code
+
+// A map of warning messages already fired
+var warnings = {};
+
+// provide method to give a stack track for warnings
+// useful for tracking-down where deprecated methods/properties/classes
+// are being used within the code
 function warn(msg) {
-    // @if DEBUG
+    // Ignore duplicat
+    if (warnings[msg]) {
+        return;
+    }
+
     /* eslint-disable no-console */
     var stack = new Error().stack;
 
@@ -41203,7 +43926,8 @@ function warn(msg) {
         }
     }
     /* eslint-enable no-console */
-    // @endif
+
+    warnings[msg] = true;
 }
 
 function deprecation(core) {
@@ -41239,13 +43963,13 @@ function deprecation(core) {
          * @name AssetLoader
          * @memberof PIXI
          * @see PIXI.loaders.Loader
-         * @throws {ReferenceError} The loader system was overhauled in pixi v3,
+         * @throws {ReferenceError} The loader system was overhauled in PixiJS v3,
          * please see the new PIXI.loaders.Loader class.
          * @deprecated since version 3.0.0
          */
         AssetLoader: {
             get: function get() {
-                throw new ReferenceError('The loader system was overhauled in pixi v3, ' + 'please see the new PIXI.loaders.Loader class.');
+                throw new ReferenceError('The loader system was overhauled in PixiJS v3, ' + 'please see the new PIXI.loaders.Loader class.');
             }
         },
 
@@ -41710,6 +44434,25 @@ function deprecation(core) {
         });
     }
 
+    if (extras) {
+        Object.defineProperties(extras, {
+            /**
+             * @class
+             * @name TextureTransform
+             * @memberof PIXI.extras
+             * @see PIXI.TextureMatrix
+             * @deprecated since version 4.6.0
+             */
+            TextureTransform: {
+                get: function get() {
+                    warn('The TextureTransform class has been renamed to TextureMatrix, ' + 'please use PIXI.TextureMatrix from now on.');
+
+                    return core.TextureMatrix;
+                }
+            }
+        });
+    }
+
     core.DisplayObject.prototype.generateTexture = function generateTexture(renderer, scaleMode, resolution) {
         warn('generateTexture has moved to the renderer, please use renderer.generateTexture(displayObject)');
 
@@ -41720,6 +44463,20 @@ function deprecation(core) {
         warn('graphics generate texture has moved to the renderer. ' + 'Or to render a graphics to a texture using canvas please use generateCanvasTexture');
 
         return this.generateCanvasTexture(scaleMode, resolution);
+    };
+
+    /**
+     * @method
+     * @name PIXI.GroupD8.isSwapWidthHeight
+     * @see PIXI.GroupD8.isVertical
+     * @param {number} rotation - The number to check.
+     * @returns {boolean} Whether or not the direction is vertical
+     * @deprecated since version 4.6.0
+     */
+    core.GroupD8.isSwapWidthHeight = function isSwapWidthHeight(rotation) {
+        warn('GroupD8.isSwapWidthHeight was renamed to GroupD8.isVertical');
+
+        return core.GroupD8.isVertical(rotation);
     };
 
     core.RenderTexture.prototype.render = function render(displayObject, matrix, clear, updateTransform) {
@@ -42021,6 +44778,21 @@ function deprecation(core) {
                 warn('filters.SpriteMaskFilter is an undocumented alias, please use SpriteMaskFilter from now on.');
 
                 return core.SpriteMaskFilter;
+            }
+        },
+
+        /**
+         * @class
+         * @private
+         * @name PIXI.filters.VoidFilter
+         * @see PIXI.filters.AlphaFilter
+         * @deprecated since version 4.5.7
+         */
+        VoidFilter: {
+            get: function get() {
+                warn('VoidFilter has been renamed to AlphaFilter, please use PIXI.filters.AlphaFilter');
+
+                return filters.AlphaFilter;
             }
         }
     });
@@ -42579,12 +45351,14 @@ var WebGLExtract = function () {
         var frame = void 0;
         var flipY = false;
         var renderTexture = void 0;
+        var generated = false;
 
         if (target) {
             if (target instanceof core.RenderTexture) {
                 renderTexture = target;
             } else {
                 renderTexture = this.renderer.generateTexture(target);
+                generated = true;
             }
         }
 
@@ -42634,7 +45408,11 @@ var WebGLExtract = function () {
             }
         }
 
+        if (generated) {
+            renderTexture.destroy(true);
+        }
         // send the canvas back..
+
         return canvasBuffer.canvas;
     };
 
@@ -42654,12 +45432,14 @@ var WebGLExtract = function () {
         var resolution = void 0;
         var frame = void 0;
         var renderTexture = void 0;
+        var generated = false;
 
         if (target) {
             if (target instanceof core.RenderTexture) {
                 renderTexture = target;
             } else {
                 renderTexture = this.renderer.generateTexture(target);
+                generated = true;
             }
         }
 
@@ -42688,6 +45468,10 @@ var WebGLExtract = function () {
             var gl = renderer.gl;
 
             gl.readPixels(frame.x * resolution, frame.y * resolution, width, height, gl.RGBA, gl.UNSIGNED_BYTE, webglPixels);
+        }
+
+        if (generated) {
+            renderTexture.destroy(true);
         }
 
         return webglPixels;
@@ -42737,7 +45521,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
- * @typedef FrameObject
+ * @typedef PIXI.extras.AnimatedSprite~FrameObject
  * @type {object}
  * @property {PIXI.Texture} texture - The {@link PIXI.Texture} of the frame
  * @property {number} time - the duration of the frame in ms
@@ -42767,9 +45551,9 @@ var AnimatedSprite = function (_core$Sprite) {
     _inherits(AnimatedSprite, _core$Sprite);
 
     /**
-     * @param {PIXI.Texture[]|FrameObject[]} textures - an array of {@link PIXI.Texture} or frame
+     * @param {PIXI.Texture[]|PIXI.extras.AnimatedSprite~FrameObject[]} textures - an array of {@link PIXI.Texture} or frame
      *  objects that make up the animation
-     * @param {boolean} [autoUpdate=true] - Whether use PIXI.ticker.shared to auto update animation time.
+     * @param {boolean} [autoUpdate=true] - Whether to use PIXI.ticker.shared to auto update animation time.
      */
     function AnimatedSprite(textures, autoUpdate) {
         _classCallCheck(this, AnimatedSprite);
@@ -42994,6 +45778,7 @@ var AnimatedSprite = function (_core$Sprite) {
     AnimatedSprite.prototype.updateTexture = function updateTexture() {
         this._texture = this._textures[this.currentFrame];
         this._textureID = -1;
+        this.cachedTint = 0xFFFFFF;
 
         if (this.onFrameChange) {
             this.onFrameChange(this.currentFrame);
@@ -43145,6 +45930,8 @@ var _ObservablePoint = __webpack_require__(90);
 
 var _ObservablePoint2 = _interopRequireDefault(_ObservablePoint);
 
+var _utils = __webpack_require__(2);
+
 var _settings = __webpack_require__(3);
 
 var _settings2 = _interopRequireDefault(_settings);
@@ -43271,6 +46058,13 @@ var BitmapText = function (_core$Container) {
         _this._maxLineHeight = 0;
 
         /**
+         * Letter spacing. This is useful for setting the space between characters.
+         * @member {number}
+         * @private
+         */
+        _this._letterSpacing = 0;
+
+        /**
          * Text anchor. read-only
          *
          * @member {PIXI.ObservablePoint}
@@ -43304,44 +46098,33 @@ var BitmapText = function (_core$Container) {
         var pos = new core.Point();
         var chars = [];
         var lineWidths = [];
+        var text = this.text.replace(/(?:\r\n|\r)/g, '\n');
+        var textLength = text.length;
+        var maxWidth = this._maxWidth * data.size / this._font.size;
 
         var prevCharCode = null;
         var lastLineWidth = 0;
         var maxLineWidth = 0;
         var line = 0;
-        var lastSpace = -1;
-        var lastSpaceWidth = 0;
+        var lastBreakPos = -1;
+        var lastBreakWidth = 0;
         var spacesRemoved = 0;
         var maxLineHeight = 0;
 
-        for (var i = 0; i < this.text.length; i++) {
-            var charCode = this.text.charCodeAt(i);
+        for (var i = 0; i < textLength; i++) {
+            var charCode = text.charCodeAt(i);
+            var char = text.charAt(i);
 
-            if (/(\s)/.test(this.text.charAt(i))) {
-                lastSpace = i;
-                lastSpaceWidth = lastLineWidth;
+            if (/(?:\s)/.test(char)) {
+                lastBreakPos = i;
+                lastBreakWidth = lastLineWidth;
             }
 
-            if (/(?:\r\n|\r|\n)/.test(this.text.charAt(i))) {
+            if (char === '\r' || char === '\n') {
                 lineWidths.push(lastLineWidth);
                 maxLineWidth = Math.max(maxLineWidth, lastLineWidth);
-                line++;
-
-                pos.x = 0;
-                pos.y += data.lineHeight;
-                prevCharCode = null;
-                continue;
-            }
-
-            if (lastSpace !== -1 && this._maxWidth > 0 && pos.x * scale > this._maxWidth) {
-                core.utils.removeItems(chars, lastSpace - spacesRemoved, i - lastSpace);
-                i = lastSpace;
-                lastSpace = -1;
+                ++line;
                 ++spacesRemoved;
-
-                lineWidths.push(lastSpaceWidth);
-                maxLineWidth = Math.max(maxLineWidth, lastSpaceWidth);
-                line++;
 
                 pos.x = 0;
                 pos.y += data.lineHeight;
@@ -43363,16 +46146,39 @@ var BitmapText = function (_core$Container) {
                 texture: charData.texture,
                 line: line,
                 charCode: charCode,
-                position: new core.Point(pos.x + charData.xOffset, pos.y + charData.yOffset)
+                position: new core.Point(pos.x + charData.xOffset + this._letterSpacing / 2, pos.y + charData.yOffset)
             });
-            lastLineWidth = pos.x + (charData.texture.width + charData.xOffset);
-            pos.x += charData.xAdvance;
+            pos.x += charData.xAdvance + this._letterSpacing;
+            lastLineWidth = pos.x;
             maxLineHeight = Math.max(maxLineHeight, charData.yOffset + charData.texture.height);
             prevCharCode = charCode;
+
+            if (lastBreakPos !== -1 && maxWidth > 0 && pos.x > maxWidth) {
+                ++spacesRemoved;
+                core.utils.removeItems(chars, 1 + lastBreakPos - spacesRemoved, 1 + i - lastBreakPos);
+                i = lastBreakPos;
+                lastBreakPos = -1;
+
+                lineWidths.push(lastBreakWidth);
+                maxLineWidth = Math.max(maxLineWidth, lastBreakWidth);
+                line++;
+
+                pos.x = 0;
+                pos.y += data.lineHeight;
+                prevCharCode = null;
+            }
         }
 
-        lineWidths.push(lastLineWidth);
-        maxLineWidth = Math.max(maxLineWidth, lastLineWidth);
+        var lastChar = text.charAt(text.length - 1);
+
+        if (lastChar !== '\r' && lastChar !== '\n') {
+            if (/(?:\s)/.test(lastChar)) {
+                lastLineWidth = lastBreakWidth;
+            }
+
+            lineWidths.push(lastLineWidth);
+            maxLineWidth = Math.max(maxLineWidth, lastLineWidth);
+        }
 
         var lineAlignOffsets = [];
 
@@ -43480,44 +46286,61 @@ var BitmapText = function (_core$Container) {
      *
      * @static
      * @param {XMLDocument} xml - The XML document data.
-     * @param {PIXI.Texture} texture - Texture with all symbols.
+     * @param {Object.<string, PIXI.Texture>|PIXI.Texture|PIXI.Texture[]} textures - List of textures for each page.
+     *  If providing an object, the key is the `<page>` element's `file` attribute in the FNT file.
      * @return {Object} Result font object with font, size, lineHeight and char fields.
      */
-    BitmapText.registerFont = function registerFont(xml, texture) {
+    BitmapText.registerFont = function registerFont(xml, textures) {
         var data = {};
         var info = xml.getElementsByTagName('info')[0];
         var common = xml.getElementsByTagName('common')[0];
-        var res = texture.baseTexture.resolution || _settings2.default.RESOLUTION;
+        var pages = xml.getElementsByTagName('page');
+        var res = (0, _utils.getResolutionOfUrl)(pages[0].getAttribute('file'), _settings2.default.RESOLUTION);
+        var pagesTextures = {};
 
         data.font = info.getAttribute('face');
         data.size = parseInt(info.getAttribute('size'), 10);
         data.lineHeight = parseInt(common.getAttribute('lineHeight'), 10) / res;
         data.chars = {};
 
+        // Single texture, convert to list
+        if (textures instanceof core.Texture) {
+            textures = [textures];
+        }
+
+        // Convert the input Texture, Textures or object
+        // into a page Texture lookup by "id"
+        for (var i = 0; i < pages.length; i++) {
+            var id = pages[i].getAttribute('id');
+            var file = pages[i].getAttribute('file');
+
+            pagesTextures[id] = textures instanceof Array ? textures[i] : textures[file];
+        }
+
         // parse letters
         var letters = xml.getElementsByTagName('char');
 
-        for (var i = 0; i < letters.length; i++) {
-            var letter = letters[i];
+        for (var _i5 = 0; _i5 < letters.length; _i5++) {
+            var letter = letters[_i5];
             var charCode = parseInt(letter.getAttribute('id'), 10);
-
-            var textureRect = new core.Rectangle(parseInt(letter.getAttribute('x'), 10) / res + texture.frame.x / res, parseInt(letter.getAttribute('y'), 10) / res + texture.frame.y / res, parseInt(letter.getAttribute('width'), 10) / res, parseInt(letter.getAttribute('height'), 10) / res);
+            var page = letter.getAttribute('page') || 0;
+            var textureRect = new core.Rectangle(parseInt(letter.getAttribute('x'), 10) / res + pagesTextures[page].frame.x / res, parseInt(letter.getAttribute('y'), 10) / res + pagesTextures[page].frame.y / res, parseInt(letter.getAttribute('width'), 10) / res, parseInt(letter.getAttribute('height'), 10) / res);
 
             data.chars[charCode] = {
                 xOffset: parseInt(letter.getAttribute('xoffset'), 10) / res,
                 yOffset: parseInt(letter.getAttribute('yoffset'), 10) / res,
                 xAdvance: parseInt(letter.getAttribute('xadvance'), 10) / res,
                 kerning: {},
-                texture: new core.Texture(texture.baseTexture, textureRect)
-
+                texture: new core.Texture(pagesTextures[page].baseTexture, textureRect),
+                page: page
             };
         }
 
         // parse kernings
         var kernings = xml.getElementsByTagName('kerning');
 
-        for (var _i5 = 0; _i5 < kernings.length; _i5++) {
-            var kerning = kernings[_i5];
+        for (var _i6 = 0; _i6 < kernings.length; _i6++) {
+            var kerning = kernings[_i6];
             var first = parseInt(kerning.getAttribute('first'), 10) / res;
             var second = parseInt(kerning.getAttribute('second'), 10) / res;
             var amount = parseInt(kerning.getAttribute('amount'), 10) / res;
@@ -43694,6 +46517,25 @@ var BitmapText = function (_core$Container) {
         }
 
         /**
+         * Additional space between characters.
+         *
+         * @member {number}
+         */
+
+    }, {
+        key: 'letterSpacing',
+        get: function get() {
+            return this._letterSpacing;
+        },
+        set: function set(value) // eslint-disable-line require-jsdoc
+        {
+            if (this._letterSpacing !== value) {
+                this._letterSpacing = value;
+                this.dirty = true;
+            }
+        }
+
+        /**
          * The height of the overall text, different from fontSize,
          * which is defined in the style object
          *
@@ -43734,13 +46576,9 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _CanvasTinter = __webpack_require__(48);
+var _CanvasTinter = __webpack_require__(49);
 
 var _CanvasTinter2 = _interopRequireDefault(_CanvasTinter);
-
-var _TextureTransform = __webpack_require__(52);
-
-var _TextureTransform2 = _interopRequireDefault(_TextureTransform);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43814,9 +46652,9 @@ var TilingSprite = function (_core$Sprite) {
         /**
          * transform that is applied to UV to get the texture coords
          *
-         * @member {PIXI.extras.TextureTransform}
+         * @member {PIXI.TextureMatrix}
          */
-        _this.uvTransform = texture.transform || new _TextureTransform2.default(texture);
+        _this.uvTransform = texture.transform || new core.TextureMatrix(texture);
 
         /**
          * Plugin that is responsible for rendering this element.
@@ -43852,6 +46690,7 @@ var TilingSprite = function (_core$Sprite) {
         if (this.uvTransform) {
             this.uvTransform.texture = this._texture;
         }
+        this.cachedTint = 0xFFFFFF;
     };
 
     /**
@@ -43901,22 +46740,19 @@ var TilingSprite = function (_core$Sprite) {
         var modY = this.tilePosition.y / this.tileScale.y % texture._frame.height * baseTextureResolution;
 
         // create a nice shiny pattern!
-        // TODO this needs to be refreshed if texture changes..
-        if (!this._canvasPattern) {
+        if (this._textureID !== this._texture._updateID || this.cachedTint !== this.tint) {
+            this._textureID = this._texture._updateID;
             // cut an object from a spritesheet..
             var tempCanvas = new core.CanvasRenderTarget(texture._frame.width, texture._frame.height, baseTextureResolution);
 
             // Tint the tiling sprite
             if (this.tint !== 0xFFFFFF) {
-                if (this.cachedTint !== this.tint) {
-                    this.cachedTint = this.tint;
-
-                    this.tintedTexture = _CanvasTinter2.default.getTintedTexture(this, this.tint);
-                }
+                this.tintedTexture = _CanvasTinter2.default.getTintedTexture(this, this.tint);
                 tempCanvas.context.drawImage(this.tintedTexture, 0, 0);
             } else {
                 tempCanvas.context.drawImage(baseTexture.source, -texture._frame.x * baseTextureResolution, -texture._frame.y * baseTextureResolution);
             }
+            this.cachedTint = this.tint;
             this._canvasPattern = tempCanvas.context.createPattern(tempCanvas.canvas, 'repeat');
         }
 
@@ -43976,7 +46812,7 @@ var TilingSprite = function (_core$Sprite) {
             this._bounds.minX = this._width * -this._anchor._x;
             this._bounds.minY = this._height * -this._anchor._y;
             this._bounds.maxX = this._width * (1 - this._anchor._x);
-            this._bounds.maxY = this._height * (1 - this._anchor._x);
+            this._bounds.maxY = this._height * (1 - this._anchor._y);
 
             if (!rect) {
                 if (!this._localBoundsRect) {
@@ -44602,13 +47438,14 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * The instance name of the object.
  *
  * @memberof PIXI.DisplayObject#
- * @member {string}
+ * @member {string} name
  */
 core.DisplayObject.prototype.name = null;
 
 /**
  * Returns the display object in the container
  *
+ * @method getChildByName
  * @memberof PIXI.Container#
  * @param {string} name - instance name
  * @return {PIXI.DisplayObject} The child with the specified name.
@@ -44640,6 +47477,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 /**
  * Returns the global position of the displayObject. Does not depend on object scale, rotation and pivot.
  *
+ * @method getGlobalPosition
  * @memberof PIXI.DisplayObject#
  * @param {Point} point - the point to write the global value to. If null a new point will be returned
  * @param {boolean} skipUpdate - setting to true will stop the transforms of the scene graph from
@@ -44726,8 +47564,8 @@ var TilingSpriteRenderer = function (_core$ObjectRenderer) {
     TilingSpriteRenderer.prototype.onContextChange = function onContextChange() {
         var gl = this.renderer.gl;
 
-        this.shader = new core.Shader(gl, 'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 translationMatrix;\nuniform mat3 uTransform;\n\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = (uTransform * vec3(aTextureCoord, 1.0)).xy;\n}\n', 'varying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform vec4 uColor;\nuniform mat3 uMapCoord;\nuniform vec4 uClampFrame;\nuniform vec2 uClampOffset;\n\nvoid main(void)\n{\n    vec2 coord = mod(vTextureCoord - uClampOffset, vec2(1.0, 1.0)) + uClampOffset;\n    coord = (uMapCoord * vec3(coord, 1.0)).xy;\n    coord = clamp(coord, uClampFrame.xy, uClampFrame.zw);\n\n    vec4 sample = texture2D(uSampler, coord);\n    vec4 color = vec4(uColor.rgb * uColor.a, uColor.a);\n\n    gl_FragColor = sample * color ;\n}\n');
-        this.simpleShader = new core.Shader(gl, 'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 translationMatrix;\nuniform mat3 uTransform;\n\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = (uTransform * vec3(aTextureCoord, 1.0)).xy;\n}\n', 'varying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform vec4 uColor;\n\nvoid main(void)\n{\n    vec4 sample = texture2D(uSampler, vTextureCoord);\n    vec4 color = vec4(uColor.rgb * uColor.a, uColor.a);\n    gl_FragColor = sample * color;\n}\n');
+        this.shader = new core.Shader(gl, 'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 translationMatrix;\nuniform mat3 uTransform;\n\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = (uTransform * vec3(aTextureCoord, 1.0)).xy;\n}\n', 'varying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform vec4 uColor;\nuniform mat3 uMapCoord;\nuniform vec4 uClampFrame;\nuniform vec2 uClampOffset;\n\nvoid main(void)\n{\n    vec2 coord = mod(vTextureCoord - uClampOffset, vec2(1.0, 1.0)) + uClampOffset;\n    coord = (uMapCoord * vec3(coord, 1.0)).xy;\n    coord = clamp(coord, uClampFrame.xy, uClampFrame.zw);\n\n    vec4 sample = texture2D(uSampler, coord);\n    gl_FragColor = sample * uColor;\n}\n');
+        this.simpleShader = new core.Shader(gl, 'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 translationMatrix;\nuniform mat3 uTransform;\n\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n\n    vTextureCoord = (uTransform * vec3(aTextureCoord, 1.0)).xy;\n}\n', 'varying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform vec4 uColor;\n\nvoid main(void)\n{\n    vec4 sample = texture2D(uSampler, vTextureCoord);\n    gl_FragColor = sample * uColor;\n}\n');
 
         this.renderer.bindVao(null);
         this.quad = new core.Quad(gl, this.renderer.state.attribState);
@@ -44844,11 +47682,100 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _BlurXFilter = __webpack_require__(103);
+var _path = __webpack_require__(6);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Simplest filter - applies alpha
+ *
+ * Use this instead of Container's alpha property to avoid visual layering of individual elements.
+ * AlphaFilter applies alpha evenly across the entire display object and any opaque elements it contains.
+ * If elements are not opaque, they will blend with each other anyway.
+ *
+ * Very handy if you want to use common features of all filters:
+ *
+ * 1. Assign a blendMode to this filter, blend all elements inside display object with background.
+ *
+ * 2. To use clipping in display coordinates, assign a filterArea to the same container that has this filter.
+ *
+ * @class
+ * @extends PIXI.Filter
+ * @memberof PIXI.filters
+ */
+var AlphaFilter = function (_core$Filter) {
+    _inherits(AlphaFilter, _core$Filter);
+
+    /**
+     * @param {number} [alpha=1] Amount of alpha from 0 to 1, where 0 is transparent
+     */
+    function AlphaFilter() {
+        var alpha = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1.0;
+
+        _classCallCheck(this, AlphaFilter);
+
+        var _this = _possibleConstructorReturn(this, _core$Filter.call(this,
+        // vertex shader
+        'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\n\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n    vTextureCoord = aTextureCoord;\n}',
+        // fragment shader
+        'varying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\nuniform float uAlpha;\n\nvoid main(void)\n{\n   gl_FragColor = texture2D(uSampler, vTextureCoord) * uAlpha;\n}\n'));
+
+        _this.alpha = alpha;
+        _this.glShaderKey = 'alpha';
+        return _this;
+    }
+
+    /**
+     * Coefficient for alpha multiplication
+     *
+     * @member {number}
+     * @default 1
+     */
+
+
+    _createClass(AlphaFilter, [{
+        key: 'alpha',
+        get: function get() {
+            return this.uniforms.uAlpha;
+        },
+        set: function set(value) // eslint-disable-line require-jsdoc
+        {
+            this.uniforms.uAlpha = value;
+        }
+    }]);
+
+    return AlphaFilter;
+}(core.Filter);
+
+exports.default = AlphaFilter;
+//# sourceMappingURL=AlphaFilter.js.map
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _core = __webpack_require__(1);
+
+var core = _interopRequireWildcard(_core);
+
+var _BlurXFilter = __webpack_require__(105);
 
 var _BlurXFilter2 = _interopRequireDefault(_BlurXFilter);
 
-var _BlurYFilter = __webpack_require__(104);
+var _BlurYFilter = __webpack_require__(106);
 
 var _BlurYFilter2 = _interopRequireDefault(_BlurYFilter);
 
@@ -44983,6 +47910,23 @@ var BlurFilter = function (_core$Filter) {
             this.blurYFilter.blur = value;
             this.padding = Math.max(Math.abs(this.blurXFilter.strength), Math.abs(this.blurYFilter.strength)) * 2;
         }
+
+        /**
+         * Sets the blendmode of the filter
+         *
+         * @member {number}
+         * @default PIXI.BLEND_MODES.NORMAL
+         */
+
+    }, {
+        key: 'blendMode',
+        get: function get() {
+            return this.blurYFilter._blendMode;
+        },
+        set: function set(value) // eslint-disable-line require-jsdoc
+        {
+            this.blurYFilter._blendMode = value;
+        }
     }]);
 
     return BlurFilter;
@@ -44992,7 +47936,7 @@ exports.default = BlurFilter;
 //# sourceMappingURL=BlurFilter.js.map
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45022,7 +47966,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * with a new set of RGBA color and alpha values. It's pretty powerful!
  *
  * ```js
- *  let colorMatrix = new PIXI.ColorMatrixFilter();
+ *  let colorMatrix = new PIXI.filters.ColorMatrixFilter();
  *  container.filters = [colorMatrix];
  *  colorMatrix.contrast(2);
  * ```
@@ -45243,7 +48187,7 @@ var ColorMatrixFilter = function (_core$Filter) {
 
     ColorMatrixFilter.prototype.contrast = function contrast(amount, multiply) {
         var v = (amount || 0) + 1;
-        var o = -128 * (v - 1);
+        var o = -0.5 * (v - 1);
 
         var matrix = [v, 0, 0, 0, o, 0, v, 0, 0, o, 0, 0, v, 0, o, 0, 0, 0, 1, 0];
 
@@ -45294,7 +48238,7 @@ var ColorMatrixFilter = function (_core$Filter) {
 
 
     ColorMatrixFilter.prototype.negative = function negative(multiply) {
-        var matrix = [0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0];
+        var matrix = [-1, 0, 0, 1, 0, 0, -1, 0, 1, 0, 0, 0, -1, 1, 0, 0, 0, 0, 1, 0];
 
         this._loadMatrix(matrix, multiply);
     };
@@ -45548,7 +48492,7 @@ ColorMatrixFilter.prototype.grayscale = ColorMatrixFilter.prototype.greyscale;
 //# sourceMappingURL=ColorMatrixFilter.js.map
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45601,7 +48545,7 @@ var DisplacementFilter = function (_core$Filter) {
         // vertex shader
         'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 filterMatrix;\n\nvarying vec2 vTextureCoord;\nvarying vec2 vFilterCoord;\n\nvoid main(void)\n{\n   gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n   vFilterCoord = ( filterMatrix * vec3( aTextureCoord, 1.0)  ).xy;\n   vTextureCoord = aTextureCoord;\n}',
         // fragment shader
-        'varying vec2 vFilterCoord;\nvarying vec2 vTextureCoord;\n\nuniform vec2 scale;\n\nuniform sampler2D uSampler;\nuniform sampler2D mapSampler;\n\nuniform vec4 filterClamp;\n\nvoid main(void)\n{\n   vec4 map =  texture2D(mapSampler, vFilterCoord);\n\n   map -= 0.5;\n   map.xy *= scale;\n\n   gl_FragColor = texture2D(uSampler, clamp(vec2(vTextureCoord.x + map.x, vTextureCoord.y + map.y), filterClamp.xy, filterClamp.zw));\n}\n'));
+        'varying vec2 vFilterCoord;\nvarying vec2 vTextureCoord;\n\nuniform vec2 scale;\n\nuniform sampler2D uSampler;\nuniform sampler2D mapSampler;\n\nuniform vec4 filterArea;\nuniform vec4 filterClamp;\n\nvoid main(void)\n{\n  vec4 map =  texture2D(mapSampler, vFilterCoord);\n\n  map -= 0.5;\n  map.xy *= scale / filterArea.xy;\n\n  gl_FragColor = texture2D(uSampler, clamp(vec2(vTextureCoord.x + map.x, vTextureCoord.y + map.y), filterClamp.xy, filterClamp.zw));\n}\n'));
 
         _this.maskSprite = sprite;
         _this.maskMatrix = maskMatrix;
@@ -45628,11 +48572,9 @@ var DisplacementFilter = function (_core$Filter) {
 
 
     DisplacementFilter.prototype.apply = function apply(filterManager, input, output) {
-        var ratio = 1 / output.destinationFrame.width * (output.size.width / input.size.width);
-
         this.uniforms.filterMatrix = filterManager.calculateSpriteMatrix(this.maskMatrix, this.maskSprite);
-        this.uniforms.scale.x = this.scale.x * ratio;
-        this.uniforms.scale.y = this.scale.y * ratio;
+        this.uniforms.scale.x = this.scale.x;
+        this.uniforms.scale.y = this.scale.y;
 
         // draw the filter...
         filterManager.applyFilter(this, input, output);
@@ -45663,7 +48605,7 @@ exports.default = DisplacementFilter;
 //# sourceMappingURL=DisplacementFilter.js.map
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45722,7 +48664,7 @@ exports.default = FXAAFilter;
 //# sourceMappingURL=FXAAFilter.js.map
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45730,7 +48672,7 @@ exports.default = FXAAFilter;
 
 exports.__esModule = true;
 
-var _FXAAFilter = __webpack_require__(242);
+var _FXAAFilter = __webpack_require__(243);
 
 Object.defineProperty(exports, 'FXAAFilter', {
   enumerable: true,
@@ -45739,7 +48681,7 @@ Object.defineProperty(exports, 'FXAAFilter', {
   }
 });
 
-var _NoiseFilter = __webpack_require__(244);
+var _NoiseFilter = __webpack_require__(245);
 
 Object.defineProperty(exports, 'NoiseFilter', {
   enumerable: true,
@@ -45748,7 +48690,7 @@ Object.defineProperty(exports, 'NoiseFilter', {
   }
 });
 
-var _DisplacementFilter = __webpack_require__(241);
+var _DisplacementFilter = __webpack_require__(242);
 
 Object.defineProperty(exports, 'DisplacementFilter', {
   enumerable: true,
@@ -45757,7 +48699,7 @@ Object.defineProperty(exports, 'DisplacementFilter', {
   }
 });
 
-var _BlurFilter = __webpack_require__(239);
+var _BlurFilter = __webpack_require__(240);
 
 Object.defineProperty(exports, 'BlurFilter', {
   enumerable: true,
@@ -45766,7 +48708,7 @@ Object.defineProperty(exports, 'BlurFilter', {
   }
 });
 
-var _BlurXFilter = __webpack_require__(103);
+var _BlurXFilter = __webpack_require__(105);
 
 Object.defineProperty(exports, 'BlurXFilter', {
   enumerable: true,
@@ -45775,7 +48717,7 @@ Object.defineProperty(exports, 'BlurXFilter', {
   }
 });
 
-var _BlurYFilter = __webpack_require__(104);
+var _BlurYFilter = __webpack_require__(106);
 
 Object.defineProperty(exports, 'BlurYFilter', {
   enumerable: true,
@@ -45784,7 +48726,7 @@ Object.defineProperty(exports, 'BlurYFilter', {
   }
 });
 
-var _ColorMatrixFilter = __webpack_require__(240);
+var _ColorMatrixFilter = __webpack_require__(241);
 
 Object.defineProperty(exports, 'ColorMatrixFilter', {
   enumerable: true,
@@ -45793,12 +48735,12 @@ Object.defineProperty(exports, 'ColorMatrixFilter', {
   }
 });
 
-var _VoidFilter = __webpack_require__(245);
+var _AlphaFilter = __webpack_require__(239);
 
-Object.defineProperty(exports, 'VoidFilter', {
+Object.defineProperty(exports, 'AlphaFilter', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_VoidFilter).default;
+    return _interopRequireDefault(_AlphaFilter).default;
   }
 });
 
@@ -45806,7 +48748,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45908,61 +48850,6 @@ exports.default = NoiseFilter;
 //# sourceMappingURL=NoiseFilter.js.map
 
 /***/ }),
-/* 245 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _core = __webpack_require__(1);
-
-var core = _interopRequireWildcard(_core);
-
-var _path = __webpack_require__(6);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/**
- * Does nothing. Very handy.
- *
- * @class
- * @extends PIXI.Filter
- * @memberof PIXI.filters
- */
-var VoidFilter = function (_core$Filter) {
-    _inherits(VoidFilter, _core$Filter);
-
-    /**
-     *
-     */
-    function VoidFilter() {
-        _classCallCheck(this, VoidFilter);
-
-        var _this = _possibleConstructorReturn(this, _core$Filter.call(this,
-        // vertex shader
-        'attribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\n\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n    vTextureCoord = aTextureCoord;\n}',
-        // fragment shader
-        'varying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\n\nvoid main(void)\n{\n   gl_FragColor = texture2D(uSampler, vTextureCoord);\n}\n'));
-
-        _this.glShaderKey = 'void';
-        return _this;
-    }
-
-    return VoidFilter;
-}(core.Filter);
-
-exports.default = VoidFilter;
-//# sourceMappingURL=VoidFilter.js.map
-
-/***/ }),
 /* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -45972,7 +48859,7 @@ exports.default = VoidFilter;
 exports.__esModule = true;
 exports.loader = exports.prepare = exports.particles = exports.mesh = exports.loaders = exports.interaction = exports.filters = exports.extras = exports.extract = exports.accessibility = undefined;
 
-var _polyfill = __webpack_require__(265);
+var _polyfill = __webpack_require__(264);
 
 Object.keys(_polyfill).forEach(function (key) {
     if (key === "default" || key === "__esModule") return;
@@ -46000,7 +48887,7 @@ var _deprecation = __webpack_require__(228);
 
 var _deprecation2 = _interopRequireDefault(_deprecation);
 
-var _accessibility = __webpack_require__(184);
+var _accessibility = __webpack_require__(185);
 
 var accessibility = _interopRequireWildcard(_accessibility);
 
@@ -46008,31 +48895,31 @@ var _extract = __webpack_require__(230);
 
 var extract = _interopRequireWildcard(_extract);
 
-var _extras = __webpack_require__(102);
+var _extras = __webpack_require__(104);
 
 var extras = _interopRequireWildcard(_extras);
 
-var _filters = __webpack_require__(243);
+var _filters = __webpack_require__(244);
 
 var filters = _interopRequireWildcard(_filters);
 
-var _interaction = __webpack_require__(250);
+var _interaction = __webpack_require__(248);
 
 var interaction = _interopRequireWildcard(_interaction);
 
-var _loaders = __webpack_require__(251);
+var _loaders = __webpack_require__(249);
 
 var loaders = _interopRequireWildcard(_loaders);
 
-var _mesh = __webpack_require__(256);
+var _mesh = __webpack_require__(254);
 
 var mesh = _interopRequireWildcard(_mesh);
 
-var _particles = __webpack_require__(259);
+var _particles = __webpack_require__(257);
 
 var particles = _interopRequireWildcard(_particles);
 
-var _prepare = __webpack_require__(268);
+var _prepare = __webpack_require__(267);
 
 var prepare = _interopRequireWildcard(_prepare);
 
@@ -46075,103 +48962,13 @@ if (typeof _deprecation2.default === 'function') {
     (0, _deprecation2.default)(exports);
 }
 
-// Always export pixi globally.
+// Always export PixiJS globally.
 global.PIXI = exports; // eslint-disable-line
 //# sourceMappingURL=index.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
 /* 247 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Event class that mimics native DOM events.
- *
- * @class
- * @memberof PIXI.interaction
- */
-var InteractionEvent = function () {
-  /**
-   *
-   */
-  function InteractionEvent() {
-    _classCallCheck(this, InteractionEvent);
-
-    /**
-     * Whether this event will continue propagating in the tree
-     *
-     * @member {boolean}
-     */
-    this.stopped = false;
-
-    /**
-     * The object which caused this event to be dispatched.
-     * For listener callback see {@link PIXI.interaction.InteractionEvent.currentTarget}.
-     *
-     * @member {PIXI.DisplayObject}
-     */
-    this.target = null;
-
-    /**
-     * The object whose event listener’s callback is currently being invoked.
-     *
-     * @member {PIXI.DisplayObject}
-     */
-    this.currentTarget = null;
-
-    /**
-     * Type of the event
-     *
-     * @member {string}
-     */
-    this.type = null;
-
-    /**
-     * InteractionData related to this event
-     *
-     * @member {PIXI.interaction.InteractionData}
-     */
-    this.data = null;
-  }
-
-  /**
-   * Prevents event from reaching any objects other than the current object.
-   *
-   */
-
-
-  InteractionEvent.prototype.stopPropagation = function stopPropagation() {
-    this.stopped = true;
-  };
-
-  /**
-   * Resets the event.
-   *
-   * @private
-   */
-
-
-  InteractionEvent.prototype._reset = function _reset() {
-    this.stopped = false;
-    this.currentTarget = null;
-    this.target = null;
-  };
-
-  return InteractionEvent;
-}();
-
-exports.default = InteractionEvent;
-//# sourceMappingURL=InteractionEvent.js.map
-
-/***/ }),
-/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46185,15 +48982,15 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _InteractionData = __webpack_require__(108);
+var _InteractionData = __webpack_require__(110);
 
 var _InteractionData2 = _interopRequireDefault(_InteractionData);
 
-var _InteractionEvent = __webpack_require__(247);
+var _InteractionEvent = __webpack_require__(111);
 
 var _InteractionEvent2 = _interopRequireDefault(_InteractionEvent);
 
-var _InteractionTrackingData = __webpack_require__(249);
+var _InteractionTrackingData = __webpack_require__(112);
 
 var _InteractionTrackingData2 = _interopRequireDefault(_InteractionTrackingData);
 
@@ -46201,7 +48998,7 @@ var _eventemitter = __webpack_require__(10);
 
 var _eventemitter2 = _interopRequireDefault(_eventemitter);
 
-var _interactiveTarget = __webpack_require__(109);
+var _interactiveTarget = __webpack_require__(113);
 
 var _interactiveTarget2 = _interopRequireDefault(_interactiveTarget);
 
@@ -46218,7 +49015,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // Mix interactiveTarget into core.DisplayObject.prototype, after deprecation has been handled
 core.utils.mixins.delayMixin(core.DisplayObject.prototype, _interactiveTarget2.default);
 
-var MOUSE_POINTER_ID = 'MOUSE';
+var MOUSE_POINTER_ID = 1;
 
 // helpers for hitTest() - only used inside hitTest()
 var hitTestEvent = {
@@ -46331,7 +49128,7 @@ var InteractionManager = function (_EventEmitter) {
          * is over the object.
          * Setting to true will make things work more in line with how the DOM verison works.
          * Setting to false can make things easier for things like dragging
-         * It is currently set to false as this is how pixi used to work. This will be set to true in
+         * It is currently set to false as this is how PixiJS used to work. This will be set to true in
          * future versions of pixi.
          *
          * @member {boolean}
@@ -46890,7 +49687,6 @@ var InteractionManager = function (_EventEmitter) {
      *
      * @param {HTMLCanvasElement} element - the DOM element which will receive mouse and touch events.
      * @param {number} [resolution=1] - The resolution / device pixel ratio of the new element (relative to the canvas).
-     * @private
      */
 
 
@@ -47125,7 +49921,7 @@ var InteractionManager = function (_EventEmitter) {
     };
 
     /**
-     * Maps x and y coords from a DOM object and maps them correctly to the pixi view. The
+     * Maps x and y coords from a DOM object and maps them correctly to the PixiJS view. The
      * resulting value is stored in the point. This takes into account the fact that the DOM
      * element could be scaled and positioned anywhere on the screen.
      *
@@ -47194,21 +49990,37 @@ var InteractionManager = function (_EventEmitter) {
         var hit = false;
         var interactiveParent = interactive;
 
-        // if the displayobject has a hitArea, then it does not need to hitTest children.
+        // Flag here can set to false if the event is outside the parents hitArea or mask
+        var hitTestChildren = true;
+
+        // If there is a hitArea, no need to test against anything else if the pointer is not within the hitArea
+        // There is also no longer a need to hitTest children.
         if (displayObject.hitArea) {
+            if (hitTest) {
+                displayObject.worldTransform.applyInverse(point, this._tempPoint);
+                if (!displayObject.hitArea.contains(this._tempPoint.x, this._tempPoint.y)) {
+                    hitTest = false;
+                    hitTestChildren = false;
+                } else {
+                    hit = true;
+                }
+            }
             interactiveParent = false;
         }
-        // it has a mask! Then lets hit test that before continuing
-        else if (hitTest && displayObject._mask) {
-                if (!displayObject._mask.containsPoint(point)) {
-                    hitTest = false;
+        // If there is a mask, no need to test against anything else if the pointer is not within the mask
+        else if (displayObject._mask) {
+                if (hitTest) {
+                    if (!displayObject._mask.containsPoint(point)) {
+                        hitTest = false;
+                        hitTestChildren = false;
+                    }
                 }
             }
 
         // ** FREE TIP **! If an object is not interactive or has no buttons in it
         // (such as a game scene!) set interactiveChildren to false for that displayObject.
-        // This will allow pixi to completely ignore and bypass checking the displayObjects children.
-        if (displayObject.interactiveChildren && displayObject.children) {
+        // This will allow PixiJS to completely ignore and bypass checking the displayObjects children.
+        if (hitTestChildren && displayObject.interactiveChildren && displayObject.children) {
             var children = displayObject.children;
 
             for (var i = children.length - 1; i >= 0; i--) {
@@ -47250,12 +50062,8 @@ var InteractionManager = function (_EventEmitter) {
             // has already been hit - but only if it was interactive, otherwise we need to keep
             // looking for an interactive child, just in case we hit one
             if (hitTest && !interactionEvent.target) {
-                if (displayObject.hitArea) {
-                    displayObject.worldTransform.applyInverse(point, this._tempPoint);
-                    if (displayObject.hitArea.contains(this._tempPoint.x, this._tempPoint.y)) {
-                        hit = true;
-                    }
-                } else if (displayObject.containsPoint) {
+                // already tested against hitArea if it is defined
+                if (!displayObject.hitArea && displayObject.containsPoint) {
                     if (displayObject.containsPoint(point)) {
                         hit = true;
                     }
@@ -47482,6 +50290,9 @@ var InteractionManager = function (_EventEmitter) {
         var isTouch = data.pointerType === 'touch';
 
         var isMouse = data.pointerType === 'mouse' || data.pointerType === 'pen';
+        // need to track mouse down status in the mouse block so that we can emit
+        // event in a later block
+        var isMouseTap = false;
 
         // Mouse only
         if (isMouse) {
@@ -47498,6 +50309,8 @@ var InteractionManager = function (_EventEmitter) {
 
                 if (isDown) {
                     this.dispatchEvent(displayObject, isRightButton ? 'rightclick' : 'click', interactionEvent);
+                    // because we can confirm that the mousedown happened on this object, flag for later emit of pointertap
+                    isMouseTap = true;
                 }
             } else if (isDown) {
                 this.dispatchEvent(displayObject, isRightButton ? 'rightupoutside' : 'mouseupoutside', interactionEvent);
@@ -47518,7 +50331,10 @@ var InteractionManager = function (_EventEmitter) {
             if (isTouch) this.dispatchEvent(displayObject, 'touchend', interactionEvent);
 
             if (trackingData) {
-                this.dispatchEvent(displayObject, 'pointertap', interactionEvent);
+                // emit pointertap if not a mouse, or if the mouse block decided it was a tap
+                if (!isMouse || isMouseTap) {
+                    this.dispatchEvent(displayObject, 'pointertap', interactionEvent);
+                }
                 if (isTouch) {
                     this.dispatchEvent(displayObject, 'tap', interactionEvent);
                     // touches are no longer over (if they ever were) when we get the touchend
@@ -47550,7 +50366,7 @@ var InteractionManager = function (_EventEmitter) {
 
         var events = this.normalizeToPointerData(originalEvent);
 
-        if (events[0].pointerType === 'mouse') {
+        if (events[0].pointerType === 'mouse' || events[0].pointerType === 'pen') {
             this.didMove = true;
 
             this.cursor = null;
@@ -47758,7 +50574,7 @@ var InteractionManager = function (_EventEmitter) {
         }
         // copy properties from the event, so that we can make sure that touch/pointer specific
         // data is available
-        interactionData._copyEvent(event);
+        interactionData.copyEvent(event);
 
         return interactionData;
     };
@@ -47776,7 +50592,7 @@ var InteractionManager = function (_EventEmitter) {
 
         if (interactionData) {
             delete this.activeInteractionData[pointerId];
-            interactionData._reset();
+            interactionData.reset();
             this.interactionDataPool.push(interactionData);
         }
     };
@@ -47813,7 +50629,7 @@ var InteractionManager = function (_EventEmitter) {
         }
 
         interactionData.originalEvent = pointerEvent;
-        interactionEvent._reset();
+        interactionEvent.reset();
 
         return interactionEvent;
     };
@@ -47936,7 +50752,7 @@ core.CanvasRenderer.registerPlugin('interaction', InteractionManager);
 //# sourceMappingURL=InteractionManager.js.map
 
 /***/ }),
-/* 249 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47944,188 +50760,7 @@ core.CanvasRenderer.registerPlugin('interaction', InteractionManager);
 
 exports.__esModule = true;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * DisplayObjects with the {@link PIXI.interaction.interactiveTarget} mixin use this class to track interactions
- *
- * @class
- * @private
- * @memberof PIXI.interaction
- */
-var InteractionTrackingData = function () {
-    /**
-     * @param {number} pointerId - Unique pointer id of the event
-     */
-    function InteractionTrackingData(pointerId) {
-        _classCallCheck(this, InteractionTrackingData);
-
-        this._pointerId = pointerId;
-        this._flags = InteractionTrackingData.FLAGS.NONE;
-    }
-
-    /**
-     *
-     * @private
-     * @param {number} flag - The interaction flag to set
-     * @param {boolean} yn - Should the flag be set or unset
-     */
-
-
-    InteractionTrackingData.prototype._doSet = function _doSet(flag, yn) {
-        if (yn) {
-            this._flags = this._flags | flag;
-        } else {
-            this._flags = this._flags & ~flag;
-        }
-    };
-
-    /**
-     * Unique pointer id of the event
-     *
-     * @readonly
-     * @member {number}
-     */
-
-
-    _createClass(InteractionTrackingData, [{
-        key: "pointerId",
-        get: function get() {
-            return this._pointerId;
-        }
-
-        /**
-         * State of the tracking data, expressed as bit flags
-         *
-         * @member {number}
-         * @memberof PIXI.interaction.InteractionTrackingData#
-         */
-
-    }, {
-        key: "flags",
-        get: function get() {
-            return this._flags;
-        }
-
-        /**
-         * Set the flags for the tracking data
-         *
-         * @param {number} flags - Flags to set
-         */
-        ,
-        set: function set(flags) {
-            this._flags = flags;
-        }
-
-        /**
-         * Is the tracked event inactive (not over or down)?
-         *
-         * @member {number}
-         * @memberof PIXI.interaction.InteractionTrackingData#
-         */
-
-    }, {
-        key: "none",
-        get: function get() {
-            return this._flags === this.constructor.FLAGS.NONE;
-        }
-
-        /**
-         * Is the tracked event over the DisplayObject?
-         *
-         * @member {boolean}
-         * @memberof PIXI.interaction.InteractionTrackingData#
-         */
-
-    }, {
-        key: "over",
-        get: function get() {
-            return (this._flags & this.constructor.FLAGS.OVER) !== 0;
-        }
-
-        /**
-         * Set the over flag
-         *
-         * @param {boolean} yn - Is the event over?
-         */
-        ,
-        set: function set(yn) {
-            this._doSet(this.constructor.FLAGS.OVER, yn);
-        }
-
-        /**
-         * Did the right mouse button come down in the DisplayObject?
-         *
-         * @member {boolean}
-         * @memberof PIXI.interaction.InteractionTrackingData#
-         */
-
-    }, {
-        key: "rightDown",
-        get: function get() {
-            return (this._flags & this.constructor.FLAGS.RIGHT_DOWN) !== 0;
-        }
-
-        /**
-         * Set the right down flag
-         *
-         * @param {boolean} yn - Is the right mouse button down?
-         */
-        ,
-        set: function set(yn) {
-            this._doSet(this.constructor.FLAGS.RIGHT_DOWN, yn);
-        }
-
-        /**
-         * Did the left mouse button come down in the DisplayObject?
-         *
-         * @member {boolean}
-         * @memberof PIXI.interaction.InteractionTrackingData#
-         */
-
-    }, {
-        key: "leftDown",
-        get: function get() {
-            return (this._flags & this.constructor.FLAGS.LEFT_DOWN) !== 0;
-        }
-
-        /**
-         * Set the left down flag
-         *
-         * @param {boolean} yn - Is the left mouse button down?
-         */
-        ,
-        set: function set(yn) {
-            this._doSet(this.constructor.FLAGS.LEFT_DOWN, yn);
-        }
-    }]);
-
-    return InteractionTrackingData;
-}();
-
-exports.default = InteractionTrackingData;
-
-
-InteractionTrackingData.FLAGS = Object.freeze({
-    NONE: 0,
-    OVER: 1 << 0,
-    LEFT_DOWN: 1 << 1,
-    RIGHT_DOWN: 1 << 2
-});
-//# sourceMappingURL=InteractionTrackingData.js.map
-
-/***/ }),
-/* 250 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _InteractionData = __webpack_require__(108);
+var _InteractionData = __webpack_require__(110);
 
 Object.defineProperty(exports, 'InteractionData', {
   enumerable: true,
@@ -48134,7 +50769,7 @@ Object.defineProperty(exports, 'InteractionData', {
   }
 });
 
-var _InteractionManager = __webpack_require__(248);
+var _InteractionManager = __webpack_require__(247);
 
 Object.defineProperty(exports, 'InteractionManager', {
   enumerable: true,
@@ -48143,7 +50778,7 @@ Object.defineProperty(exports, 'InteractionManager', {
   }
 });
 
-var _interactiveTarget = __webpack_require__(109);
+var _interactiveTarget = __webpack_require__(113);
 
 Object.defineProperty(exports, 'interactiveTarget', {
   enumerable: true,
@@ -48152,11 +50787,29 @@ Object.defineProperty(exports, 'interactiveTarget', {
   }
 });
 
+var _InteractionTrackingData = __webpack_require__(112);
+
+Object.defineProperty(exports, 'InteractionTrackingData', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_InteractionTrackingData).default;
+  }
+});
+
+var _InteractionEvent = __webpack_require__(111);
+
+Object.defineProperty(exports, 'InteractionEvent', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_InteractionEvent).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 251 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48165,7 +50818,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.__esModule = true;
 exports.shared = exports.Resource = exports.textureParser = exports.getResourcePath = exports.spritesheetParser = exports.parseBitmapFontData = exports.bitmapFontParser = exports.Loader = undefined;
 
-var _bitmapFontParser = __webpack_require__(110);
+var _bitmapFontParser = __webpack_require__(114);
 
 Object.defineProperty(exports, 'bitmapFontParser', {
     enumerable: true,
@@ -48180,7 +50833,7 @@ Object.defineProperty(exports, 'parseBitmapFontData', {
     }
 });
 
-var _spritesheetParser = __webpack_require__(111);
+var _spritesheetParser = __webpack_require__(115);
 
 Object.defineProperty(exports, 'spritesheetParser', {
     enumerable: true,
@@ -48195,7 +50848,7 @@ Object.defineProperty(exports, 'getResourcePath', {
     }
 });
 
-var _textureParser = __webpack_require__(112);
+var _textureParser = __webpack_require__(116);
 
 Object.defineProperty(exports, 'textureParser', {
     enumerable: true,
@@ -48204,7 +50857,7 @@ Object.defineProperty(exports, 'textureParser', {
     }
 });
 
-var _resourceLoader = __webpack_require__(23);
+var _resourceLoader = __webpack_require__(24);
 
 Object.defineProperty(exports, 'Resource', {
     enumerable: true,
@@ -48217,7 +50870,7 @@ var _Application = __webpack_require__(83);
 
 var _Application2 = _interopRequireDefault(_Application);
 
-var _loader = __webpack_require__(252);
+var _loader = __webpack_require__(250);
 
 var _loader2 = _interopRequireDefault(_loader);
 
@@ -48279,17 +50932,17 @@ Object.defineProperty(AppPrototype, 'loader', {
 // Override the destroy function
 // making sure to destroy the current Loader
 AppPrototype._parentDestroy = AppPrototype.destroy;
-AppPrototype.destroy = function destroy(removeView) {
+AppPrototype.destroy = function destroy(removeView, stageOptions) {
     if (this._loader) {
         this._loader.destroy();
         this._loader = null;
     }
-    this._parentDestroy(removeView);
+    this._parentDestroy(removeView, stageOptions);
 };
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 252 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48297,25 +50950,25 @@ AppPrototype.destroy = function destroy(removeView) {
 
 exports.__esModule = true;
 
-var _resourceLoader = __webpack_require__(23);
+var _resourceLoader = __webpack_require__(24);
 
 var _resourceLoader2 = _interopRequireDefault(_resourceLoader);
 
-var _blob = __webpack_require__(278);
+var _blob = __webpack_require__(276);
 
 var _eventemitter = __webpack_require__(10);
 
 var _eventemitter2 = _interopRequireDefault(_eventemitter);
 
-var _textureParser = __webpack_require__(112);
+var _textureParser = __webpack_require__(116);
 
 var _textureParser2 = _interopRequireDefault(_textureParser);
 
-var _spritesheetParser = __webpack_require__(111);
+var _spritesheetParser = __webpack_require__(115);
 
 var _spritesheetParser2 = _interopRequireDefault(_spritesheetParser);
 
-var _bitmapFontParser = __webpack_require__(110);
+var _bitmapFontParser = __webpack_require__(114);
 
 var _bitmapFontParser2 = _interopRequireDefault(_bitmapFontParser);
 
@@ -48332,7 +50985,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * The new loader, extends Resource Loader by Chad Engler: https://github.com/englercj/resource-loader
  *
  * ```js
- * const loader = PIXI.loader; // pixi exposes a premade instance for you to use.
+ * const loader = PIXI.loader; // PixiJS exposes a premade instance for you to use.
  * //or
  * const loader = new PIXI.loaders.Loader(); // you can also create your own if you want
  *
@@ -48416,7 +51069,7 @@ var Loader = function (_ResourceLoader) {
     }
 
     /**
-     * Adds a default middleware to the pixi loader.
+     * Adds a default middleware to the PixiJS loader.
      *
      * @static
      * @param {Function} fn - The middleware to add.
@@ -48465,7 +51118,7 @@ Resource.setExtensionXhrType('fnt', Resource.XHR_RESPONSE_TYPE.DOCUMENT);
 //# sourceMappingURL=loader.js.map
 
 /***/ }),
-/* 253 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48475,7 +51128,7 @@ exports.__esModule = true;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Plane2 = __webpack_require__(113);
+var _Plane2 = __webpack_require__(117);
 
 var _Plane3 = _interopRequireDefault(_Plane2);
 
@@ -48564,7 +51217,7 @@ var NineSlicePlane = function (_Plane) {
          * @memberof PIXI.NineSlicePlane#
          * @override
          */
-        _this.leftWidth = typeof leftWidth !== 'undefined' ? leftWidth : DEFAULT_BORDER_SIZE;
+        _this._leftWidth = typeof leftWidth !== 'undefined' ? leftWidth : DEFAULT_BORDER_SIZE;
 
         /**
          * The width of the right column (b)
@@ -48573,7 +51226,7 @@ var NineSlicePlane = function (_Plane) {
          * @memberof PIXI.NineSlicePlane#
          * @override
          */
-        _this.rightWidth = typeof rightWidth !== 'undefined' ? rightWidth : DEFAULT_BORDER_SIZE;
+        _this._rightWidth = typeof rightWidth !== 'undefined' ? rightWidth : DEFAULT_BORDER_SIZE;
 
         /**
          * The height of the top row (c)
@@ -48582,7 +51235,7 @@ var NineSlicePlane = function (_Plane) {
          * @memberof PIXI.NineSlicePlane#
          * @override
          */
-        _this.topHeight = typeof topHeight !== 'undefined' ? topHeight : DEFAULT_BORDER_SIZE;
+        _this._topHeight = typeof topHeight !== 'undefined' ? topHeight : DEFAULT_BORDER_SIZE;
 
         /**
          * The height of the bottom row (d)
@@ -48591,7 +51244,7 @@ var NineSlicePlane = function (_Plane) {
          * @memberof PIXI.NineSlicePlane#
          * @override
          */
-        _this.bottomHeight = typeof bottomHeight !== 'undefined' ? bottomHeight : DEFAULT_BORDER_SIZE;
+        _this._bottomHeight = typeof bottomHeight !== 'undefined' ? bottomHeight : DEFAULT_BORDER_SIZE;
 
         _this.refresh(true);
         return _this;
@@ -48606,8 +51259,11 @@ var NineSlicePlane = function (_Plane) {
     NineSlicePlane.prototype.updateHorizontalVertices = function updateHorizontalVertices() {
         var vertices = this.vertices;
 
-        vertices[9] = vertices[11] = vertices[13] = vertices[15] = this._topHeight;
-        vertices[17] = vertices[19] = vertices[21] = vertices[23] = this._height - this._bottomHeight;
+        var h = this._topHeight + this._bottomHeight;
+        var scale = this._height > h ? 1.0 : this._height / h;
+
+        vertices[9] = vertices[11] = vertices[13] = vertices[15] = this._topHeight * scale;
+        vertices[17] = vertices[19] = vertices[21] = vertices[23] = this._height - this._bottomHeight * scale;
         vertices[25] = vertices[27] = vertices[29] = vertices[31] = this._height;
     };
 
@@ -48620,8 +51276,11 @@ var NineSlicePlane = function (_Plane) {
     NineSlicePlane.prototype.updateVerticalVertices = function updateVerticalVertices() {
         var vertices = this.vertices;
 
-        vertices[2] = vertices[10] = vertices[18] = vertices[26] = this._leftWidth;
-        vertices[4] = vertices[12] = vertices[20] = vertices[28] = this._width - this._rightWidth;
+        var w = this._leftWidth + this._rightWidth;
+        var scale = this._width > w ? 1.0 : this._width / w;
+
+        vertices[2] = vertices[10] = vertices[18] = vertices[26] = this._leftWidth * scale;
+        vertices[4] = vertices[12] = vertices[20] = vertices[28] = this._width - this._rightWidth * scale;
         vertices[6] = vertices[14] = vertices[22] = vertices[30] = this._width;
     };
 
@@ -48637,6 +51296,7 @@ var NineSlicePlane = function (_Plane) {
         var context = renderer.context;
 
         context.globalAlpha = this.worldAlpha;
+        renderer.setBlendMode(this.blendMode);
 
         var transform = this.worldTransform;
         var res = renderer.resolution;
@@ -48649,8 +51309,8 @@ var NineSlicePlane = function (_Plane) {
 
         var base = this._texture.baseTexture;
         var textureSource = base.source;
-        var w = base.width;
-        var h = base.height;
+        var w = base.width * base.resolution;
+        var h = base.height * base.resolution;
 
         this.drawSegment(context, textureSource, w, h, 0, 1, 10, 11);
         this.drawSegment(context, textureSource, w, h, 2, 3, 12, 13);
@@ -48747,7 +51407,7 @@ var NineSlicePlane = function (_Plane) {
         this.updateHorizontalVertices();
         this.updateVerticalVertices();
 
-        this.dirty = true;
+        this.dirty++;
 
         this.multiplyUvs();
     };
@@ -48856,7 +51516,7 @@ exports.default = NineSlicePlane;
 //# sourceMappingURL=NineSlicePlane.js.map
 
 /***/ }),
-/* 254 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48864,7 +51524,7 @@ exports.default = NineSlicePlane;
 
 exports.__esModule = true;
 
-var _Mesh2 = __webpack_require__(22);
+var _Mesh2 = __webpack_require__(23);
 
 var _Mesh3 = _interopRequireDefault(_Mesh2);
 
@@ -49097,7 +51757,7 @@ exports.default = Rope;
 //# sourceMappingURL=Rope.js.map
 
 /***/ }),
-/* 255 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49109,7 +51769,7 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _Mesh = __webpack_require__(22);
+var _Mesh = __webpack_require__(23);
 
 var _Mesh2 = _interopRequireDefault(_Mesh);
 
@@ -49156,6 +51816,7 @@ var MeshSpriteRenderer = function () {
             context.setTransform(transform.a * res, transform.b * res, transform.c * res, transform.d * res, transform.tx * res, transform.ty * res);
         }
 
+        renderer.context.globalAlpha = mesh.worldAlpha;
         renderer.setBlendMode(mesh.blendMode);
 
         if (mesh.drawMode === _Mesh2.default.DRAW_MODES.TRIANGLE_MESH) {
@@ -49266,9 +51927,11 @@ var MeshSpriteRenderer = function () {
         var y1 = vertices[index1 + 1];
         var y2 = vertices[index2 + 1];
 
-        if (mesh.canvasPadding > 0) {
-            var paddingX = mesh.canvasPadding / mesh.worldTransform.a;
-            var paddingY = mesh.canvasPadding / mesh.worldTransform.d;
+        var canvasPadding = mesh.canvasPadding / this.renderer.resolution;
+
+        if (canvasPadding > 0) {
+            var paddingX = canvasPadding / Math.abs(mesh.worldTransform.a);
+            var paddingY = canvasPadding / Math.abs(mesh.worldTransform.d);
             var centerX = (x0 + x1 + x2) / 3;
             var centerY = (y0 + y1 + y2) / 3;
 
@@ -49322,6 +51985,7 @@ var MeshSpriteRenderer = function () {
         context.drawImage(textureSource, 0, 0, textureWidth * base.resolution, textureHeight * base.resolution, 0, 0, textureWidth, textureHeight);
 
         context.restore();
+        this.renderer.invalidateBlendMode();
     };
 
     /**
@@ -49384,7 +52048,7 @@ core.CanvasRenderer.registerPlugin('mesh', MeshSpriteRenderer);
 //# sourceMappingURL=CanvasMeshRenderer.js.map
 
 /***/ }),
-/* 256 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49392,7 +52056,7 @@ core.CanvasRenderer.registerPlugin('mesh', MeshSpriteRenderer);
 
 exports.__esModule = true;
 
-var _Mesh = __webpack_require__(22);
+var _Mesh = __webpack_require__(23);
 
 Object.defineProperty(exports, 'Mesh', {
   enumerable: true,
@@ -49401,7 +52065,7 @@ Object.defineProperty(exports, 'Mesh', {
   }
 });
 
-var _MeshRenderer = __webpack_require__(257);
+var _MeshRenderer = __webpack_require__(255);
 
 Object.defineProperty(exports, 'MeshRenderer', {
   enumerable: true,
@@ -49410,7 +52074,7 @@ Object.defineProperty(exports, 'MeshRenderer', {
   }
 });
 
-var _CanvasMeshRenderer = __webpack_require__(255);
+var _CanvasMeshRenderer = __webpack_require__(253);
 
 Object.defineProperty(exports, 'CanvasMeshRenderer', {
   enumerable: true,
@@ -49419,7 +52083,7 @@ Object.defineProperty(exports, 'CanvasMeshRenderer', {
   }
 });
 
-var _Plane = __webpack_require__(113);
+var _Plane = __webpack_require__(117);
 
 Object.defineProperty(exports, 'Plane', {
   enumerable: true,
@@ -49428,7 +52092,7 @@ Object.defineProperty(exports, 'Plane', {
   }
 });
 
-var _NineSlicePlane = __webpack_require__(253);
+var _NineSlicePlane = __webpack_require__(251);
 
 Object.defineProperty(exports, 'NineSlicePlane', {
   enumerable: true,
@@ -49437,7 +52101,7 @@ Object.defineProperty(exports, 'NineSlicePlane', {
   }
 });
 
-var _Rope = __webpack_require__(254);
+var _Rope = __webpack_require__(252);
 
 Object.defineProperty(exports, 'Rope', {
   enumerable: true,
@@ -49450,7 +52114,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 257 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49466,7 +52130,7 @@ var _pixiGlCore = __webpack_require__(5);
 
 var _pixiGlCore2 = _interopRequireDefault(_pixiGlCore);
 
-var _Mesh = __webpack_require__(22);
+var _Mesh = __webpack_require__(23);
 
 var _Mesh2 = _interopRequireDefault(_Mesh);
 
@@ -49551,7 +52215,8 @@ var MeshRenderer = function (_core$ObjectRenderer) {
                 // build the vao object that will render..
                 vao: null,
                 dirty: mesh.dirty,
-                indexDirty: mesh.indexDirty
+                indexDirty: mesh.indexDirty,
+                vertexDirty: mesh.vertexDirty
             };
 
             // build the vao object that will render..
@@ -49572,7 +52237,10 @@ var MeshRenderer = function (_core$ObjectRenderer) {
             glData.indexBuffer.upload(mesh.indices);
         }
 
-        glData.vertexBuffer.upload(mesh.vertices);
+        if (mesh.vertexDirty !== glData.vertexDirty) {
+            glData.vertexDirty = mesh.vertexDirty;
+            glData.vertexBuffer.upload(mesh.vertices);
+        }
 
         renderer.bindShader(glData.shader);
 
@@ -49606,7 +52274,7 @@ core.WebGLRenderer.registerPlugin('mesh', MeshRenderer);
 //# sourceMappingURL=MeshRenderer.js.map
 
 /***/ }),
-/* 258 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49632,9 +52300,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 /**
  * The ParticleContainer class is a really fast version of the Container built solely for speed,
- * so use when you need a lot of sprites or particles. The tradeoff of the ParticleContainer is that advanced
- * functionality will not work. ParticleContainer implements only the basic object transform (position, scale, rotation).
- * Any other functionality like tinting, masking, etc will not work on sprites in this batch.
+ * so use when you need a lot of sprites or particles. The tradeoff of the ParticleContainer is that most advanced
+ * functionality will not work. ParticleContainer implements the basic object transform (position, scale, rotation)
+ * and some advanced functionality like tint (as of v4.5.6).
+ * Other more advanced functionality like masking, children, filters, etc will not work on sprites in this batch.
  *
  * It's extremely easy to use :
  *
@@ -49648,7 +52317,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * }
  * ```
  *
- * And here you have a hundred sprites that will be renderer at the speed of light.
+ * And here you have a hundred sprites that will be rendered at the speed of light.
  *
  * @class
  * @extends PIXI.Container
@@ -49658,19 +52327,24 @@ var ParticleContainer = function (_core$Container) {
     _inherits(ParticleContainer, _core$Container);
 
     /**
-     * @param {number} [maxSize=15000] - The maximum number of particles that can be renderer by the container.
+     * @param {number} [maxSize=1500] - The maximum number of particles that can be rendered by the container.
+     *  Affects size of allocated buffers.
      * @param {object} [properties] - The properties of children that should be uploaded to the gpu and applied.
-     * @param {boolean} [properties.scale=false] - When true, scale be uploaded and applied.
+     * @param {boolean} [properties.vertices=false] - When true, vertices be uploaded and applied.
+     *                  if sprite's ` scale/anchor/trim/frame/orig` is dynamic, please set `true`.
      * @param {boolean} [properties.position=true] - When true, position be uploaded and applied.
      * @param {boolean} [properties.rotation=false] - When true, rotation be uploaded and applied.
      * @param {boolean} [properties.uvs=false] - When true, uvs be uploaded and applied.
-     * @param {boolean} [properties.alpha=false] - When true, alpha be uploaded and applied.
-     * @param {number} [batchSize=15000] - Number of particles per batch.
+     * @param {boolean} [properties.tint=false] - When true, alpha and tint be uploaded and applied.
+     * @param {number} [batchSize=16384] - Number of particles per batch. If less than maxSize, it uses maxSize instead.
+     * @param {boolean} [autoResize=false] If true, container allocates more batches in case
+     *  there are more than `maxSize` particles.
      */
     function ParticleContainer() {
         var maxSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1500;
         var properties = arguments[1];
         var batchSize = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 16384;
+        var autoResize = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
         _classCallCheck(this, ParticleContainer);
 
@@ -49716,10 +52390,18 @@ var ParticleContainer = function (_core$Container) {
         _this._glBuffers = {};
 
         /**
-         * @member {number}
+         * for every batch stores _updateID corresponding to the last change in that batch
+         * @member {number[]}
          * @private
          */
-        _this._bufferToUpdate = 0;
+        _this._bufferUpdateIDs = [];
+
+        /**
+         * when child inserted, removed or changes position this number goes up
+         * @member {number[]}
+         * @private
+         */
+        _this._updateID = 0;
 
         /**
          * @member {boolean}
@@ -49736,6 +52418,13 @@ var ParticleContainer = function (_core$Container) {
          * @see PIXI.BLEND_MODES
          */
         _this.blendMode = core.BLEND_MODES.NORMAL;
+
+        /**
+         * If true, container allocates more batches in case there are more than `maxSize` particles.
+         * @member {boolean}
+         * @default false
+         */
+        _this.autoResize = autoResize;
 
         /**
          * Used for canvas renderering. If true then the elements will be positioned at the
@@ -49779,11 +52468,11 @@ var ParticleContainer = function (_core$Container) {
 
     ParticleContainer.prototype.setProperties = function setProperties(properties) {
         if (properties) {
-            this._properties[0] = 'scale' in properties ? !!properties.scale : this._properties[0];
+            this._properties[0] = 'vertices' in properties || 'scale' in properties ? !!properties.vertices || !!properties.scale : this._properties[0];
             this._properties[1] = 'position' in properties ? !!properties.position : this._properties[1];
             this._properties[2] = 'rotation' in properties ? !!properties.rotation : this._properties[2];
             this._properties[3] = 'uvs' in properties ? !!properties.uvs : this._properties[3];
-            this._properties[4] = 'alpha' in properties ? !!properties.alpha : this._properties[4];
+            this._properties[4] = 'tint' in properties || 'alpha' in properties ? !!properties.tint || !!properties.alpha : this._properties[4];
         }
     };
 
@@ -49846,9 +52535,10 @@ var ParticleContainer = function (_core$Container) {
     ParticleContainer.prototype.onChildrenChange = function onChildrenChange(smallestChildIndex) {
         var bufferIndex = Math.floor(smallestChildIndex / this._batchSize);
 
-        if (bufferIndex < this._bufferToUpdate) {
-            this._bufferToUpdate = bufferIndex;
+        while (this._bufferUpdateIDs.length < bufferIndex) {
+            this._bufferUpdateIDs.push(0);
         }
+        this._bufferUpdateIDs[bufferIndex] = ++this._updateID;
     };
 
     /**
@@ -49874,11 +52564,7 @@ var ParticleContainer = function (_core$Container) {
         var finalWidth = 0;
         var finalHeight = 0;
 
-        var compositeOperation = renderer.blendModes[this.blendMode];
-
-        if (compositeOperation !== context.globalCompositeOperation) {
-            context.globalCompositeOperation = compositeOperation;
-        }
+        renderer.setBlendMode(this.blendMode);
 
         context.globalAlpha = this.worldAlpha;
 
@@ -49961,6 +52647,7 @@ var ParticleContainer = function (_core$Container) {
 
         this._properties = null;
         this._buffers = null;
+        this._bufferUpdateIDs = null;
     };
 
     _createClass(ParticleContainer, [{
@@ -49982,7 +52669,7 @@ exports.default = ParticleContainer;
 //# sourceMappingURL=ParticleContainer.js.map
 
 /***/ }),
-/* 259 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49990,7 +52677,7 @@ exports.default = ParticleContainer;
 
 exports.__esModule = true;
 
-var _ParticleContainer = __webpack_require__(258);
+var _ParticleContainer = __webpack_require__(256);
 
 Object.defineProperty(exports, 'ParticleContainer', {
   enumerable: true,
@@ -49999,7 +52686,7 @@ Object.defineProperty(exports, 'ParticleContainer', {
   }
 });
 
-var _ParticleRenderer = __webpack_require__(261);
+var _ParticleRenderer = __webpack_require__(259);
 
 Object.defineProperty(exports, 'ParticleRenderer', {
   enumerable: true,
@@ -50012,7 +52699,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 260 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50024,7 +52711,7 @@ var _pixiGlCore = __webpack_require__(5);
 
 var _pixiGlCore2 = _interopRequireDefault(_pixiGlCore);
 
-var _createIndicesForQuads = __webpack_require__(51);
+var _createIndicesForQuads = __webpack_require__(52);
 
 var _createIndicesForQuads2 = _interopRequireDefault(_createIndicesForQuads);
 
@@ -50036,7 +52723,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * @author Mat Groves
  *
  * Big thanks to the very clever Matt DesLauriers <mattdesl> https://github.com/mattdesl/
- * for creating the original pixi version!
+ * for creating the original PixiJS version!
  * Also a thanks to https://github.com/bchevalier for tweaking the tint and alpha so that
  * they now share 4 bytes on the vertex buffer
  *
@@ -50069,20 +52756,6 @@ var ParticleBuffer = function () {
         this.gl = gl;
 
         /**
-         * Size of a single vertex.
-         *
-         * @member {number}
-         */
-        this.vertSize = 2;
-
-        /**
-         * Size of a single vertex in bytes.
-         *
-         * @member {number}
-         */
-        this.vertByteSize = this.vertSize * 4;
-
-        /**
          * The number of particles the buffer can hold
          *
          * @member {number}
@@ -50112,6 +52785,7 @@ var ParticleBuffer = function () {
                 attribute: property.attribute,
                 size: property.size,
                 uploadFunction: property.uploadFunction,
+                unsignedByte: property.unsignedByte,
                 offset: property.offset
             };
 
@@ -50125,10 +52799,14 @@ var ParticleBuffer = function () {
         this.staticStride = 0;
         this.staticBuffer = null;
         this.staticData = null;
+        this.staticDataUint32 = null;
 
         this.dynamicStride = 0;
         this.dynamicBuffer = null;
         this.dynamicData = null;
+        this.dynamicDataUint32 = null;
+
+        this._updateID = 0;
 
         this.initBuffers();
     }
@@ -50162,8 +52840,11 @@ var ParticleBuffer = function () {
             this.dynamicStride += property.size;
         }
 
-        this.dynamicData = new Float32Array(this.size * this.dynamicStride * 4);
-        this.dynamicBuffer = _pixiGlCore2.default.GLBuffer.createVertexBuffer(gl, this.dynamicData, gl.STREAM_DRAW);
+        var dynBuffer = new ArrayBuffer(this.size * this.dynamicStride * 4 * 4);
+
+        this.dynamicData = new Float32Array(dynBuffer);
+        this.dynamicDataUint32 = new Uint32Array(dynBuffer);
+        this.dynamicBuffer = _pixiGlCore2.default.GLBuffer.createVertexBuffer(gl, dynBuffer, gl.STREAM_DRAW);
 
         // static //
         var staticOffset = 0;
@@ -50178,21 +52859,32 @@ var ParticleBuffer = function () {
             this.staticStride += _property.size;
         }
 
-        this.staticData = new Float32Array(this.size * this.staticStride * 4);
-        this.staticBuffer = _pixiGlCore2.default.GLBuffer.createVertexBuffer(gl, this.staticData, gl.STATIC_DRAW);
+        var statBuffer = new ArrayBuffer(this.size * this.staticStride * 4 * 4);
+
+        this.staticData = new Float32Array(statBuffer);
+        this.staticDataUint32 = new Uint32Array(statBuffer);
+        this.staticBuffer = _pixiGlCore2.default.GLBuffer.createVertexBuffer(gl, statBuffer, gl.STATIC_DRAW);
 
         this.vao = new _pixiGlCore2.default.VertexArrayObject(gl).addIndex(this.indexBuffer);
 
         for (var _i2 = 0; _i2 < this.dynamicProperties.length; ++_i2) {
             var _property2 = this.dynamicProperties[_i2];
 
-            this.vao.addAttribute(this.dynamicBuffer, _property2.attribute, gl.FLOAT, false, this.dynamicStride * 4, _property2.offset * 4);
+            if (_property2.unsignedByte) {
+                this.vao.addAttribute(this.dynamicBuffer, _property2.attribute, gl.UNSIGNED_BYTE, true, this.dynamicStride * 4, _property2.offset * 4);
+            } else {
+                this.vao.addAttribute(this.dynamicBuffer, _property2.attribute, gl.FLOAT, false, this.dynamicStride * 4, _property2.offset * 4);
+            }
         }
 
         for (var _i3 = 0; _i3 < this.staticProperties.length; ++_i3) {
             var _property3 = this.staticProperties[_i3];
 
-            this.vao.addAttribute(this.staticBuffer, _property3.attribute, gl.FLOAT, false, this.staticStride * 4, _property3.offset * 4);
+            if (_property3.unsignedByte) {
+                this.vao.addAttribute(this.staticBuffer, _property3.attribute, gl.UNSIGNED_BYTE, true, this.staticStride * 4, _property3.offset * 4);
+            } else {
+                this.vao.addAttribute(this.staticBuffer, _property3.attribute, gl.FLOAT, false, this.staticStride * 4, _property3.offset * 4);
+            }
         }
     };
 
@@ -50209,7 +52901,7 @@ var ParticleBuffer = function () {
         for (var i = 0; i < this.dynamicProperties.length; i++) {
             var property = this.dynamicProperties[i];
 
-            property.uploadFunction(children, startIndex, amount, this.dynamicData, this.dynamicStride, property.offset);
+            property.uploadFunction(children, startIndex, amount, property.unsignedByte ? this.dynamicDataUint32 : this.dynamicData, this.dynamicStride, property.offset);
         }
 
         this.dynamicBuffer.upload();
@@ -50228,7 +52920,7 @@ var ParticleBuffer = function () {
         for (var i = 0; i < this.staticProperties.length; i++) {
             var property = this.staticProperties[i];
 
-            property.uploadFunction(children, startIndex, amount, this.staticData, this.staticStride, property.offset);
+            property.uploadFunction(children, startIndex, amount, property.unsignedByte ? this.staticDataUint32 : this.staticData, this.staticStride, property.offset);
         }
 
         this.staticBuffer.upload();
@@ -50242,12 +52934,16 @@ var ParticleBuffer = function () {
 
     ParticleBuffer.prototype.destroy = function destroy() {
         this.dynamicProperties = null;
-        this.dynamicData = null;
         this.dynamicBuffer.destroy();
+        this.dynamicBuffer = null;
+        this.dynamicData = null;
+        this.dynamicDataUint32 = null;
 
         this.staticProperties = null;
-        this.staticData = null;
         this.staticBuffer.destroy();
+        this.staticBuffer = null;
+        this.staticData = null;
+        this.staticDataUint32 = null;
     };
 
     return ParticleBuffer;
@@ -50257,7 +52953,7 @@ exports.default = ParticleBuffer;
 //# sourceMappingURL=ParticleBuffer.js.map
 
 /***/ }),
-/* 261 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50269,13 +52965,15 @@ var _core = __webpack_require__(1);
 
 var core = _interopRequireWildcard(_core);
 
-var _ParticleShader = __webpack_require__(262);
+var _ParticleShader = __webpack_require__(260);
 
 var _ParticleShader2 = _interopRequireDefault(_ParticleShader);
 
-var _ParticleBuffer = __webpack_require__(260);
+var _ParticleBuffer = __webpack_require__(258);
 
 var _ParticleBuffer2 = _interopRequireDefault(_ParticleBuffer);
+
+var _utils = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50291,7 +52989,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @author Mat Groves
  *
  * Big thanks to the very clever Matt DesLauriers <mattdesl> https://github.com/mattdesl/
- * for creating the original pixi version!
+ * for creating the original PixiJS version!
  * Also a thanks to https://github.com/bchevalier for tweaking the tint and alpha so that they now
  * share 4 bytes on the vertex buffer
  *
@@ -50383,11 +53081,12 @@ var ParticleRenderer = function (_core$ObjectRenderer) {
             uploadFunction: this.uploadUvs,
             offset: 0
         },
-        // alphaData
+        // tintData
         {
             attribute: this.shader.attributes.aColor,
             size: 1,
-            uploadFunction: this.uploadAlpha,
+            unsignedByte: true,
+            uploadFunction: this.uploadTint,
             offset: 0
         }];
     };
@@ -50446,6 +53145,8 @@ var ParticleRenderer = function (_core$ObjectRenderer) {
         // make sure the texture is bound..
         this.shader.uniforms.uSampler = renderer.bindTexture(baseTexture);
 
+        var updateStatic = false;
+
         // now lets upload and render the buffers..
         for (var i = 0, j = 0; i < totalChildren; i += batchSize, j += 1) {
             var amount = totalChildren - i;
@@ -50454,15 +53155,25 @@ var ParticleRenderer = function (_core$ObjectRenderer) {
                 amount = batchSize;
             }
 
+            if (j >= buffers.length) {
+                if (!container.autoResize) {
+                    break;
+                }
+                buffers.push(this._generateOneMoreBuffer(container));
+            }
+
             var buffer = buffers[j];
 
             // we always upload the dynamic
             buffer.uploadDynamic(children, i, amount);
 
+            var bid = container._bufferUpdateIDs[j] || 0;
+
+            updateStatic = updateStatic || buffer._updateID < bid;
             // we only upload the static content when we have to!
-            if (container._bufferToUpdate === j) {
+            if (updateStatic) {
+                buffer._updateID = container._updateID;
                 buffer.uploadStatic(children, i, amount);
-                container._bufferToUpdate = j + 1;
             }
 
             // bind the buffer
@@ -50491,6 +53202,23 @@ var ParticleRenderer = function (_core$ObjectRenderer) {
         }
 
         return buffers;
+    };
+
+    /**
+     * Creates one more particle buffer, because container has autoResize feature
+     *
+     * @param {PIXI.ParticleContainer} container - The container to render using this ParticleRenderer
+     * @return {PIXI.ParticleBuffer} generated buffer
+     * @private
+     */
+
+
+    ParticleRenderer.prototype._generateOneMoreBuffer = function _generateOneMoreBuffer(container) {
+        var gl = this.renderer.gl;
+        var batchSize = container._batchSize;
+        var dynamicPropertyFlags = container._properties;
+
+        return new _ParticleBuffer2.default(gl, this.properties, dynamicPropertyFlags, batchSize);
     };
 
     /**
@@ -50665,14 +53393,18 @@ var ParticleRenderer = function (_core$ObjectRenderer) {
      */
 
 
-    ParticleRenderer.prototype.uploadAlpha = function uploadAlpha(children, startIndex, amount, array, stride, offset) {
-        for (var i = 0; i < amount; i++) {
-            var spriteAlpha = children[startIndex + i].alpha;
+    ParticleRenderer.prototype.uploadTint = function uploadTint(children, startIndex, amount, array, stride, offset) {
+        for (var i = 0; i < amount; ++i) {
+            var sprite = children[startIndex + i];
+            var premultiplied = sprite._texture.baseTexture.premultipliedAlpha;
+            var alpha = sprite.alpha;
+            // we dont call extra function if alpha is 1.0, that's faster
+            var argb = alpha < 1.0 && premultiplied ? (0, _utils.premultiplyTint)(sprite._tintRGB, alpha) : sprite._tintRGB + (alpha * 255 << 24);
 
-            array[offset] = spriteAlpha;
-            array[offset + stride] = spriteAlpha;
-            array[offset + stride * 2] = spriteAlpha;
-            array[offset + stride * 3] = spriteAlpha;
+            array[offset] = argb;
+            array[offset + stride] = argb;
+            array[offset + stride * 2] = argb;
+            array[offset + stride * 3] = argb;
 
             offset += stride * 4;
         }
@@ -50707,7 +53439,7 @@ core.WebGLRenderer.registerPlugin('particle', ParticleRenderer);
 //# sourceMappingURL=ParticleRenderer.js.map
 
 /***/ }),
-/* 262 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50715,7 +53447,7 @@ core.WebGLRenderer.registerPlugin('particle', ParticleRenderer);
 
 exports.__esModule = true;
 
-var _Shader2 = __webpack_require__(18);
+var _Shader2 = __webpack_require__(19);
 
 var _Shader3 = _interopRequireDefault(_Shader2);
 
@@ -50743,9 +53475,9 @@ var ParticleShader = function (_Shader) {
 
         return _possibleConstructorReturn(this, _Shader.call(this, gl,
         // vertex shader
-        ['attribute vec2 aVertexPosition;', 'attribute vec2 aTextureCoord;', 'attribute float aColor;', 'attribute vec2 aPositionCoord;', 'attribute vec2 aScale;', 'attribute float aRotation;', 'uniform mat3 projectionMatrix;', 'varying vec2 vTextureCoord;', 'varying float vColor;', 'void main(void){', '   vec2 v = aVertexPosition;', '   v.x = (aVertexPosition.x) * cos(aRotation) - (aVertexPosition.y) * sin(aRotation);', '   v.y = (aVertexPosition.x) * sin(aRotation) + (aVertexPosition.y) * cos(aRotation);', '   v = v + aPositionCoord;', '   gl_Position = vec4((projectionMatrix * vec3(v, 1.0)).xy, 0.0, 1.0);', '   vTextureCoord = aTextureCoord;', '   vColor = aColor;', '}'].join('\n'),
+        ['attribute vec2 aVertexPosition;', 'attribute vec2 aTextureCoord;', 'attribute vec4 aColor;', 'attribute vec2 aPositionCoord;', 'attribute float aRotation;', 'uniform mat3 projectionMatrix;', 'uniform vec4 uColor;', 'varying vec2 vTextureCoord;', 'varying vec4 vColor;', 'void main(void){', '   float x = (aVertexPosition.x) * cos(aRotation) - (aVertexPosition.y) * sin(aRotation);', '   float y = (aVertexPosition.x) * sin(aRotation) + (aVertexPosition.y) * cos(aRotation);', '   vec2 v = vec2(x, y);', '   v = v + aPositionCoord;', '   gl_Position = vec4((projectionMatrix * vec3(v, 1.0)).xy, 0.0, 1.0);', '   vTextureCoord = aTextureCoord;', '   vColor = aColor * uColor;', '}'].join('\n'),
         // hello
-        ['varying vec2 vTextureCoord;', 'varying float vColor;', 'uniform sampler2D uSampler;', 'uniform vec4 uColor;', 'void main(void){', '  vec4 color = texture2D(uSampler, vTextureCoord) * vColor * uColor;', '  if (color.a == 0.0) discard;', '  gl_FragColor = color;', '}'].join('\n')));
+        ['varying vec2 vTextureCoord;', 'varying vec4 vColor;', 'uniform sampler2D uSampler;', 'void main(void){', '  vec4 color = texture2D(uSampler, vTextureCoord) * vColor;', '  gl_FragColor = color;', '}'].join('\n')));
     }
 
     return ParticleShader;
@@ -50755,7 +53487,7 @@ exports.default = ParticleShader;
 //# sourceMappingURL=ParticleShader.js.map
 
 /***/ }),
-/* 263 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50778,13 +53510,30 @@ if (!Math.sign) {
 //# sourceMappingURL=Math.sign.js.map
 
 /***/ }),
-/* 264 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _objectAssign = __webpack_require__(176);
+// References:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+
+if (!Number.isInteger) {
+    Number.isInteger = function numberIsInteger(value) {
+        return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+    };
+}
+//# sourceMappingURL=Number.isInteger.js.map
+
+/***/ }),
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _objectAssign = __webpack_require__(177);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
@@ -50798,17 +53547,19 @@ if (!Object.assign) {
 //# sourceMappingURL=Object.assign.js.map
 
 /***/ }),
-/* 265 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(264);
-
-__webpack_require__(266);
-
 __webpack_require__(263);
+
+__webpack_require__(265);
+
+__webpack_require__(261);
+
+__webpack_require__(262);
 
 if (!window.ArrayBuffer) {
     window.ArrayBuffer = Array;
@@ -50828,7 +53579,7 @@ if (!window.Uint16Array) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 266 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50906,10 +53657,10 @@ if (!global.cancelAnimationFrame) {
     };
 }
 //# sourceMappingURL=requestAnimationFrame.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ }),
-/* 267 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51034,7 +53785,7 @@ core.CanvasRenderer.registerPlugin('prepare', CanvasPrepare);
 //# sourceMappingURL=CanvasPrepare.js.map
 
 /***/ }),
-/* 268 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51042,7 +53793,7 @@ core.CanvasRenderer.registerPlugin('prepare', CanvasPrepare);
 
 exports.__esModule = true;
 
-var _WebGLPrepare = __webpack_require__(270);
+var _WebGLPrepare = __webpack_require__(269);
 
 Object.defineProperty(exports, 'webgl', {
   enumerable: true,
@@ -51051,7 +53802,7 @@ Object.defineProperty(exports, 'webgl', {
   }
 });
 
-var _CanvasPrepare = __webpack_require__(267);
+var _CanvasPrepare = __webpack_require__(266);
 
 Object.defineProperty(exports, 'canvas', {
   enumerable: true,
@@ -51069,7 +53820,7 @@ Object.defineProperty(exports, 'BasePrepare', {
   }
 });
 
-var _CountLimiter = __webpack_require__(114);
+var _CountLimiter = __webpack_require__(118);
 
 Object.defineProperty(exports, 'CountLimiter', {
   enumerable: true,
@@ -51078,7 +53829,7 @@ Object.defineProperty(exports, 'CountLimiter', {
   }
 });
 
-var _TimeLimiter = __webpack_require__(269);
+var _TimeLimiter = __webpack_require__(268);
 
 Object.defineProperty(exports, 'TimeLimiter', {
   enumerable: true,
@@ -51091,7 +53842,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 269 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51154,7 +53905,7 @@ exports.default = TimeLimiter;
 //# sourceMappingURL=TimeLimiter.js.map
 
 /***/ }),
-/* 270 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51281,197 +54032,7 @@ core.WebGLRenderer.registerPlugin('prepare', WebGLPrepare);
 //# sourceMappingURL=WebGLPrepare.js.map
 
 /***/ }),
-/* 271 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 272 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -52007,10 +54568,10 @@ process.umask = function() { return 0; };
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(283)(module), __webpack_require__(30)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(284)(module), __webpack_require__(13)))
 
 /***/ }),
-/* 273 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52101,7 +54662,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 274 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52193,18 +54754,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 275 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(273);
-exports.encode = exports.stringify = __webpack_require__(274);
+exports.decode = exports.parse = __webpack_require__(271);
+exports.encode = exports.stringify = __webpack_require__(272);
 
 
 /***/ }),
-/* 276 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52239,7 +54800,7 @@ module.exports = function removeItems(arr, startIdx, removeCount)
 
 
 /***/ }),
-/* 277 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52249,6 +54810,8 @@ exports.__esModule = true;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _miniSignals = __webpack_require__(71);
 
 var _miniSignals2 = _interopRequireDefault(_miniSignals);
@@ -52257,7 +54820,7 @@ var _parseUri = __webpack_require__(72);
 
 var _parseUri2 = _interopRequireDefault(_parseUri);
 
-var _async = __webpack_require__(115);
+var _async = __webpack_require__(120);
 
 var async = _interopRequireWildcard(_async);
 
@@ -52708,24 +55271,35 @@ var Loader = function () {
             return this;
         }
 
-        // distribute progress chunks
-        var chunk = 100 / this._queue._tasks.length;
+        if (this._queue.idle()) {
+            this._onStart();
+            this._onComplete();
+        } else {
+            // distribute progress chunks
+            var numTasks = this._queue._tasks.length;
+            var chunk = 100 / numTasks;
 
-        for (var i = 0; i < this._queue._tasks.length; ++i) {
-            this._queue._tasks[i].data.progressChunk = chunk;
+            for (var i = 0; i < this._queue._tasks.length; ++i) {
+                this._queue._tasks[i].data.progressChunk = chunk;
+            }
+
+            // notify we are starting
+            this._onStart();
+
+            // start loading
+            this._queue.resume();
         }
-
-        // update loading state
-        this.loading = true;
-
-        // notify of start
-        this.onStart.dispatch(this);
-
-        // start loading
-        this._queue.resume();
 
         return this;
     };
+
+    /**
+     * The number of resources to load concurrently.
+     *
+     * @member {number}
+     * @default 10
+     */
+
 
     /**
      * Prepares a url for usage based on the configuration of this object
@@ -52734,8 +55308,6 @@ var Loader = function () {
      * @param {string} url - The url to prepare.
      * @return {string} The prepared url.
      */
-
-
     Loader.prototype._prepareUrl = function _prepareUrl(url) {
         var parsedUrl = (0, _parseUri2.default)(url, { strictMode: true });
         var result = void 0;
@@ -52801,6 +55373,19 @@ var Loader = function () {
     };
 
     /**
+     * Called once loading has started.
+     *
+     * @private
+     */
+
+
+    Loader.prototype._onStart = function _onStart() {
+        this.progress = 0;
+        this.loading = true;
+        this.onStart.dispatch(this);
+    };
+
+    /**
      * Called once each resource has loaded.
      *
      * @private
@@ -52808,8 +55393,8 @@ var Loader = function () {
 
 
     Loader.prototype._onComplete = function _onComplete() {
+        this.progress = MAX_PROGRESS;
         this.loading = false;
-
         this.onComplete.dispatch(this, this.resources);
     };
 
@@ -52849,11 +55434,22 @@ var Loader = function () {
 
             // do completion check
             if (_this3._queue.idle() && _this3._resourcesParsing.length === 0) {
-                _this3.progress = MAX_PROGRESS;
                 _this3._onComplete();
             }
         }, true);
     };
+
+    _createClass(Loader, [{
+        key: 'concurrency',
+        get: function get() {
+            return this._queue.concurrency;
+        }
+        // eslint-disable-next-line require-jsdoc
+        ,
+        set: function set(concurrency) {
+            this._queue.concurrency = concurrency;
+        }
+    }]);
 
     return Loader;
 }();
@@ -52862,7 +55458,7 @@ exports.default = Loader;
 //# sourceMappingURL=Loader.js.map
 
 /***/ }),
-/* 278 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52878,7 +55474,7 @@ var _Resource = __webpack_require__(54);
 
 var _Resource2 = _interopRequireDefault(_Resource);
 
-var _b = __webpack_require__(116);
+var _b = __webpack_require__(121);
 
 var _b2 = _interopRequireDefault(_b);
 
@@ -52955,7 +55551,444 @@ function blobMiddlewareFactory() {
 //# sourceMappingURL=blob.js.map
 
 /***/ }),
+/* 277 */
+/***/ (function(module, exports) {
+
+/*!
+* screenfull
+* v3.3.2 - 2017-10-27
+* (c) Sindre Sorhus; MIT License
+*/
+(function () {
+	'use strict';
+
+	var document = typeof window !== 'undefined' && typeof window.document !== 'undefined' ? window.document : {};
+	var isCommonjs = typeof module !== 'undefined' && module.exports;
+	var keyboardAllowed = typeof Element !== 'undefined' && 'ALLOW_KEYBOARD_INPUT' in Element;
+
+	var fn = (function () {
+		var val;
+
+		var fnMap = [
+			[
+				'requestFullscreen',
+				'exitFullscreen',
+				'fullscreenElement',
+				'fullscreenEnabled',
+				'fullscreenchange',
+				'fullscreenerror'
+			],
+			// New WebKit
+			[
+				'webkitRequestFullscreen',
+				'webkitExitFullscreen',
+				'webkitFullscreenElement',
+				'webkitFullscreenEnabled',
+				'webkitfullscreenchange',
+				'webkitfullscreenerror'
+
+			],
+			// Old WebKit (Safari 5.1)
+			[
+				'webkitRequestFullScreen',
+				'webkitCancelFullScreen',
+				'webkitCurrentFullScreenElement',
+				'webkitCancelFullScreen',
+				'webkitfullscreenchange',
+				'webkitfullscreenerror'
+
+			],
+			[
+				'mozRequestFullScreen',
+				'mozCancelFullScreen',
+				'mozFullScreenElement',
+				'mozFullScreenEnabled',
+				'mozfullscreenchange',
+				'mozfullscreenerror'
+			],
+			[
+				'msRequestFullscreen',
+				'msExitFullscreen',
+				'msFullscreenElement',
+				'msFullscreenEnabled',
+				'MSFullscreenChange',
+				'MSFullscreenError'
+			]
+		];
+
+		var i = 0;
+		var l = fnMap.length;
+		var ret = {};
+
+		for (; i < l; i++) {
+			val = fnMap[i];
+			if (val && val[1] in document) {
+				for (i = 0; i < val.length; i++) {
+					ret[fnMap[0][i]] = val[i];
+				}
+				return ret;
+			}
+		}
+
+		return false;
+	})();
+
+	var eventNameMap = {
+		change: fn.fullscreenchange,
+		error: fn.fullscreenerror
+	};
+
+	var screenfull = {
+		request: function (elem) {
+			var request = fn.requestFullscreen;
+
+			elem = elem || document.documentElement;
+
+			// Work around Safari 5.1 bug: reports support for
+			// keyboard in fullscreen even though it doesn't.
+			// Browser sniffing, since the alternative with
+			// setTimeout is even worse.
+			if (/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)) {
+				elem[request]();
+			} else {
+				elem[request](keyboardAllowed && Element.ALLOW_KEYBOARD_INPUT);
+			}
+		},
+		exit: function () {
+			document[fn.exitFullscreen]();
+		},
+		toggle: function (elem) {
+			if (this.isFullscreen) {
+				this.exit();
+			} else {
+				this.request(elem);
+			}
+		},
+		onchange: function (callback) {
+			this.on('change', callback);
+		},
+		onerror: function (callback) {
+			this.on('error', callback);
+		},
+		on: function (event, callback) {
+			var eventName = eventNameMap[event];
+			if (eventName) {
+				document.addEventListener(eventName, callback, false);
+			}
+		},
+		off: function (event, callback) {
+			var eventName = eventNameMap[event];
+			if (eventName) {
+				document.removeEventListener(eventName, callback, false);
+			}
+		},
+		raw: fn
+	};
+
+	if (!fn) {
+		if (isCommonjs) {
+			module.exports = false;
+		} else {
+			window.screenfull = false;
+		}
+
+		return;
+	}
+
+	Object.defineProperties(screenfull, {
+		isFullscreen: {
+			get: function () {
+				return Boolean(document[fn.fullscreenElement]);
+			}
+		},
+		element: {
+			enumerable: true,
+			get: function () {
+				return document[fn.fullscreenElement];
+			}
+		},
+		enabled: {
+			enumerable: true,
+			get: function () {
+				// Coerce to boolean in case of old WebKit
+				return Boolean(document[fn.fullscreenEnabled]);
+			}
+		}
+	});
+
+	if (isCommonjs) {
+		module.exports = screenfull;
+	} else {
+		window.screenfull = screenfull;
+	}
+})();
+
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13), __webpack_require__(119)))
+
+/***/ }),
 /* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
+            (typeof self !== "undefined" && self) ||
+            window;
+var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, scope, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, scope, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(scope, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__(278);
+// On some exotic environments, it's not clear which object `setimmediate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
+
+/***/ }),
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52978,7 +56011,7 @@ module.exports = {
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -53075,8 +56108,8 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 281 */,
-/* 282 */
+/* 282 */,
+/* 283 */
 /***/ (function(module, exports) {
 
 /**
@@ -53109,7 +56142,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -53137,7 +56170,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports) {
 
 /*
@@ -53219,7 +56252,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -53238,7 +56271,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(282)
+var listToStyles = __webpack_require__(283)
 
 /*
 type StyleObject = {
@@ -53266,13 +56299,17 @@ var singletonElement = null
 var singletonCounter = 0
 var isProduction = false
 var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
 
 // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 // tags it will allow on a page
 var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
 
-module.exports = function (parentId, list, _isProduction) {
+module.exports = function (parentId, list, _isProduction, _options) {
   isProduction = _isProduction
+
+  options = _options || {}
 
   var styles = listToStyles(parentId, list)
   addStylesToDom(styles)
@@ -53337,7 +56374,7 @@ function createStyleElement () {
 
 function addStyle (obj /* StyleObjectPart */) {
   var update, remove
-  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
 
   if (styleElement) {
     if (isProduction) {
@@ -53419,6 +56456,9 @@ function applyToTag (styleElement, obj) {
   if (media) {
     styleElement.setAttribute('media', media)
   }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
 
   if (sourceMap) {
     // https://developer.chrome.com/devtools/docs/javascript-debugging
@@ -53441,4 +56481,4 @@ function applyToTag (styleElement, obj) {
 
 /***/ })
 ]);
-//# sourceMappingURL=vendor.664030e8980c7d938901.js.map
+//# sourceMappingURL=vendor.db5c2da0078cafb266a7.js.map

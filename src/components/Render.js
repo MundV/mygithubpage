@@ -47,7 +47,7 @@ export default class Render {
     window.removeEventListener('resize', this.resize)
     window.removeEventListener('keyup', this.deactivateKey)
     window.removeEventListener('keydown', this.activateKey)
-    screenfull.off('change', this.pause)
+    screenfull.off('change', this.pause.bind(this))
   }
   resize () {
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
@@ -192,7 +192,7 @@ export default class Render {
   start () {
     // if (screenfull.enabled) screenfull.request()
 
-    screenfull.on('change', this.pause)
+    screenfull.on('change', this.pause.bind(this))
 
     this.target.appendChild(this.renderer.view)
     this.firstRender()

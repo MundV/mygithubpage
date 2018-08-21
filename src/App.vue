@@ -106,6 +106,7 @@ export default {
   methods: {
     startGame: function () {
       this.gameIsRunning = true
+      this.paused = false
       if(screenfull.enabled) screenfull.request()
     },
     unpause: function () {

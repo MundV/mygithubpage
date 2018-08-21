@@ -41,7 +41,8 @@
     </div>
     <div class="paused" v-show="paused">
       <h1>The game is paused!</h1>
-      <button type="button" class="button pauseButton" name="button" @click="paused = false">Unpause</button>
+      <button type="button" class="button pauseButton" name="button" @click="unpause()">Unpause</button>
+      <!-- <button type="button" class="button pauseButton" name="button" @click="unpause()">Unpause</button> -->
     </div>
     <div id="canvas" v-show="gameIsRunning"></div>
   </div>
@@ -104,8 +105,11 @@ export default {
   },
   methods: {
     startGame: function () {
-      console.log('afdfs')
       this.gameIsRunning = true
+      if(screenfull.enabled) screenfull.request()
+    },
+    unpause: function () {
+      this.paused = false
       if(screenfull.enabled) screenfull.request()
     },
     addPlayer: function () {

@@ -8,7 +8,7 @@ export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
     this.game = new Game(options)
     this.stop = stop
-    this.pause = pause
+    this.pauseAction = pause
     this.reRender = false
 
     this.bots = options.paddles.map(options => options.bot ? bot() : false)
@@ -47,6 +47,7 @@ export default class Render {
     window.removeEventListener('resize', this.resize)
     window.removeEventListener('keyup', this.deactivateKey)
     window.removeEventListener('keydown', this.activateKey)
+    screenfull.off('change', this.pause)
   }
   resize () {
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
@@ -121,7 +122,7 @@ export default class Render {
     }
     // controller for touch
     for (let i = 0; i < this.game.paddles.length; i++) {
-      if(this.bots[i]) controller.push({paddle: this.game.paddles[i], action: bots[i](this.game, i)})
+      if(this.bots[i]) controller.push({paddle: this.game.paddles[i], action: this.bots[i](this.game, i)})
       else {
         for (let j = 0; j < this.actions.length; j++) {
           if (this.touches[i * 2 + j]) {
@@ -191,12 +192,7 @@ export default class Render {
   start () {
     // if (screenfull.enabled) screenfull.request()
 
-    screenfull.on('change', () => {
-      if(!screenfull.isFullscreen) {
-        this.game.paused = true
-        this.pause()
-      }
-    })
+    screenfull.on('change', this.pause)
 
     this.target.appendChild(this.renderer.view)
     this.firstRender()
@@ -237,7 +233,12 @@ export default class Render {
     gameLoop()
   }
   unpause () {
-    if(screenfull.enabled) screenfull.request()
     this.game.paused = false
+  }
+  pause () {
+    if(!screenfull.isFullscreen) {
+      this.game.paused = true
+      this.pauseAction()
+    }
   }
 }

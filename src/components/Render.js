@@ -1,7 +1,7 @@
 /* globals screen */
 import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
-import fullscreen from 'fullscreen'
+import screenfull from 'screenfull'
 
 export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
@@ -17,7 +17,7 @@ export default class Render {
       backgroundColor: 0x333333
     })
 
-    this.touches = {}
+    this.touches = new Uint8Array(4)
     this.keys = []
     this.actions = ['up', 'down']
 
@@ -29,7 +29,6 @@ export default class Render {
     while (this.target.firstChild) {
       this.target.removeChild(this.target.firstChild)
     }
-    this.fs = fullscreen(this.target)
 
     this.resize = this.resize.bind(this)
     this.activateKey = this.activateKey.bind(this)
@@ -59,16 +58,10 @@ export default class Render {
     this.keys[e.keyCode] = false
   }
   addTouchAreas () {
-    const conversion = {
-      '00': '00',
-      '01': '10',
-      '10': '01',
-      '11': '11'
-    }
     this.touchAreas.removeChildren()
     for (let i = 0; i < this.game.paddles.length; i++) {
       for (let j = 0; j < this.actions.length; j++) {
-        const state = '' + i + j
+        const state = (screen.availWidth > screen.availHeight) ? i * 2 + j : j * 2 + i;
         const area = new PIXI.Graphics()
         const standard = this.mp(this.game.fieldSize[0] / 2, this.game.fieldSize[1] / 2)
         area.hitArea = new PIXI.Rectangle(
@@ -80,25 +73,13 @@ export default class Render {
         this.touchAreas.addChild(area)
 
         area.on('touchstart', () => {
-          if (screen.availWidth > screen.availHeight) {
-            this.touches[state] = true
-          } else {
-            this.touches[conversion[state]] = true
-          }
+          this.touches[state] = true
         })
         area.on('touchend', () => {
-          if (screen.availWidth > screen.availHeight) {
-            this.touches[state] = false
-          } else {
-            this.touches[conversion[state]] = false
-          }
+          this.touches[state] = false
         })
         area.on('touchendoutside', () => {
-          if (screen.availWidth > screen.availHeight) {
-            this.touches[state] = false
-          } else {
-            this.touches[conversion[state]] = false
-          }
+          this.touches[state] = false
         })
       }
     }
@@ -136,8 +117,7 @@ export default class Render {
     // controller for touch
     for (let i = 0; i < this.game.paddles.length; i++) {
       for (let j = 0; j < this.actions.length; j++) {
-        const state = '' + i + j
-        if (this.touches[state]) {
+        if (this.touches[i * 2 + j]) {
           controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
         }
       }
@@ -201,13 +181,15 @@ export default class Render {
     this.stage.addChild(this.touchAreas)
   }
   start () {
-    if (fullscreen.available()) {
-      this.fs.request()
-    }
-    this.fs.on('release', () => {
-      this.game.paused = true
-      this.pause()
+    if (screenfull.enabled) screenfull.request()
+
+    screenfull.on('change', () => {
+      if(!screenfull.isFullscreen) {
+        this.game.paused = true
+        this.pause()
+      }
     })
+
     this.target.appendChild(this.renderer.view)
     this.firstRender()
     const gameLoop = () => {
@@ -239,8 +221,7 @@ export default class Render {
         this.renderer.render(this.stage)
       } else {
         this.removeEventListeners()
-        this.fs.release()
-        this.fs.dispose()
+        screenfull.exit();
         this.stage.destroy()
         this.stop()
       }
@@ -248,7 +229,7 @@ export default class Render {
     gameLoop()
   }
   unpause () {
-    this.fs.request()
+    if(screenfull.enabled) screenfull.request()
     this.game.paused = false
   }
 }

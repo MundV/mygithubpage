@@ -3,6 +3,7 @@ import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
 import bot from './bot.js'
 import screenfull from 'screenfull'
+import Controller from './controller.js'
 
 export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
@@ -11,6 +12,7 @@ export default class Render {
     this.pauseAction = pause
     this.reRender = false
 
+    
     this.bots = options.paddles.map(options => options.bot ? bot() : false)
 
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
@@ -20,9 +22,9 @@ export default class Render {
       backgroundColor: 0x333333
     })
 
-    this.touches = new Uint8Array(4)
     this.keys = []
     this.actions = ['up', 'down']
+    this.controller = new Controller(this.game, this.actions, this.bots)
 
     this.touchAreas = new PIXI.Container()
     this.touchAreas.interactive = true
@@ -42,11 +44,13 @@ export default class Render {
     window.addEventListener('resize', this.resize)
     window.addEventListener('keyup', this.deactivateKey)
     window.addEventListener('keydown', this.activateKey)
+    window.addEventListener('contextmenu', this.blockContext)
   }
   removeEventListeners () {
     window.removeEventListener('resize', this.resize)
     window.removeEventListener('keyup', this.deactivateKey)
     window.removeEventListener('keydown', this.activateKey)
+    window.removeEventListener('contextmenu', this.blockContext)
     screenfull.off('change', this.pause.bind(this))
   }
   resize () {
@@ -56,16 +60,18 @@ export default class Render {
     this.renderer.resize(screen.width, screen.height)
   }
   activateKey (e) {
-    this.keys[e.keyCode] = true
+    this.controller.activateKey(e.keyCode)
   }
   deactivateKey (e) {
-    this.keys[e.keyCode] = false
+    this.controller.deactivateKey(e.keyCode)
+  }
+  blockContext (e) {
+    e.preventDefault()
   }
   addTouchAreas () {
     this.touchAreas.removeChildren()
     for (let i = 0; i < this.game.paddles.length; i++) {
       for (let j = 0; j < this.actions.length; j++) {
-        const state = (screen.width > screen.height) ? i * 2 + j : j * 2 + i;
         const area = new PIXI.Graphics()
         const standard = this.mp(this.game.fieldSize[0] / 2, this.game.fieldSize[1] / 2)
         area.hitArea = new PIXI.Rectangle(
@@ -77,13 +83,13 @@ export default class Render {
         this.touchAreas.addChild(area)
 
         area.on('touchstart', () => {
-          this.touches[state] = true
+          this.controller.addControl(i, j)
         })
         area.on('touchend', () => {
-          this.touches[state] = false
+          this.controller.removeControl(i, j)
         })
         area.on('touchendoutside', () => {
-          this.touches[state] = false
+          this.controller.removeControl(i, j)
         })
       }
     }
@@ -108,31 +114,31 @@ export default class Render {
       return [y * mp.y, x * mp.x]
     }
   }
-  createController () {
-    const controller = []
-    // controller for keyboard
-    for (const paddle of this.game.paddles) {
-      if(paddle.bot) continue
+  // createController () {
+  //   const controller = []
+  //   // controller for keyboard
+  //   for (const paddle of this.game.paddles) {
+  //     if(paddle.bot) continue
 
-      for (const control of paddle.controls) {
-        if (this.keys[control.key.toString()]) {
-          controller.push({paddle, action: control.action})
-        }
-      }
-    }
-    // controller for touch
-    for (let i = 0; i < this.game.paddles.length; i++) {
-      if(this.bots[i]) controller.push({paddle: this.game.paddles[i], action: this.bots[i](this.game, i)})
-      else {
-        for (let j = 0; j < this.actions.length; j++) {
-          if (this.touches[i * 2 + j]) {
-            controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
-          }
-        }
-      }
-    }
-    this.controller = controller
-  }
+  //     for (const control of paddle.controls) {
+  //       if (this.keys[control.key.toString()]) {
+  //         controller.push({paddle, action: control.action})
+  //       }
+  //     }
+  //   }
+  //   // controller for touch
+  //   for (let i = 0; i < this.game.paddles.length; i++) {
+  //     if(this.bots[i]) controller.push({paddle: this.game.paddles[i], action: this.bots[i](this.game, i)})
+  //     else {
+  //       for (let j = 0; j < this.actions.length; j++) {
+  //         if (this.touches[i * 2 + j]) {
+  //           controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
+  //         }
+  //       }
+  //     }
+  //   }
+  //   this.controller = controller
+  // }
   firstRender () {
     if (this.reRender) {
       this.paddles.destroy()
@@ -198,8 +204,8 @@ export default class Render {
     this.firstRender()
     const gameLoop = () => {
       if (!this.game.ended) {
-        this.createController()
-        this.game.update(this.controller)
+        // this.createController()
+        this.game.update(this.controller.getController())
 
         for (let i = 0; i < this.game.paddles.length; i++) {
           const paddle = this.game.paddles[i]

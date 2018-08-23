@@ -108,7 +108,7 @@ export default {
       this.gameIsRunning = true
       this.paused = false
       if(screenfull.enabled) screenfull.request()
-      document.body.requestPointerLock();
+      // document.body.requestPointerLock();
     },
     addPlayer: function () {
       const paddle = {...this.paddles[0]}

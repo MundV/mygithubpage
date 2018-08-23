@@ -3,6 +3,7 @@
     <div id="startScreen" v-show="!gameIsRunning" class="screen">
       <h1>{{message}}</h1>
       <button @click="startGame" class="startGame button">Play 🕹️</button>
+      <!-- <button class="button">Online 🌎</button> -->
       <button v-scroll-to="'#settingScreen'" id="settingButton" class="button">Settings 🔎</button>
     </div>
     <div id="settingScreen" class="screen" v-show="!gameIsRunning">
@@ -38,11 +39,13 @@
         </table>
         <button class="button" @click="addPlayer">Add player</button>
       </div>
+      <!-- <h2>Online 🌎</h2>
+      <input src=""><input> -->
+
     </div>
     <div class="paused" v-show="paused">
       <h1>The game is paused!</h1>
       <button type="button" class="button pauseButton" name="button" @click="startGame()">Unpause</button>
-      <!-- <button type="button" class="button pauseButton" name="button" @click="unpause()">Unpause</button> -->
     </div>
     <div id="canvas" v-show="gameIsRunning"></div>
   </div>
@@ -108,7 +111,7 @@ export default {
       this.gameIsRunning = true
       this.paused = false
       if(screenfull.enabled) screenfull.request()
-      // document.body.requestPointerLock();
+      document.body.requestPointerLock();
     },
     addPlayer: function () {
       const paddle = {...this.paddles[0]}
@@ -222,6 +225,9 @@ input[type='number'] {
 }
 
 #startScreen button:nth-child(2) {
+  margin-bottom: 10px;
+}
+#startScreen button:nth-child(3) {
   margin-bottom: 10px;
 }
 #startScreen h1 {

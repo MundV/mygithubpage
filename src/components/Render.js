@@ -113,31 +113,6 @@ export default class Render {
       return [y * mp.y, x * mp.x]
     }
   }
-  // createController () {
-  //   const controller = []
-  //   // controller for keyboard
-  //   for (const paddle of this.game.paddles) {
-  //     if(paddle.bot) continue
-
-  //     for (const control of paddle.controls) {
-  //       if (this.keys[control.key.toString()]) {
-  //         controller.push({paddle, action: control.action})
-  //       }
-  //     }
-  //   }
-  //   // controller for touch
-  //   for (let i = 0; i < this.game.paddles.length; i++) {
-  //     if(this.bots[i]) controller.push({paddle: this.game.paddles[i], action: this.bots[i](this.game, i)})
-  //     else {
-  //       for (let j = 0; j < this.actions.length; j++) {
-  //         if (this.touches[i * 2 + j]) {
-  //           controller.push({paddle: this.game.paddles[i], action: this.actions[j]})
-  //         }
-  //       }
-  //     }
-  //   }
-  //   this.controller = controller
-  // }
   firstRender () {
     if (this.reRender) {
       this.paddles.destroy()
@@ -201,7 +176,6 @@ export default class Render {
     this.firstRender()
     const gameLoop = () => {
       if (!this.game.ended) {
-        // this.createController()
         this.game.update(this.controller.getController())
 
         for (let i = 0; i < this.game.paddles.length; i++) {

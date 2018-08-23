@@ -12,7 +12,6 @@ export default class Render {
     this.pauseAction = pause
     this.reRender = false
 
-    
     this.bots = options.paddles.map(options => options.bot ? bot() : false)
 
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
@@ -196,8 +195,6 @@ export default class Render {
     this.stage.addChild(this.touchAreas)
   }
   start () {
-    // if (screenfull.enabled) screenfull.request()
-
     screenfull.on('change', this.pause.bind(this))
 
     this.target.appendChild(this.renderer.view)
@@ -242,7 +239,7 @@ export default class Render {
     this.game.paused = false
   }
   pause () {
-    if(!screenfull.isFullscreen) {
+    if(!screenfull.isFullscreen && !this.game.ended) {
       this.game.paused = true
       this.pauseAction()
     }

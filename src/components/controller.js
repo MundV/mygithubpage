@@ -17,27 +17,28 @@ export default class Controller {
     this.controller = null
   }
   activateKey(keycode) {
-    const {paddleId, actionId} = this.lookup(keycode)
-    if(paddleId === -1 || actionId === -1) return
-
-    this.addControl(paddleId, actionId)
+    const controls = this.lookup(keycode)
+    for(const {paddleId, actionId} of controls) {
+      this.addControl(paddleId, actionId)
+    }
   }
   deactivateKey(keycode) {
-    const {paddleId, actionId} = this.lookup(keycode)
-    if(paddleId === -1 || actionId === -1) return
-
-    this.removeControl(paddleId, actionId)
+    const controls = this.lookup(keycode)
+    for(const {paddleId, actionId} of controls) {
+      this.removeControl(paddleId, actionId)
+    }
   }
   lookup(keycode) {
+    const controls = []
     for (let i = 0; i < this.game.paddles.length; i++) {
       for(const control of this.game.paddles[i].controls) {
         if(control.key == keycode) {
-          return {paddleId: i, actionId: this.actions.indexOf(control.action)}
+          controls.push({paddleId: i, actionId: this.actions.indexOf(control.action)})
         }
       }
     }
 
-    return {paddleId: -1, actionId: -1}
+    return controls
   }
   getController () {
     if(!this.controller) {

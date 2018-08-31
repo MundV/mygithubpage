@@ -80,15 +80,16 @@ export default class Render {
           j * standard[1] + standard[1])
         area.interactive = true
         this.touchAreas.addChild(area)
-
+        
+        const [paddleId, actionId] = (screen.width > screen.height) ? [i, j] : [j, i]
         area.on('touchstart', () => {
-          this.controller.addControl(i, j)
+          this.controller.addControl(paddleId, actionId)
         })
         area.on('touchend', () => {
-          this.controller.removeControl(i, j)
+          this.controller.removeControl(paddleId, actionId)
         })
         area.on('touchendoutside', () => {
-          this.controller.removeControl(i, j)
+          this.controller.removeControl(paddleId, actionId)
         })
       }
     }

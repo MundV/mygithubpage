@@ -51,7 +51,6 @@ export default class Controller {
           paddle: this.game.paddles[parseInt(i / this.actions.length)],
           action: this.actions[i % this.actions.length]
         })
-        console.log(this.controller)
       }
     }
     const res = [...this.controller]

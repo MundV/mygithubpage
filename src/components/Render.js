@@ -41,14 +41,14 @@ export default class Render {
   }
   addEventListeners () {
     window.addEventListener('resize', this.resize)
-    window.addEventListener('keyup', this.deactivateKey)
-    window.addEventListener('keydown', this.activateKey)
+    window.addEventListener('keyup', this.deactivateKey, {passive: true})
+    window.addEventListener('keydown', this.activateKey, {passive: true})
     window.addEventListener('contextmenu', this.blockContext)
   }
   removeEventListeners () {
     window.removeEventListener('resize', this.resize)
-    window.removeEventListener('keyup', this.deactivateKey)
-    window.removeEventListener('keydown', this.activateKey)
+    window.removeEventListener('keyup', this.deactivateKey, {passive: true})
+    window.removeEventListener('keydown', this.activateKey, {passive: true})
     window.removeEventListener('contextmenu', this.blockContext)
     screenfull.off('change', this.pause.bind(this))
   }

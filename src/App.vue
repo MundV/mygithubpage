@@ -46,6 +46,7 @@
     <div class="paused" v-show="paused">
       <h1>The game is paused!</h1>
       <button type="button" class="button pauseButton" name="button" @click="startGame()">Unpause</button>
+      <button type="button" class="button pauseButton" name="button" @click="gameIsRunning = false">Exit</button>
     </div>
     <div id="canvas" v-show="gameIsRunning"></div>
   </div>
@@ -86,7 +87,9 @@ export default {
         this.render.start()
       } else {
         const game = this.render.game
-        if (game.winner.length > 1) {
+        if(game.winner.length === 0) {
+          this.message = 'Glitchping by Mund'
+        } else if (game.winner.length > 1) {
           this.message = `${game.winner[0]} and others won!🎉`
         } else {
           this.message = `${game.winner[0]} won!🎉`

@@ -1,4 +1,4 @@
-/* globals screen */
+/* globals window */
 import * as PIXI from 'pixi.js'
 import Game from 'gp_engine'
 import bot from './bot.js'
@@ -14,10 +14,10 @@ export default class Render {
 
     this.bots = options.paddles.map(options => options.bot ? bot() : false)
 
-    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
+    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, window.innerWidth, window.innerHeight)
     this.renderer = new PIXI.autoDetectRenderer({
-      width: screen.Width,
-      height: screen.Height,
+      width: window.innerWidth,
+      height: window.innerHeight,
       backgroundColor: 0x333333
     })
 
@@ -53,10 +53,10 @@ export default class Render {
     screenfull.off('change', this.pause.bind(this))
   }
   resize () {
-    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, screen.width, screen.height)
+    this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, window.innerWidth, window.innerHeight)
     this.addTouchAreas()
     this.firstRender()
-    this.renderer.resize(screen.width, screen.height)
+    this.renderer.resize(window.innerWidth, window.innerHeight)
   }
   activateKey (e) {
     this.controller.activateKey(e.keyCode)
@@ -81,7 +81,7 @@ export default class Render {
         area.interactive = true
         this.touchAreas.addChild(area)
         
-        const [paddleId, actionId] = (screen.width > screen.height) ? [i, j] : [j, i]
+        const [paddleId, actionId] = (window.innerWidth > window.innerHeight) ? [i, j] : [j, i]
         area.on('touchstart', () => {
           this.controller.addControl(paddleId, actionId)
         })
@@ -95,7 +95,7 @@ export default class Render {
     }
   }
   findSaveMultiplier (xS, yS, xT, yT) {
-    if (screen.width > screen.height) {
+    if (window.innerWidth > window.innerHeight) {
       return {
         x: xT / xS,
         y: yT / yS
@@ -108,7 +108,7 @@ export default class Render {
     }
   }
   mp (x, y = 0, mp = this.multiplier) {
-    if (screen.width > screen.height) {
+    if (window.innerWidth > window.innerHeight) {
       return [x * mp.x, y * mp.y]
     } else {
       return [y * mp.y, x * mp.x]

@@ -4,6 +4,7 @@ import Game from 'gp_engine'
 import bot from './bot.js'
 import screenfull from 'screenfull'
 import Controller from './controller.js'
+import * as inline_worker from 'inline-web-worker'
 
 export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
@@ -175,6 +176,11 @@ export default class Render {
 
     this.target.appendChild(this.renderer.view)
     this.firstRender()
+    const worker = inline_worker().create(function () {
+      console.log("hallo wereld")
+    })
+    console.log("jadfasd")
+    worker.run({a: "hallo"})
     const gameLoop = () => {
       if (!this.game.ended) {
         this.game.update(this.controller.getController())

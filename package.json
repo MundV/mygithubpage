@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "gp_engine": "^1.0.1",
-    "inline-web-worker": "^1.1.0",
     "pixi.js": "^4.5.3",
     "screenfull": "^4.0.0",
     "sw-toolbox": "^3.6.0",

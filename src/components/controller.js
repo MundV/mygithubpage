@@ -1,13 +1,14 @@
 export default class Controller {
-  constructor (game, actions, bots) {
+  constructor (game, actions, paddleOptions, sharedState) {
     this.game = game
     this.actions = actions
-    this.bots = bots
-    this.states = new Uint8Array(this.game.paddles.length * this.actions.length)
+    this.paddleOptions = paddleOptions
+
+    this.states = new Uint8Array(sharedState)
     this.controller = null
   }
   addControl (paddleId, actionId) {
-    if(this.bots[paddleId]) return
+    if(this.paddleOptions[paddleId].bot) return
 
     this.states[paddleId * this.actions.length + actionId] = true
     this.controller = null
@@ -40,31 +41,31 @@ export default class Controller {
 
     return controls
   }
-  getController () {
-    if(!this.controller) {
-      this.controller = []
+  // getController () {
+  //   if(!this.controller) {
+  //     this.controller = []
 
-      for(let i = 0; i < this.states.length; i++) {
-        if(!this.states[i]) continue
+  //     for(let i = 0; i < this.states.length; i++) {
+  //       if(!this.states[i]) continue
 
-        this.controller.push({
-          paddle: this.game.paddles[parseInt(i / this.actions.length)],
-          action: this.actions[i % this.actions.length]
-        })
-      }
-    }
-    const res = [...this.controller]
+  //       this.controller.push({
+  //         paddle: this.game.paddles[parseInt(i / this.actions.length)],
+  //         action: this.actions[i % this.actions.length]
+  //       })
+  //     }
+  //   }
+  //   const res = [...this.controller]
 
-    //for bots
-    for (let i = 0; i < this.bots.length; i++) {
-      if(!this.bots[i]) continue
+  //   //for bots
+  //   for (let i = 0; i < this.bots.length; i++) {
+  //     if(!this.bots[i]) continue
 
-      res.push({
-        paddle: this.game.paddles[i],
-        action: this.bots[i](this.game, i)
-      })
-    }
+  //     res.push({
+  //       paddle: this.game.paddles[i],
+  //       action: this.bots[i](this.game, i)
+  //     })
+  //   }
 
-    return res
-  }
+  //   return res
+  // }
 }

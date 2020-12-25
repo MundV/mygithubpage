@@ -41,7 +41,7 @@
   "ball": {
     "startPos": [360, 180],
     "pos": [360, 180],
-    "energyX": 200,
+    "energyX": 1000,
     "energyY": 0,
     "size": 10,
     "fieldWidth": 360,

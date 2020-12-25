@@ -4,7 +4,7 @@ import Game from 'gp_engine'
 import bot from './bot.js'
 import screenfull from 'screenfull'
 import Controller from './controller.js'
-import * as inline_worker from 'inline-web-worker'
+import gameLoop from './gameLoop.js'
 
 export default class Render {
   constructor (options = {}, stop = () => {}, pause = () => {}) {
@@ -12,8 +12,6 @@ export default class Render {
     this.stop = stop
     this.pauseAction = pause
     this.reRender = false
-
-    this.bots = options.paddles.map(options => options.bot ? bot() : false)
 
     this.multiplier = this.findSaveMultiplier(...this.game.fieldSize, window.innerWidth, window.innerHeight)
     this.renderer = new PIXI.autoDetectRenderer({
@@ -24,7 +22,9 @@ export default class Render {
 
     this.keys = []
     this.actions = ['up', 'down']
-    this.controller = new Controller(this.game, this.actions, this.bots)
+    const sharedState = new SharedArrayBuffer(Uint8Array.BYTES_PER_ELEMENT * this.game.paddles.length * this.actions.length)
+    this.controller = new Controller(options, this.actions, options.paddles, sharedState)
+    this.gameLoop = new gameLoop(options, sharedState)
 
     this.touchAreas = new PIXI.Container()
     this.touchAreas.interactive = true
@@ -132,7 +132,7 @@ export default class Render {
 
     for (let i = 0; i < this.game.paddles.length; i++) {
       const paddle = this.game.paddles[i]
-
+      const paddlePos = this.gameLoop.getPaddlePos(i)
       // draw the text
       const scoreText = new PIXI.Text('', {
         fontFamily: 'sarpanch',
@@ -140,7 +140,7 @@ export default class Render {
         fill: 0xffffff,
         stroke: 0xff0000
       })
-      const textPos = this.mp(paddle.pos[0], paddle.pos[1] + 100)
+      const textPos = this.mp(paddlePos[0], paddlePos[1] + 100)
       scoreText.x = textPos[0]
       scoreText.y = textPos[1]
       this.textContainer.addChild(scoreText)
@@ -150,7 +150,7 @@ export default class Render {
       paddleRender.lineStyle(this.multiplier.x, 0xff0000)
       paddleRender.beginFill(0xffffff)
       paddleRender.drawRect(0, 0, ...this.mp(...paddle.size))
-      const correctedPaddlePos = this.mp(...paddle.pos)
+      const correctedPaddlePos = this.mp(...paddlePos)
       paddleRender.x = correctedPaddlePos[0]
       paddleRender.y = correctedPaddlePos[1]
       paddleRender.endFill()
@@ -158,7 +158,7 @@ export default class Render {
     }
 
     // draw the ball
-    const correctedBallPos = this.mp(...this.game.ball.pos)
+    const correctedBallPos = this.mp(...this.gameLoop.getBallPos())
     this.ball.lineStyle(this.multiplier.x, 0xff0000)
     this.ball.beginFill(0xffffff)
     this.ball.drawCircle(0, 0, (this.game.ball.size / 2) * this.multiplier.x)
@@ -176,29 +176,27 @@ export default class Render {
 
     this.target.appendChild(this.renderer.view)
     this.firstRender()
-    const worker = inline_worker().create(function () {
-      console.log("hallo wereld")
-    })
-    console.log("jadfasd")
-    worker.run({a: "hallo"})
+
     const gameLoop = () => {
-      if (!this.game.ended) {
-        this.game.update(this.controller.getController())
+      // if (!this.game.ended) {
+      if (true) {
 
         for (let i = 0; i < this.game.paddles.length; i++) {
           const paddle = this.game.paddles[i]
           const scoreText = this.textContainer.getChildAt(i)
-          const textPos = this.mp(paddle.pos[0], paddle.pos[1] + 100)
+          const paddlePos = this.gameLoop.getPaddlePos(i)
+          // console.log('' + i + ' ' + paddlePos)
+          const textPos = this.mp(paddlePos[0], paddlePos[1] + 100)
           scoreText.text = paddle.points || ''
           scoreText.x = textPos[0]
           scoreText.y = textPos[1]
 
           const paddleRender = this.paddles.getChildAt(i)
-          const correctedPaddlePos = this.mp(...paddle.pos)
+          const correctedPaddlePos = this.mp(...paddlePos)
           paddleRender.x = correctedPaddlePos[0]
           paddleRender.y = correctedPaddlePos[1]
         }
-        const correctedBallPos = this.mp(...this.game.ball.pos)
+        const correctedBallPos = this.mp(...this.gameLoop.getBallPos())
         this.ball.x = correctedBallPos[0]
         this.ball.y = correctedBallPos[1]
 
@@ -217,11 +215,11 @@ export default class Render {
     gameLoop()
   }
   unpause () {
-    this.game.paused = false
+    this.gameLoop.unpause()
   }
   pause () {
     if(!screenfull.isFullscreen && !this.game.ended) {
-      this.game.paused = true
+      this.gameLoop.pause()
       this.pauseAction()
     }
   }

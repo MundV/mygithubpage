@@ -10,6 +10,7 @@ var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
+const { response } = require('express')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
@@ -23,11 +24,33 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
+app.use(function (req, res, next) {
+  res.header("Cross-Origin-Embedder-Policy", "require-corp");
+  res.header("Cross-Origin-Opener-Policy",  "same-origin");
+  // res.send("test");
+  // console.log(res._headers)
+  res.header("x-powered-by", "pizza123")
+  //
+  // console.l 
+  // res.rawHeaders.push("Cross-Origin-Embedder-Policy");
+  // res.rawHeaders.push("require-corp");
+  // res.rawHeaders.push("Cross-Origin-Opener-Policy");
+  // res.rawHeaders.push("same-origin");
+
+  console.log(res._headers)
+  next();
+});
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  quiet: true,
+  // headers: (req, res, context) => {
+  //   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  //   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+  // }
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
@@ -47,6 +70,15 @@ Object.keys(proxyTable).forEach(function (context) {
   if (typeof options === 'string') {
     options = { target: options }
   }
+  // options.onProxyRes = response => {
+  //   // headers: {
+  //     response.headers["Cross-Origin-Embedder-Policy"] = "require-corp";
+  //     response.headers["Cross-Origin-Opener-Policy"] = "same-origin";
+  //     // "Cross-Origin-Embedder-Policy": "require-corp",
+  //     // "Cross-Origin-Opener-Policy": "same-origin"
+  //   // }
+  // }
+  console.log(context, options);
   app.use(proxyMiddleware(options.filter || context, options))
 })
 
@@ -64,6 +96,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
+
 var uri = 'http://localhost:' + port
 
 var _resolve
@@ -80,6 +113,8 @@ devMiddleware.waitUntilValid(() => {
   }
   _resolve()
 })
+
+
 
 var server = app.listen(port)
 

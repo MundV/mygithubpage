@@ -37,8 +37,6 @@ app.use(function (req, res, next) {
   // res.rawHeaders.push("require-corp");
   // res.rawHeaders.push("Cross-Origin-Opener-Policy");
   // res.rawHeaders.push("same-origin");
-
-  console.log(res._headers)
   next();
 });
 

@@ -21,6 +21,8 @@ export default class Game {
       this.paused = false
       this.ended = false
       this.winner = []
+      this.last_t = performance.now()
+      this.diff_t = 0 
     }
   
     sendControls (controller) {
@@ -83,13 +85,16 @@ export default class Game {
   
     calcPos () {
       for (const paddle of this.paddles) {
-        paddle.calcPos()
+        paddle.calcPos(this.diff_t)
       }
-      this.ball.calcPos()
+      this.ball.calcPos(this.diff_t)
     }
   
     update (controller = []) {
       if (!this.paused && !this.ended) {
+        const now = performance.now()
+        this.diff_t = (now - this.last_t) / 1000
+        this.last_t = now
         this.sendControls(controller)
         this.calcPos()
         this.bounce()

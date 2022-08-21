@@ -185,6 +185,8 @@ export default class Render {
           const paddle = this.game.paddles[i]
           const scoreText = this.textContainer.getChildAt(i)
           const paddlePos = this.gameLoop.getPaddlePos(i)
+
+          // console.log(paddlePos)
           // console.log('' + i + ' ' + paddlePos)
           const textPos = this.mp(paddlePos[0], paddlePos[1] + 100)
           scoreText.text = paddle.points || ''

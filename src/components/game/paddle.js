@@ -32,12 +32,12 @@ export default class Paddle {
       this.physics.powerDirection = direction
     }
   
-    calcPos () {
-      this.physics.calcEnergy()
+    calcPos (diff_t) {
+      this.physics.calcEnergy(diff_t)
       if (this.physics.objectDirection === 'up') {
-        this.pos[1] -= this.physics.energyToVelocity(this.physics.energy, this.physics.mass)
+        this.pos[1] -= this.physics.energyToVelocity(this.physics.energy, this.physics.mass) * diff_t
       } else if (this.physics.objectDirection === 'down') {
-        this.pos[1] += this.physics.energyToVelocity(this.physics.energy, this.physics.mass)
+        this.pos[1] += this.physics.energyToVelocity(this.physics.energy, this.physics.mass) * diff_t
       }
   
       if (this.pos[1] + this.size[1] < 0) {

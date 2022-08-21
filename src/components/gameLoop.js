@@ -8,6 +8,8 @@ export default class gameLoop {
     constructor (options, sharedController, bots) {
         this.interval = null
         const size = (1 + options.paddles.length) * 2
+        // console.log(size)
+        // console.log(options.paddles.length)	
 
         // Shared memory
         const sharedPositions = new SharedArrayBuffer(Float64Array.BYTES_PER_ELEMENT * size)
@@ -22,7 +24,8 @@ export default class gameLoop {
         this.positions = new Float64Array(sharedPositions)
     }
     getPaddlePos (index) {
-        return [this.positions[2 + index], this.positions[2 + index + 1]]
+        // console.log(this.positions)
+        return [this.positions[2 + index * 2], this.positions[2 + index * 2 + 1]]
     }
     getBallPos () {
         return [this.positions[0], this.positions[1]]
@@ -46,7 +49,7 @@ function gameWorker (ev) {
         for (let i = 0; i < self.controller.length; i++) {
             if(!self.controller[i]) continue
 
-            const action = i % 2 ? 'up' : 'down'
+            const action = i % 2 ? 'down' : 'up'
             actionList.push({
                 paddle: self.game.paddles[parseInt(i / 2)],
                 action
@@ -68,8 +71,8 @@ function gameWorker (ev) {
         self.positions[0] = self.game.ball.pos[0]
         self.positions[1] = self.game.ball.pos[1]
         for (let i = 0; i < self.game.paddles.length; i++) {
-            self.positions[2 + i] = self.game.paddles[i].pos[0]
-            self.positions[2 + i + 1] = self.game.paddles[i].pos[1]
+            self.positions[2 + i * 2] = self.game.paddles[i].pos[0]
+            self.positions[2 + i * 2 + 1] = self.game.paddles[i].pos[1]
         }
         // console.log(self.positions)
     }
@@ -91,12 +94,13 @@ function gameWorker (ev) {
     }
 
     self.onmessage = e => {
-        console.log("init")
-        console.log(e)
+        // console.log("init")
+        // console.log(e)
         if (e.data.type == "init") {
             const options = e.data.options
             self.game = eval("new Game(options)")
             self.bots = options.paddles.map(options => options.bot ? eval("bot()") : false)
+            console.log(e.data.positions)
             self.positions = new Float64Array(e.data.positions)
 
             self.controller = new Uint8Array(e.data.sharedController)

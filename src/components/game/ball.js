@@ -2,12 +2,12 @@ export default class Ball {
     constructor (options = {}) {
       this.startPos = options.pos || [360, 180]
       this.pos = options.pos || [360, 180]
-      this.energyX = options.energyX || 300
+      this.energyX = options.energyX || 60000
       this.energyY = options.energyY || 0
       this.size = options.size || 10
       this.fieldWidth = options.fieldWidth || 360
       this.xDirection = options.xDirection || 'left'
-      this.maxPower = options.maxPower || 28
+      this.maxPower = options.maxPower || 28000
   
       this.physicsX = new Physics({
         energy: this.energyX,
@@ -30,19 +30,19 @@ export default class Ball {
       this.physicsY.powerDirection = (direction === 'up') ? 'down' : (direction === 'down') ? 'up' : '';
     }
   
-    calcPosX () {
-      this.physicsX.calcEnergy()
+    calcPosX (diff_t) {
+      this.physicsX.calcEnergy(diff_t)
       const energy = this.physicsX.energyToVelocity(this.physicsX.energy, this.physicsX.mass)
   
       if (this.xDirection === 'left') {
-        this.pos[0] -= energy;
+        this.pos[0] -= energy * diff_t
       } else if (this.xDirection === 'right'){
-        this.pos[0] += energy
+        this.pos[0] += energy * diff_t;
       }
     }
   
-    calcPosY () {
-      this.physicsY.calcEnergy()
+    calcPosY (diff_t) {
+      this.physicsY.calcEnergy(diff_t)
       const energy = this.physicsY.energyToVelocity(this.physicsY.energy, this.physicsY.mass)
   
       if (this.pos[1] + this.size < 0) {
@@ -52,9 +52,9 @@ export default class Ball {
       }
   
       if (this.physicsY.objectDirection === 'down') {
-         this.pos[1] += energy
+         this.pos[1] += energy * diff_t
       } else if (this.physicsY.objectDirection == 'up') {
-        this.pos[1] -= energy
+        this.pos[1] -= energy * diff_t
       }
     }
   
@@ -70,8 +70,8 @@ export default class Ball {
       this.physicsX.energy += amount
     }
   
-    calcPos () {
-      this.calcPosX()
-      this.calcPosY()
+    calcPos (diff_t) {
+      this.calcPosX(diff_t)
+      this.calcPosY(diff_t)
     }
   }

@@ -15,7 +15,7 @@
     }],
     "points": 0,
     "controllsBall": false,
-    "maxPower": 60,
+    "maxPower": 120000,
     "density": 400,
     "height": 0.1
   }, {
@@ -33,7 +33,7 @@
     }],
     "points": 0,
     "controllsBall": false,
-    "maxPower": 60,
+    "maxPower": 120000,
     "density": 400,
     "height": 0.1
   }],
